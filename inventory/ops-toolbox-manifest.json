@@ -1,0 +1,167 @@
+{
+  "openclaw_skill_total": 134,
+  "ready_total": 95,
+  "workspace_skill_dirs": 94,
+  "ops_api_db_toolbox": [
+    {
+      "name": "logging-observability",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Structured logging, distributed tracing, and metrics collection patterns for building observable systems. Use when implementing logging infrastructure, setting up distributed tracing with OpenTelemetry, designing metrics collection (RED/USE methods), configuring alerting and dashboards, or reviewing observability practices. Covers structured JSON logging, context propagation, trace sampling, Prometheus/Grafana stack, alert design, and PII/secret scrubbing.",
+      "note": "OK"
+    },
+    {
+      "name": "system-resource-monitor",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "monitoring",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "grafana-lens",
+      "state": "needs-setup",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Grafana tools for data visualization, monitoring, alerting, security, and SRE investigation. Use grafana_query, grafana_query_logs, grafana_query_traces, grafana_create_dashboard, grafana_update_dashboard, grafana_create_alert, grafana_share_dashboard, grafana_annotate, grafana_explore_datasources, grafana_list_metrics, grafana_search, grafana_get_dashboard, grafana_check_alerts, grafana_push_metrics, grafana_explain_metric, grafana_security_check, and grafana_investigate. Trigger when asked about metrics, dashboards, monitoring, alerts, costs, token usage, data visualization, PromQL, Prometheus, LogQL, Loki, log queries, error logs, log search, TraceQL, Tempo, traces, distributed tracing, span search, find slow traces, debug session traces, annotations, deployments, sharing charts, investigating alert notifications, pushing custom data (calendar, git, fitness, finance) to Grafana for visualization, pushing historical data, backfilling metrics, recording past data with timestamps, modifying dashboards, adding panels, removing panels, changing dashboard settings, updating dashboard time range, explain metric, metric trend, what is this metric, how has this changed, is this metric normal, why did my bill spike, cost visibility, security monitoring, security check, security audit, am I being attacked, is my agent compromised, suspicious activity, threat detection, prompt injection detection, set up security alerts, investigate, debug, triage, root cause, what's wrong, why is X broken, anomaly detection, RED method, USE method, alert fatigue, postmortem, incident summary.",
+      "note": "config: grafana.url, grafana.apiKey 需要 grafana.url / grafana.apiKey 配置后 fully ready。"
+    },
+    {
+      "name": "grafana-api",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "prometheus",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Query Prometheus monitoring data to check server metrics, resource usage, and system health. Use when the user asks about server status, disk space, CPU/memory usage, network stats, or any metrics collected by Prometheus. Supports multiple Prometheus instances with aggregated queries, config file or environment variables, and HTTP Basic Auth.",
+      "note": "OK"
+    },
+    {
+      "name": "promql-cli",
+      "state": "needs-setup",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "CLI for querying Prometheus and PromQL-compatible engines (Thanos, Cortex, VictoriaMetrics, Grafana Mimir, Grafana Tempo...) — instant queries, range queries, metric discovery (metrics/labels/meta subcommands), output formats (table/csv/json/graph). Apply when executing PromQL queries, troubleshooting performance issues on a software having observability, investigating latency/error rates/saturation, or analyzing time series data.",
+      "note": "bins: promql promql 二进制当前仍缺。"
+    },
+    {
+      "name": "kibana",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Kibana API integration with managed authentication. Manage saved objects, dashboards, data views, spaces, alerts, and fleet.Use this skill when users want to interact with Kibana for observability, security, and search analytics.For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).",
+      "note": "OK"
+    },
+    {
+      "name": "openclaw-log-analyzer",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "sql-toolkit",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Query, design, migrate, and optimize SQL databases. Use when working with SQLite, PostgreSQL, or MySQL — schema design, writing queries, creating migrations, indexing, backup/restore, and debugging slow queries. No ORMs required.",
+      "note": "OK"
+    },
+    {
+      "name": "db-readonly",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Run safe read-only queries against MySQL or PostgreSQL for data inspection, reporting, and troubleshooting. Use when the user asks to read tables, inspect schema, count rows, sample data, or export query results without modifying data.",
+      "note": "OK"
+    },
+    {
+      "name": "mysqladm",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。 mysql/mysqladmin 已通过 mysql-client 链接到 PATH。"
+    },
+    {
+      "name": "postgres-mcp-skill",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。 psql 已安装。"
+    },
+    {
+      "name": "redis-skill",
+      "state": "missing",
+      "source": "not-installed",
+      "exists": false,
+      "description": "",
+      "note": "未安装。 redis-cli 已安装；skill 目录可能已存在但当前未在 skills list 暴露。"
+    },
+    {
+      "name": "openapi-spec",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Deep OpenAPI workflow—design-first vs code-first, reusable schemas, security schemes, errors, examples, linting, compatibility, and codegen. Use when documenting REST APIs or driving clients and gateways from a spec.",
+      "note": "OK"
+    },
+    {
+      "name": "api-doc-generator",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "sovereign-api-mock-generator",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "postman",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。 newman 已安装，可用于 Postman collection CLI 执行。"
+    },
+    {
+      "name": "tcpdump",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Tcpdump reference tool. Use when working with tcpdump in devtools contexts.",
+      "note": "OK tcpdump 已存在于系统。"
+    },
+    {
+      "name": "wireshark-analysis",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。 tshark 已安装。"
+    }
+  ]
+}

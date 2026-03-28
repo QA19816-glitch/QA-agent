@@ -179,3 +179,21 @@ QA-agent/
 - 移动端：`mobile-appium-test`、`midscene-android-automation`、`android-adb`、`ios-simulator`
 - 发版 / 分发：`testflight`、`fastlane`
 - 视觉 / 稳定性：`visual-regression-testing`、`incident-fupan`、`incident-response`、`crash-fixer`、`ci-cd`
+
+
+## 监控 / DB / API / 抓包增强版（v6）
+
+这一版继续往“测试负责人 + IT 负责人”的排障与联调工具箱扩：
+
+- `dist/qa-it-lead-skills-v6.zip`：当前最新总包
+- `inventory/OPS_API_DB_SKILLS_ADDED.md`：监控 / 日志 / 数据库 / API / 抓包技能清单
+- `inventory/FINAL_FULL_CHECK_OPS_API_DB.md`：包含这批技能的最终检查清单
+
+这一版额外纳入：
+- 监控 / 观测：`monitoring`、`logging-observability`、`grafana-lens`、`grafana-api`、`prometheus`、`promql-cli`、`kibana`
+- 数据库：`sql-toolkit`、`db-readonly`、`mysqladm`、`postgres-mcp-skill`
+- API 治理：`openapi-spec`、`api-doc-generator`、`sovereign-api-mock-generator`、`postman`
+- 抓包 / 网络：`tcpdump`、`wireshark-analysis`
+- 系统依赖：`mitmproxy`、`tshark`、`newman`、`psql`、`redis-cli`、`mysql`
+
+备注：`redis-skill` 由于 ClawHub 下载限流，本轮仍未成功拉取，已在清单中标注。

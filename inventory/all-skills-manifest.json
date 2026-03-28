@@ -1,11 +1,11 @@
 {
   "generated_from_workspace": "/Users/jiguang/.openclaw/workspace-main",
   "managed_skills_dir": "/Users/jiguang/.openclaw-main/skills",
-  "total_skills": 118,
-  "ready_skills": 81,
-  "not_ready_skills": 37,
+  "total_skills": 134,
+  "ready_skills": 95,
+  "not_ready_skills": 39,
   "qa_skills": 11,
-  "non_qa_skills": 107,
+  "non_qa_skills": 123,
   "skills": [
     {
       "name": "qa-api-runner",
@@ -1337,6 +1337,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "API Mock Server Generator",
+      "description": "Generates mock API servers from OpenAPI specs or examples. Realistic fake data, configurable delays, error simulation.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "APITester Agent-Driven API Testing",
       "description": "Test API endpoints and document responses. Define tests in plain English, run them, get formatted results. Agent-driven Postman alternative.",
       "eligible": true,
@@ -1410,6 +1428,43 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "Monitoring",
+      "description": "Set up observability for applications and infrastructure with metrics, logs, traces, and alerts.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "Postman",
+      "description": "Build, test, and automate APIs with Postman collections, environments, and Newman CLI.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://clawic.com/skills/postman",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "Powerpoint / PPTX",
       "description": "Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks with reliable layouts, templates, placeholders, notes, charts, and visual QA. Use when (1) the task is about PowerPoint or `.pptx`; (2) layouts, placeholders, notes, charts, comments, or template fidelity matter; (3) the deck must render cleanly after edits.",
       "eligible": true,
@@ -1456,6 +1511,24 @@
       "source": "openclaw-workspace",
       "bundled": false,
       "homepage": "https://clawic.com/skills/testflight",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "Wireshark Network Traffic Analysis",
+      "description": "Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troubleshoot connectivity, and perform forensic PCAP analysis.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
       "missing": {
         "bins": [],
         "anyBins": [],
@@ -1604,6 +1677,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "db-readonly",
+      "description": "Run safe read-only queries against MySQL or PostgreSQL for data inspection, reporting, and troubleshooting. Use when the user asks to read tables, inspect schema, count rows, sample data, or export query results without modifying data.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "e2e-test-orchestrator",
       "description": "端到端（E2E）测试编排与执行。用于用户要求：设计测试用例、基于 Playwright/Cypress 实现自动化脚本、通过源码优先定位元素并在必要时使用截图/图像识别兜底、执行测试、自动修复脚本问题（如定位器或等待策略）、并输出结构化测试报告。",
       "eligible": true,
@@ -1695,6 +1786,46 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "grafana",
+      "description": "Grafana API integration with managed authentication. Manage dashboards, data sources, folders, annotations, alerts, and teams.Use this skill when users want to interact with Grafana for monitoring, visualization, and observability.For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "grafana-lens",
+      "description": "Grafana tools for data visualization, monitoring, alerting, security, and SRE investigation. Use grafana_query, grafana_query_logs, grafana_query_traces, grafana_create_dashboard, grafana_update_dashboard, grafana_create_alert, grafana_share_dashboard, grafana_annotate, grafana_explore_datasources, grafana_list_metrics, grafana_search, grafana_get_dashboard, grafana_check_alerts, grafana_push_metrics, grafana_explain_metric, grafana_security_check, and grafana_investigate. Trigger when asked about metrics, dashboards, monitoring, alerts, costs, token usage, data visualization, PromQL, Prometheus, LogQL, Loki, log queries, error logs, log search, TraceQL, Tempo, traces, distributed tracing, span search, find slow traces, debug session traces, annotations, deployments, sharing charts, investigating alert notifications, pushing custom data (calendar, git, fitness, finance) to Grafana for visualization, pushing historical data, backfilling metrics, recording past data with timestamps, modifying dashboards, adding panels, removing panels, changing dashboard settings, updating dashboard time range, explain metric, metric trend, what is this metric, how has this changed, is this metric normal, why did my bill spike, cost visibility, security monitoring, security check, security audit, am I being attacked, is my agent compromised, suspicious activity, threat detection, prompt injection detection, set up security alerts, investigate, debug, triage, root cause, what's wrong, why is X broken, anomaly detection, RED method, USE method, alert fatigue, postmortem, incident summary.",
+      "emoji": "🔭",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [
+          "grafana.url",
+          "grafana.apiKey"
+        ],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "缺少配置: grafana.url, grafana.apiKey"
+    },
+    {
       "name": "html-to-pdf",
       "description": "Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).",
       "eligible": true,
@@ -1740,6 +1871,24 @@
       "source": "openclaw-workspace",
       "bundled": false,
       "homepage": "https://github.com/ankitpokhrel/jira-cli",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "kibana",
+      "description": "Kibana API integration with managed authentication. Manage saved objects, dashboards, data views, spaces, alerts, and fleet.Use this skill when users want to interact with Kibana for observability, security, and search analytics.For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
       "missing": {
         "bins": [],
         "anyBins": [],
@@ -1807,6 +1956,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "logging-observability",
+      "description": "Structured logging, distributed tracing, and metrics collection patterns for building observable systems. Use when implementing logging infrastructure, setting up distributed tracing with OpenTelemetry, designing metrics collection (RED/USE methods), configuring alerting and dashboards, or reviewing observability practices. Covers structured JSON logging, context propagation, trace sampling, Prometheus/Grafana stack, alert design, and PII/secret scrubbing.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "mantis-manager",
       "description": "Manage Mantis Bug Tracker (issues, projects, users, filters, configs) via the official Mantis REST API. Supports full CRUD operations on issues, projects, users, attachments, notes, tags, relationships, and configuration management. Features dynamic instance switching with context-aware base URL and token resolution.",
       "emoji": "🐞",
@@ -1852,6 +2019,24 @@
     {
       "name": "mobile-responsive",
       "description": "Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "openapi-spec",
+      "description": "Deep OpenAPI workflow—design-first vs code-first, reusable schemas, security schemes, errors, examples, linting, compatibility, and codegen. Use when documenting REST APIs or driving clients and gateways from a spec.",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -2032,6 +2217,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "postgres",
+      "description": "PostgreSQL database management and optimization assistant. Provides complete database operation capabilities: health checks, index optimization, query plan analysis, schema queries, SQL execution.Use this skill when users mention PostgreSQL, Postgres, database optimization, index tuning, query performance, database health checks, or any PostgreSQL-related operations.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "pptx-generator",
       "description": "专业PPT生成器。Use when user wants to create editable PowerPoint presentations with professional layouts, multiple styles, and beautiful designs. Supports business, academic, creative styles. 可编辑PPT、幻灯片制作、演示文稿。",
       "emoji": "📊",
@@ -2049,6 +2252,46 @@
       },
       "category": "其他",
       "setup_note": "已就绪"
+    },
+    {
+      "name": "prometheus",
+      "description": "Query Prometheus monitoring data to check server metrics, resource usage, and system health. Use when the user asks about server status, disk space, CPU/memory usage, network stats, or any metrics collected by Prometheus. Supports multiple Prometheus instances with aggregated queries, config file or environment variables, and HTTP Basic Auth.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "promql-cli",
+      "description": "CLI for querying Prometheus and PromQL-compatible engines (Thanos, Cortex, VictoriaMetrics, Grafana Mimir, Grafana Tempo...) — instant queries, range queries, metric discovery (metrics/labels/meta subcommands), output formats (table/csv/json/graph). Apply when executing PromQL queries, troubleshooting performance issues on a software having observability, investigating latency/error rates/saturation, or analyzing time series data.",
+      "emoji": "📊",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://github.com/samber/cc-skills",
+      "missing": {
+        "bins": [
+          "promql"
+        ],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "缺少命令: promql"
     },
     {
       "name": "qa",
@@ -2166,6 +2409,61 @@
       "blockedByAllowlist": false,
       "source": "openclaw-workspace",
       "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "sql-toolkit",
+      "description": "Query, design, migrate, and optimize SQL databases. Use when working with SQLite, PostgreSQL, or MySQL — schema design, writing queries, creating migrations, indexing, backup/restore, and debugging slow queries. No ORMs required.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "system_resource_monitor",
+      "description": "A clean, reliable system resource monitor for CPU load, RAM, Swap, and Disk usage. Optimized for OpenClaw.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "tcpdump",
+      "description": "Tcpdump reference tool. Use when working with tcpdump in devtools contexts.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://bytesagain.com",
       "missing": {
         "bins": [],
         "anyBins": [],
