@@ -197,3 +197,22 @@ QA-agent/
 - 系统依赖：`mitmproxy`、`tshark`、`newman`、`psql`、`redis-cli`、`mysql`
 
 备注：`redis-skill` 由于 ClawHub 下载限流，本轮仍未成功拉取，已在清单中标注。
+
+
+## 平台 / 网关 / MQ / K8s / CI-CD 增强版（v7）
+
+这一版把测试负责人通用工具箱的最后一块也补上了，偏平台、基础设施、容器编排、消息队列、CI/CD：
+
+- `dist/qa-it-lead-skills-v7.zip`：当前最新总包
+- `inventory/PLATFORM_CICD_K8S_SKILLS_ADDED.md`：平台 / 网关 / MQ / K8s / CI-CD 技能清单
+- `inventory/FINAL_FULL_CHECK_PLATFORM_V7.md`：包含这批技能的最终检查清单
+
+这一版额外纳入：
+- Docker / K8s / Helm：`docker-skill`、`docker-compose`、`docker-diag`、`kubectl`、`k8s`、`kubernetes-devops`、`helm`
+- MQ / 网关：`kafka`、`mqtt-client`、`rabbitmq-client-guide`、`nginx`、`traefik`、`initial-traefik`
+- 云服务 / IaC：`aws-infra`、`cloudflare-toolkit`、`cloudflare-api`、`cloudflare-tunnel-manager`、`terraform-iac`
+- CI/CD：`github-actions`、`cicd-pipeline`、`gitlab`、`jenkins`
+
+说明：
+- 一部分 skill 已装入工作区并会随 ZIP 一起分发，但当前 `openclaw skills list` 不一定逐个暴露出来；清单里已标记为 `installed-dir-unlisted`。
+- 本机已补装 `kubectl`、`helm`、`k9s`、`terraform`、`aws`、`cloudflared`、`kcat`、`nginx`、`MQTTX`。

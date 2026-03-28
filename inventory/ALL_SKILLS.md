@@ -1,10 +1,10 @@
 # 本机 OpenClaw Skills 清单
 
-- 总数：**134**
-- 已就绪（ready）：**95**
-- 需额外安装/配置：**39**
+- 总数：**155**
+- 已就绪（ready）：**114**
+- 需额外安装/配置：**41**
 - 软件测试类：**11**
-- 非软件测试类：**123**
+- 非软件测试类：**144**
 
 ## 分类统计
 
@@ -17,7 +17,7 @@
 - **音频 / 视频 / PDF / 媒体**：9 个（ready 4 / total 9）
 - **设备 / 智能家居 / 影音控制**：7 个（ready 0 / total 7）
 - **生活 / 搜索 / 地点 / 天气**：4 个（ready 1 / total 4）
-- **其他**：69 个（ready 64 / total 69）
+- **其他**：90 个（ready 83 / total 90）
 
 ## 全量技能明细
 
@@ -254,14 +254,32 @@
 - **CI-CD** [ready] (openclaw-workspace)
   - 功能：Automate builds, tests, and deployments across web, mobile, and backend applications.
   - 状态说明：已就绪
+- **Docker Compose** [ready] (openclaw-workspace)
+  - 功能：Define multi-container applications with proper dependency handling, networking, and volume management.
+  - 状态说明：已就绪
+- **Docker Pro Diagnostic** [ready] (openclaw-workspace)
+  - 功能：Advanced log analysis for Docker containers using signal extraction.
+  - 状态说明：已就绪
 - **Excel / XLSX** [ready] (openclaw-workspace)
   - 功能：Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.
+  - 状态说明：已就绪
+- **GitHub Actions** [ready] (openclaw-workspace)
+  - 功能：Design, debug, and harden GitHub Actions workflows with reusable pipelines, safe permissions, and faster CI and release automation.
+  - 状态说明：已就绪
+- **GitLab** [ready] (openclaw-workspace)
+  - 功能：Avoid common GitLab CI/CD mistakes — rules gotchas, silent failures, and YAML merge traps.
   - 状态说明：已就绪
 - **Image Editing** [ready] (openclaw-workspace)
   - 功能：Edit images with AI inpainting, outpainting, background removal, upscaling, and restoration tools.
   - 状态说明：已就绪
+- **Kubernetes** [ready] (openclaw-workspace)
+  - 功能：Avoid common Kubernetes mistakes — resource limits, probe configuration, selector mismatches, and RBAC pitfalls.
+  - 状态说明：已就绪
 - **Monitoring** [ready] (openclaw-workspace)
   - 功能：Set up observability for applications and infrastructure with metrics, logs, traces, and alerts.
+  - 状态说明：已就绪
+- **Nginx** [ready] (openclaw-workspace)
+  - 功能：Configure Nginx for reverse proxy, load balancing, SSL termination, and high-performance static serving.
   - 状态说明：已就绪
 - **Postman** [ready] (openclaw-workspace)
   - 功能：Build, test, and automate APIs with Postman collections, environments, and Newman CLI.
@@ -275,6 +293,9 @@
 - **TestFlight** [ready] (openclaw-workspace)
   - 功能：Distribute iOS and macOS beta builds with TestFlight, tester management, and CI/CD automation.
   - 状态说明：已就绪
+- **Traefik** [ready] (openclaw-workspace)
+  - 功能：Avoid common Traefik mistakes — router priority, TLS configuration, Docker labels syntax, and middleware ordering.
+  - 状态说明：已就绪
 - **Wireshark Network Traffic Analysis** [ready] (openclaw-workspace)
   - 功能：Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troubleshoot connectivity, and perform forensic PCAP analysis.
   - 状态说明：已就绪
@@ -287,8 +308,20 @@
 - **automate-excel** [ready] (openclaw-workspace)
   - 功能：Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls) files. Use when the user works with spreadsheets, .xlsx files, Excel data, CSV-to-Excel conversion, batch Excel processing, or report generation from tables.
   - 状态说明：已就绪
+- **aws-infra** [ready] (openclaw-workspace)
+  - 功能：Chat-based AWS infrastructure assistance using AWS CLI and console context. Use for querying, auditing, and monitoring AWS resources (EC2, S3, IAM, Lambda, ECS/EKS, RDS, CloudWatch, billing, etc.), and for proposing safe changes with explicit confirmation before any write/destructive action.
+  - 状态说明：已就绪
 - **bug-investigation** [ready] (openclaw-workspace)
   - 功能：Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.
+  - 状态说明：已就绪
+- **cicd-pipeline** [ready] (openclaw-workspace)
+  - 功能：Create, debug, and manage CI/CD pipelines with GitHub Actions. Use when the user needs to set up automated testing, deployment, releases, or workflows. Covers workflow syntax, common patterns, secrets management, caching, matrix builds, and troubleshooting.
+  - 状态说明：已就绪
+- **cloudflare** [needs setup] (openclaw-workspace)
+  - 功能：Manage Cloudflare domains, DNS records, SSL settings, zone configuration, firewall rules, tunnels, and analytics via the Cloudflare API. Use when the user asks to set up a domain, add/edit/delete DNS records, configure SSL, check zone settings, manage Cloudflare Tunnels, view analytics, or any Cloudflare account management task.
+  - 状态说明：缺少环境变量: CLOUDFLARE_API_TOKEN
+- **cloudflare-tunnel** [ready] (openclaw-workspace)
+  - 功能：Create and manage secure Cloudflare Tunnels using cloudflared. Expose local services to the internet safely, configure DNS routing, set up zero-trust access controls, and manage tunnel authentication without opening firewall ports.
   - 状态说明：已就绪
 - **confluence** [needs setup] (openclaw-workspace)
   - 功能：Read and write Confluence Cloud pages — search, create, update, manage labels. Use when user mentions Confluence, wiki, documentation, pages, or knowledge base.
@@ -302,6 +335,9 @@
 - **db-readonly** [ready] (openclaw-workspace)
   - 功能：Run safe read-only queries against MySQL or PostgreSQL for data inspection, reporting, and troubleshooting. Use when the user asks to read tables, inspect schema, count rows, sample data, or export query results without modifying data.
   - 状态说明：已就绪
+- **docker** [needs setup] (openclaw-workspace)
+  - 功能：Installs and uses Docker reliably with official docs. Use when installing Docker (Desktop or Engine), building or running containers, writing Dockerfiles, using docker compose, or when the user asks about containers, images, or Docker CLI.
+  - 状态说明：至少需要一个命令: docker
 - **e2e-test-orchestrator** [ready] (openclaw-workspace)
   - 功能：端到端（E2E）测试编排与执行。用于用户要求：设计测试用例、基于 Playwright/Cypress 实现自动化脚本、通过源码优先定位元素并在必要时使用截图/图像识别兜底、执行测试、自动修复脚本问题（如定位器或等待策略）、并输出结构化测试报告。
   - 状态说明：已就绪
@@ -323,17 +359,35 @@
 - **grafana-lens** [needs setup] (openclaw-workspace)
   - 功能：Grafana tools for data visualization, monitoring, alerting, security, and SRE investigation. Use grafana_query, grafana_query_logs, grafana_query_traces, grafana_create_dashboard, grafana_update_dashboard, grafana_create_alert, grafana_share_dashboard, grafana_annotate, grafana_explore_datasources, grafana_list_metrics, grafana_search, grafana_get_dashboard, grafana_check_alerts, grafana_push_metrics, grafana_explain_metric, grafana_security_check, and grafana_investigate. Trigger when asked about metrics, dashboards, monitoring, alerts, costs, token usage, data visualization, PromQL, Prometheus, LogQL, Loki, log queries, error logs, log search, TraceQL, Tempo, traces, distributed tracing, span search, find slow traces, debug session traces, annotations, deployments, sharing charts, investigating alert notifications, pushing custom data (calendar, git, fitness, finance) to Grafana for visualization, pushing historical data, backfilling metrics, recording past data with timestamps, modifying dashboards, adding panels, removing panels, changing dashboard settings, updating dashboard time range, explain metric, metric trend, what is this metric, how has this changed, is this metric normal, why did my bill spike, cost visibility, security monitoring, security check, security audit, am I being attacked, is my agent compromised, suspicious activity, threat detection, prompt injection detection, set up security alerts, investigate, debug, triage, root cause, what's wrong, why is X broken, anomaly detection, RED method, USE method, alert fatigue, postmortem, incident summary.
   - 状态说明：缺少配置: grafana.url, grafana.apiKey
+- **helm** [ready] (openclaw-workspace)
+  - 功能：Create, lint, template, and package Kubernetes Helm charts with checks. Use when scaffolding charts, linting templates, or packaging chart releases.
+  - 状态说明：已就绪
 - **html-to-pdf** [ready] (openclaw-workspace)
   - 功能：Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).
   - 状态说明：已就绪
 - **incident-fupan** [ready] (openclaw-workspace)
   - 功能：事故复盘 / Incident Fupan — structured root cause analysis for production failures, outages, bugs, and near-misses. Use when: (1) 事故复盘 or incident review is needed, (2) a production incident just happened and needs root cause analysis, (3) an agent made a costly mistake and you want to prevent recurrence, (4) building safety rules or kill switches from incident patterns. Triggers on: 复盘, fupan, postmortem, incident review, root cause analysis, 事故分析. Generates a full report with timeline, 5 Whys root cause, impact assessment, fix/prevention actions, and new defensive rules. NOT for: routine debugging, feature planning, or non-incident analysis.
   - 状态说明：已就绪
+- **initial-traefik** [ready] (openclaw-workspace)
+  - 功能：Initialize and configure Traefik reverse proxy with Docker. Install Traefik, configure Docker Compose, set up service routing via path prefix or host-based routing, enable features like dashboard metrics logging tracing, configure Dashboard access via nip.io or path prefix
+  - 状态说明：已就绪
+- **jenkins** [ready] (openclaw-workspace)
+  - 功能：Interact with Jenkins CI/CD server via REST API. Use when you need to trigger builds, check build status, view console output, manage jobs, or monitor Jenkins nodes and queue. Supports deployment to different Jenkins instances via environment variables.
+  - 状态说明：已就绪
 - **jira** [ready] (openclaw-workspace)
   - 功能：Use when the user mentions Jira issues (e.g., "PROJ-123"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like "jira", "issue", "ticket", "sprint", "backlog", or issue key patterns.
   - 状态说明：已就绪
+- **kafka** [ready] (openclaw-workspace)
+  - 功能：Produce, consume, and manage Kafka topics with lag monitoring and data export. Use when publishing messages, consuming topics, monitoring consumer lag.
+  - 状态说明：已就绪
 - **kibana** [ready] (openclaw-workspace)
   - 功能：Kibana API integration with managed authentication. Manage saved objects, dashboards, data views, spaces, alerts, and fleet.Use this skill when users want to interact with Kibana for observability, security, and search analytics.For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).
+  - 状态说明：已就绪
+- **kubectl-skill** [ready] (openclaw-workspace)
+  - 功能：Execute and manage Kubernetes clusters via kubectl commands. Query resources, deploy applications, debug containers, manage configurations, and monitor cluster health. Use when working with Kubernetes clusters, containers, deployments, or pod diagnostics.
+  - 状态说明：已就绪
+- **kubernetes-devops** [ready] (openclaw-workspace)
+  - 功能：WHAT: Kubernetes manifest generation - Deployments, StatefulSets, CronJobs, Services, Ingresses, ConfigMaps, Secrets, and PVCs with production-grade security and health checks.WHEN: User needs to create K8s manifests, deploy containers, configure Services/Ingress, manage ConfigMaps/Secrets, set up persistent storage, or organize multi-environment configs.KEYWORDS: kubernetes, k8s, manifest, deployment, statefulset, cronjob, service, ingress, configmap, secret, pvc, pod, container, yaml, kustomize, helm, namespace, probe, security context
   - 状态说明：已就绪
 - **lh-video-gen** [ready] (openclaw-workspace)
   - 功能：Generate vertical short videos (9:16) from a Markdown script. Parses script sections, generates TTS audio, renders subtitle cards, and composites into MP4 with FFmpeg.
@@ -355,6 +409,9 @@
   - 状态说明：已就绪
 - **mobile-responsive** [ready] (openclaw-workspace)
   - 功能：Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.
+  - 状态说明：已就绪
+- **mqtt-client** [ready] (openclaw-workspace)
+  - 功能：This is a simple client for connecting to an mqtt instance
   - 状态说明：已就绪
 - **openapi-spec** [ready] (openclaw-workspace)
   - 功能：Deep OpenAPI workflow—design-first vs code-first, reusable schemas, security schemes, errors, examples, linting, compatibility, and codegen. Use when documenting REST APIs or driving clients and gateways from a spec.
@@ -410,6 +467,9 @@
 - **qa-skill** [ready] (openclaw-workspace)
   - 功能：Generate comprehensive test cases and quality assurance documentation from SwiftUI iOS code. Use when iOS application code is available and needs testing strategies, test cases, and quality validation. This skill receives input from dev-skill and completes the auto-dev-pipeline by providing testing coverage.
   - 状态说明：已就绪
+- **rabbitmq-client-guide** [ready] (openclaw-workspace)
+  - 功能：RabbitMQ 客户端代码指南。当用户需要编写、调试或审查 RabbitMQ 应用代码时使用。涵盖：用任意语言（Java/Go/Python/PHP/.NET）写生产者或消费者；排查连接暴增、消息丢失、Broken pipe、消费慢、漏消费等客户端问题；审查 spring-boot-starter-amqp、amqp091-go、pika、php-amqplib 等库的代码；实现 RPC 模式、confirm、手动 ack、prefetch 调优、连接复用、重连机制。用户贴了 RabbitMQ 相关代码片段或描述了客户端侧的消息异常时，始终触发此技能。不适用于 RabbitMQ 服务端运维部署、Kafka 等其他消息系统、或纯架构设计问题。
+  - 状态说明：已就绪
 - **security-audit** [ready] (openclaw-workspace)
   - 功能：Audit codebases and infrastructure for security issues. Use when scanning dependencies for vulnerabilities, detecting hardcoded secrets, checking OWASP top 10 issues, verifying SSL/TLS, auditing file permissions, or reviewing code for injection and auth flaws.
   - 状态说明：已就绪
@@ -427,6 +487,9 @@
   - 状态说明：已就绪
 - **tcpdump** [ready] (openclaw-workspace)
   - 功能：Tcpdump reference tool. Use when working with tcpdump in devtools contexts.
+  - 状态说明：已就绪
+- **terraform-iac** [ready] (openclaw-workspace)
+  - 功能：Deep Terraform/IaC workflow—module boundaries, state, workspaces, plan/apply safety, drift, secrets, CI integration, and team governance. Use when building infra as code, refactoring modules, or debugging state issues.
   - 状态说明：已就绪
 - **test-master** [ready] (openclaw-workspace)
   - 功能：Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.

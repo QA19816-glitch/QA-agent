@@ -1,11 +1,11 @@
 {
   "generated_from_workspace": "/Users/jiguang/.openclaw/workspace-main",
   "managed_skills_dir": "/Users/jiguang/.openclaw-main/skills",
-  "total_skills": 134,
-  "ready_skills": 95,
-  "not_ready_skills": 39,
+  "total_skills": 155,
+  "ready_skills": 114,
+  "not_ready_skills": 41,
   "qa_skills": 11,
-  "non_qa_skills": 123,
+  "non_qa_skills": 144,
   "skills": [
     {
       "name": "qa-api-runner",
@@ -1391,6 +1391,42 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "Docker Compose",
+      "description": "Define multi-container applications with proper dependency handling, networking, and volume management.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "Docker Pro Diagnostic",
+      "description": "Advanced log analysis for Docker containers using signal extraction.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "Excel / XLSX",
       "description": "Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.",
       "eligible": true,
@@ -1399,6 +1435,43 @@
       "source": "openclaw-workspace",
       "bundled": false,
       "homepage": "https://clawic.com/skills/excel-xlsx",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "GitHub Actions",
+      "description": "Design, debug, and harden GitHub Actions workflows with reusable pipelines, safe permissions, and faster CI and release automation.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://clawic.com/skills/github-actions",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "GitLab",
+      "description": "Avoid common GitLab CI/CD mistakes — rules gotchas, silent failures, and YAML merge traps.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
       "missing": {
         "bins": [],
         "anyBins": [],
@@ -1428,8 +1501,44 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "Kubernetes",
+      "description": "Avoid common Kubernetes mistakes — resource limits, probe configuration, selector mismatches, and RBAC pitfalls.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "Monitoring",
       "description": "Set up observability for applications and infrastructure with metrics, logs, traces, and alerts.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "Nginx",
+      "description": "Configure Nginx for reverse proxy, load balancing, SSL termination, and high-performance static serving.",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -1522,6 +1631,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "Traefik",
+      "description": "Avoid common Traefik mistakes — router priority, TLS configuration, Docker labels syntax, and middleware ordering.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "Wireshark Network Traffic Analysis",
       "description": "Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troubleshoot connectivity, and perform forensic PCAP analysis.",
       "eligible": true,
@@ -1594,8 +1721,83 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "aws-infra",
+      "description": "Chat-based AWS infrastructure assistance using AWS CLI and console context. Use for querying, auditing, and monitoring AWS resources (EC2, S3, IAM, Lambda, ECS/EKS, RDS, CloudWatch, billing, etc.), and for proposing safe changes with explicit confirmation before any write/destructive action.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "bug-investigation",
       "description": "Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "cicd-pipeline",
+      "description": "Create, debug, and manage CI/CD pipelines with GitHub Actions. Use when the user needs to set up automated testing, deployment, releases, or workflows. Covers workflow syntax, common patterns, secrets management, caching, matrix builds, and troubleshooting.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "cloudflare",
+      "description": "Manage Cloudflare domains, DNS records, SSL settings, zone configuration, firewall rules, tunnels, and analytics via the Cloudflare API. Use when the user asks to set up a domain, add/edit/delete DNS records, configure SSL, check zone settings, manage Cloudflare Tunnels, view analytics, or any Cloudflare account management task.",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "primaryEnv": "CLOUDFLARE_API_TOKEN",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [
+          "CLOUDFLARE_API_TOKEN"
+        ],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "缺少环境变量: CLOUDFLARE_API_TOKEN"
+    },
+    {
+      "name": "cloudflare-tunnel",
+      "description": "Create and manage secure Cloudflare Tunnels using cloudflared. Expose local services to the internet safely, configure DNS routing, set up zero-trust access controls, and manage tunnel authentication without opening firewall ports.",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -1693,6 +1895,27 @@
       },
       "category": "其他",
       "setup_note": "已就绪"
+    },
+    {
+      "name": "docker",
+      "description": "Installs and uses Docker reliably with official docs. Use when installing Docker (Desktop or Engine), building or running containers, writing Dockerfiles, using docker compose, or when the user asks about containers, images, or Docker CLI.",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://docs.docker.com/",
+      "missing": {
+        "bins": [],
+        "anyBins": [
+          "docker"
+        ],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "至少需要一个命令: docker"
     },
     {
       "name": "e2e-test-orchestrator",
@@ -1826,6 +2049,25 @@
       "setup_note": "缺少配置: grafana.url, grafana.apiKey"
     },
     {
+      "name": "helm",
+      "description": "Create, lint, template, and package Kubernetes Helm charts with checks. Use when scaffolding charts, linting templates, or packaging chart releases.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://bytesagain.com",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "html-to-pdf",
       "description": "Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).",
       "eligible": true,
@@ -1862,6 +2104,42 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "initial-traefik",
+      "description": "Initialize and configure Traefik reverse proxy with Docker. Install Traefik, configure Docker Compose, set up service routing via path prefix or host-based routing, enable features like dashboard metrics logging tracing, configure Dashboard access via nip.io or path prefix",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "jenkins",
+      "description": "Interact with Jenkins CI/CD server via REST API. Use when you need to trigger builds, check build status, view console output, manage jobs, or monitor Jenkins nodes and queue. Supports deployment to different Jenkins instances via environment variables.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "jira",
       "description": "Use when the user mentions Jira issues (e.g., \"PROJ-123\"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like \"jira\", \"issue\", \"ticket\", \"sprint\", \"backlog\", or issue key patterns.",
       "emoji": "🎫",
@@ -1882,8 +2160,63 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "kafka",
+      "description": "Produce, consume, and manage Kafka topics with lag monitoring and data export. Use when publishing messages, consuming topics, monitoring consumer lag.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://bytesagain.com",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "kibana",
       "description": "Kibana API integration with managed authentication. Manage saved objects, dashboards, data views, spaces, alerts, and fleet.Use this skill when users want to interact with Kibana for observability, security, and search analytics.For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "kubectl-skill",
+      "description": "Execute and manage Kubernetes clusters via kubectl commands. Query resources, deploy applications, debug containers, manage configurations, and monitor cluster health. Use when working with Kubernetes clusters, containers, deployments, or pod diagnostics.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "kubernetes-devops",
+      "description": "WHAT: Kubernetes manifest generation - Deployments, StatefulSets, CronJobs, Services, Ingresses, ConfigMaps, Secrets, and PVCs with production-grade security and health checks.WHEN: User needs to create K8s manifests, deploy containers, configure Services/Ingress, manage ConfigMaps/Secrets, set up persistent storage, or organize multi-environment configs.KEYWORDS: kubernetes, k8s, manifest, deployment, statefulset, cronjob, service, ingress, configmap, secret, pvc, pod, container, yaml, kustomize, helm, namespace, probe, security context",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -2024,6 +2357,25 @@
       "blockedByAllowlist": false,
       "source": "openclaw-workspace",
       "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "mqtt-client",
+      "description": "This is a simple client for connecting to an mqtt instance",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://mqtt.org/",
       "missing": {
         "bins": [],
         "anyBins": [],
@@ -2366,6 +2718,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "rabbitmq-client-guide",
+      "description": "RabbitMQ 客户端代码指南。当用户需要编写、调试或审查 RabbitMQ 应用代码时使用。涵盖：用任意语言（Java/Go/Python/PHP/.NET）写生产者或消费者；排查连接暴增、消息丢失、Broken pipe、消费慢、漏消费等客户端问题；审查 spring-boot-starter-amqp、amqp091-go、pika、php-amqplib 等库的代码；实现 RPC 模式、confirm、手动 ack、prefetch 调优、连接复用、重连机制。用户贴了 RabbitMQ 相关代码片段或描述了客户端侧的消息异常时，始终触发此技能。不适用于 RabbitMQ 服务端运维部署、Kafka 等其他消息系统、或纯架构设计问题。",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "security-audit",
       "description": "Audit codebases and infrastructure for security issues. Use when scanning dependencies for vulnerabilities, detecting hardcoded secrets, checking OWASP top 10 issues, verifying SSL/TLS, auditing file permissions, or reviewing code for injection and auth flaws.",
       "eligible": true,
@@ -2464,6 +2834,24 @@
       "source": "openclaw-workspace",
       "bundled": false,
       "homepage": "https://bytesagain.com",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "terraform-iac",
+      "description": "Deep Terraform/IaC workflow—module boundaries, state, workspaces, plan/apply safety, drift, secrets, CI integration, and team governance. Use when building infra as code, refactoring modules, or debugging state issues.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
       "missing": {
         "bins": [],
         "anyBins": [],
