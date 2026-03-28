@@ -148,3 +148,19 @@ QA-agent/
 - 终版总包内含当前工作区全部 skill 源码，以及多份 inventory 清单。
 - 某些 OpenClaw bundled skills 是系统自带的，仓库不复制其系统源码，但会在清单中标出 ready 状态。
 - `gifgrep`、`songsee` 目前由于本机包源不可用，未能成功 ready，已在最终清单中注明。
+
+
+## IT / 测试负责人增强版
+
+如果你的工作不只是做测试，还会碰到汇报、文档、表格、项目协作、Jira/Confluence、日志排障，这一版更适合：
+
+- `dist/qa-it-lead-skills-v4.zip`：当前最完整的 IT / 测试负责人总包
+- `inventory/IT_LEAD_SKILLS_ADDED.md`：新增的 PPT / Excel / Jira / Confluence / 日志 / 周报 skills 清单
+- `inventory/FINAL_FULL_CHECK_IT.md`：包含这批新增技能的最终检查清单
+
+这一版额外纳入：
+- PPT / 演示文稿：`pptx-generator`、`openclaw-slides`、`powerpoint-pptx`
+- Excel：`automate-excel`、`excel-xlsx`
+- Atlassian：`atlassian-jira`、`atlassian-confluence`
+- 日志/汇报：`openclaw-log-analyzer`、`weekly-report-writer`、`smart-weekly-report`、`daily-report-writer`
+- 安全与秘钥：`1password`

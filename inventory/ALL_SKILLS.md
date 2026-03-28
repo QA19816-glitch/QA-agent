@@ -1,23 +1,23 @@
 # 本机 OpenClaw Skills 清单
 
-- 总数：**99**
-- 已就绪（ready）：**64**
-- 需额外安装/配置：**35**
+- 总数：**109**
+- 已就绪（ready）：**73**
+- 需额外安装/配置：**36**
 - 软件测试类：**11**
-- 非软件测试类：**88**
+- 非软件测试类：**98**
 
 ## 分类统计
 
 - **QA / 软件测试**：11 个（ready 11 / total 11）
 - **文档 / 知识库 / 飞书**：4 个（ready 4 / total 4）
 - **开发 / GitHub / Agent 工具**：12 个（ready 8 / total 12）
-- **安全 / 基础设施 / 连接诊断**：3 个（ready 2 / total 3）
+- **安全 / 基础设施 / 连接诊断**：3 个（ready 3 / total 3）
 - **笔记 / 任务 / 效率工具**：7 个（ready 0 / total 7）
 - **消息 / 协作 / 社交**：8 个（ready 0 / total 8）
 - **音频 / 视频 / PDF / 媒体**：9 个（ready 4 / total 9）
 - **设备 / 智能家居 / 影音控制**：7 个（ready 0 / total 7）
 - **生活 / 搜索 / 地点 / 天气**：4 个（ready 1 / total 4）
-- **其他**：34 个（ready 34 / total 34）
+- **其他**：44 个（ready 42 / total 44）
 
 ## 全量技能明细
 
@@ -113,9 +113,9 @@
 
 ### 安全 / 基础设施 / 连接诊断
 
-- **1password** [needs setup] (openclaw-bundled)
+- **1password** [ready] (openclaw-bundled)
   - 功能：Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.
-  - 状态说明：缺少命令: op
+  - 状态说明：已就绪
 - **healthcheck** [ready] (openclaw-bundled)
   - 功能：Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).
   - 状态说明：已就绪
@@ -248,14 +248,29 @@
 - **APITester Agent-Driven API Testing** [ready] (openclaw-workspace)
   - 功能：Test API endpoints and document responses. Define tests in plain English, run them, get formatted results. Agent-driven Postman alternative.
   - 状态说明：已就绪
+- **Excel / XLSX** [ready] (openclaw-workspace)
+  - 功能：Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.
+  - 状态说明：已就绪
 - **Image Editing** [ready] (openclaw-workspace)
   - 功能：Edit images with AI inpainting, outpainting, background removal, upscaling, and restoration tools.
+  - 状态说明：已就绪
+- **Powerpoint / PPTX** [ready] (openclaw-workspace)
+  - 功能：Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks with reliable layouts, templates, placeholders, notes, charts, and visual QA. Use when (1) the task is about PowerPoint or `.pptx`; (2) layouts, placeholders, notes, charts, comments, or template fidelity matter; (3) the deck must render cleanly after edits.
   - 状态说明：已就绪
 - **Test Generator** [ready] (openclaw-workspace)
   - 功能：Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.
   - 状态说明：已就绪
+- **automate-excel** [ready] (openclaw-workspace)
+  - 功能：Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls) files. Use when the user works with spreadsheets, .xlsx files, Excel data, CSV-to-Excel conversion, batch Excel processing, or report generation from tables.
+  - 状态说明：已就绪
 - **bug-investigation** [ready] (openclaw-workspace)
   - 功能：Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.
+  - 状态说明：已就绪
+- **confluence** [needs setup] (openclaw-workspace)
+  - 功能：Read and write Confluence Cloud pages — search, create, update, manage labels. Use when user mentions Confluence, wiki, documentation, pages, or knowledge base.
+  - 状态说明：缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN
+- **daily-report-writer** [ready] (openclaw-workspace)
+  - 功能：根据输入生成日报 Markdown 草稿并写入 reports 目录
   - 状态说明：已就绪
 - **e2e-test-orchestrator** [ready] (openclaw-workspace)
   - 功能：端到端（E2E）测试编排与执行。用于用户要求：设计测试用例、基于 Playwright/Cypress 实现自动化脚本、通过源码优先定位元素并在必要时使用截图/图像识别兜底、执行测试、自动修复脚本问题（如定位器或等待策略）、并输出结构化测试报告。
@@ -272,14 +287,23 @@
 - **html-to-pdf** [ready] (openclaw-workspace)
   - 功能：Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).
   - 状态说明：已就绪
+- **jira** [needs setup] (openclaw-workspace)
+  - 功能：Manage Jira Cloud issues — search, create, update, comment, transition. Use when user mentions Jira, issues, tickets, sprints, bugs, tasks, or issue keys like PROJ-123.
+  - 状态说明：缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN
 - **lh-video-gen** [ready] (openclaw-workspace)
   - 功能：Generate vertical short videos (9:16) from a Markdown script. Parses script sections, generates TTS audio, renders subtitle cards, and composites into MP4 with FFmpeg.
+  - 状态说明：已就绪
+- **log-analyzer** [ready] (openclaw-workspace)
+  - 功能：Intelligent log analysis tool for monitoring cron jobs, detecting errors, analyzing patterns, and generating reports. Supports automatic error detection, log aggregation, and Discord notifications.
   - 状态说明：已就绪
 - **mobile-appium-test** [ready] (openclaw-workspace)
   - 功能：Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.
   - 状态说明：已就绪
 - **mobile-responsive** [ready] (openclaw-workspace)
   - 功能：Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.
+  - 状态说明：已就绪
+- **openclaw-slides** [ready] (openclaw-workspace)
+  - 功能：Create stunning, animation-rich HTML presentations from scratch or convert PowerPoint files (.ppt/.pptx) to beautiful web slides. Use when the user wants to build a pitch deck, presentation, slideshow, or slide deck — or convert an existing PPT to a web presentation. Generates zero-dependency single HTML files with keyboard/touch navigation and scroll-triggered animations. Style options include Neon Cyber, Bold Signal, Swiss Modern, Paper & Ink, and 8 more curated presets.
   - 状态说明：已就绪
 - **pdf** [ready] (openclaw-workspace)
   - 功能：Create, read, edit, merge, split PDF files. Supports text extraction, table extraction, form filling, watermarks, OCR, and HTML-to-PDF conversion.
@@ -304,6 +328,9 @@
   - 状态说明：已就绪
 - **playwright-skill** [ready] (openclaw-workspace)
   - 功能：Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.
+  - 状态说明：已就绪
+- **pptx-generator** [ready] (openclaw-workspace)
+  - 功能：专业PPT生成器。Use when user wants to create editable PowerPoint presentations with professional layouts, multiple styles, and beautiful designs. Supports business, academic, creative styles. 可编辑PPT、幻灯片制作、演示文稿。
   - 状态说明：已就绪
 - **qa** [ready] (openclaw-workspace)
   - 功能：Systematically QA test a web application and fix bugs found. Runs QA testing,then iteratively fixes bugs in source code, committing each fix atomically andre-verifying. Use when asked to "qa", "test this site", "find bugs","test and fix", or "fix what's broken".Proactively suggest when the user says a feature is ready for testingor asks "does this work?".Three tiers: Quick (critical/high only), Standard (+ medium), Exhaustive (+ cosmetic).Produces before/after health scores, fix evidence, and a ship-readiness summary.
@@ -346,4 +373,7 @@
   - 状态说明：已就绪
 - **web-screenshot** [ready] (openclaw-workspace)
   - 功能：🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。
+  - 状态说明：已就绪
+- **weekly-report-writer** [ready] (openclaw-workspace)
+  - 功能：用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。
   - 状态说明：已就绪

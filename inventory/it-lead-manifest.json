@@ -1,0 +1,135 @@
+{
+  "openclaw_skill_total": 109,
+  "ready_total": 73,
+  "workspace_skill_dirs": 63,
+  "it_lead_focus": [
+    {
+      "name": "powerpoint-pptx",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "pptx-generator",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "专业PPT生成器。Use when user wants to create editable PowerPoint presentations with professional layouts, multiple styles, and beautiful designs. Supports business, academic, creative styles. 可编辑PPT、幻灯片制作、演示文稿。",
+      "note": "OK"
+    },
+    {
+      "name": "openclaw-slides",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Create stunning, animation-rich HTML presentations from scratch or convert PowerPoint files (.ppt/.pptx) to beautiful web slides. Use when the user wants to build a pitch deck, presentation, slideshow, or slide deck — or convert an existing PPT to a web presentation. Generates zero-dependency single HTML files with keyboard/touch navigation and scroll-triggered animations. Style options include Neon Cyber, Bold Signal, Swiss Modern, Paper & Ink, and 8 more curated presets.",
+      "note": "OK"
+    },
+    {
+      "name": "excel-xlsx",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "automate-excel",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls) files. Use when the user works with spreadsheets, .xlsx files, Excel data, CSV-to-Excel conversion, batch Excel processing, or report generation from tables.",
+      "note": "OK"
+    },
+    {
+      "name": "atlassian-jira",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "atlassian-confluence",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "openclaw-log-analyzer",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "weekly-report-writer",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。",
+      "note": "OK"
+    },
+    {
+      "name": "smart-weekly-report",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "daily-report-writer",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "根据输入生成日报 Markdown 草稿并写入 reports 目录",
+      "note": "OK"
+    },
+    {
+      "name": "1password",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "exists": false,
+      "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.",
+      "note": "OK"
+    },
+    {
+      "name": "apple-notes",
+      "state": "needs-setup",
+      "source": "openclaw-bundled",
+      "exists": false,
+      "description": "Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folders.",
+      "note": "bins: memo"
+    },
+    {
+      "name": "obsidian",
+      "state": "needs-setup",
+      "source": "openclaw-bundled",
+      "exists": false,
+      "description": "Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.",
+      "note": "bins: obsidian-cli"
+    },
+    {
+      "name": "notion",
+      "state": "needs-setup",
+      "source": "openclaw-bundled",
+      "exists": false,
+      "description": "Notion API for creating and managing pages, databases, and blocks.",
+      "note": "env: NOTION_API_KEY"
+    },
+    {
+      "name": "trello",
+      "state": "needs-setup",
+      "source": "openclaw-bundled",
+      "exists": false,
+      "description": "Manage Trello boards, lists, and cards via the Trello REST API.",
+      "note": "env: TRELLO_API_KEY, TRELLO_TOKEN"
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 {
   "generated_from_workspace": "/Users/jiguang/.openclaw/workspace-main",
   "managed_skills_dir": "/Users/jiguang/.openclaw-main/skills",
-  "total_skills": 99,
-  "ready_skills": 64,
-  "not_ready_skills": 35,
+  "total_skills": 109,
+  "ready_skills": 73,
+  "not_ready_skills": 36,
   "qa_skills": 11,
-  "non_qa_skills": 88,
+  "non_qa_skills": 98,
   "skills": [
     {
       "name": "qa-api-runner",
@@ -519,23 +519,21 @@
       "name": "1password",
       "description": "Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.",
       "emoji": "🔐",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "homepage": "https://developer.1password.com/docs/cli/get-started/",
       "missing": {
-        "bins": [
-          "op"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "安全 / 基础设施 / 连接诊断",
-      "setup_note": "缺少命令: op"
+      "setup_note": "已就绪"
     },
     {
       "name": "healthcheck",
@@ -1357,6 +1355,25 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "Excel / XLSX",
+      "description": "Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://clawic.com/skills/excel-xlsx",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "Image Editing",
       "description": "Edit images with AI inpainting, outpainting, background removal, upscaling, and restoration tools.",
       "eligible": true,
@@ -1364,6 +1381,25 @@
       "blockedByAllowlist": false,
       "source": "openclaw-workspace",
       "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "Powerpoint / PPTX",
+      "description": "Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks with reliable layouts, templates, placeholders, notes, charts, and visual QA. Use when (1) the task is about PowerPoint or `.pptx`; (2) layouts, placeholders, notes, charts, comments, or template fidelity matter; (3) the deck must render cleanly after edits.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://clawic.com/skills/powerpoint-pptx",
       "missing": {
         "bins": [],
         "anyBins": [],
@@ -1394,8 +1430,68 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "automate-excel",
+      "description": "Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls) files. Use when the user works with spreadsheets, .xlsx files, Excel data, CSV-to-Excel conversion, batch Excel processing, or report generation from tables.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "bug-investigation",
       "description": "Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "confluence",
+      "description": "Read and write Confluence Cloud pages — search, create, update, manage labels. Use when user mentions Confluence, wiki, documentation, pages, or knowledge base.",
+      "emoji": "📄",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [
+          "ATLASSIAN_URL",
+          "ATLASSIAN_EMAIL",
+          "ATLASSIAN_API_TOKEN"
+        ],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN"
+    },
+    {
+      "name": "daily-report-writer",
+      "description": "根据输入生成日报 Markdown 草稿并写入 reports 目录",
+      "emoji": "📝",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -1502,6 +1598,29 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "jira",
+      "description": "Manage Jira Cloud issues — search, create, update, comment, transition. Use when user mentions Jira, issues, tickets, sprints, bugs, tasks, or issue keys like PROJ-123.",
+      "emoji": "🎫",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [
+          "ATLASSIAN_URL",
+          "ATLASSIAN_EMAIL",
+          "ATLASSIAN_API_TOKEN"
+        ],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN"
+    },
+    {
       "name": "lh-video-gen",
       "description": "Generate vertical short videos (9:16) from a Markdown script. Parses script sections, generates TTS audio, renders subtitle cards, and composites into MP4 with FFmpeg.",
       "eligible": true,
@@ -1510,6 +1629,24 @@
       "source": "openclaw-workspace",
       "bundled": false,
       "homepage": "https://github.com/liuhedev/lh-openclaw-kit",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "log-analyzer",
+      "description": "Intelligent log analysis tool for monitoring cron jobs, detecting errors, analyzing patterns, and generating reports. Supports automatic error detection, log aggregation, and Discord notifications.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
       "missing": {
         "bins": [],
         "anyBins": [],
@@ -1542,6 +1679,24 @@
     {
       "name": "mobile-responsive",
       "description": "Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "openclaw-slides",
+      "description": "Create stunning, animation-rich HTML presentations from scratch or convert PowerPoint files (.ppt/.pptx) to beautiful web slides. Use when the user wants to build a pitch deck, presentation, slideshow, or slide deck — or convert an existing PPT to a web presentation. Generates zero-dependency single HTML files with keyboard/touch navigation and scroll-triggered animations. Style options include Neon Cyber, Bold Signal, Swiss Modern, Paper & Ink, and 8 more curated presets.",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -1688,6 +1843,25 @@
     {
       "name": "playwright-skill",
       "description": "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "pptx-generator",
+      "description": "专业PPT生成器。Use when user wants to create editable PowerPoint presentations with professional layouts, multiple styles, and beautiful designs. Supports business, academic, creative styles. 可编辑PPT、幻灯片制作、演示文稿。",
+      "emoji": "📊",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -1940,6 +2114,24 @@
     {
       "name": "web-screenshot",
       "description": "🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "weekly-report-writer",
+      "description": "用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
