@@ -236,3 +236,22 @@ QA-agent/
 说明：
 - 神策没有找到足够靠谱的现成公开 skill，所以仓库里额外附带了我为你补的 `sensors-analytics-tracking` 自定义技能。
 - 这套适合 Web/H5/App 的事件方案设计、埋点验收、漏埋/错埋/重复埋点排查，以及打通神策平台前的事件模型整理。
+
+
+## 软件测试专项总清单
+
+如果你只关心“软件测试相关 skills”，直接看这份：
+
+- `inventory/SOFTWARE_TESTING_SPECIALTIES.md`
+
+它按测试负责人的视角重新分类，包括：
+- 功能 / 冒烟 / 回归
+- 接口 / API / Mock
+- Web E2E / Playwright
+- APP / 移动端
+- 性能 / Lighthouse / Web Vitals
+- SEO 测试
+- 安全测试
+- BUG 缺陷管理
+- 埋点测试 / 神策埋点
+- 测试支撑环境（日志 / DB / 监控 / CI/CD / K8s）
