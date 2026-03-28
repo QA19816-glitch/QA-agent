@@ -216,3 +216,23 @@ QA-agent/
 说明：
 - 一部分 skill 已装入工作区并会随 ZIP 一起分发，但当前 `openclaw skills list` 不一定逐个暴露出来；清单里已标记为 `installed-dir-unlisted`。
 - 本机已补装 `kubectl`、`helm`、`k9s`、`terraform`、`aws`、`cloudflared`、`kcat`、`nginx`、`MQTTX`。
+
+
+## SEO / 埋点 / 神策增强版（v8）
+
+这一版把 SEO 测试、Lighthouse、Core Web Vitals、埋点审计和神策埋点也补齐了：
+
+- `dist/qa-it-lead-skills-v8.zip`：当前最新总包
+- `dist/sensors-analytics-tracking.skill`：神策埋点专用单独 skill 包
+- `inventory/SEO_TRACKING_SKILLS_ADDED.md`：SEO / 埋点 / 神策技能清单
+- `inventory/FINAL_FULL_CHECK_SEO_TRACKING.md`：包含这批技能的最终检查清单
+
+这一版额外纳入：
+- SEO：`seo-optimizer`、`website-seo`、`pls-seo-audit`、`shelly-seo-analyzer`
+- Lighthouse / 性能：`web-auto-analyzer`、`webperf-core-web-vitals`、`lighthouse CLI`
+- 埋点 / 分析：`check-analytics`、`add-analytics`、`analytics-tracking-2`、`cs-analytics-tracking`、`sw-analytics-tracking`
+- 神策专用：`sensors-analytics-tracking`
+
+说明：
+- 神策没有找到足够靠谱的现成公开 skill，所以仓库里额外附带了我为你补的 `sensors-analytics-tracking` 自定义技能。
+- 这套适合 Web/H5/App 的事件方案设计、埋点验收、漏埋/错埋/重复埋点排查，以及打通神策平台前的事件模型整理。

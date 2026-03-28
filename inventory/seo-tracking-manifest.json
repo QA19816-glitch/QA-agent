@@ -1,0 +1,112 @@
+{
+  "openclaw_skill_total": 164,
+  "ready_total": 123,
+  "workspace_skill_dirs": 129,
+  "seo_tracking_skills": [
+    {
+      "name": "seo-optimizer",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "This skill should be used when analyzing HTML/CSS websites for SEO optimization, fixing SEO issues, generating SEO reports, or implementing SEO best practices. Use when the user requests SEO audits, optimization, meta tag improvements, schema markup implementation, sitemap generation, or general search engine optimization tasks.",
+      "note": "OK"
+    },
+    {
+      "name": "website-seo",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Complete on-page SEO system for any website — page optimization, schema markup, technical SEO checklist, internal linking strategy, Core Web Vitals guidance, and AI-driven content gap analysis. Works for any CMS (WordPress, Webflow, Squarespace, custom).",
+      "note": "OK"
+    },
+    {
+      "name": "pls-seo-audit",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "shelly-seo-analyzer",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "web-auto-analyzer",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。 适合配合 Lighthouse 指标做自动网站分析。"
+    },
+    {
+      "name": "webperf-core-web-vitals",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Intelligent Core Web Vitals analysis with automated workflows and decision trees. Measures LCP, CLS, INP with guided debugging that automatically determines follow-up analysis based on results. Includes workflows for LCP deep dive (5 phases), CLS investigation (loading vs interaction), INP debugging (latency breakdown + attribution), and cross-skill integration with loading, interaction, and media skills. Use when the user asks about Core Web Vitals, LCP optimization, layout shifts, or interaction responsiveness. Compatible with Chrome DevTools MCP.",
+      "note": "OK 适合看 LCP / CLS / INP。"
+    },
+    {
+      "name": "pls-audit-website",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "check-analytics",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Audit existing Google Analytics implementation. Checks for common issues, missing configurations, and optimization opportunities.",
+      "note": "OK 适合先审已有埋点实现是否缺漏。"
+    },
+    {
+      "name": "add-analytics",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Add Google Analytics 4 tracking to any project. Detects framework, adds tracking code, sets up events, and configures privacy settings.",
+      "note": "OK 偏新增埋点/分析接入。"
+    },
+    {
+      "name": "analytics-tracking-2",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "cs-analytics-tracking",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "sw-analytics-tracking",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "sensors-analytics-tracking",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Plan, audit, and validate Sensors Analytics (神策) tracking for web, H5, app, and mini-program scenarios. Use when the user mentions 神策, Sensors Analytics, 埋点, 事件 tracking, event taxonomy, 埋点方案, 数据校验, 漏埋/错埋/重复埋点, funnel, conversion tracking, or wants to connect a product flow to 神策平台.",
+      "note": "OK 这是本轮新增的自定义神策专用 skill，用来承接神策事件模型、验收和回归。"
+    }
+  ],
+  "lighthouse_cli_installed": true
+}

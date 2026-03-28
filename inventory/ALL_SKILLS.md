@@ -1,10 +1,10 @@
 # 本机 OpenClaw Skills 清单
 
-- 总数：**155**
-- 已就绪（ready）：**114**
+- 总数：**164**
+- 已就绪（ready）：**123**
 - 需额外安装/配置：**41**
 - 软件测试类：**11**
-- 非软件测试类：**144**
+- 非软件测试类：**153**
 
 ## 分类统计
 
@@ -17,7 +17,7 @@
 - **音频 / 视频 / PDF / 媒体**：9 个（ready 4 / total 9）
 - **设备 / 智能家居 / 影音控制**：7 个（ready 0 / total 7）
 - **生活 / 搜索 / 地点 / 天气**：4 个（ready 1 / total 4）
-- **其他**：90 个（ready 83 / total 90）
+- **其他**：99 个（ready 92 / total 99）
 
 ## 全量技能明细
 
@@ -254,6 +254,9 @@
 - **CI-CD** [ready] (openclaw-workspace)
   - 功能：Automate builds, tests, and deployments across web, mobile, and backend applications.
   - 状态说明：已就绪
+- **Chrome DevTools Auto Analyzer** [ready] (openclaw-workspace)
+  - 功能：Automatically analyze websites for performance metrics and audit issues using Lighthouse.
+  - 状态说明：已就绪
 - **Docker Compose** [ready] (openclaw-workspace)
   - 功能：Define multi-container applications with proper dependency handling, networking, and volume management.
   - 状态说明：已就绪
@@ -299,6 +302,12 @@
 - **Wireshark Network Traffic Analysis** [ready] (openclaw-workspace)
   - 功能：Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troubleshoot connectivity, and perform forensic PCAP analysis.
   - 状态说明：已就绪
+- **add-analytics** [ready] (openclaw-workspace)
+  - 功能：Add Google Analytics 4 tracking to any project. Detects framework, adds tracking code, sets up events, and configures privacy settings.
+  - 状态说明：已就绪
+- **analytics-tracking** [ready] (openclaw-workspace)
+  - 功能：Set up, audit, and debug analytics tracking implementation — GA4, Google Tag Manager, event taxonomy, conversion tracking, and data quality. Use when building a tracking plan from scratch, auditing existing analytics for gaps or errors, debugging missing events, or setting up GTM. Trigger keywords: GA4 setup, Google Tag Manager, GTM, event tracking, analytics implementation, conversion tracking, tracking plan, event taxonomy, custom dimensions, UTM tracking, analytics audit, missing events, tracking broken. NOT for analyzing marketing campaign data — use campaign-analytics for that. NOT for BI dashboards — use product-analytics for in-product event analysis.
+  - 状态说明：已就绪
 - **android-automation** [ready] (openclaw-workspace)
   - 功能：Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.
   - 状态说明：已就绪
@@ -313,6 +322,9 @@
   - 状态说明：已就绪
 - **bug-investigation** [ready] (openclaw-workspace)
   - 功能：Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.
+  - 状态说明：已就绪
+- **check-analytics** [ready] (openclaw-workspace)
+  - 功能：Audit existing Google Analytics implementation. Checks for common issues, missing configurations, and optimization opportunities.
   - 状态说明：已就绪
 - **cicd-pipeline** [ready] (openclaw-workspace)
   - 功能：Create, debug, and manage CI/CD pipelines with GitHub Actions. Use when the user needs to set up automated testing, deployment, releases, or workflows. Covers workflow syntax, common patterns, secrets management, caching, matrix builds, and troubleshooting.
@@ -479,6 +491,15 @@
 - **security-scanner** [ready] (openclaw-workspace)
   - 功能：Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform security audits. Integrates with nmap, nuclei, and other security tools.
   - 状态说明：已就绪
+- **sensors-analytics-tracking** [ready] (openclaw-workspace)
+  - 功能：Plan, audit, and validate Sensors Analytics (神策) tracking for web, H5, app, and mini-program scenarios. Use when the user mentions 神策, Sensors Analytics, 埋点, 事件 tracking, event taxonomy, 埋点方案, 数据校验, 漏埋/错埋/重复埋点, funnel, conversion tracking, or wants to connect a product flow to 神策平台.
+  - 状态说明：已就绪
+- **seo-analyzer** [ready] (openclaw-workspace)
+  - 功能：Analyze any webpage URL for SEO issues and get actionable recommendations. Checks title tags, meta descriptions, heading structure, keyword density, image alt tags, Open Graph, and more.
+  - 状态说明：已就绪
+- **seo-optimizer** [ready] (openclaw-workspace)
+  - 功能：This skill should be used when analyzing HTML/CSS websites for SEO optimization, fixing SEO issues, generating SEO reports, or implementing SEO best practices. Use when the user requests SEO audits, optimization, meta tag improvements, schema markup implementation, sitemap generation, or general search engine optimization tasks.
+  - 状态说明：已就绪
 - **sql-toolkit** [ready] (openclaw-workspace)
   - 功能：Query, design, migrate, and optimize SQL databases. Use when working with SQLite, PostgreSQL, or MySQL — schema design, writing queries, creating migrations, indexing, backup/restore, and debugging slow queries. No ORMs required.
   - 状态说明：已就绪
@@ -511,6 +532,12 @@
   - 状态说明：已就绪
 - **web-screenshot** [ready] (openclaw-workspace)
   - 功能：🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。
+  - 状态说明：已就绪
+- **webperf-core-web-vitals** [ready] (openclaw-workspace)
+  - 功能：Intelligent Core Web Vitals analysis with automated workflows and decision trees. Measures LCP, CLS, INP with guided debugging that automatically determines follow-up analysis based on results. Includes workflows for LCP deep dive (5 phases), CLS investigation (loading vs interaction), INP debugging (latency breakdown + attribution), and cross-skill integration with loading, interaction, and media skills. Use when the user asks about Core Web Vitals, LCP optimization, layout shifts, or interaction responsiveness. Compatible with Chrome DevTools MCP.
+  - 状态说明：已就绪
+- **website-seo** [ready] (openclaw-workspace)
+  - 功能：Complete on-page SEO system for any website — page optimization, schema markup, technical SEO checklist, internal linking strategy, Core Web Vitals guidance, and AI-driven content gap analysis. Works for any CMS (WordPress, Webflow, Squarespace, custom).
   - 状态说明：已就绪
 - **weekly-report-writer** [ready] (openclaw-workspace)
   - 功能：用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。
