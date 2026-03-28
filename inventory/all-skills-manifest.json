@@ -1,12 +1,30 @@
 {
   "generated_from_workspace": "/Users/jiguang/.openclaw/workspace-main",
   "managed_skills_dir": "/Users/jiguang/.openclaw-main/skills",
-  "total_skills": 164,
-  "ready_skills": 123,
+  "total_skills": 165,
+  "ready_skills": 124,
   "not_ready_skills": 41,
-  "qa_skills": 11,
+  "qa_skills": 12,
   "non_qa_skills": 153,
   "skills": [
+    {
+      "name": "api-performance-testing",
+      "description": "Plan, execute, and analyze API performance and load testing for REST and HTTP services using k6, Locust, or Newman-compatible workflows. Use when the user mentions 接口性能, 压测, load test, stress test, benchmark, throughput, latency, TPS, QPS, 并发, API bottleneck, slow endpoints, rate limits, or wants structured API performance validation before release.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "QA / 软件测试",
+      "setup_note": "已就绪"
+    },
     {
       "name": "qa-api-runner",
       "description": "Generate, execute, and summarize API smoke, regression, and negative tests from API docs or endpoint descriptions. Use when the user asks to run API tests, validate endpoint behavior, exercise request/response contracts, verify auth and error handling, or turn API specs into executable checks.",

@@ -1,14 +1,14 @@
 # 本机 OpenClaw Skills 清单
 
-- 总数：**164**
-- 已就绪（ready）：**123**
+- 总数：**165**
+- 已就绪（ready）：**124**
 - 需额外安装/配置：**41**
-- 软件测试类：**11**
+- 软件测试类：**12**
 - 非软件测试类：**153**
 
 ## 分类统计
 
-- **QA / 软件测试**：11 个（ready 11 / total 11）
+- **QA / 软件测试**：12 个（ready 12 / total 12）
 - **文档 / 知识库 / 飞书**：4 个（ready 4 / total 4）
 - **开发 / GitHub / Agent 工具**：12 个（ready 8 / total 12）
 - **安全 / 基础设施 / 连接诊断**：3 个（ready 3 / total 3）
@@ -23,6 +23,9 @@
 
 ### QA / 软件测试
 
+- **api-performance-testing** [ready] (openclaw-workspace)
+  - 功能：Plan, execute, and analyze API performance and load testing for REST and HTTP services using k6, Locust, or Newman-compatible workflows. Use when the user mentions 接口性能, 压测, load test, stress test, benchmark, throughput, latency, TPS, QPS, 并发, API bottleneck, slow endpoints, rate limits, or wants structured API performance validation before release.
+  - 状态说明：已就绪
 - **qa-api-runner** [ready] (openclaw-workspace)
   - 功能：Generate, execute, and summarize API smoke, regression, and negative tests from API docs or endpoint descriptions. Use when the user asks to run API tests, validate endpoint behavior, exercise request/response contracts, verify auth and error handling, or turn API specs into executable checks.
   - 状态说明：已就绪

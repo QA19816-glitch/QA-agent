@@ -222,7 +222,7 @@ QA-agent/
 
 这一版把 SEO 测试、Lighthouse、Core Web Vitals、埋点审计和神策埋点也补齐了：
 
-- `dist/qa-it-lead-skills-v8.zip`：当前最新总包
+- `dist/qa-it-lead-skills-v9.zip`：当前最新总包
 - `dist/sensors-analytics-tracking.skill`：神策埋点专用单独 skill 包
 - `inventory/SEO_TRACKING_SKILLS_ADDED.md`：SEO / 埋点 / 神策技能清单
 - `inventory/FINAL_FULL_CHECK_SEO_TRACKING.md`：包含这批技能的最终检查清单
@@ -255,3 +255,15 @@ QA-agent/
 - BUG 缺陷管理
 - 埋点测试 / 神策埋点
 - 测试支撑环境（日志 / DB / 监控 / CI/CD / K8s）
+
+
+## 接口测试 / 接口自动化 / 接口性能（已补齐）
+
+软件测试专项清单现已明确拆分：
+- 接口测试
+- 接口自动化
+- 接口性能测试
+
+新增：
+- `dist/api-performance-testing.skill`：接口性能测试单独 skill 包
+- `inventory/SOFTWARE_TESTING_SPECIALTIES.md`：测试专项清单已把接口测试、接口自动化、接口性能独立列出

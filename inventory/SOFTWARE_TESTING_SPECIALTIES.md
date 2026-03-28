@@ -4,7 +4,7 @@
 
 仓库地址：<https://github.com/QA19816-glitch/QA-agent>
 
-最新总包：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/qa-it-lead-skills-v8.zip>
+最新总包：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/qa-it-lead-skills-v9.zip>
 
 完整总表：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ALL_SKILLS.md>
 
@@ -52,7 +52,7 @@
 
 ---
 
-## 3. 接口测试 / API 测试 / 合同测试 / Mock
+## 3. 接口测试（功能 / 协议 / 合同 / Mock）
 
 - **qa-api-runner**
   - 作用：生成并执行 API 冒烟、回归、异常测试，校验接口行为、状态码、鉴权和断言。
@@ -60,16 +60,36 @@
   - 作用：用自然语言定义接口测试，跑接口并输出结果。
 - **API Mock Server Generator**
   - 作用：从 OpenAPI 或示例生成 Mock API 服务器。
-- **Postman**
-  - 作用：管理 Postman collection / environment / Newman 自动化。
 - **openapi-spec**
   - 作用：OpenAPI 规范设计、schema 复用、安全方案、codegen。
 - **openclaw-api-tester / analytics-tracking 系列**
   - 作用：补充 API 文档、接口追踪和事件模型验证。
 
+## 4. 接口自动化
+
+- **Postman**
+  - 作用：管理 Postman collection / environment / Newman 自动化。
+- **qa-api-runner**
+  - 作用：把接口测试场景自动化执行成冒烟、回归、异常测试。
+- **APITester Agent-Driven API Testing**
+  - 作用：用自然语言描述接口测试并自动执行。
+- **API Mock Server Generator**
+  - 作用：快速生成 Mock API 服务，方便接口联调和自动化测试。
+
+## 5. 接口性能测试 / 压测 / 稳定性
+
+- **api-performance-testing**
+  - 作用：接口性能测试专用，规划压测场景、并发、TPS/QPS、P95/P99、错误率，并输出性能结论与风险。
+- **performance-tuning**
+  - 作用：系统级性能调优思路，适合分析接口慢、吞吐低、资源饱和、瓶颈定位。
+- **frontend-performance-audit**
+  - 作用：虽然偏前端，但适合联动看接口导致的页面性能问题。
+- **Postman / Newman**
+  - 作用：适合做轻量接口压测、回归验证和接口稳定性检查。
+
 ---
 
-## 4. Web UI / E2E / 浏览器自动化
+## 6. Web UI / E2E / 浏览器自动化
 
 - **qa-web-e2e-runner**
   - 作用：执行 Web UI 端到端测试，记录步骤、断言、截图和结论。
@@ -96,7 +116,7 @@
 
 ---
 
-## 5. APP / 移动端测试（Android / iOS）
+## 7. APP / 移动端测试（Android / iOS）
 
 - **mobile-appium-test**
   - 作用：Appium + 真机 Android UI 自动化测试。
@@ -115,7 +135,7 @@
 
 ---
 
-## 6. 性能测试 / 前端性能 / 页面体验
+## 8. 性能测试 / 前端性能 / 页面体验
 
 - **frontend-performance-audit**
   - 作用：前端性能诊断，输出结构化优化报告。
@@ -130,7 +150,7 @@
 
 ---
 
-## 7. SEO 测试 / 网站健康 / 技术 SEO
+## 9. SEO 测试 / 网站健康 / 技术 SEO
 
 - **seo-analyzer**
   - 作用：分析网页 SEO 问题并给建议。
@@ -147,7 +167,7 @@
 
 ---
 
-## 8. 安全测试 / 漏洞扫描 / 风险审计
+## 10. 安全测试 / 漏洞扫描 / 风险审计
 
 - **security-audit**
   - 作用：代码和基础设施安全审计。
@@ -160,7 +180,7 @@
 
 ---
 
-## 9. BUG 缺陷管理 / 缺陷定位 / 事故复盘
+## 11. BUG 缺陷管理 / 缺陷定位 / 事故复盘
 
 - **qa-bug-triage**
   - 作用：把失败结果、截图、日志整理成缺陷单，给出严重级别和优先级建议。
@@ -179,7 +199,7 @@
 
 ---
 
-## 10. 埋点测试 / 数据分析 / 神策埋点
+## 12. 埋点测试 / 数据分析 / 神策埋点
 
 - **check-analytics**
   - 作用：审计现有埋点/GA 实现是否缺漏。
@@ -196,7 +216,7 @@
 
 ---
 
-## 11. 测试环境 / 数据库 / 日志 / 可观测性（测试支撑类）
+## 13. 测试环境 / 数据库 / 日志 / 可观测性（测试支撑类）
 
 - **db-readonly**
   - 作用：只读查询 MySQL/PostgreSQL，适合数据校验。
@@ -219,7 +239,7 @@
 
 ---
 
-## 12. 测试平台 / CI / 发布 / 环境自动化（测试支撑类）
+## 14. 测试平台 / CI / 发布 / 环境自动化（测试支撑类）
 
 - **docker / Docker Compose / Docker Pro Diagnostic**
   - 作用：容器环境、依赖服务、日志排查。
@@ -239,7 +259,7 @@
 ## 推荐分享给朋友的入口
 
 - 仓库首页：<https://github.com/QA19816-glitch/QA-agent>
-- 最新总包：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/qa-it-lead-skills-v8.zip>
+- 最新总包：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/qa-it-lead-skills-v9.zip>
 - 完整总表：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ALL_SKILLS.md>
 - 软件测试专项总清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/SOFTWARE_TESTING_SPECIALTIES.md>
 - 神策埋点 skill：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/sensors-analytics-tracking.skill>
