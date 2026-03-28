@@ -1,10 +1,10 @@
 # 本机 OpenClaw Skills 清单
 
-- 总数：**109**
-- 已就绪（ready）：**73**
-- 需额外安装/配置：**36**
+- 总数：**118**
+- 已就绪（ready）：**81**
+- 需额外安装/配置：**37**
 - 软件测试类：**11**
-- 非软件测试类：**98**
+- 非软件测试类：**107**
 
 ## 分类统计
 
@@ -17,7 +17,7 @@
 - **音频 / 视频 / PDF / 媒体**：9 个（ready 4 / total 9）
 - **设备 / 智能家居 / 影音控制**：7 个（ready 0 / total 7）
 - **生活 / 搜索 / 地点 / 天气**：4 个（ready 1 / total 4）
-- **其他**：44 个（ready 42 / total 44）
+- **其他**：53 个（ready 50 / total 53）
 
 ## 全量技能明细
 
@@ -248,6 +248,9 @@
 - **APITester Agent-Driven API Testing** [ready] (openclaw-workspace)
   - 功能：Test API endpoints and document responses. Define tests in plain English, run them, get formatted results. Agent-driven Postman alternative.
   - 状态说明：已就绪
+- **CI-CD** [ready] (openclaw-workspace)
+  - 功能：Automate builds, tests, and deployments across web, mobile, and backend applications.
+  - 状态说明：已就绪
 - **Excel / XLSX** [ready] (openclaw-workspace)
   - 功能：Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.
   - 状态说明：已就绪
@@ -260,6 +263,15 @@
 - **Test Generator** [ready] (openclaw-workspace)
   - 功能：Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.
   - 状态说明：已就绪
+- **TestFlight** [ready] (openclaw-workspace)
+  - 功能：Distribute iOS and macOS beta builds with TestFlight, tester management, and CI/CD automation.
+  - 状态说明：已就绪
+- **android-automation** [ready] (openclaw-workspace)
+  - 功能：Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.
+  - 状态说明：已就绪
+- **android-device-automation** [ready] (openclaw-workspace)
+  - 功能：Vision-driven Android device automation using Midscene. Operates entirely from screenshots — no DOM or accessibility labels required. Can interact with all visible elements on screen regardless of technology stack. Control Android devices with natural language commands via ADB. Perform taps, swipes, text input, app launches, screenshots, and more.Trigger keywords: android, phone, mobile app, tap, swipe, install app, open app on phone, android device, mobile automation, adb, launch app, mobile screenPowered by Midscene.js (https://midscenejs.com)
+  - 状态说明：已就绪
 - **automate-excel** [ready] (openclaw-workspace)
   - 功能：Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls) files. Use when the user works with spreadsheets, .xlsx files, Excel data, CSV-to-Excel conversion, batch Excel processing, or report generation from tables.
   - 状态说明：已就绪
@@ -269,6 +281,9 @@
 - **confluence** [needs setup] (openclaw-workspace)
   - 功能：Read and write Confluence Cloud pages — search, create, update, manage labels. Use when user mentions Confluence, wiki, documentation, pages, or knowledge base.
   - 状态说明：缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN
+- **crash-fixer** [needs setup] (openclaw-workspace)
+  - 功能：Autonomous crash analysis and bug fixing. Monitors crash reports from Cloudflare D1, deduplicates, analyzes with Codex 5.3 High, generates fixes, and creates PRs. Usage: /crash-fixer [--hours 24] [--limit 5] [--dry-run]
+  - 状态说明：缺少环境变量: GH_TOKEN, CRASH_REPORTER_API_KEY, CRASH_REPORTER_URL, TARGET_REPO
 - **daily-report-writer** [ready] (openclaw-workspace)
   - 功能：根据输入生成日报 Markdown 草稿并写入 reports 目录
   - 状态说明：已就绪
@@ -281,21 +296,33 @@
 - **e2e-testing-patterns** [ready] (openclaw-workspace)
   - 功能：Build reliable, fast E2E test suites with Playwright and Cypress. Critical user journey coverage, flaky test elimination, CI/CD integration.
   - 状态说明：已就绪
+- **fastlane** [ready] (openclaw-workspace)
+  - 功能：iOS/macOS app automation — builds, signing, TestFlight, App Store via CLI
+  - 状态说明：已就绪
 - **frontend-performance-audit** [ready] (openclaw-workspace)
   - 功能：分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。
   - 状态说明：已就绪
 - **html-to-pdf** [ready] (openclaw-workspace)
   - 功能：Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).
   - 状态说明：已就绪
-- **jira** [needs setup] (openclaw-workspace)
-  - 功能：Manage Jira Cloud issues — search, create, update, comment, transition. Use when user mentions Jira, issues, tickets, sprints, bugs, tasks, or issue keys like PROJ-123.
-  - 状态说明：缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN
+- **incident-fupan** [ready] (openclaw-workspace)
+  - 功能：事故复盘 / Incident Fupan — structured root cause analysis for production failures, outages, bugs, and near-misses. Use when: (1) 事故复盘 or incident review is needed, (2) a production incident just happened and needs root cause analysis, (3) an agent made a costly mistake and you want to prevent recurrence, (4) building safety rules or kill switches from incident patterns. Triggers on: 复盘, fupan, postmortem, incident review, root cause analysis, 事故分析. Generates a full report with timeline, 5 Whys root cause, impact assessment, fix/prevention actions, and new defensive rules. NOT for: routine debugging, feature planning, or non-incident analysis.
+  - 状态说明：已就绪
+- **jira** [ready] (openclaw-workspace)
+  - 功能：Use when the user mentions Jira issues (e.g., "PROJ-123"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like "jira", "issue", "ticket", "sprint", "backlog", or issue key patterns.
+  - 状态说明：已就绪
 - **lh-video-gen** [ready] (openclaw-workspace)
   - 功能：Generate vertical short videos (9:16) from a Markdown script. Parses script sections, generates TTS audio, renders subtitle cards, and composites into MP4 with FFmpeg.
+  - 状态说明：已就绪
+- **linear** [ready] (openclaw-workspace)
+  - 功能：Query and manage Linear issues, projects, and team workflows.
   - 状态说明：已就绪
 - **log-analyzer** [ready] (openclaw-workspace)
   - 功能：Intelligent log analysis tool for monitoring cron jobs, detecting errors, analyzing patterns, and generating reports. Supports automatic error detection, log aggregation, and Discord notifications.
   - 状态说明：已就绪
+- **mantis-manager** [needs setup] (openclaw-workspace)
+  - 功能：Manage Mantis Bug Tracker (issues, projects, users, filters, configs) via the official Mantis REST API. Supports full CRUD operations on issues, projects, users, attachments, notes, tags, relationships, and configuration management. Features dynamic instance switching with context-aware base URL and token resolution.
+  - 状态说明：缺少环境变量: MANTIS_BASE_URL, MANTIS_API_TOKEN
 - **mobile-appium-test** [ready] (openclaw-workspace)
   - 功能：Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.
   - 状态说明：已就绪

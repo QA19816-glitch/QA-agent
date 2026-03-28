@@ -164,3 +164,18 @@ QA-agent/
 - Atlassian：`atlassian-jira`、`atlassian-confluence`
 - 日志/汇报：`openclaw-log-analyzer`、`weekly-report-writer`、`smart-weekly-report`、`daily-report-writer`
 - 安全与秘钥：`1password`
+
+
+## BUG / 缺陷管理 / APP 移动端增强版
+
+这一版把缺陷管理和移动端测试相关的能力也补齐了，适合测试负责人、质量负责人、移动端测试、发布管理：
+
+- `dist/qa-it-lead-skills-v5.zip`：当前最新总包
+- `inventory/BUG_MOBILE_SKILLS_ADDED.md`：缺陷管理 / APP 移动端测试清单
+- `inventory/FINAL_FULL_CHECK_BUG_MOBILE.md`：含这批技能的最终检查清单
+
+这一版额外纳入：
+- 缺陷管理：`jira`、`linear`、`mantis-manager`、`qa-bug-triage`、`bug-investigation`
+- 移动端：`mobile-appium-test`、`midscene-android-automation`、`android-adb`、`ios-simulator`
+- 发版 / 分发：`testflight`、`fastlane`
+- 视觉 / 稳定性：`visual-regression-testing`、`incident-fupan`、`incident-response`、`crash-fixer`、`ci-cd`

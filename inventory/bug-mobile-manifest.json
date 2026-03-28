@@ -1,0 +1,143 @@
+{
+  "openclaw_skill_total": 118,
+  "ready_total": 81,
+  "workspace_skill_dirs": 76,
+  "bug_mobile_focus": [
+    {
+      "name": "qa-bug-triage",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Turn failed tests, screenshots, logs, and mismatches into high-quality defect reports with titles, reproduction steps, severity/priority guidance, and likely ownership hints. Use when the user asks to write bugs, triage failures, classify severity, deduplicate issues, or convert raw evidence into actionable QA defect records.",
+      "note": "OK"
+    },
+    {
+      "name": "bug-investigation",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.",
+      "note": "OK"
+    },
+    {
+      "name": "jira",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Use when the user mentions Jira issues (e.g., \"PROJ-123\"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like \"jira\", \"issue\", \"ticket\", \"sprint\", \"backlog\", or issue key patterns.",
+      "note": "OK"
+    },
+    {
+      "name": "atlassian-jira",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "linear",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Query and manage Linear issues, projects, and team workflows.",
+      "note": "OK"
+    },
+    {
+      "name": "mantis-manager",
+      "state": "needs-setup",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Manage Mantis Bug Tracker (issues, projects, users, filters, configs) via the official Mantis REST API. Supports full CRUD operations on issues, projects, users, attachments, notes, tags, relationships, and configuration management. Features dynamic instance switching with context-aware base URL and token resolution.",
+      "note": "env: MANTIS_BASE_URL, MANTIS_API_TOKEN"
+    },
+    {
+      "name": "mobile-appium-test",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.",
+      "note": "OK"
+    },
+    {
+      "name": "midscene-android-automation",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "android-adb",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "ios-simulator",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "testflight",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "fastlane",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "iOS/macOS app automation — builds, signing, TestFlight, App Store via CLI",
+      "note": "OK"
+    },
+    {
+      "name": "visual-regression-testing",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "incident-fupan",
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "事故复盘 / Incident Fupan — structured root cause analysis for production failures, outages, bugs, and near-misses. Use when: (1) 事故复盘 or incident review is needed, (2) a production incident just happened and needs root cause analysis, (3) an agent made a costly mistake and you want to prevent recurrence, (4) building safety rules or kill switches from incident patterns. Triggers on: 复盘, fupan, postmortem, incident review, root cause analysis, 事故分析. Generates a full report with timeline, 5 Whys root cause, impact assessment, fix/prevention actions, and new defensive rules. NOT for: routine debugging, feature planning, or non-incident analysis.",
+      "note": "OK"
+    },
+    {
+      "name": "incident-response",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    },
+    {
+      "name": "crash-fixer",
+      "state": "needs-setup",
+      "source": "openclaw-workspace",
+      "exists": true,
+      "description": "Autonomous crash analysis and bug fixing. Monitors crash reports from Cloudflare D1, deduplicates, analyzes with Codex 5.3 High, generates fixes, and creates PRs. Usage: /crash-fixer [--hours 24] [--limit 5] [--dry-run]",
+      "note": "env: GH_TOKEN, CRASH_REPORTER_API_KEY, CRASH_REPORTER_URL, TARGET_REPO"
+    },
+    {
+      "name": "ci-cd",
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "exists": true,
+      "description": "",
+      "note": "目录已安装，但当前 openclaw skills list 未暴露。"
+    }
+  ]
+}

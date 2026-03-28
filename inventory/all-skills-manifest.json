@@ -1,11 +1,11 @@
 {
   "generated_from_workspace": "/Users/jiguang/.openclaw/workspace-main",
   "managed_skills_dir": "/Users/jiguang/.openclaw-main/skills",
-  "total_skills": 109,
-  "ready_skills": 73,
-  "not_ready_skills": 36,
+  "total_skills": 118,
+  "ready_skills": 81,
+  "not_ready_skills": 37,
   "qa_skills": 11,
-  "non_qa_skills": 98,
+  "non_qa_skills": 107,
   "skills": [
     {
       "name": "qa-api-runner",
@@ -1355,6 +1355,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "CI-CD",
+      "description": "Automate builds, tests, and deployments across web, mobile, and backend applications.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "Excel / XLSX",
       "description": "Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.",
       "eligible": true,
@@ -1430,6 +1448,61 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "TestFlight",
+      "description": "Distribute iOS and macOS beta builds with TestFlight, tester management, and CI/CD automation.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://clawic.com/skills/testflight",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "android-automation",
+      "description": "Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "android-device-automation",
+      "description": "Vision-driven Android device automation using Midscene. Operates entirely from screenshots — no DOM or accessibility labels required. Can interact with all visible elements on screen regardless of technology stack. Control Android devices with natural language commands via ADB. Perform taps, swipes, text input, app launches, screenshots, and more.Trigger keywords: android, phone, mobile app, tap, swipe, install app, open app on phone, android device, mobile automation, adb, launch app, mobile screenPowered by Midscene.js (https://midscenejs.com)",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "automate-excel",
       "description": "Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls) files. Use when the user works with spreadsheets, .xlsx files, Excel data, CSV-to-Excel conversion, batch Excel processing, or report generation from tables.",
       "eligible": true,
@@ -1487,6 +1560,29 @@
       },
       "category": "其他",
       "setup_note": "缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN"
+    },
+    {
+      "name": "crash-fixer",
+      "description": "Autonomous crash analysis and bug fixing. Monitors crash reports from Cloudflare D1, deduplicates, analyzes with Codex 5.3 High, generates fixes, and creates PRs. Usage: /crash-fixer [--hours 24] [--limit 5] [--dry-run]",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [
+          "GH_TOKEN",
+          "CRASH_REPORTER_API_KEY",
+          "CRASH_REPORTER_URL",
+          "TARGET_REPO"
+        ],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "缺少环境变量: GH_TOKEN, CRASH_REPORTER_API_KEY, CRASH_REPORTER_URL, TARGET_REPO"
     },
     {
       "name": "daily-report-writer",
@@ -1562,6 +1658,25 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "fastlane",
+      "description": "iOS/macOS app automation — builds, signing, TestFlight, App Store via CLI",
+      "emoji": "🚀",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "frontend-performance-audit",
       "description": "分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。",
       "eligible": true,
@@ -1598,10 +1713,9 @@
       "setup_note": "已就绪"
     },
     {
-      "name": "jira",
-      "description": "Manage Jira Cloud issues — search, create, update, comment, transition. Use when user mentions Jira, issues, tickets, sprints, bugs, tasks, or issue keys like PROJ-123.",
-      "emoji": "🎫",
-      "eligible": false,
+      "name": "incident-fupan",
+      "description": "事故复盘 / Incident Fupan — structured root cause analysis for production failures, outages, bugs, and near-misses. Use when: (1) 事故复盘 or incident review is needed, (2) a production incident just happened and needs root cause analysis, (3) an agent made a costly mistake and you want to prevent recurrence, (4) building safety rules or kill switches from incident patterns. Triggers on: 复盘, fupan, postmortem, incident review, root cause analysis, 事故分析. Generates a full report with timeline, 5 Whys root cause, impact assessment, fix/prevention actions, and new defensive rules. NOT for: routine debugging, feature planning, or non-incident analysis.",
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-workspace",
@@ -1609,16 +1723,32 @@
       "missing": {
         "bins": [],
         "anyBins": [],
-        "env": [
-          "ATLASSIAN_URL",
-          "ATLASSIAN_EMAIL",
-          "ATLASSIAN_API_TOKEN"
-        ],
+        "env": [],
         "config": [],
         "os": []
       },
       "category": "其他",
-      "setup_note": "缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN"
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "jira",
+      "description": "Use when the user mentions Jira issues (e.g., \"PROJ-123\"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like \"jira\", \"issue\", \"ticket\", \"sprint\", \"backlog\", or issue key patterns.",
+      "emoji": "🎫",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://github.com/ankitpokhrel/jira-cli",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
     },
     {
       "name": "lh-video-gen",
@@ -1629,6 +1759,25 @@
       "source": "openclaw-workspace",
       "bundled": false,
       "homepage": "https://github.com/liuhedev/lh-openclaw-kit",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "linear",
+      "description": "Query and manage Linear issues, projects, and team workflows.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://linear.app",
       "missing": {
         "bins": [],
         "anyBins": [],
@@ -1656,6 +1805,30 @@
       },
       "category": "其他",
       "setup_note": "已就绪"
+    },
+    {
+      "name": "mantis-manager",
+      "description": "Manage Mantis Bug Tracker (issues, projects, users, filters, configs) via the official Mantis REST API. Supports full CRUD operations on issues, projects, users, attachments, notes, tags, relationships, and configuration management. Features dynamic instance switching with context-aware base URL and token resolution.",
+      "emoji": "🐞",
+      "eligible": false,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "primaryEnv": "MANTIS_API_TOKEN",
+      "homepage": "https://www.mantisbt.org/",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [
+          "MANTIS_BASE_URL",
+          "MANTIS_API_TOKEN"
+        ],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "缺少环境变量: MANTIS_BASE_URL, MANTIS_API_TOKEN"
     },
     {
       "name": "mobile-appium-test",
