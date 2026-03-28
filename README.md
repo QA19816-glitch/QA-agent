@@ -132,3 +132,19 @@ QA-agent/
 说明：
 - `skills/` 目录中包含当前工作区里的测试相关 skill 源码。
 - 某些 OpenClaw 自带 bundled skills（如 `github`、`tmux`、`clawhub`、`coding-agent`）在当前机器已 ready，但不会把 OpenClaw 自带源码整包复制进仓库；会通过清单记录状态。
+
+
+## 最终实战版（核心 20 + 工作补充）
+
+现在仓库里最新、最值得直接下载的是这一套：
+
+- `dist/qa-work-skills-final-v3.zip`：终版总包
+- `inventory/CORE_20_TESTING_SKILLS.md`：长期保留的 20 个测试核心 skills
+- `inventory/WORK_UTILITY_SKILLS.md`：PDF / 图片 / 视频 / 转录等工作常用补充 skills
+- `inventory/FINAL_SKILLS_CHECK.md`：最终检查清单
+- `inventory/ALL_SKILLS.md`：这台机器当前可见的完整 skills 总表
+
+说明：
+- 终版总包内含当前工作区全部 skill 源码，以及多份 inventory 清单。
+- 某些 OpenClaw bundled skills 是系统自带的，仓库不复制其系统源码，但会在清单中标出 ready 状态。
+- `gifgrep`、`songsee` 目前由于本机包源不可用，未能成功 ready，已在最终清单中注明。

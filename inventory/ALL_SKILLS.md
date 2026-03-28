@@ -1,10 +1,10 @@
 # 本机 OpenClaw Skills 清单
 
-- 总数：**92**
-- 已就绪（ready）：**56**
-- 需额外安装/配置：**36**
+- 总数：**99**
+- 已就绪（ready）：**64**
+- 需额外安装/配置：**35**
 - 软件测试类：**11**
-- 非软件测试类：**81**
+- 非软件测试类：**88**
 
 ## 分类统计
 
@@ -14,10 +14,10 @@
 - **安全 / 基础设施 / 连接诊断**：3 个（ready 2 / total 3）
 - **笔记 / 任务 / 效率工具**：7 个（ready 0 / total 7）
 - **消息 / 协作 / 社交**：8 个（ready 0 / total 8）
-- **音频 / 视频 / PDF / 媒体**：9 个（ready 3 / total 9）
+- **音频 / 视频 / PDF / 媒体**：9 个（ready 4 / total 9）
 - **设备 / 智能家居 / 影音控制**：7 个（ready 0 / total 7）
 - **生活 / 搜索 / 地点 / 天气**：4 个（ready 1 / total 4）
-- **其他**：27 个（ready 27 / total 27）
+- **其他**：34 个（ready 34 / total 34）
 
 ## 全量技能明细
 
@@ -197,9 +197,9 @@
 - **songsee** [needs setup] (openclaw-bundled)
   - 功能：Generate spectrograms and feature-panel visualizations from audio with the songsee CLI.
   - 状态说明：缺少命令: songsee
-- **summarize** [needs setup] (openclaw-bundled)
+- **summarize** [ready] (openclaw-bundled)
   - 功能：Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).
-  - 状态说明：缺少命令: summarize
+  - 状态说明：已就绪
 - **video-frames** [ready] (openclaw-bundled)
   - 功能：Extract frames or short clips from videos using ffmpeg.
   - 状态说明：已就绪
@@ -248,6 +248,9 @@
 - **APITester Agent-Driven API Testing** [ready] (openclaw-workspace)
   - 功能：Test API endpoints and document responses. Define tests in plain English, run them, get formatted results. Agent-driven Postman alternative.
   - 状态说明：已就绪
+- **Image Editing** [ready] (openclaw-workspace)
+  - 功能：Edit images with AI inpainting, outpainting, background removal, upscaling, and restoration tools.
+  - 状态说明：已就绪
 - **Test Generator** [ready] (openclaw-workspace)
   - 功能：Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.
   - 状态说明：已就绪
@@ -266,11 +269,20 @@
 - **frontend-performance-audit** [ready] (openclaw-workspace)
   - 功能：分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。
   - 状态说明：已就绪
+- **html-to-pdf** [ready] (openclaw-workspace)
+  - 功能：Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).
+  - 状态说明：已就绪
+- **lh-video-gen** [ready] (openclaw-workspace)
+  - 功能：Generate vertical short videos (9:16) from a Markdown script. Parses script sections, generates TTS audio, renders subtitle cards, and composites into MP4 with FFmpeg.
+  - 状态说明：已就绪
 - **mobile-appium-test** [ready] (openclaw-workspace)
   - 功能：Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.
   - 状态说明：已就绪
 - **mobile-responsive** [ready] (openclaw-workspace)
   - 功能：Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.
+  - 状态说明：已就绪
+- **pdf** [ready] (openclaw-workspace)
+  - 功能：Create, read, edit, merge, split PDF files. Supports text extraction, table extraction, form filling, watermarks, OCR, and HTML-to-PDF conversion.
   - 状态说明：已就绪
 - **performance-tuning** [ready] (openclaw-workspace)
   - 功能：Deep performance tuning workflow—goals and measurement, profiling, hotspots, caching and concurrency trade-offs, system-specific tuning (DB, GC, network), and verification. Use when fixing latency, throughput, or resource saturation.
@@ -325,4 +337,13 @@
   - 状态说明：已就绪
 - **ux-qa-gate** [ready] (openclaw-workspace)
   - 功能：Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, component, or flow. Triggers on: finishing a build task, completing a UI change, delivering a web app feature, wrapping up frontend work. Also use when asked to QA this, review the UX, check for usability issues, or run the gate. What it does: (1) Functional completeness check — verifies every button, link, form, and flow works end-to-end, (2) Heuristic review — walks through all 10 Nielsen Norman usability heuristics with a detailed checklist, (3) State and edge case sweep — checks empty, loading, error, success, partial, overflow, and auth states, (4) Interaction and responsiveness — verifies clickability, keyboard access, and responsive layout, (5) Severity classification — blockers and major issues fixed before delivery, minor items noted. Catches missing functionality, broken flows, empty states, and usability problems before the user sees them.
+  - 状态说明：已就绪
+- **video-gif-converter** [ready] (openclaw-workspace)
+  - 功能：Convert short video moments into GIF-friendly snippets for demos, support, product walkthroughs, and social sharing. Use when a team needs lightweight motion previews instead of full video files.
+  - 状态说明：已就绪
+- **video-stitcher** [ready] (openclaw-workspace)
+  - 功能：视频片段拼接和后期处理。输入视频片段列表，输出完整视频。支持转场效果、背景音乐、字幕叠加。底层使用 FFmpeg 或 Remotion。触发词：拼接视频、合并视频、视频剪辑、video stitch、concatenate videos、add transitions。
+  - 状态说明：已就绪
+- **web-screenshot** [ready] (openclaw-workspace)
+  - 功能：🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。
   - 状态说明：已就绪

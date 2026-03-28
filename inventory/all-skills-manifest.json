@@ -1,11 +1,11 @@
 {
   "generated_from_workspace": "/Users/jiguang/.openclaw/workspace-main",
   "managed_skills_dir": "/Users/jiguang/.openclaw-main/skills",
-  "total_skills": 92,
-  "ready_skills": 56,
-  "not_ready_skills": 36,
+  "total_skills": 99,
+  "ready_skills": 64,
+  "not_ready_skills": 35,
   "qa_skills": 11,
-  "non_qa_skills": 81,
+  "non_qa_skills": 88,
   "skills": [
     {
       "name": "qa-api-runner",
@@ -1058,23 +1058,21 @@
       "name": "summarize",
       "description": "Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).",
       "emoji": "🧾",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "homepage": "https://summarize.sh",
       "missing": {
-        "bins": [
-          "summarize"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "音频 / 视频 / PDF / 媒体",
-      "setup_note": "缺少命令: summarize"
+      "setup_note": "已就绪"
     },
     {
       "name": "video-frames",
@@ -1359,6 +1357,24 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "Image Editing",
+      "description": "Edit images with AI inpainting, outpainting, background removal, upscaling, and restoration tools.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "Test Generator",
       "description": "Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.",
       "eligible": true,
@@ -1468,6 +1484,43 @@
       "setup_note": "已就绪"
     },
     {
+      "name": "html-to-pdf",
+      "description": "Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "lh-video-gen",
+      "description": "Generate vertical short videos (9:16) from a Markdown script. Parses script sections, generates TTS audio, renders subtitle cards, and composites into MP4 with FFmpeg.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://github.com/liuhedev/lh-openclaw-kit",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
       "name": "mobile-appium-test",
       "description": "Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.",
       "emoji": "📱",
@@ -1489,6 +1542,24 @@
     {
       "name": "mobile-responsive",
       "description": "Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "pdf",
+      "description": "Create, read, edit, merge, split PDF files. Supports text extraction, table extraction, form filling, watermarks, OCR, and HTML-to-PDF conversion.",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
@@ -1815,6 +1886,60 @@
     {
       "name": "ux-qa-gate",
       "description": "Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, component, or flow. Triggers on: finishing a build task, completing a UI change, delivering a web app feature, wrapping up frontend work. Also use when asked to QA this, review the UX, check for usability issues, or run the gate. What it does: (1) Functional completeness check — verifies every button, link, form, and flow works end-to-end, (2) Heuristic review — walks through all 10 Nielsen Norman usability heuristics with a detailed checklist, (3) State and edge case sweep — checks empty, loading, error, success, partial, overflow, and auth states, (4) Interaction and responsiveness — verifies clickability, keyboard access, and responsive layout, (5) Severity classification — blockers and major issues fixed before delivery, minor items noted. Catches missing functionality, broken flows, empty states, and usability problems before the user sees them.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "video-gif-converter",
+      "description": "Convert short video moments into GIF-friendly snippets for demos, support, product walkthroughs, and social sharing. Use when a team needs lightweight motion previews instead of full video files.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "video-stitcher",
+      "description": "视频片段拼接和后期处理。输入视频片段列表，输出完整视频。支持转场效果、背景音乐、字幕叠加。底层使用 FFmpeg 或 Remotion。触发词：拼接视频、合并视频、视频剪辑、video stitch、concatenate videos、add transitions。",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "web-screenshot",
+      "description": "🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
