@@ -1,0 +1,476 @@
+{
+  "workspace": "/Users/jiguang/.openclaw/workspace-main",
+  "workspace_test_skill_count": 44,
+  "workspace_test_skill_dirs_present": 44,
+  "workspace_test_skill_ready": 33,
+  "workspace_test_skill_unlisted": 11,
+  "support_skill_count": 16,
+  "workspace_test_skills": [
+    {
+      "name": "qa-prd-analyzer",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Analyze PRDs, Feishu docs, wiki pages, specs, change notes, and prototype text into structured feature breakdowns, business flows, hidden assumptions, ambiguity lists, and QA risk summaries. Use when the user asks to analyze a requirement, break down a feature, review a spec, find missing cases, or identify unclear/risky requirements before test design.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-test-point-extractor",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Convert requirements, flows, API specs, and feature summaries into structured QA test points covering happy path, negative path, boundary, permission, state transition, compatibility, and resilience. Use when the user asks to extract test points, design coverage, list edge cases, or expand testing scope before formal test cases are written.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-testcase-writer",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Turn QA test points or requirements into standardized test cases with preconditions, data, steps, expected results, priority, and automation hints. Use when the user asks to write test cases, generate smoke/regression cases, convert test points into executable cases, or format cases for docs, Feishu, spreadsheets, or case-management tools.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-traceability-mapper",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Build QA traceability between requirements, test points, test cases, execution results, and defects. Use when the user asks for a traceability matrix, coverage mapping, gap analysis, release coverage proof, or help linking requirements to tests and bugs.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-test-data-factory",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Design and generate QA test data sets for validation, boundaries, permissions, workflow states, imports, and integration scenarios. Use when the user asks for test data, edge-case values, account/data setup plans, or scenario matrices needed to execute tests reliably.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-api-runner",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Generate, execute, and summarize API smoke, regression, and negative tests from API docs or endpoint descriptions. Use when the user asks to run API tests, validate endpoint behavior, exercise request/response contracts, verify auth and error handling, or turn API specs into executable checks.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-web-e2e-runner",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Execute browser-based QA flows for web apps, capture assertions, screenshots, and failure evidence, and summarize end-to-end results. Use when the user asks to run UI smoke tests, verify business flows in a browser, regression-test key pages, or reproduce front-end issues with observable evidence.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-bug-triage",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Turn failed tests, screenshots, logs, and mismatches into high-quality defect reports with titles, reproduction steps, severity/priority guidance, and likely ownership hints. Use when the user asks to write bugs, triage failures, classify severity, deduplicate issues, or convert raw evidence into actionable QA defect records.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-test-report-generator",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Summarize QA execution into release-facing test reports with scope, environment, pass/fail counts, defect distribution, residual risk, and release recommendation. Use when the user asks to generate a test report, release summary, QA conclusion, execution recap, or stakeholder-ready testing status update.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-release-gate-checker",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Decide whether a build is releasable by checking core-flow status, unresolved defects, coverage gaps, and residual risks. Use when the user asks if a version can ship, wants a release gate decision, or needs a concise go/no-go QA judgement from current evidence.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-regression-planner",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Plan focused QA regression scope from requirement changes, bug fixes, impacted modules, and system dependencies. Use when the user asks what to regress, wants a change-impact-based regression plan, or needs a lean smoke vs full-regression split for a release.",
+      "note": "OK"
+    },
+    {
+      "name": "afrexai-qa-test-plan",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "qa-patrol",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Automated QA testing for web apps using local browser automation. Runs entirely on your machine — no data leaves, no cloud services, no external servers. Level 1 (smoke tests) needs only a URL. Level 2 (auth/payment testing) uses optional env vars for test credentials. Level 3 (static analysis, DB checks) optionally reads local files and connects to a user-provided database. Supports Supabase/Firebase auth, Stripe payments, React Native Web, Next.js, and SPAs.",
+      "note": "OK"
+    },
+    {
+      "name": "gstack-qa",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "qa-skill",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Generate comprehensive test cases and quality assurance documentation from SwiftUI iOS code. Use when iOS application code is available and needs testing strategies, test cases, and quality validation. This skill receives input from dev-skill and completes the auto-dev-pipeline by providing testing coverage.",
+      "note": "OK"
+    },
+    {
+      "name": "qa-browser-tester",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Launch a real headless browser on the server and perform exhaustive end-to-end QA testing of a web application — clicking every button, filling every form, navigating every menu, and simulating a complete user journey. Use this skill whenever the user asks to \"test the app\", \"check if everything works\", \"simulate a user\", \"run QA\", \"click through the site\", or \"browse the website automatically\". Also trigger when the user says things like \"בדוק את האתר\", \"תדמה משתמש\", or \"תבדוק שהכל עובד\". Always use this skill — do not attempt browser automation without it, as it contains critical Docker-safe configuration required for Chromium to run on Linux servers.",
+      "note": "OK"
+    },
+    {
+      "name": "test-runner",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "test-master",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.",
+      "note": "OK"
+    },
+    {
+      "name": "test-patterns",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Write and run tests across languages and frameworks. Use when setting up test suites, writing unit/integration/E2E tests, measuring coverage, mocking dependencies, or debugging test failures. Covers Node.js (Jest/Vitest), Python (pytest), Go, Rust, and Bash.",
+      "note": "OK"
+    },
+    {
+      "name": "test-generator",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "test-sentinel",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Writes and runs tests (unit, integration, E2E), performs linting, and auto-fixes failures",
+      "note": "OK"
+    },
+    {
+      "name": "e2e-test-orchestrator",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "端到端（E2E）测试编排与执行。用于用户要求：设计测试用例、基于 Playwright/Cypress 实现自动化脚本、通过源码优先定位元素并在必要时使用截图/图像识别兜底、执行测试、自动修复脚本问题（如定位器或等待策略）、并输出结构化测试报告。",
+      "note": "OK"
+    },
+    {
+      "name": "e2e-testing-patterns",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Build reliable, fast E2E test suites with Playwright and Cypress. Critical user journey coverage, flaky test elimination, CI/CD integration.",
+      "note": "OK"
+    },
+    {
+      "name": "e2e-testing",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Playwright 与 Cypress E2E 测试规范，涵盖目录结构、Page Object、CI 集成、视口与设备配置。当用户提到 E2E、端到端测试、Playwright、Cypress、集成测试时自动激活。",
+      "note": "OK"
+    },
+    {
+      "name": "openclaw-api-tester",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "bug-investigation",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.",
+      "note": "OK"
+    },
+    {
+      "name": "performance-profiler",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "frontend-performance",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "frontend-performance-audit",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。",
+      "note": "OK"
+    },
+    {
+      "name": "performance-tuning",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Deep performance tuning workflow—goals and measurement, profiling, hotspots, caching and concurrency trade-offs, system-specific tuning (DB, GC, network), and verification. Use when fixing latency, throughput, or resource saturation.",
+      "note": "OK"
+    },
+    {
+      "name": "security-auditor",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review.",
+      "note": "OK"
+    },
+    {
+      "name": "security-audit-toolkit",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "security-scanner",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform security audits. Integrates with nmap, nuclei, and other security tools.",
+      "note": "OK"
+    },
+    {
+      "name": "mobile-appium-test",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.",
+      "note": "OK"
+    },
+    {
+      "name": "playwright-pro",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. Generate tests, fix flaky failures, migrate from Cypress/Selenium, sync with TestRail, run on BrowserStack. 55 templates, 3 agents, smart reporting.",
+      "note": "OK"
+    },
+    {
+      "name": "playwright-skill",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.",
+      "note": "OK"
+    },
+    {
+      "name": "playwright-cli-openclaw",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "playwright-browser-automation",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Browser automation using Playwright API directly. Navigate websites, interact with elements, extract data, take screenshots, generate PDFs, record videos, and automate complex workflows. More reliable than MCP approach.",
+      "note": "OK"
+    },
+    {
+      "name": "playwright-mcp",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Browser automation via Playwright MCP server. Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full browser automation workflows.",
+      "note": "OK"
+    },
+    {
+      "name": "playwright-npx",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Fast browser automation using Node.js scripts with Playwright (run via `node script.mjs`). Use for web scraping, screenshots, form automation, and any browser task requiring programmatic control. For simple page fetching without JavaScript execution, use web_fetch first. For interactive CLI browsing without writing code, use browser tool or playwright-cli. This skill is ideal when you need full control, custom logic, or reusable scripts.",
+      "note": "OK"
+    },
+    {
+      "name": "mobile-responsive",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.",
+      "note": "OK"
+    },
+    {
+      "name": "ux-qa-gate",
+      "exists": true,
+      "state": "ready",
+      "source": "openclaw-workspace",
+      "description": "Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, component, or flow. Triggers on: finishing a build task, completing a UI change, delivering a web app feature, wrapping up frontend work. Also use when asked to QA this, review the UX, check for usability issues, or run the gate. What it does: (1) Functional completeness check — verifies every button, link, form, and flow works end-to-end, (2) Heuristic review — walks through all 10 Nielsen Norman usability heuristics with a detailed checklist, (3) State and edge case sweep — checks empty, loading, error, success, partial, overflow, and auth states, (4) Interaction and responsiveness — verifies clickability, keyboard access, and responsive layout, (5) Severity classification — blockers and major issues fixed before delivery, minor items noted. Catches missing functionality, broken flows, empty states, and usability problems before the user sees them.",
+      "note": "OK"
+    },
+    {
+      "name": "afrexai-qa-testing-engine",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    },
+    {
+      "name": "afrexai-qa-engine",
+      "exists": true,
+      "state": "installed-dir-unlisted",
+      "source": "workspace-dir-only",
+      "description": "",
+      "note": "Skill directory exists, but current `openclaw skills list` did not expose it."
+    }
+  ],
+  "support_skills": [
+    {
+      "name": "clawhub",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.",
+      "note": "OK"
+    },
+    {
+      "name": "coding-agent",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.",
+      "note": "OK"
+    },
+    {
+      "name": "github",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.",
+      "note": "OK"
+    },
+    {
+      "name": "gh-issues",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]",
+      "note": "OK"
+    },
+    {
+      "name": "tmux",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
+      "note": "OK"
+    },
+    {
+      "name": "openai-whisper",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Local speech-to-text with the Whisper CLI (no API key).",
+      "note": "OK"
+    },
+    {
+      "name": "healthcheck",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).",
+      "note": "OK"
+    },
+    {
+      "name": "node-connect",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.",
+      "note": "OK"
+    },
+    {
+      "name": "session-logs",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Search and analyze your own session logs (older/parent conversations) using jq.",
+      "note": "OK"
+    },
+    {
+      "name": "nano-pdf",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Edit PDFs with natural-language instructions using the nano-pdf CLI.",
+      "note": "OK"
+    },
+    {
+      "name": "feishu-doc",
+      "state": "ready",
+      "source": "openclaw-extra",
+      "description": "Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.",
+      "note": "OK"
+    },
+    {
+      "name": "feishu-drive",
+      "state": "ready",
+      "source": "openclaw-extra",
+      "description": "Feishu cloud storage file management. Activate when user mentions cloud space, folders, drive.",
+      "note": "OK"
+    },
+    {
+      "name": "feishu-perm",
+      "state": "ready",
+      "source": "openclaw-extra",
+      "description": "Feishu permission management for documents and files. Activate when user mentions sharing, permissions, collaborators.",
+      "note": "OK"
+    },
+    {
+      "name": "feishu-wiki",
+      "state": "ready",
+      "source": "openclaw-extra",
+      "description": "Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links.",
+      "note": "OK"
+    },
+    {
+      "name": "skill-creator",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like \"create a skill\", \"author a skill\", \"tidy up a skill\", \"improve this skill\", \"review the skill\", \"clean up the skill\", \"audit the skill\".",
+      "note": "OK"
+    },
+    {
+      "name": "gemini",
+      "state": "ready",
+      "source": "openclaw-bundled",
+      "description": "Gemini CLI for one-shot Q&A, summaries, and generation.",
+      "note": "OK"
+    }
+  ]
+}

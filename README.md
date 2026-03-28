@@ -105,3 +105,30 @@ QA-agent/
 - `dist/qa-agent-complete-bundle.zip`：包含上面清单 + `dist/qa-skill-suite-v1.zip` 的总压缩包
 
 > 注意：这里包含的是“本机可见 skills 的清单元数据”，不是把 OpenClaw 自带的所有 bundled skill 源码都复制进仓库。
+
+
+## 软件测试大礼包（已扩容）
+
+仓库现已包含一整套更大的 testing / QA skill 集合，覆盖：
+
+- 功能测试
+- 接口测试
+- 自动化测试
+- E2E / Playwright
+- APP / Appium
+- H5 / 响应式测试
+- 性能测试
+- 安全测试
+- Bug 排查
+- 测试报告 / 回归规划
+
+### 推荐直接下载
+
+- `dist/testing-skills-suite-v2.zip`：当前工作区中的测试技能源码总包
+- `dist/qa-skill-suite-v1.zip`：最初那套 11 个自定义 QA skills
+- `inventory/TESTING_SKILLS.md`：测试技能完整清单与状态
+- `inventory/testing-skills-manifest.json`：结构化测试技能清单
+
+说明：
+- `skills/` 目录中包含当前工作区里的测试相关 skill 源码。
+- 某些 OpenClaw 自带 bundled skills（如 `github`、`tmux`、`clawhub`、`coding-agent`）在当前机器已 ready，但不会把 OpenClaw 自带源码整包复制进仓库；会通过清单记录状态。

@@ -1,11 +1,11 @@
 {
   "generated_from_workspace": "/Users/jiguang/.openclaw/workspace-main",
   "managed_skills_dir": "/Users/jiguang/.openclaw-main/skills",
-  "total_skills": 65,
-  "ready_skills": 22,
-  "not_ready_skills": 43,
+  "total_skills": 92,
+  "ready_skills": 56,
+  "not_ready_skills": 36,
   "qa_skills": 11,
-  "non_qa_skills": 54,
+  "non_qa_skills": 81,
   "skills": [
     {
       "name": "qa-api-runner",
@@ -280,46 +280,39 @@
     {
       "name": "clawhub",
       "description": "Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.",
-      "eligible": false,
-      "disabled": false,
-      "blockedByAllowlist": false,
-      "source": "openclaw-bundled",
-      "bundled": true,
-      "missing": {
-        "bins": [
-          "clawhub"
-        ],
-        "anyBins": [],
-        "env": [],
-        "config": [],
-        "os": []
-      },
-      "category": "开发 / GitHub / Agent 工具",
-      "setup_note": "缺少命令: clawhub"
-    },
-    {
-      "name": "coding-agent",
-      "description": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.",
-      "emoji": "🧩",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "missing": {
         "bins": [],
-        "anyBins": [
-          "claude",
-          "codex",
-          "opencode",
-          "pi"
-        ],
+        "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "开发 / GitHub / Agent 工具",
-      "setup_note": "至少需要一个命令: claude, codex, opencode, pi"
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "coding-agent",
+      "description": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.",
+      "emoji": "🧩",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-bundled",
+      "bundled": true,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "开发 / GitHub / Agent 工具",
+      "setup_note": "已就绪"
     },
     {
       "name": "gemini",
@@ -344,44 +337,40 @@
     {
       "name": "gh-issues",
       "description": "Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "primaryEnv": "GH_TOKEN",
       "missing": {
-        "bins": [
-          "gh"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "开发 / GitHub / Agent 工具",
-      "setup_note": "缺少命令: gh"
+      "setup_note": "已就绪"
     },
     {
       "name": "github",
       "description": "GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.",
       "emoji": "🐙",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "missing": {
-        "bins": [
-          "gh"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "开发 / GitHub / Agent 工具",
-      "setup_note": "缺少命令: gh"
+      "setup_note": "已就绪"
     },
     {
       "name": "gog",
@@ -511,22 +500,20 @@
       "name": "tmux",
       "description": "Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.",
       "emoji": "🧵",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "missing": {
-        "bins": [
-          "tmux"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "开发 / GitHub / Agent 工具",
-      "setup_note": "缺少命令: tmux"
+      "setup_note": "已就绪"
     },
     {
       "name": "1password",
@@ -959,23 +946,21 @@
       "name": "openai-whisper",
       "description": "Local speech-to-text with the Whisper CLI (no API key).",
       "emoji": "🎤",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "homepage": "https://openai.com/research/whisper",
       "missing": {
-        "bins": [
-          "whisper"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "音频 / 视频 / PDF / 媒体",
-      "setup_note": "缺少命令: whisper"
+      "setup_note": "已就绪"
     },
     {
       "name": "openai-whisper-api",
@@ -1095,23 +1080,21 @@
       "name": "video-frames",
       "description": "Extract frames or short clips from videos using ffmpeg.",
       "emoji": "🎬",
-      "eligible": false,
+      "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
       "source": "openclaw-bundled",
       "bundled": true,
       "homepage": "https://ffmpeg.org",
       "missing": {
-        "bins": [
-          "ffmpeg"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [],
         "config": [],
         "os": []
       },
       "category": "音频 / 视频 / PDF / 媒体",
-      "setup_note": "缺少命令: ffmpeg"
+      "setup_note": "已就绪"
     },
     {
       "name": "blucli",
@@ -1355,6 +1338,496 @@
         "os": []
       },
       "category": "生活 / 搜索 / 地点 / 天气",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "APITester Agent-Driven API Testing",
+      "description": "Test API endpoints and document responses. Define tests in plain English, run them, get formatted results. Agent-driven Postman alternative.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "Test Generator",
+      "description": "Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "homepage": "https://bytesagain.com",
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "bug-investigation",
+      "description": "Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "e2e-test-orchestrator",
+      "description": "端到端（E2E）测试编排与执行。用于用户要求：设计测试用例、基于 Playwright/Cypress 实现自动化脚本、通过源码优先定位元素并在必要时使用截图/图像识别兜底、执行测试、自动修复脚本问题（如定位器或等待策略）、并输出结构化测试报告。",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "e2e-testing",
+      "description": "Playwright 与 Cypress E2E 测试规范，涵盖目录结构、Page Object、CI 集成、视口与设备配置。当用户提到 E2E、端到端测试、Playwright、Cypress、集成测试时自动激活。",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "e2e-testing-patterns",
+      "description": "Build reliable, fast E2E test suites with Playwright and Cypress. Critical user journey coverage, flaky test elimination, CI/CD integration.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "frontend-performance-audit",
+      "description": "分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "mobile-appium-test",
+      "description": "Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.",
+      "emoji": "📱",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "mobile-responsive",
+      "description": "Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "performance-tuning",
+      "description": "Deep performance tuning workflow—goals and measurement, profiling, hotspots, caching and concurrency trade-offs, system-specific tuning (DB, GC, network), and verification. Use when fixing latency, throughput, or resource saturation.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "playwright-browser-automation",
+      "description": "Browser automation using Playwright API directly. Navigate websites, interact with elements, extract data, take screenshots, generate PDFs, record videos, and automate complex workflows. More reliable than MCP approach.",
+      "emoji": "🎭",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "playwright-cli",
+      "description": "官方Microsoft Playwright CLI网页自动化工具，支持所有主流浏览器的无头/有头自动化操作，包括页面导航、元素交互、截图、录制、测试等功能。当用户提到网页自动化、浏览器操作、爬虫、截图、录制用户操作、E2E测试时触发。",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "playwright-mcp",
+      "description": "Browser automation via Playwright MCP server. Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full browser automation workflows.",
+      "emoji": "🎭",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "playwright-npx",
+      "description": "Fast browser automation using Node.js scripts with Playwright (run via `node script.mjs`). Use for web scraping, screenshots, form automation, and any browser task requiring programmatic control. For simple page fetching without JavaScript execution, use web_fetch first. For interactive CLI browsing without writing code, use browser tool or playwright-cli. This skill is ideal when you need full control, custom logic, or reusable scripts.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "playwright-pro",
+      "description": "Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. Generate tests, fix flaky failures, migrate from Cypress/Selenium, sync with TestRail, run on BrowserStack. 55 templates, 3 agents, smart reporting.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "playwright-skill",
+      "description": "Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "qa",
+      "description": "Systematically QA test a web application and fix bugs found. Runs QA testing,then iteratively fixes bugs in source code, committing each fix atomically andre-verifying. Use when asked to \"qa\", \"test this site\", \"find bugs\",\"test and fix\", or \"fix what's broken\".Proactively suggest when the user says a feature is ready for testingor asks \"does this work?\".Three tiers: Quick (critical/high only), Standard (+ medium), Exhaustive (+ cosmetic).Produces before/after health scores, fix evidence, and a ship-readiness summary.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "qa-browser-tester",
+      "description": "Launch a real headless browser on the server and perform exhaustive end-to-end QA testing of a web application — clicking every button, filling every form, navigating every menu, and simulating a complete user journey. Use this skill whenever the user asks to \"test the app\", \"check if everything works\", \"simulate a user\", \"run QA\", \"click through the site\", or \"browse the website automatically\". Also trigger when the user says things like \"בדוק את האתר\", \"תדמה משתמש\", or \"תבדוק שהכל עובד\". Always use this skill — do not attempt browser automation without it, as it contains critical Docker-safe configuration required for Chromium to run on Linux servers.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "qa-patrol",
+      "description": "Automated QA testing for web apps using local browser automation. Runs entirely on your machine — no data leaves, no cloud services, no external servers. Level 1 (smoke tests) needs only a URL. Level 2 (auth/payment testing) uses optional env vars for test credentials. Level 3 (static analysis, DB checks) optionally reads local files and connects to a user-provided database. Supports Supabase/Firebase auth, Stripe payments, React Native Web, Next.js, and SPAs.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "qa-skill",
+      "description": "Generate comprehensive test cases and quality assurance documentation from SwiftUI iOS code. Use when iOS application code is available and needs testing strategies, test cases, and quality validation. This skill receives input from dev-skill and completes the auto-dev-pipeline by providing testing coverage.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "security-audit",
+      "description": "Audit codebases and infrastructure for security issues. Use when scanning dependencies for vulnerabilities, detecting hardcoded secrets, checking OWASP top 10 issues, verifying SSL/TLS, auditing file permissions, or reviewing code for injection and auth flaws.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "security-auditor",
+      "description": "Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "security-scanner",
+      "description": "Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform security audits. Integrates with nmap, nuclei, and other security tools.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "test-master",
+      "description": "Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "test-patterns",
+      "description": "Write and run tests across languages and frameworks. Use when setting up test suites, writing unit/integration/E2E tests, measuring coverage, mocking dependencies, or debugging test failures. Covers Node.js (Jest/Vitest), Python (pytest), Go, Rust, and Bash.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "test-sentinel",
+      "description": "Writes and runs tests (unit, integration, E2E), performs linting, and auto-fixes failures",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
+      "setup_note": "已就绪"
+    },
+    {
+      "name": "ux-qa-gate",
+      "description": "Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, component, or flow. Triggers on: finishing a build task, completing a UI change, delivering a web app feature, wrapping up frontend work. Also use when asked to QA this, review the UX, check for usability issues, or run the gate. What it does: (1) Functional completeness check — verifies every button, link, form, and flow works end-to-end, (2) Heuristic review — walks through all 10 Nielsen Norman usability heuristics with a detailed checklist, (3) State and edge case sweep — checks empty, loading, error, success, partial, overflow, and auth states, (4) Interaction and responsiveness — verifies clickability, keyboard access, and responsive layout, (5) Severity classification — blockers and major issues fixed before delivery, minor items noted. Catches missing functionality, broken flows, empty states, and usability problems before the user sees them.",
+      "eligible": true,
+      "disabled": false,
+      "blockedByAllowlist": false,
+      "source": "openclaw-workspace",
+      "bundled": false,
+      "missing": {
+        "bins": [],
+        "anyBins": [],
+        "env": [],
+        "config": [],
+        "os": []
+      },
+      "category": "其他",
       "setup_note": "已就绪"
     }
   ]

@@ -1,22 +1,23 @@
 # 本机 OpenClaw Skills 清单
 
-- 总数：**65**
-- 已就绪（ready）：**22**
-- 需额外安装/配置：**43**
+- 总数：**92**
+- 已就绪（ready）：**56**
+- 需额外安装/配置：**36**
 - 软件测试类：**11**
-- 非软件测试类：**54**
+- 非软件测试类：**81**
 
 ## 分类统计
 
 - **QA / 软件测试**：11 个（ready 11 / total 11）
 - **文档 / 知识库 / 飞书**：4 个（ready 4 / total 4）
-- **开发 / GitHub / Agent 工具**：12 个（ready 3 / total 12）
+- **开发 / GitHub / Agent 工具**：12 个（ready 8 / total 12）
 - **安全 / 基础设施 / 连接诊断**：3 个（ready 2 / total 3）
 - **笔记 / 任务 / 效率工具**：7 个（ready 0 / total 7）
 - **消息 / 协作 / 社交**：8 个（ready 0 / total 8）
-- **音频 / 视频 / PDF / 媒体**：9 个（ready 1 / total 9）
+- **音频 / 视频 / PDF / 媒体**：9 个（ready 3 / total 9）
 - **设备 / 智能家居 / 影音控制**：7 个（ready 0 / total 7）
 - **生活 / 搜索 / 地点 / 天气**：4 个（ready 1 / total 4）
+- **其他**：27 个（ready 27 / total 27）
 
 ## 全量技能明细
 
@@ -73,21 +74,21 @@
 
 ### 开发 / GitHub / Agent 工具
 
-- **clawhub** [needs setup] (openclaw-bundled)
+- **clawhub** [ready] (openclaw-bundled)
   - 功能：Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.
-  - 状态说明：缺少命令: clawhub
-- **coding-agent** [needs setup] (openclaw-bundled)
+  - 状态说明：已就绪
+- **coding-agent** [ready] (openclaw-bundled)
   - 功能：Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:"acp"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.
-  - 状态说明：至少需要一个命令: claude, codex, opencode, pi
+  - 状态说明：已就绪
 - **gemini** [ready] (openclaw-bundled)
   - 功能：Gemini CLI for one-shot Q&A, summaries, and generation.
   - 状态说明：已就绪
-- **gh-issues** [needs setup] (openclaw-bundled)
+- **gh-issues** [ready] (openclaw-bundled)
   - 功能：Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]
-  - 状态说明：缺少命令: gh
-- **github** [needs setup] (openclaw-bundled)
+  - 状态说明：已就绪
+- **github** [ready] (openclaw-bundled)
   - 功能：GitHub operations via `gh` CLI: issues, PRs, CI runs, code review, API queries. Use when: (1) checking PR status or CI, (2) creating/commenting on issues, (3) listing/filtering PRs or issues, (4) viewing run logs. NOT for: complex web UI interactions requiring manual browser flows (use browser tooling when available), bulk operations across many repos (script with gh api), or when gh auth is not configured.
-  - 状态说明：缺少命令: gh
+  - 状态说明：已就绪
 - **gog** [needs setup] (openclaw-bundled)
   - 功能：Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
   - 状态说明：缺少命令: gog
@@ -106,9 +107,9 @@
 - **skill-creator** [ready] (openclaw-bundled)
   - 功能：Create, edit, improve, or audit AgentSkills. Use when creating a new skill from scratch or when asked to improve, review, audit, tidy up, or clean up an existing skill or SKILL.md file. Also use when editing or restructuring a skill directory (moving files to references/ or scripts/, removing stale content, validating against the AgentSkills spec). Triggers on phrases like "create a skill", "author a skill", "tidy up a skill", "improve this skill", "review the skill", "clean up the skill", "audit the skill".
   - 状态说明：已就绪
-- **tmux** [needs setup] (openclaw-bundled)
+- **tmux** [ready] (openclaw-bundled)
   - 功能：Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.
-  - 状态说明：缺少命令: tmux
+  - 状态说明：已就绪
 
 ### 安全 / 基础设施 / 连接诊断
 
@@ -181,9 +182,9 @@
 - **nano-pdf** [ready] (openclaw-bundled)
   - 功能：Edit PDFs with natural-language instructions using the nano-pdf CLI.
   - 状态说明：已就绪
-- **openai-whisper** [needs setup] (openclaw-bundled)
+- **openai-whisper** [ready] (openclaw-bundled)
   - 功能：Local speech-to-text with the Whisper CLI (no API key).
-  - 状态说明：缺少命令: whisper
+  - 状态说明：已就绪
 - **openai-whisper-api** [needs setup] (openclaw-bundled)
   - 功能：Transcribe audio via OpenAI Audio Transcriptions API (Whisper).
   - 状态说明：缺少环境变量: OPENAI_API_KEY
@@ -199,9 +200,9 @@
 - **summarize** [needs setup] (openclaw-bundled)
   - 功能：Summarize or extract text/transcripts from URLs, podcasts, and local files (great fallback for “transcribe this YouTube/video”).
   - 状态说明：缺少命令: summarize
-- **video-frames** [needs setup] (openclaw-bundled)
+- **video-frames** [ready] (openclaw-bundled)
   - 功能：Extract frames or short clips from videos using ffmpeg.
-  - 状态说明：缺少命令: ffmpeg
+  - 状态说明：已就绪
 
 ### 设备 / 智能家居 / 影音控制
 
@@ -240,4 +241,88 @@
   - 状态说明：缺少命令: ordercli
 - **weather** [ready] (openclaw-bundled)
   - 功能：Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.
+  - 状态说明：已就绪
+
+### 其他
+
+- **APITester Agent-Driven API Testing** [ready] (openclaw-workspace)
+  - 功能：Test API endpoints and document responses. Define tests in plain English, run them, get formatted results. Agent-driven Postman alternative.
+  - 状态说明：已就绪
+- **Test Generator** [ready] (openclaw-workspace)
+  - 功能：Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.
+  - 状态说明：已就绪
+- **bug-investigation** [ready] (openclaw-workspace)
+  - 功能：Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.
+  - 状态说明：已就绪
+- **e2e-test-orchestrator** [ready] (openclaw-workspace)
+  - 功能：端到端（E2E）测试编排与执行。用于用户要求：设计测试用例、基于 Playwright/Cypress 实现自动化脚本、通过源码优先定位元素并在必要时使用截图/图像识别兜底、执行测试、自动修复脚本问题（如定位器或等待策略）、并输出结构化测试报告。
+  - 状态说明：已就绪
+- **e2e-testing** [ready] (openclaw-workspace)
+  - 功能：Playwright 与 Cypress E2E 测试规范，涵盖目录结构、Page Object、CI 集成、视口与设备配置。当用户提到 E2E、端到端测试、Playwright、Cypress、集成测试时自动激活。
+  - 状态说明：已就绪
+- **e2e-testing-patterns** [ready] (openclaw-workspace)
+  - 功能：Build reliable, fast E2E test suites with Playwright and Cypress. Critical user journey coverage, flaky test elimination, CI/CD integration.
+  - 状态说明：已就绪
+- **frontend-performance-audit** [ready] (openclaw-workspace)
+  - 功能：分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。
+  - 状态说明：已就绪
+- **mobile-appium-test** [ready] (openclaw-workspace)
+  - 功能：Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.
+  - 状态说明：已就绪
+- **mobile-responsive** [ready] (openclaw-workspace)
+  - 功能：Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.
+  - 状态说明：已就绪
+- **performance-tuning** [ready] (openclaw-workspace)
+  - 功能：Deep performance tuning workflow—goals and measurement, profiling, hotspots, caching and concurrency trade-offs, system-specific tuning (DB, GC, network), and verification. Use when fixing latency, throughput, or resource saturation.
+  - 状态说明：已就绪
+- **playwright-browser-automation** [ready] (openclaw-workspace)
+  - 功能：Browser automation using Playwright API directly. Navigate websites, interact with elements, extract data, take screenshots, generate PDFs, record videos, and automate complex workflows. More reliable than MCP approach.
+  - 状态说明：已就绪
+- **playwright-cli** [ready] (openclaw-workspace)
+  - 功能：官方Microsoft Playwright CLI网页自动化工具，支持所有主流浏览器的无头/有头自动化操作，包括页面导航、元素交互、截图、录制、测试等功能。当用户提到网页自动化、浏览器操作、爬虫、截图、录制用户操作、E2E测试时触发。
+  - 状态说明：已就绪
+- **playwright-mcp** [ready] (openclaw-workspace)
+  - 功能：Browser automation via Playwright MCP server. Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full browser automation workflows.
+  - 状态说明：已就绪
+- **playwright-npx** [ready] (openclaw-workspace)
+  - 功能：Fast browser automation using Node.js scripts with Playwright (run via `node script.mjs`). Use for web scraping, screenshots, form automation, and any browser task requiring programmatic control. For simple page fetching without JavaScript execution, use web_fetch first. For interactive CLI browsing without writing code, use browser tool or playwright-cli. This skill is ideal when you need full control, custom logic, or reusable scripts.
+  - 状态说明：已就绪
+- **playwright-pro** [ready] (openclaw-workspace)
+  - 功能：Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. Generate tests, fix flaky failures, migrate from Cypress/Selenium, sync with TestRail, run on BrowserStack. 55 templates, 3 agents, smart reporting.
+  - 状态说明：已就绪
+- **playwright-skill** [ready] (openclaw-workspace)
+  - 功能：Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.
+  - 状态说明：已就绪
+- **qa** [ready] (openclaw-workspace)
+  - 功能：Systematically QA test a web application and fix bugs found. Runs QA testing,then iteratively fixes bugs in source code, committing each fix atomically andre-verifying. Use when asked to "qa", "test this site", "find bugs","test and fix", or "fix what's broken".Proactively suggest when the user says a feature is ready for testingor asks "does this work?".Three tiers: Quick (critical/high only), Standard (+ medium), Exhaustive (+ cosmetic).Produces before/after health scores, fix evidence, and a ship-readiness summary.
+  - 状态说明：已就绪
+- **qa-browser-tester** [ready] (openclaw-workspace)
+  - 功能：Launch a real headless browser on the server and perform exhaustive end-to-end QA testing of a web application — clicking every button, filling every form, navigating every menu, and simulating a complete user journey. Use this skill whenever the user asks to "test the app", "check if everything works", "simulate a user", "run QA", "click through the site", or "browse the website automatically". Also trigger when the user says things like "בדוק את האתר", "תדמה משתמש", or "תבדוק שהכל עובד". Always use this skill — do not attempt browser automation without it, as it contains critical Docker-safe configuration required for Chromium to run on Linux servers.
+  - 状态说明：已就绪
+- **qa-patrol** [ready] (openclaw-workspace)
+  - 功能：Automated QA testing for web apps using local browser automation. Runs entirely on your machine — no data leaves, no cloud services, no external servers. Level 1 (smoke tests) needs only a URL. Level 2 (auth/payment testing) uses optional env vars for test credentials. Level 3 (static analysis, DB checks) optionally reads local files and connects to a user-provided database. Supports Supabase/Firebase auth, Stripe payments, React Native Web, Next.js, and SPAs.
+  - 状态说明：已就绪
+- **qa-skill** [ready] (openclaw-workspace)
+  - 功能：Generate comprehensive test cases and quality assurance documentation from SwiftUI iOS code. Use when iOS application code is available and needs testing strategies, test cases, and quality validation. This skill receives input from dev-skill and completes the auto-dev-pipeline by providing testing coverage.
+  - 状态说明：已就绪
+- **security-audit** [ready] (openclaw-workspace)
+  - 功能：Audit codebases and infrastructure for security issues. Use when scanning dependencies for vulnerabilities, detecting hardcoded secrets, checking OWASP top 10 issues, verifying SSL/TLS, auditing file permissions, or reviewing code for injection and auth flaws.
+  - 状态说明：已就绪
+- **security-auditor** [ready] (openclaw-workspace)
+  - 功能：Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review.
+  - 状态说明：已就绪
+- **security-scanner** [ready] (openclaw-workspace)
+  - 功能：Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform security audits. Integrates with nmap, nuclei, and other security tools.
+  - 状态说明：已就绪
+- **test-master** [ready] (openclaw-workspace)
+  - 功能：Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.
+  - 状态说明：已就绪
+- **test-patterns** [ready] (openclaw-workspace)
+  - 功能：Write and run tests across languages and frameworks. Use when setting up test suites, writing unit/integration/E2E tests, measuring coverage, mocking dependencies, or debugging test failures. Covers Node.js (Jest/Vitest), Python (pytest), Go, Rust, and Bash.
+  - 状态说明：已就绪
+- **test-sentinel** [ready] (openclaw-workspace)
+  - 功能：Writes and runs tests (unit, integration, E2E), performs linting, and auto-fixes failures
+  - 状态说明：已就绪
+- **ux-qa-gate** [ready] (openclaw-workspace)
+  - 功能：Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, component, or flow. Triggers on: finishing a build task, completing a UI change, delivering a web app feature, wrapping up frontend work. Also use when asked to QA this, review the UX, check for usability issues, or run the gate. What it does: (1) Functional completeness check — verifies every button, link, form, and flow works end-to-end, (2) Heuristic review — walks through all 10 Nielsen Norman usability heuristics with a detailed checklist, (3) State and edge case sweep — checks empty, loading, error, success, partial, overflow, and auth states, (4) Interaction and responsiveness — verifies clickability, keyboard access, and responsive layout, (5) Severity classification — blockers and major issues fixed before delivery, minor items noted. Catches missing functionality, broken flows, empty states, and usability problems before the user sees them.
   - 状态说明：已就绪
