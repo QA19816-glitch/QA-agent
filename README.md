@@ -94,3 +94,14 @@ QA-agent/
 - 行业专项场景（电商 / 金融 / ERP / OA / AI 产品）
 
 建议继续做定制化增强。
+
+
+## 本机 Skills 全量清单
+
+仓库里还附带了一份从当前机器导出的完整技能清单：
+
+- `inventory/ALL_SKILLS.md`：完整人类可读列表（含功能、状态、来源）
+- `inventory/all-skills-manifest.json`：结构化 JSON 清单
+- `dist/qa-agent-complete-bundle.zip`：包含上面清单 + `dist/qa-skill-suite-v1.zip` 的总压缩包
+
+> 注意：这里包含的是“本机可见 skills 的清单元数据”，不是把 OpenClaw 自带的所有 bundled skill 源码都复制进仓库。
