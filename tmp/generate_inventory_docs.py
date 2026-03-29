@@ -215,6 +215,7 @@ readme_lines = [
     '## 直接入口',
     '',
     f'- **GitHub 仓库主页**：<{REPO}>',
+    f'- **公司分享版总文档**：<{REPO}/blob/{BRANCH}/inventory/COMPANY_SHARE_SKILLS_CATALOG.md>',
     f'- **全局技能总清单**：<{REPO}/blob/{BRANCH}/inventory/ALL_SKILLS.md>',
     f'- **测试专项清单**：<{REPO}/blob/{BRANCH}/inventory/SOFTWARE_TESTING_SPECIALTIES.md>',
     f'- **非测试专项清单**：<{REPO}/blob/{BRANCH}/inventory/NON_TESTING_SPECIALTIES.md>',
@@ -241,6 +242,7 @@ lines = [
     '# 全局 OpenClaw Skills 总清单',
     '',
     f'- 仓库主页：<{REPO}>',
+    f'- 公司分享版总文档：<{REPO}/blob/{BRANCH}/inventory/COMPANY_SHARE_SKILLS_CATALOG.md>',
     f'- 测试专项清单：<{REPO}/blob/{BRANCH}/inventory/SOFTWARE_TESTING_SPECIALTIES.md>',
     f'- 非测试专项清单：<{REPO}/blob/{BRANCH}/inventory/NON_TESTING_SPECIALTIES.md>',
     '',
@@ -274,6 +276,51 @@ for cat in category_order:
         lines.append(f'  - 状态说明：{s["setup_note"]}')
     lines.append('')
 (inventory_dir / 'ALL_SKILLS.md').write_text('\n'.join(lines).rstrip() + '\n', encoding='utf-8')
+
+# Company-share master catalog
+company_lines = [
+    '# 公司分享版：OpenClaw Skills 分类总文档',
+    '',
+    '这是一份适合直接发给公司同事的技能总文档，重点是 **按分类列出每个 skill 的名称、功能介绍、当前可用状态**，方便大家自己判断哪些值得安装。',
+    '',
+    '## 文档用途',
+    '',
+    '- 给同事快速了解这套仓库里到底有哪些 skills',
+    '- 按分类查看每个 skill 是干什么的',
+    '- 自己判断哪些属于测试、研发、Agent、文档、运维、搜索类能力',
+    '- 根据 `ready / needs setup` 判断是否能直接上手',
+    '',
+    '## 入口链接',
+    '',
+    f'- 仓库主页：<{REPO}>',
+    f'- 全局技能总清单：<{REPO}/blob/{BRANCH}/inventory/ALL_SKILLS.md>',
+    f'- 测试专项清单：<{REPO}/blob/{BRANCH}/inventory/SOFTWARE_TESTING_SPECIALTIES.md>',
+    f'- 非测试专项清单：<{REPO}/blob/{BRANCH}/inventory/NON_TESTING_SPECIALTIES.md>',
+    '',
+    '## 当前规模',
+    '',
+    f'- 总技能数：**{all_count}**',
+    f'- Ready：**{ready_count}**',
+    f'- Needs setup：**{needs_count}**',
+    f'- 测试专项：**{len(testing)}**',
+    f'- 非测试专项：**{len(non_testing)}**',
+    '',
+    '## 分类 + 每个 Skills 名称 + 功能介绍',
+    '',
+]
+for cat in category_order:
+    items = by_cat.get(cat, [])
+    if not items:
+        continue
+    r = sum(1 for s in items if s['eligible'])
+    company_lines.append(f'### {cat}（{len(items)} 个，ready {r} / total {len(items)}）')
+    company_lines.append('')
+    for s in items:
+        company_lines.append(f'- **{s["name"]}** [{s["status"]}]')
+        company_lines.append(f'  - 功能介绍：{s["cn_intro"]}')
+        company_lines.append(f'  - 状态说明：{s["setup_note"]}')
+    company_lines.append('')
+(inventory_dir / 'COMPANY_SHARE_SKILLS_CATALOG.md').write_text('\n'.join(company_lines).rstrip() + '\n', encoding='utf-8')
 
 # Testing specialties (preserve curated style, refresh links + header)
 test_doc = [
@@ -370,6 +417,7 @@ non_lines = [
     '这份清单把“非软件测试”能力集中整理出来，适合做研发工具箱、Agent 能力中心、文档中台和运维支撑目录。',
     '',
     f'- 仓库主页：<{REPO}>',
+    f'- 公司分享版总文档：<{REPO}/blob/{BRANCH}/inventory/COMPANY_SHARE_SKILLS_CATALOG.md>',
     f'- 全局技能总表：<{REPO}/blob/{BRANCH}/inventory/ALL_SKILLS.md>',
     f'- 测试专项清单：<{REPO}/blob/{BRANCH}/inventory/SOFTWARE_TESTING_SPECIALTIES.md>',
     '',
@@ -398,6 +446,7 @@ index_lines = [
     '# Inventory Index',
     '',
     f'- 仓库主页：<{REPO}>',
+    f'- 公司分享版总文档：<{REPO}/blob/{BRANCH}/inventory/COMPANY_SHARE_SKILLS_CATALOG.md>',
     f'- 全局技能总清单：<{REPO}/blob/{BRANCH}/inventory/ALL_SKILLS.md>',
     f'- 测试专项清单：<{REPO}/blob/{BRANCH}/inventory/SOFTWARE_TESTING_SPECIALTIES.md>',
     f'- 非测试专项清单：<{REPO}/blob/{BRANCH}/inventory/NON_TESTING_SPECIALTIES.md>',

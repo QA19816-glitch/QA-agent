@@ -1,11 +1,22 @@
-# 全局 OpenClaw Skills 总清单
+# 公司分享版：OpenClaw Skills 分类总文档
+
+这是一份适合直接发给公司同事的技能总文档，重点是 **按分类列出每个 skill 的名称、功能介绍、当前可用状态**，方便大家自己判断哪些值得安装。
+
+## 文档用途
+
+- 给同事快速了解这套仓库里到底有哪些 skills
+- 按分类查看每个 skill 是干什么的
+- 自己判断哪些属于测试、研发、Agent、文档、运维、搜索类能力
+- 根据 `ready / needs setup` 判断是否能直接上手
+
+## 入口链接
 
 - 仓库主页：<https://github.com/QA19816-glitch/QA-agent>
-- 公司分享版总文档：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/COMPANY_SHARE_SKILLS_CATALOG.md>
+- 全局技能总清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ALL_SKILLS.md>
 - 测试专项清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/SOFTWARE_TESTING_SPECIALTIES.md>
 - 非测试专项清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/NON_TESTING_SPECIALTIES.md>
 
-## 总览
+## 当前规模
 
 - 总技能数：**172**
 - Ready：**131**
@@ -13,20 +24,9 @@
 - 测试专项：**52**
 - 非测试专项：**120**
 
-## 分类统计
+## 分类 + 每个 Skills 名称 + 功能介绍
 
-- **QA / 软件测试**：52 个（ready 52 / total 52）
-- **开发 / GitHub / Agent 工具**：18 个（ready 18 / total 18）
-- **文档 / 知识库 / 媒体内容**：19 个（ready 17 / total 19）
-- **安全 / 基础设施 / 运维观测**：33 个（ready 30 / total 33）
-- **协作 / 项目 / 工作流**：12 个（ready 5 / total 12）
-- **移动 / 设备 / 终端**：3 个（ready 3 / total 3）
-- **搜索 / 生活 / 通用工具**：3 个（ready 1 / total 3）
-- **其他**：32 个（ready 5 / total 32）
-
-## 分类 + Skills + 功能介绍
-
-### QA / 软件测试
+### QA / 软件测试（52 个，ready 52 / total 52）
 
 - **add-analytics** [ready]
   - 功能介绍：Add Google Analytics 4 tracking to any project. Detects framework, adds tracking code, sets up events, and configures privacy settings.
@@ -185,7 +185,7 @@
   - 功能介绍：Complete on-page SEO system for any website — page optimization, schema markup, technical SEO checklist, internal linking strategy, Core Web Vitals guidance, and AI-driven content gap analysis. Works for any CMS (WordPress, Webflow, Squarespace, custom).
   - 状态说明：已就绪
 
-### 开发 / GitHub / Agent 工具
+### 开发 / GitHub / Agent 工具（18 个，ready 18 / total 18）
 
 - **agent-browser** [ready]
   - 功能介绍：网页自动化与数据抓取，适合打开网站、填表、点击、截图、采集。
@@ -242,7 +242,7 @@
   - 功能介绍：Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.
   - 状态说明：已就绪
 
-### 文档 / 知识库 / 媒体内容
+### 文档 / 知识库 / 媒体内容（19 个，ready 17 / total 19）
 
 - **feishu-doc** [ready]
   - 功能介绍：Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.
@@ -302,7 +302,7 @@
   - 功能介绍：视频片段拼接和后期处理。输入视频片段列表，输出完整视频。支持转场效果、背景音乐、字幕叠加。底层使用 FFmpeg 或 Remotion。触发词：拼接视频、合并视频、视频剪辑、video stitch、concatenate videos、add transitions。
   - 状态说明：已就绪
 
-### 安全 / 基础设施 / 运维观测
+### 安全 / 基础设施 / 运维观测（33 个，ready 30 / total 33）
 
 - **1password** [ready]
   - 功能介绍：Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.
@@ -404,7 +404,7 @@
   - 功能介绍：Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troubleshoot connectivity, and perform forensic PCAP analysis.
   - 状态说明：已就绪
 
-### 协作 / 项目 / 工作流
+### 协作 / 项目 / 工作流（12 个，ready 5 / total 12）
 
 - **bluebubbles** [needs setup]
   - 功能介绍：Use when you need to send or manage iMessages via BlueBubbles (recommended iMessage integration). Calls go through the generic message tool with channel="bluebubbles".
@@ -443,7 +443,7 @@
   - 功能介绍：用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。
   - 状态说明：已就绪
 
-### 移动 / 设备 / 终端
+### 移动 / 设备 / 终端（3 个，ready 3 / total 3）
 
 - **android-automation** [ready]
   - 功能介绍：Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.
@@ -455,7 +455,7 @@
   - 功能介绍：iOS/macOS app automation — builds, signing, TestFlight, App Store via CLI
   - 状态说明：已就绪
 
-### 搜索 / 生活 / 通用工具
+### 搜索 / 生活 / 通用工具（3 个，ready 1 / total 3）
 
 - **baidu-web-search** [needs setup]
   - 功能介绍：基于百度搜索进行实时中文网页检索。
@@ -467,7 +467,7 @@
   - 功能介绍：Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.
   - 状态说明：已就绪
 
-### 其他
+### 其他（32 个，ready 5 / total 32）
 
 - **API Mock Server Generator** [ready]
   - 功能介绍：Generates mock API servers from OpenAPI specs or examples. Realistic fake data, configurable delays, error simulation.

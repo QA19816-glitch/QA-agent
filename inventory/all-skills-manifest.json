@@ -3311,9 +3311,7 @@
       "primaryEnv": "GOOGLE_PLACES_API_KEY",
       "homepage": "https://github.com/steipete/goplaces",
       "missing": {
-        "bins": [
-          "goplaces"
-        ],
+        "bins": [],
         "anyBins": [],
         "env": [
           "GOOGLE_PLACES_API_KEY"
@@ -3324,7 +3322,7 @@
       "category": "搜索 / 生活 / 通用工具",
       "is_testing": false,
       "status": "needs setup",
-      "setup_note": "缺少命令: goplaces；缺少环境变量: GOOGLE_PLACES_API_KEY",
+      "setup_note": "缺少环境变量: GOOGLE_PLACES_API_KEY",
       "cn_intro": "Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts."
     },
     {
