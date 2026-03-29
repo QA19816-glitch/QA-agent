@@ -1,0 +1,513 @@
+{
+  "version": 1,
+  "skills": {
+    "afrexai-qa-test-plan": {
+      "version": "1.0.0",
+      "installedAt": 1774709125748
+    },
+    "qa-patrol": {
+      "version": "1.0.3",
+      "installedAt": 1774709130197
+    },
+    "qa-browser-tester": {
+      "version": "1.0.0",
+      "installedAt": 1774709140497
+    },
+    "test-runner": {
+      "version": "1.0.0",
+      "installedAt": 1774709144196
+    },
+    "test-master": {
+      "version": "0.1.0",
+      "installedAt": 1774709148445
+    },
+    "test-patterns": {
+      "version": "1.0.0",
+      "installedAt": 1774709152157
+    },
+    "test-generator": {
+      "version": "2.0.1",
+      "installedAt": 1774709156407
+    },
+    "e2e-test-orchestrator": {
+      "version": "1.0.0",
+      "installedAt": 1774709171728
+    },
+    "e2e-testing-patterns": {
+      "version": "1.0.0",
+      "installedAt": 1774709183009
+    },
+    "e2e-testing": {
+      "version": "1.0.0",
+      "installedAt": 1774709190346
+    },
+    "openclaw-api-tester": {
+      "version": "1.0.0",
+      "installedAt": 1774709199318
+    },
+    "bug-investigation": {
+      "version": "1.0.0",
+      "installedAt": 1774709206478
+    },
+    "performance-profiler": {
+      "version": "1.0.0",
+      "installedAt": 1774709215210
+    },
+    "frontend-performance": {
+      "version": "1.0.0",
+      "installedAt": 1774709227278
+    },
+    "frontend-performance-audit": {
+      "version": "1.0.0",
+      "installedAt": 1774709235885
+    },
+    "performance-tuning": {
+      "version": "1.0.0",
+      "installedAt": 1774709242929
+    },
+    "mobile-appium-test": {
+      "version": "1.0.0",
+      "installedAt": 1774709262232
+    },
+    "playwright-cli-openclaw": {
+      "version": "1.0.0",
+      "installedAt": 1774709277171
+    },
+    "playwright-browser-automation": {
+      "version": "2.0.0",
+      "installedAt": 1774709283534
+    },
+    "playwright-mcp": {
+      "version": "1.0.0",
+      "installedAt": 1774709286900
+    },
+    "playwright-npx": {
+      "version": "1.0.0",
+      "installedAt": 1774709291597
+    },
+    "mobile-responsive": {
+      "version": "1.0.0",
+      "installedAt": 1774709295280
+    },
+    "ux-qa-gate": {
+      "version": "1.0.0",
+      "installedAt": 1774709302726
+    },
+    "afrexai-qa-testing-engine": {
+      "version": "1.0.0",
+      "installedAt": 1774709306651
+    },
+    "afrexai-qa-engine": {
+      "version": "1.0.0",
+      "installedAt": 1774709310678
+    },
+    "gstack-qa": {
+      "version": "1.0.0",
+      "installedAt": 1774709355472
+    },
+    "qa-skill": {
+      "version": "1.0.1",
+      "installedAt": 1774709362394
+    },
+    "test-sentinel": {
+      "version": "0.1.2",
+      "installedAt": 1774709369326
+    },
+    "security-auditor": {
+      "version": "1.0.0",
+      "installedAt": 1774709375785
+    },
+    "security-audit-toolkit": {
+      "version": "1.0.0",
+      "installedAt": 1774709382715
+    },
+    "playwright-pro": {
+      "version": "2.1.1",
+      "installedAt": 1774709401478
+    },
+    "playwright-skill": {
+      "version": "0.1.0",
+      "installedAt": 1774709408164
+    },
+    "security-scanner": {
+      "version": "1.0.0",
+      "installedAt": 1774709443158
+    },
+    "pdf-skill": {
+      "version": "1.0.0",
+      "installedAt": 1774710088768
+    },
+    "html-to-pdf": {
+      "version": "1.0.0",
+      "installedAt": 1774710094766
+    },
+    "image-handler": {
+      "version": "1.0.0",
+      "installedAt": 1774710100785
+    },
+    "image-edit": {
+      "version": "1.0.0",
+      "installedAt": 1774710106509
+    },
+    "web-screenshot": {
+      "version": "1.1.3",
+      "installedAt": 1774710112305
+    },
+    "lh-video-gen": {
+      "version": "1.0.0",
+      "installedAt": 1774710118412
+    },
+    "video-stitcher": {
+      "version": "1.0.0",
+      "installedAt": 1774710124209
+    },
+    "video-gif-converter": {
+      "version": "1.0.0",
+      "installedAt": 1774710130419
+    },
+    "powerpoint-pptx": {
+      "version": "1.0.1",
+      "installedAt": 1774710673495
+    },
+    "pptx-generator": {
+      "version": "1.0.2",
+      "installedAt": 1774710678942
+    },
+    "openclaw-slides": {
+      "version": "2.0.0",
+      "installedAt": 1774710685503
+    },
+    "excel-xlsx": {
+      "version": "1.0.2",
+      "installedAt": 1774710691018
+    },
+    "automate-excel": {
+      "version": "0.1.3",
+      "installedAt": 1774710698063
+    },
+    "atlassian-jira": {
+      "version": "1.0.1",
+      "installedAt": 1774710704037
+    },
+    "atlassian-confluence": {
+      "version": "1.0.1",
+      "installedAt": 1774710709863
+    },
+    "openclaw-log-analyzer": {
+      "version": "1.0.0",
+      "installedAt": 1774710721348
+    },
+    "weekly-report-writer": {
+      "version": "1.0.0",
+      "installedAt": 1774710727346
+    },
+    "smart-weekly-report": {
+      "version": "1.0.0",
+      "installedAt": 1774710733373
+    },
+    "daily-report-writer": {
+      "version": "1.0.0",
+      "installedAt": 1774710739194
+    },
+    "jira": {
+      "version": "1.3.3",
+      "installedAt": 1774711179056
+    },
+    "linear": {
+      "version": "1.0.0",
+      "installedAt": 1774711186089
+    },
+    "testflight": {
+      "version": "1.0.0",
+      "installedAt": 1774711205974
+    },
+    "fastlane": {
+      "version": "1.0.0",
+      "installedAt": 1774711212888
+    },
+    "midscene-android-automation": {
+      "version": "1.0.2",
+      "installedAt": 1774711219757
+    },
+    "android-adb": {
+      "version": "1.0.0",
+      "installedAt": 1774711226553
+    },
+    "visual-regression-testing": {
+      "version": "1.0.0",
+      "installedAt": 1774711233598
+    },
+    "incident-fupan": {
+      "version": "1.0.0",
+      "installedAt": 1774711240894
+    },
+    "incident-response": {
+      "version": "1.0.0",
+      "installedAt": 1774711248427
+    },
+    "crash-fixer": {
+      "version": "3.0.0",
+      "installedAt": 1774711255484
+    },
+    "ci-cd": {
+      "version": "1.0.0",
+      "installedAt": 1774711262846
+    },
+    "ios-simulator": {
+      "version": "0.1.2",
+      "installedAt": 1774711312730
+    },
+    "mantis-manager": {
+      "version": "0.0.1",
+      "installedAt": 1774711322937
+    },
+    "system-resource-monitor": {
+      "version": "1.0.0",
+      "installedAt": 1774711987296
+    },
+    "grafana-lens": {
+      "version": "0.4.0",
+      "installedAt": 1774712000849
+    },
+    "prometheus": {
+      "version": "1.1.0",
+      "installedAt": 1774712009638
+    },
+    "sql-toolkit": {
+      "version": "1.0.0",
+      "installedAt": 1774712015937
+    },
+    "db-readonly": {
+      "version": "1.0.0",
+      "installedAt": 1774712022946
+    },
+    "mysqladm": {
+      "version": "0.1.0",
+      "installedAt": 1774712030489
+    },
+    "api-doc-generator": {
+      "version": "1.0.0",
+      "installedAt": 1774712056939
+    },
+    "sovereign-api-mock-generator": {
+      "version": "1.0.0",
+      "installedAt": 1774712063691
+    },
+    "postman": {
+      "version": "1.0.0",
+      "installedAt": 1774712070269
+    },
+    "monitoring": {
+      "version": "1.0.0",
+      "installedAt": 1774712107686
+    },
+    "logging-observability": {
+      "version": "0.1.0",
+      "installedAt": 1774712116380
+    },
+    "grafana-api": {
+      "version": "1.0.0",
+      "installedAt": 1774712125415
+    },
+    "promql-cli": {
+      "version": "1.1.2",
+      "installedAt": 1774712134139
+    },
+    "postgres-mcp-skill": {
+      "version": "1.0.0",
+      "installedAt": 1774712143610
+    },
+    "openapi-spec": {
+      "version": "1.0.0",
+      "installedAt": 1774712160132
+    },
+    "tcpdump": {
+      "version": "1.0.0",
+      "installedAt": 1774712168954
+    },
+    "wireshark-analysis": {
+      "version": "1.0.1",
+      "installedAt": 1774712234129
+    },
+    "kibana": {
+      "version": "1.0.0",
+      "installedAt": 1774712243373
+    },
+    "docker-skill": {
+      "version": "1.0.0",
+      "installedAt": 1774712843784
+    },
+    "docker-compose": {
+      "version": "1.0.0",
+      "installedAt": 1774712851649
+    },
+    "docker-diag": {
+      "version": "1.0.0",
+      "installedAt": 1774712859751
+    },
+    "kubectl": {
+      "version": "1.0.0",
+      "installedAt": 1774712868411
+    },
+    "k8s": {
+      "version": "1.0.0",
+      "installedAt": 1774712876206
+    },
+    "kubernetes-devops": {
+      "version": "1.0.0",
+      "installedAt": 1774712885370
+    },
+    "helm": {
+      "version": "3.0.1",
+      "installedAt": 1774712893235
+    },
+    "kafka": {
+      "version": "3.0.1",
+      "installedAt": 1774712899648
+    },
+    "mqtt-client": {
+      "version": "1.0.7",
+      "installedAt": 1774712907541
+    },
+    "rabbitmq-client-guide": {
+      "version": "0.0.1",
+      "installedAt": 1774712915462
+    },
+    "nginx": {
+      "version": "1.0.1",
+      "installedAt": 1774712923697
+    },
+    "traefik": {
+      "version": "1.0.0",
+      "installedAt": 1774712939046
+    },
+    "initial-traefik": {
+      "version": "1.0.0",
+      "installedAt": 1774712947211
+    },
+    "aws-infra": {
+      "version": "1.0.0",
+      "installedAt": 1774712955190
+    },
+    "cloudflare-toolkit": {
+      "version": "1.5.0",
+      "installedAt": 1774712963206
+    },
+    "cloudflare-api": {
+      "version": "1.0.0",
+      "installedAt": 1774712971972
+    },
+    "cloudflare-tunnel-manager": {
+      "version": "1.0.0",
+      "installedAt": 1774712980014
+    },
+    "terraform-iac": {
+      "version": "1.0.0",
+      "installedAt": 1774712987830
+    },
+    "github-actions": {
+      "version": "1.0.0",
+      "installedAt": 1774712996578
+    },
+    "cicd-pipeline": {
+      "version": "1.0.0",
+      "installedAt": 1774713004461
+    },
+    "gitlab": {
+      "version": "1.0.0",
+      "installedAt": 1774713012308
+    },
+    "jenkins": {
+      "version": "1.0.0",
+      "installedAt": 1774713020226
+    },
+    "seo-optimizer": {
+      "version": "0.1.0",
+      "installedAt": 1774713762270
+    },
+    "website-seo": {
+      "version": "1.0.0",
+      "installedAt": 1774713770254
+    },
+    "pls-seo-audit": {
+      "version": "1.0.0",
+      "installedAt": 1774713778495
+    },
+    "shelly-seo-analyzer": {
+      "version": "1.0.0",
+      "installedAt": 1774713786512
+    },
+    "web-auto-analyzer": {
+      "version": "1.1.1",
+      "installedAt": 1774713795280
+    },
+    "webperf-core-web-vitals": {
+      "version": "0.1.0",
+      "installedAt": 1774713804192
+    },
+    "pls-audit-website": {
+      "version": "1.0.0",
+      "installedAt": 1774713811977
+    },
+    "check-analytics": {
+      "version": "0.1.0",
+      "installedAt": 1774713819888
+    },
+    "add-analytics": {
+      "version": "0.1.0",
+      "installedAt": 1774713827791
+    },
+    "analytics-tracking-2": {
+      "version": "0.1.0",
+      "installedAt": 1774713836038
+    },
+    "cs-analytics-tracking": {
+      "version": "1.0.0",
+      "installedAt": 1774713844765
+    },
+    "sw-analytics-tracking": {
+      "version": "1.0.0",
+      "installedAt": 1774713852702
+    },
+    "find-skills-3": {
+      "version": "0.1.0",
+      "installedAt": 1774754896418
+    },
+    "skill-creator": {
+      "version": "0.1.0",
+      "installedAt": 1774754901094
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1774754905271
+    },
+    "capability-evolver-pro": {
+      "version": "1.0.2",
+      "installedAt": 1774754909910
+    },
+    "self-improving-agent-skill": {
+      "version": "0.2.0",
+      "installedAt": 1774754915181
+    },
+    "openclaw-agent-browser": {
+      "version": "1.0.0",
+      "installedAt": 1774754919886
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1774754924111
+    },
+    "baidu-web-search": {
+      "version": "2.1.0",
+      "installedAt": 1774754929013
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1774755043192
+    },
+    "deerflow-super-agent-harness": {
+      "version": "1.0.0",
+      "installedAt": 1774755046587
+    }
+  }
+}
