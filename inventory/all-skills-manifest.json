@@ -2955,12 +2955,12 @@
     },
     {
       "name": "coding-agent",
-      "description": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.",
-      "emoji": "🧩",
+      "description": "通用的编码代理技能，封装 Codex、Claude Code、OpenCode 等工具。使用场景：(1) 构建/创建新功能或应用 (2) 重构大型代码库 (3) Bug 修复 (4) 代码审查 (5) 迭代式编码。不适用于：简单的单行修改（直接用 edit），读取代码（用 read 工具）。",
+      "emoji": "🤖",
       "eligible": true,
       "disabled": false,
       "blockedByAllowlist": false,
-      "source": "openclaw-bundled",
+      "source": "openclaw-workspace",
       "bundled": true,
       "missing": {
         "bins": [],
@@ -2973,7 +2973,7 @@
       "is_testing": false,
       "status": "ready",
       "setup_note": "已就绪",
-      "cn_intro": "Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:\"acp\"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required."
+      "cn_intro": "通用编码代理，封装 Codex、Claude Code、OpenCode 等工具，适合构建功能、重构、修 Bug、代码审查和迭代式编码。"
     },
     {
       "name": "deerflow-super-agent-harness",

@@ -82,6 +82,7 @@ MANUAL_CN = {
     'baidu-web-search': '基于百度搜索进行实时中文网页检索。',
     'github': '通过 gh CLI 管理仓库、PR、Issue、Actions 等 GitHub 工作流。',
     'deerflow-super-agent-harness': '安装和配置 DeerFlow 2.0 超级代理框架，用于多代理、记忆、沙箱和复杂任务编排。',
+    'coding-agent': '通用编码代理，封装 Codex、Claude Code、OpenCode 等工具，适合构建功能、重构、修 Bug、代码审查和迭代式编码。',
 }
 
 
@@ -186,7 +187,7 @@ readme_lines = [
     '',
     '这是大王当前维护的一份 **OpenClaw Skills 仓库**：既包含软件测试专项 skills，也包含研发、Agent、浏览器自动化、GitHub、文档、搜索、基础设施等非测试专项能力。',
     '',
-    '## 本次新增（按你的图片 + DeerFlow 2.0 要求补装）',
+    '## 本次新增（按你的图片 + DeerFlow 2.0 要求补装 + 额外推荐 1 项）',
     '',
     '- **开发 / Agent 工具**',
     '  - `find-skills`：智能搜索和发现可安装 skill。',
@@ -195,6 +196,7 @@ readme_lines = [
     '  - `self-improving-agent-skill`：让 Agent 从经验中持续学习。',
     '  - `github`：管理仓库、PR、Issue、Actions。',
     '  - `deerflow-super-agent-harness`：对接 DeerFlow 2.0，多代理/记忆/沙箱任务编排。',
+    '  - `coding-agent`：**额外推荐安装**，补上真正的开发执行层，适合构建功能、重构、修 Bug、代码审查。',
     '- **安全 / 治理**',
     '  - `skill-vetter`：安装前安全审查与风险扫描。',
     '- **网页自动化 / 内容处理 / 搜索**',

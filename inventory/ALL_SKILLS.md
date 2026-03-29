@@ -196,7 +196,7 @@
   - 功能介绍：Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.
   - 状态说明：已就绪
 - **coding-agent** [ready]
-  - 功能介绍：Delegate coding tasks to Codex, Claude Code, or Pi agents via background process. Use when: (1) building/creating new features or apps, (2) reviewing PRs (spawn in temp dir), (3) refactoring large codebases, (4) iterative coding that needs file exploration. NOT for: simple one-liner fixes (just edit), reading code (use read tool), thread-bound ACP harness requests in chat (for example spawn/run Codex or Claude Code in a Discord thread; use sessions_spawn with runtime:"acp"), or any work in ~/clawd workspace (never spawn agents here). Claude Code: use --print --permission-mode bypassPermissions (no PTY). Codex/Pi/OpenCode: pty:true required.
+  - 功能介绍：通用编码代理，封装 Codex、Claude Code、OpenCode 等工具，适合构建功能、重构、修 Bug、代码审查和迭代式编码。
   - 状态说明：已就绪
 - **deerflow-super-agent-harness** [ready]
   - 功能介绍：安装和配置 DeerFlow 2.0 超级代理框架，用于多代理、记忆、沙箱和复杂任务编排。

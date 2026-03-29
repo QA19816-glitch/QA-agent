@@ -508,6 +508,10 @@
     "deerflow-super-agent-harness": {
       "version": "1.0.0",
       "installedAt": 1774755046587
+    },
+    "coding-agent-common": {
+      "version": "1.0.0",
+      "installedAt": 1774756065378
     }
   }
 }
