@@ -260,4 +260,4 @@
 - 执行类：agent-browser（自动操作）
 - 安全类：skill-vetter（安全保障）
 - 文档协同类：feishu-doc、feishu-wiki（协同办公）
-- 工作汇报类：daily-report-writer、weekly-report-writer（高效汇报） 更新到我的GitHub里，一字不差的那种，覆盖之前的内容
+- 工作汇报类：daily-report-writer、weekly-report-writer（高效汇报）
