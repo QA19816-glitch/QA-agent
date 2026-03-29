@@ -1,10 +1,9 @@
 # 全局 OpenClaw Skills 总清单
-
-- 仓库主页：<https://github.com/QA19816-glitch/QA-agent>
-- 公司分享版总文档：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/COMPANY_SHARE_SKILLS_CATALOG.md>
-- 测试专项清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/SOFTWARE_TESTING_SPECIALTIES.md>
-- 非测试专项清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/NON_TESTING_SPECIALTIES.md>
-
+- 🔗 GitHub 主页链接：https://github.com/QA19816-glitch/QA-agent（核心入口，包含所有技能资源汇总）
+- 🧪 测试专项清单链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/SOFTWARE_TESTING_SPECIALTIES.md（聚焦测试领域专项技能）
+- 🌐 非测试专项清单链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/NON_TESTING_SPECIALTIES.md（覆盖装机及通用技术能力）
+- ✅ 建议安装 Skills 清单链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ESSENTIAL_SETUP_SKILLS.md（通用环境适配，推荐优先安装）
+- 📋 全局总清单 Skills 链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ALL_SKILLS.md（全量技能汇总，全面查阅）
 ## 总览
 
 - 总技能数：**172**
