@@ -1,0 +1,696 @@
+# 文档 Skills 名称 与 GitHub 目录映射核对表
+
+这份清单用于核对：文档里写到的 skill，GitHub 仓库里是否真的有对应目录。
+
+- 文档中提到的唯一 skill 名称数：**171**
+- 仓库 skills 目录数：**191**
+- 已完成名称→目录映射：**171**
+- 需要人工检查项：**0**
+
+## 映射结果
+
+- **qa-prd-analyzer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-prd-analyzer`
+  - 核对结果：OK
+- **qa-test-point-extractor**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-test-point-extractor`
+  - 核对结果：OK
+- **qa-testcase-writer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-testcase-writer`
+  - 核对结果：OK
+- **qa-traceability-mapper**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-traceability-mapper`
+  - 核对结果：OK
+- **qa-test-data-factory**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-test-data-factory`
+  - 核对结果：OK
+- **qa-test-report-generator**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-test-report-generator`
+  - 核对结果：OK
+- **qa-regression-planner**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-regression-planner`
+  - 核对结果：OK
+- **qa-release-gate-checker**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-release-gate-checker`
+  - 核对结果：OK
+- **qa**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/gstack-qa`
+  - 核对结果：OK
+- **qa-browser-tester**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-browser-tester`
+  - 核对结果：OK
+- **qa-patrol**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-patrol`
+  - 核对结果：OK
+- **Test Generator**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/test-generator`
+  - 核对结果：OK
+- **test-master**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/test-master`
+  - 核对结果：OK
+- **test-patterns**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/test-patterns`
+  - 核对结果：OK
+- **test-sentinel**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/test-sentinel`
+  - 核对结果：OK
+- **ux-qa-gate**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/ux-qa-gate`
+  - 核对结果：OK
+- **qa-api-runner**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-api-runner`
+  - 核对结果：OK
+- **APITester Agent-Driven API Testing**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openclaw-api-tester`
+  - 核对结果：OK
+- **API Mock Server Generator**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/sovereign-api-mock-generator`
+  - 核对结果：OK
+- **openapi-spec**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openapi-spec`
+  - 核对结果：OK
+- **Postman**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/postman`
+  - 核对结果：OK
+- **qa-web-e2e-runner**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-web-e2e-runner`
+  - 核对结果：OK
+- **e2e-test-orchestrator**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/e2e-test-orchestrator`
+  - 核对结果：OK
+- **e2e-testing**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/e2e-testing`
+  - 核对结果：OK
+- **e2e-testing-patterns**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/e2e-testing-patterns`
+  - 核对结果：OK
+- **playwright-browser-automation**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/playwright-browser-automation`
+  - 核对结果：OK
+- **playwright-cli**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/playwright-cli-openclaw`
+  - 核对结果：OK
+- **playwright-mcp**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/playwright-mcp`
+  - 核对结果：OK
+- **playwright-npx**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/playwright-npx`
+  - 核对结果：OK
+- **playwright-pro**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/playwright-pro`
+  - 核对结果：OK
+- **playwright-skill**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/playwright-skill`
+  - 核对结果：OK
+- **web-screenshot**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/web-screenshot`
+  - 核对结果：OK
+- **mobile-appium-test**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/mobile-appium-test`
+  - 核对结果：OK
+- **android-automation**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/android-adb`
+  - 核对结果：OK
+- **android-device-automation**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/midscene-android-automation`
+  - 核对结果：OK
+- **mobile-responsive**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/mobile-responsive`
+  - 核对结果：OK
+- **fastlane**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/fastlane`
+  - 核对结果：OK
+- **TestFlight**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/testflight`
+  - 核对结果：OK
+- **api-performance-testing**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/api-performance-testing`
+  - 核对结果：OK
+- **frontend-performance-audit**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/frontend-performance-audit`
+  - 核对结果：OK
+- **webperf-core-web-vitals**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/webperf-core-web-vitals`
+  - 核对结果：OK
+- **Chrome DevTools Auto Analyzer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/web-auto-analyzer`
+  - 核对结果：OK
+- **performance-tuning**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/performance-tuning`
+  - 核对结果：OK
+- **seo-optimizer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/seo-optimizer`
+  - 核对结果：OK
+- **seo-analyzer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/shelly-seo-analyzer`
+  - 核对结果：OK
+- **website-seo**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/website-seo`
+  - 核对结果：OK
+- **security-audit**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/security-audit-toolkit`
+  - 核对结果：OK
+- **security-auditor**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/security-auditor`
+  - 核对结果：OK
+- **security-scanner**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/security-scanner`
+  - 核对结果：OK
+- **add-analytics**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/add-analytics`
+  - 核对结果：OK
+- **analytics-tracking**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/analytics-tracking-2`
+  - 核对结果：OK
+- **check-analytics**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/check-analytics`
+  - 核对结果：OK
+- **sensors-analytics-tracking**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/sensors-analytics-tracking`
+  - 核对结果：OK
+- **qa-bug-triage**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/qa-bug-triage`
+  - 核对结果：OK
+- **bug-investigation**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/bug-investigation`
+  - 核对结果：OK
+- **jira**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/jira`
+  - 核对结果：OK
+- **linear**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/linear`
+  - 核对结果：OK
+- **incident-fupan**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/incident-fupan`
+  - 核对结果：OK
+- **db-readonly**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/db-readonly`
+  - 核对结果：OK
+- **sql-toolkit**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/sql-toolkit`
+  - 核对结果：OK
+- **postgres**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/postgres-mcp-skill`
+  - 核对结果：OK
+- **grafana**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/grafana-api`
+  - 核对结果：OK
+- **grafana-lens**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/grafana-lens`
+  - 核对结果：OK
+- **kibana**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/kibana`
+  - 核对结果：OK
+- **prometheus**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/prometheus`
+  - 核对结果：OK
+- **promql-cli**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/promql-cli`
+  - 核对结果：OK
+- **log-analyzer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openclaw-log-analyzer`
+  - 核对结果：OK
+- **logging-observability**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/logging-observability`
+  - 核对结果：OK
+- **tcpdump**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/tcpdump`
+  - 核对结果：OK
+- **Wireshark Network Traffic Analysis**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/wireshark-analysis`
+  - 核对结果：OK
+- **docker**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/docker-skill`
+  - 核对结果：OK
+- **Docker Compose**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/docker-compose`
+  - 核对结果：OK
+- **Docker Pro Diagnostic**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/docker-diag`
+  - 核对结果：OK
+- **kubectl-skill**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/kubectl`
+  - 核对结果：OK
+- **Kubernetes**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/k8s`
+  - 核对结果：OK
+- **kubernetes-devops**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/kubernetes-devops`
+  - 核对结果：OK
+- **helm**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/helm`
+  - 核对结果：OK
+- **kafka**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/kafka`
+  - 核对结果：OK
+- **mqtt-client**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/mqtt-client`
+  - 核对结果：OK
+- **rabbitmq-client-guide**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/rabbitmq-client-guide`
+  - 核对结果：OK
+- **Nginx**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/nginx`
+  - 核对结果：OK
+- **Traefik**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/traefik`
+  - 核对结果：OK
+- **initial-traefik**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/initial-traefik`
+  - 核对结果：OK
+- **aws-infra**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/aws-infra`
+  - 核对结果：OK
+- **cloudflare**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/cloudflare-api`
+  - 核对结果：OK
+- **cloudflare-tunnel**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/cloudflare-tunnel-manager`
+  - 核对结果：OK
+- **terraform-iac**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/terraform-iac`
+  - 核对结果：OK
+- **GitHub Actions**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/github-actions`
+  - 核对结果：OK
+- **GitLab**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/gitlab`
+  - 核对结果：OK
+- **Jenkins**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/jenkins`
+  - 核对结果：OK
+- **CI-CD**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/ci-cd`
+  - 核对结果：OK
+- **cicd-pipeline**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/cicd-pipeline`
+  - 核对结果：OK
+- **Monitoring**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/monitoring`
+  - 核对结果：OK
+- **agent-browser**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openclaw-agent-browser`
+  - 核对结果：OK
+- **Capability Evolver**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/capability-evolver-pro`
+  - 核对结果：OK
+- **clawhub**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/clawhub`
+  - 核对结果：OK
+- **coding-agent**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/coding-agent-common`
+  - 核对结果：OK
+- **deerflow-super-agent-harness**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/deerflow-super-agent-harness`
+  - 核对结果：OK
+- **find-skills**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/find-skills-3`
+  - 核对结果：OK
+- **gemini**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/gemini`
+  - 核对结果：OK
+- **gh-issues**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/gh-issues`
+  - 核对结果：OK
+- **github**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/github`
+  - 核对结果：OK
+- **self-improving-agent-skill**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/self-improving-agent-skill`
+  - 核对结果：OK
+- **session-logs**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/session-logs`
+  - 核对结果：OK
+- **skill-creator**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/skill-creator`
+  - 核对结果：OK
+- **skill-vetter**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/skill-vetter`
+  - 核对结果：OK
+- **tmux**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/tmux`
+  - 核对结果：OK
+- **feishu-doc**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/feishu-doc`
+  - 核对结果：OK
+- **feishu-drive**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/feishu-drive`
+  - 核对结果：OK
+- **feishu-perm**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/feishu-perm`
+  - 核对结果：OK
+- **feishu-wiki**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/feishu-wiki`
+  - 核对结果：OK
+- **gifgrep**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/gifgrep`
+  - 核对结果：OK
+- **html-to-pdf**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/html-to-pdf`
+  - 核对结果：OK
+- **Image Editing**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/image-edit`
+  - 核对结果：OK
+- **lh-video-gen**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/lh-video-gen`
+  - 核对结果：OK
+- **nano-pdf**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/nano-pdf`
+  - 核对结果：OK
+- **openai-whisper**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openai-whisper`
+  - 核对结果：OK
+- **openai-whisper-api**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openai-whisper-api`
+  - 核对结果：OK
+- **openclaw-slides**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openclaw-slides`
+  - 核对结果：OK
+- **pdf**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/pdf-skill`
+  - 核对结果：OK
+- **Powerpoint / PPTX**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/powerpoint-pptx`
+  - 核对结果：OK
+- **pptx-generator**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/pptx-generator`
+  - 核对结果：OK
+- **summarize**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/summarize`
+  - 核对结果：OK
+- **video-frames**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/video-frames`
+  - 核对结果：OK
+- **video-gif-converter**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/video-gif-converter`
+  - 核对结果：OK
+- **video-stitcher**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/video-stitcher`
+  - 核对结果：OK
+- **1password**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/1password`
+  - 核对结果：OK
+- **healthcheck**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/healthcheck`
+  - 核对结果：OK
+- **jenkins**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/jenkins`
+  - 核对结果：OK
+- **node-connect**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/node-connect`
+  - 核对结果：OK
+- **bluebubbles**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/bluebubbles`
+  - 核对结果：OK
+- **confluence**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/atlassian-confluence`
+  - 核对结果：OK
+- **daily-report-writer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/daily-report-writer`
+  - 核对结果：OK
+- **discord**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/discord`
+  - 核对结果：OK
+- **himalaya**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/himalaya`
+  - 核对结果：OK
+- **imsg**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/imsg`
+  - 核对结果：OK
+- **slack**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/slack`
+  - 核对结果：OK
+- **wacli**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/wacli`
+  - 核对结果：OK
+- **weekly-report-writer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/weekly-report-writer`
+  - 核对结果：OK
+- **baidu-web-search**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/baidu-web-search`
+  - 核对结果：OK
+- **goplaces**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/goplaces`
+  - 核对结果：OK
+- **weather**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/weather`
+  - 核对结果：OK
+- **apple-notes**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/apple-notes`
+  - 核对结果：OK
+- **apple-reminders**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/apple-reminders`
+  - 核对结果：OK
+- **automate-excel**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/automate-excel`
+  - 核对结果：OK
+- **bear-notes**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/bear-notes`
+  - 核对结果：OK
+- **blogwatcher**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/blogwatcher`
+  - 核对结果：OK
+- **blucli**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/blucli`
+  - 核对结果：OK
+- **camsnap**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/camsnap`
+  - 核对结果：OK
+- **crash-fixer**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/crash-fixer`
+  - 核对结果：OK
+- **eightctl**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/eightctl`
+  - 核对结果：OK
+- **Excel / XLSX**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/excel-xlsx`
+  - 核对结果：OK
+- **gog**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/gog`
+  - 核对结果：OK
+- **mantis-manager**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/mantis-manager`
+  - 核对结果：OK
+- **mcporter**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/mcporter`
+  - 核对结果：OK
+- **model-usage**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/model-usage`
+  - 核对结果：OK
+- **notion**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/notion`
+  - 核对结果：OK
+- **obsidian**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/obsidian`
+  - 核对结果：OK
+- **openhue**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/openhue`
+  - 核对结果：OK
+- **oracle**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/oracle`
+  - 核对结果：OK
+- **ordercli**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/ordercli`
+  - 核对结果：OK
+- **peekaboo**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/peekaboo`
+  - 核对结果：OK
+- **sag**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/sag`
+  - 核对结果：OK
+- **sherpa-onnx-tts**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/sherpa-onnx-tts`
+  - 核对结果：OK
+- **songsee**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/songsee`
+  - 核对结果：OK
+- **sonoscli**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/sonoscli`
+  - 核对结果：OK
+- **spotify-player**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/spotify-player`
+  - 核对结果：OK
+- **things-mac**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/things-mac`
+  - 核对结果：OK
+- **trello**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/trello`
+  - 核对结果：OK
+- **voice-call**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/voice-call`
+  - 核对结果：OK
+- **xurl**
+  - OpenClaw 可见：是
+  - GitHub 目录：`skills/xurl`
+  - 核对结果：OK
+
