@@ -1,567 +1,263 @@
-OpenClaw Skills 分类总文档
-
-这是一份适合直接发给公司同事的技能总文档，重点是 **按分类列出每个 skill 的名称、功能介绍、当前可用状态**，方便大家自己判断哪些值得安装。
-
-## 文档用途
-
-- 给同事快速了解这套仓库里到底有哪些 skills
-- 按分类查看每个 skill 是干什么的
-- 自己判断哪些属于测试、研发、Agent、文档、运维、搜索类能力
-- 根据 `ready / needs setup` 判断是否能直接上手
-
-## 入口链接
-
-- 仓库主页：<https://github.com/QA19816-glitch/QA-agent>
-- 全局技能总清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ALL_SKILLS.md>
-- 测试专项清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/SOFTWARE_TESTING_SPECIALTIES.md>
-- 非测试专项清单：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/NON_TESTING_SPECIALTIES.md>
-
-## 当前规模
-
-- 总技能数：**172**
-- Ready：**131**
-- Needs setup：**41**
-- 测试专项：**52**
-- 非测试专项：**120**
-
-## 分类 + 每个 Skills 名称 + 功能介绍
-
-### QA / 软件测试（52 个，ready 52 / total 52）
-
-- **add-analytics** [ready]
-  - 功能介绍：Add Google Analytics 4 tracking to any project. Detects framework, adds tracking code, sets up events, and configures privacy settings.
-  - 状态说明：已就绪
-- **analytics-tracking** [ready]
-  - 功能介绍：Set up, audit, and debug analytics tracking implementation — GA4, Google Tag Manager, event taxonomy, conversion tracking, and data quality. Use when building a tracking plan from scratch, auditing existing analytics for gaps or errors, debugging missing events, or setting up GTM. Trigger keywords: GA4 setup, Google Tag Manager, GTM, event tracking, analytics implementation, conversion tracking, tracking plan, event taxonomy, custom dimensions, UTM tracking, analytics audit, missing events, tracking broken. NOT for analyzing marketing campaign data — use campaign-analytics for that. NOT for BI dashboards — use product-analytics for in-product event analysis.
-  - 状态说明：已就绪
-- **api-performance-testing** [ready]
-  - 功能介绍：Plan, execute, and analyze API performance and load testing for REST and HTTP services using k6, Locust, or Newman-compatible workflows. Use when the user mentions 接口性能, 压测, load test, stress test, benchmark, throughput, latency, TPS, QPS, 并发, API bottleneck, slow endpoints, rate limits, or wants structured API performance validation before release.
-  - 状态说明：已就绪
-- **APITester Agent-Driven API Testing** [ready]
-  - 功能介绍：Test API endpoints and document responses. Define tests in plain English, run them, get formatted results. Agent-driven Postman alternative.
-  - 状态说明：已就绪
-- **bug-investigation** [ready]
-  - 功能介绍：Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.
-  - 状态说明：已就绪
-- **check-analytics** [ready]
-  - 功能介绍：Audit existing Google Analytics implementation. Checks for common issues, missing configurations, and optimization opportunities.
-  - 状态说明：已就绪
-- **Chrome DevTools Auto Analyzer** [ready]
-  - 功能介绍：Automatically analyze websites for performance metrics and audit issues using Lighthouse.
-  - 状态说明：已就绪
-- **e2e-test-orchestrator** [ready]
-  - 功能介绍：端到端（E2E）测试编排与执行。用于用户要求：设计测试用例、基于 Playwright/Cypress 实现自动化脚本、通过源码优先定位元素并在必要时使用截图/图像识别兜底、执行测试、自动修复脚本问题（如定位器或等待策略）、并输出结构化测试报告。
-  - 状态说明：已就绪
-- **e2e-testing** [ready]
-  - 功能介绍：Playwright 与 Cypress E2E 测试规范，涵盖目录结构、Page Object、CI 集成、视口与设备配置。当用户提到 E2E、端到端测试、Playwright、Cypress、集成测试时自动激活。
-  - 状态说明：已就绪
-- **e2e-testing-patterns** [ready]
-  - 功能介绍：Build reliable, fast E2E test suites with Playwright and Cypress. Critical user journey coverage, flaky test elimination, CI/CD integration.
-  - 状态说明：已就绪
-- **frontend-performance-audit** [ready]
-  - 功能介绍：分析前端页面性能并输出结构化优化报告。适用于页面速度慢、lighthouse 指标差、core web vitals 不达标、首屏慢、交互卡顿、bundle 过大、阻塞渲染资源过多等场景。
-  - 状态说明：已就绪
-- **mobile-appium-test** [ready]
-  - 功能介绍：Android UI automation testing using Appium with USB-connected real devices. Use when the user wants to run Appium tests on physical Android devices connected via USB, including: device connection verification, app installation, UI element inspection, test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.
-  - 状态说明：已就绪
-- **mobile-responsive** [ready]
-  - 功能介绍：Deep responsive design workflow—breakpoints, content priority, touch targets, typography, performance on mobile networks, and testing on real devices. Use when fixing mobile UX, defining responsive patterns, or auditing layouts across viewports.
-  - 状态说明：已就绪
-- **openapi-spec** [ready]
-  - 功能介绍：Deep OpenAPI workflow—design-first vs code-first, reusable schemas, security schemes, errors, examples, linting, compatibility, and codegen. Use when documenting REST APIs or driving clients and gateways from a spec.
-  - 状态说明：已就绪
-- **performance-tuning** [ready]
-  - 功能介绍：Deep performance tuning workflow—goals and measurement, profiling, hotspots, caching and concurrency trade-offs, system-specific tuning (DB, GC, network), and verification. Use when fixing latency, throughput, or resource saturation.
-  - 状态说明：已就绪
-- **playwright-browser-automation** [ready]
-  - 功能介绍：Browser automation using Playwright API directly. Navigate websites, interact with elements, extract data, take screenshots, generate PDFs, record videos, and automate complex workflows. More reliable than MCP approach.
-  - 状态说明：已就绪
-- **playwright-cli** [ready]
-  - 功能介绍：官方Microsoft Playwright CLI网页自动化工具，支持所有主流浏览器的无头/有头自动化操作，包括页面导航、元素交互、截图、录制、测试等功能。当用户提到网页自动化、浏览器操作、爬虫、截图、录制用户操作、E2E测试时触发。
-  - 状态说明：已就绪
-- **playwright-mcp** [ready]
-  - 功能介绍：Browser automation via Playwright MCP server. Navigate websites, click elements, fill forms, extract data, take screenshots, and perform full browser automation workflows.
-  - 状态说明：已就绪
-- **playwright-npx** [ready]
-  - 功能介绍：Fast browser automation using Node.js scripts with Playwright (run via `node script.mjs`). Use for web scraping, screenshots, form automation, and any browser task requiring programmatic control. For simple page fetching without JavaScript execution, use web_fetch first. For interactive CLI browsing without writing code, use browser tool or playwright-cli. This skill is ideal when you need full control, custom logic, or reusable scripts.
-  - 状态说明：已就绪
-- **playwright-pro** [ready]
-  - 功能介绍：Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. Generate tests, fix flaky failures, migrate from Cypress/Selenium, sync with TestRail, run on BrowserStack. 55 templates, 3 agents, smart reporting.
-  - 状态说明：已就绪
-- **playwright-skill** [ready]
-  - 功能介绍：Complete browser automation with Playwright. Auto-detects dev servers, writes clean test scripts to /tmp. Test pages, fill forms, take screenshots, check responsive design, validate UX, test login flows, check links, automate any browser task. Use when user wants to test websites, automate browser interactions, validate web functionality, or perform any browser-based testing.
-  - 状态说明：已就绪
-- **Postman** [ready]
-  - 功能介绍：Build, test, and automate APIs with Postman collections, environments, and Newman CLI.
-  - 状态说明：已就绪
-- **qa** [ready]
-  - 功能介绍：Systematically QA test a web application and fix bugs found. Runs QA testing,then iteratively fixes bugs in source code, committing each fix atomically andre-verifying. Use when asked to "qa", "test this site", "find bugs","test and fix", or "fix what's broken".Proactively suggest when the user says a feature is ready for testingor asks "does this work?".Three tiers: Quick (critical/high only), Standard (+ medium), Exhaustive (+ cosmetic).Produces before/after health scores, fix evidence, and a ship-readiness summary.
-  - 状态说明：已就绪
-- **qa-api-runner** [ready]
-  - 功能介绍：Generate, execute, and summarize API smoke, regression, and negative tests from API docs or endpoint descriptions. Use when the user asks to run API tests, validate endpoint behavior, exercise request/response contracts, verify auth and error handling, or turn API specs into executable checks.
-  - 状态说明：已就绪
-- **qa-browser-tester** [ready]
-  - 功能介绍：Launch a real headless browser on the server and perform exhaustive end-to-end QA testing of a web application — clicking every button, filling every form, navigating every menu, and simulating a complete user journey. Use this skill whenever the user asks to "test the app", "check if everything works", "simulate a user", "run QA", "click through the site", or "browse the website automatically". Also trigger when the user says things like "בדוק את האתר", "תדמה משתמש", or "תבדוק שהכל עובד". Always use this skill — do not attempt browser automation without it, as it contains critical Docker-safe configuration required for Chromium to run on Linux servers.
-  - 状态说明：已就绪
-- **qa-bug-triage** [ready]
-  - 功能介绍：Turn failed tests, screenshots, logs, and mismatches into high-quality defect reports with titles, reproduction steps, severity/priority guidance, and likely ownership hints. Use when the user asks to write bugs, triage failures, classify severity, deduplicate issues, or convert raw evidence into actionable QA defect records.
-  - 状态说明：已就绪
-- **qa-patrol** [ready]
-  - 功能介绍：Automated QA testing for web apps using local browser automation. Runs entirely on your machine — no data leaves, no cloud services, no external servers. Level 1 (smoke tests) needs only a URL. Level 2 (auth/payment testing) uses optional env vars for test credentials. Level 3 (static analysis, DB checks) optionally reads local files and connects to a user-provided database. Supports Supabase/Firebase auth, Stripe payments, React Native Web, Next.js, and SPAs.
-  - 状态说明：已就绪
-- **qa-prd-analyzer** [ready]
-  - 功能介绍：Analyze PRDs, Feishu docs, wiki pages, specs, change notes, and prototype text into structured feature breakdowns, business flows, hidden assumptions, ambiguity lists, and QA risk summaries. Use when the user asks to analyze a requirement, break down a feature, review a spec, find missing cases, or identify unclear/risky requirements before test design.
-  - 状态说明：已就绪
-- **qa-regression-planner** [ready]
-  - 功能介绍：Plan focused QA regression scope from requirement changes, bug fixes, impacted modules, and system dependencies. Use when the user asks what to regress, wants a change-impact-based regression plan, or needs a lean smoke vs full-regression split for a release.
-  - 状态说明：已就绪
-- **qa-release-gate-checker** [ready]
-  - 功能介绍：Decide whether a build is releasable by checking core-flow status, unresolved defects, coverage gaps, and residual risks. Use when the user asks if a version can ship, wants a release gate decision, or needs a concise go/no-go QA judgement from current evidence.
-  - 状态说明：已就绪
-- **qa-skill** [ready]
-  - 功能介绍：Generate comprehensive test cases and quality assurance documentation from SwiftUI iOS code. Use when iOS application code is available and needs testing strategies, test cases, and quality validation. This skill receives input from dev-skill and completes the auto-dev-pipeline by providing testing coverage.
-  - 状态说明：已就绪
-- **qa-test-data-factory** [ready]
-  - 功能介绍：Design and generate QA test data sets for validation, boundaries, permissions, workflow states, imports, and integration scenarios. Use when the user asks for test data, edge-case values, account/data setup plans, or scenario matrices needed to execute tests reliably.
-  - 状态说明：已就绪
-- **qa-test-point-extractor** [ready]
-  - 功能介绍：Convert requirements, flows, API specs, and feature summaries into structured QA test points covering happy path, negative path, boundary, permission, state transition, compatibility, and resilience. Use when the user asks to extract test points, design coverage, list edge cases, or expand testing scope before formal test cases are written.
-  - 状态说明：已就绪
-- **qa-test-report-generator** [ready]
-  - 功能介绍：Summarize QA execution into release-facing test reports with scope, environment, pass/fail counts, defect distribution, residual risk, and release recommendation. Use when the user asks to generate a test report, release summary, QA conclusion, execution recap, or stakeholder-ready testing status update.
-  - 状态说明：已就绪
-- **qa-testcase-writer** [ready]
-  - 功能介绍：Turn QA test points or requirements into standardized test cases with preconditions, data, steps, expected results, priority, and automation hints. Use when the user asks to write test cases, generate smoke/regression cases, convert test points into executable cases, or format cases for docs, Feishu, spreadsheets, or case-management tools.
-  - 状态说明：已就绪
-- **qa-traceability-mapper** [ready]
-  - 功能介绍：Build QA traceability between requirements, test points, test cases, execution results, and defects. Use when the user asks for a traceability matrix, coverage mapping, gap analysis, release coverage proof, or help linking requirements to tests and bugs.
-  - 状态说明：已就绪
-- **qa-web-e2e-runner** [ready]
-  - 功能介绍：Execute browser-based QA flows for web apps, capture assertions, screenshots, and failure evidence, and summarize end-to-end results. Use when the user asks to run UI smoke tests, verify business flows in a browser, regression-test key pages, or reproduce front-end issues with observable evidence.
-  - 状态说明：已就绪
-- **security-audit** [ready]
-  - 功能介绍：Audit codebases and infrastructure for security issues. Use when scanning dependencies for vulnerabilities, detecting hardcoded secrets, checking OWASP top 10 issues, verifying SSL/TLS, auditing file permissions, or reviewing code for injection and auth flaws.
-  - 状态说明：已就绪
-- **security-auditor** [ready]
-  - 功能介绍：Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review.
-  - 状态说明：已就绪
-- **security-scanner** [ready]
-  - 功能介绍：Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform security audits. Integrates with nmap, nuclei, and other security tools.
-  - 状态说明：已就绪
-- **sensors-analytics-tracking** [ready]
-  - 功能介绍：Plan, audit, and validate Sensors Analytics (神策) tracking for web, H5, app, and mini-program scenarios. Use when the user mentions 神策, Sensors Analytics, 埋点, 事件 tracking, event taxonomy, 埋点方案, 数据校验, 漏埋/错埋/重复埋点, funnel, conversion tracking, or wants to connect a product flow to 神策平台.
-  - 状态说明：已就绪
-- **seo-analyzer** [ready]
-  - 功能介绍：Analyze any webpage URL for SEO issues and get actionable recommendations. Checks title tags, meta descriptions, heading structure, keyword density, image alt tags, Open Graph, and more.
-  - 状态说明：已就绪
-- **seo-optimizer** [ready]
-  - 功能介绍：This skill should be used when analyzing HTML/CSS websites for SEO optimization, fixing SEO issues, generating SEO reports, or implementing SEO best practices. Use when the user requests SEO audits, optimization, meta tag improvements, schema markup implementation, sitemap generation, or general search engine optimization tasks.
-  - 状态说明：已就绪
-- **Test Generator** [ready]
-  - 功能介绍：Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.
-  - 状态说明：已就绪
-- **test-master** [ready]
-  - 功能介绍：Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.
-  - 状态说明：已就绪
-- **test-patterns** [ready]
-  - 功能介绍：Write and run tests across languages and frameworks. Use when setting up test suites, writing unit/integration/E2E tests, measuring coverage, mocking dependencies, or debugging test failures. Covers Node.js (Jest/Vitest), Python (pytest), Go, Rust, and Bash.
-  - 状态说明：已就绪
-- **test-sentinel** [ready]
-  - 功能介绍：Writes and runs tests (unit, integration, E2E), performs linting, and auto-fixes failures
-  - 状态说明：已就绪
-- **TestFlight** [ready]
-  - 功能介绍：Distribute iOS and macOS beta builds with TestFlight, tester management, and CI/CD automation.
-  - 状态说明：已就绪
-- **ux-qa-gate** [ready]
-  - 功能介绍：Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, component, or flow. Triggers on: finishing a build task, completing a UI change, delivering a web app feature, wrapping up frontend work. Also use when asked to QA this, review the UX, check for usability issues, or run the gate. What it does: (1) Functional completeness check — verifies every button, link, form, and flow works end-to-end, (2) Heuristic review — walks through all 10 Nielsen Norman usability heuristics with a detailed checklist, (3) State and edge case sweep — checks empty, loading, error, success, partial, overflow, and auth states, (4) Interaction and responsiveness — verifies clickability, keyboard access, and responsive layout, (5) Severity classification — blockers and major issues fixed before delivery, minor items noted. Catches missing functionality, broken flows, empty states, and usability problems before the user sees them.
-  - 状态说明：已就绪
-- **web-screenshot** [ready]
-  - 功能介绍：🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。
-  - 状态说明：已就绪
-- **webperf-core-web-vitals** [ready]
-  - 功能介绍：Intelligent Core Web Vitals analysis with automated workflows and decision trees. Measures LCP, CLS, INP with guided debugging that automatically determines follow-up analysis based on results. Includes workflows for LCP deep dive (5 phases), CLS investigation (loading vs interaction), INP debugging (latency breakdown + attribution), and cross-skill integration with loading, interaction, and media skills. Use when the user asks about Core Web Vitals, LCP optimization, layout shifts, or interaction responsiveness. Compatible with Chrome DevTools MCP.
-  - 状态说明：已就绪
-- **website-seo** [ready]
-  - 功能介绍：Complete on-page SEO system for any website — page optimization, schema markup, technical SEO checklist, internal linking strategy, Core Web Vitals guidance, and AI-driven content gap analysis. Works for any CMS (WordPress, Webflow, Squarespace, custom).
-  - 状态说明：已就绪
-
-### 开发 / GitHub / Agent 工具（18 个，ready 18 / total 18）
-
-- **agent-browser** [ready]
-  - 功能介绍：网页自动化与数据抓取，适合打开网站、填表、点击、截图、采集。
-  - 状态说明：已就绪
-- **Capability Evolver** [ready]
-  - 功能介绍：分析运行日志和失败模式，生成能力优化与演进建议。
-  - 状态说明：已就绪
-- **clawhub** [ready]
-  - 功能介绍：Use the ClawHub CLI to search, install, update, and publish agent skills from clawhub.com. Use when you need to fetch new skills on the fly, sync installed skills to latest or a specific version, or publish new/updated skill folders with the npm-installed clawhub CLI.
-  - 状态说明：已就绪
-- **coding-agent** [ready]
-  - 功能介绍：通用编码代理，封装 Codex、Claude Code、OpenCode 等工具，适合构建功能、重构、修 Bug、代码审查和迭代式编码。
-  - 状态说明：已就绪
-- **deerflow-super-agent-harness** [ready]
-  - 功能介绍：安装和配置 DeerFlow 2.0 超级代理框架，用于多代理、记忆、沙箱和复杂任务编排。
-  - 状态说明：已就绪
-- **find-skills** [ready]
-  - 功能介绍：智能搜索和发现可安装 skill，适合找能力、找插件、找扩展。
-  - 状态说明：已就绪
-- **gemini** [ready]
-  - 功能介绍：Gemini CLI for one-shot Q&A, summaries, and generation.
-  - 状态说明：已就绪
-- **gh-issues** [ready]
-  - 功能介绍：Fetch GitHub issues, spawn sub-agents to implement fixes and open PRs, then monitor and address PR review comments. Usage: /gh-issues [owner/repo] [--label bug] [--limit 5] [--milestone v1.0] [--assignee @me] [--fork user/repo] [--watch] [--interval 5] [--reviews-only] [--cron] [--dry-run] [--model glm-5] [--notify-channel -1002381931352]
-  - 状态说明：已就绪
-- **github** [ready]
-  - 功能介绍：通过 gh CLI 管理仓库、PR、Issue、Actions 等 GitHub 工作流。
-  - 状态说明：已就绪
-- **GitHub Actions** [ready]
-  - 功能介绍：Design, debug, and harden GitHub Actions workflows with reusable pipelines, safe permissions, and faster CI and release automation.
-  - 状态说明：已就绪
-- **kubectl-skill** [ready]
-  - 功能介绍：Execute and manage Kubernetes clusters via kubectl commands. Query resources, deploy applications, debug containers, manage configurations, and monitor cluster health. Use when working with Kubernetes clusters, containers, deployments, or pod diagnostics.
-  - 状态说明：已就绪
-- **log-analyzer** [ready]
-  - 功能介绍：Intelligent log analysis tool for monitoring cron jobs, detecting errors, analyzing patterns, and generating reports. Supports automatic error detection, log aggregation, and Discord notifications.
-  - 状态说明：已就绪
-- **self-improving-agent-skill** [ready]
-  - 功能介绍：让 Agent 从经验中学习，沉淀改进点，持续优化表现。
-  - 状态说明：已就绪
-- **session-logs** [ready]
-  - 功能介绍：Search and analyze your own session logs (older/parent conversations) using jq.
-  - 状态说明：已就绪
-- **skill-creator** [ready]
-  - 功能介绍：用于新建或改造 OpenClaw skill，帮助定制专属能力。
-  - 状态说明：已就绪
-- **skill-vetter** [ready]
-  - 功能介绍：安装前安全扫描 skill，检查权限范围、可疑行为和风险信号。
-  - 状态说明：已就绪
-- **sql-toolkit** [ready]
-  - 功能介绍：Query, design, migrate, and optimize SQL databases. Use when working with SQLite, PostgreSQL, or MySQL — schema design, writing queries, creating migrations, indexing, backup/restore, and debugging slow queries. No ORMs required.
-  - 状态说明：已就绪
-- **tmux** [ready]
-  - 功能介绍：Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.
-  - 状态说明：已就绪
-
-### 文档 / 知识库 / 媒体内容（19 个，ready 17 / total 19）
-
-- **feishu-doc** [ready]
-  - 功能介绍：Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.
-  - 状态说明：已就绪
-- **feishu-drive** [ready]
-  - 功能介绍：Feishu cloud storage file management. Activate when user mentions cloud space, folders, drive.
-  - 状态说明：已就绪
-- **feishu-perm** [ready]
-  - 功能介绍：Feishu permission management for documents and files. Activate when user mentions sharing, permissions, collaborators.
-  - 状态说明：已就绪
-- **feishu-wiki** [ready]
-  - 功能介绍：Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links.
-  - 状态说明：已就绪
-- **gifgrep** [needs setup]
-  - 功能介绍：Search GIF providers with CLI/TUI, download results, and extract stills/sheets.
-  - 状态说明：缺少命令: gifgrep
-- **html-to-pdf** [ready]
-  - 功能介绍：Convert HTML files and URLs to PDF using Puppeteer. Use when a user needs to convert HTML documents, web pages, or reports to PDF format with custom formatting options (margins, page size, orientation, headers/footers).
-  - 状态说明：已就绪
-- **Image Editing** [ready]
-  - 功能介绍：Edit images with AI inpainting, outpainting, background removal, upscaling, and restoration tools.
-  - 状态说明：已就绪
-- **lh-video-gen** [ready]
-  - 功能介绍：Generate vertical short videos (9:16) from a Markdown script. Parses script sections, generates TTS audio, renders subtitle cards, and composites into MP4 with FFmpeg.
-  - 状态说明：已就绪
-- **nano-pdf** [ready]
-  - 功能介绍：Edit PDFs with natural-language instructions using the nano-pdf CLI.
-  - 状态说明：已就绪
-- **openai-whisper** [ready]
-  - 功能介绍：Local speech-to-text with the Whisper CLI (no API key).
-  - 状态说明：已就绪
-- **openai-whisper-api** [needs setup]
-  - 功能介绍：Transcribe audio via OpenAI Audio Transcriptions API (Whisper).
-  - 状态说明：缺少环境变量: OPENAI_API_KEY
-- **openclaw-slides** [ready]
-  - 功能介绍：Create stunning, animation-rich HTML presentations from scratch or convert PowerPoint files (.ppt/.pptx) to beautiful web slides. Use when the user wants to build a pitch deck, presentation, slideshow, or slide deck — or convert an existing PPT to a web presentation. Generates zero-dependency single HTML files with keyboard/touch navigation and scroll-triggered animations. Style options include Neon Cyber, Bold Signal, Swiss Modern, Paper & Ink, and 8 more curated presets.
-  - 状态说明：已就绪
-- **pdf** [ready]
-  - 功能介绍：Create, read, edit, merge, split PDF files. Supports text extraction, table extraction, form filling, watermarks, OCR, and HTML-to-PDF conversion.
-  - 状态说明：已就绪
-- **Powerpoint / PPTX** [ready]
-  - 功能介绍：Create, inspect, and edit Microsoft PowerPoint presentations and PPTX decks with reliable layouts, templates, placeholders, notes, charts, and visual QA. Use when (1) the task is about PowerPoint or `.pptx`; (2) layouts, placeholders, notes, charts, comments, or template fidelity matter; (3) the deck must render cleanly after edits.
-  - 状态说明：已就绪
-- **pptx-generator** [ready]
-  - 功能介绍：专业PPT生成器。Use when user wants to create editable PowerPoint presentations with professional layouts, multiple styles, and beautiful designs. Supports business, academic, creative styles. 可编辑PPT、幻灯片制作、演示文稿。
-  - 状态说明：已就绪
-- **summarize** [ready]
-  - 功能介绍：总结网页、文件、PDF、图片、音频、YouTube 等长内容。
-  - 状态说明：已就绪
-- **video-frames** [ready]
-  - 功能介绍：Extract frames or short clips from videos using ffmpeg.
-  - 状态说明：已就绪
-- **video-gif-converter** [ready]
-  - 功能介绍：Convert short video moments into GIF-friendly snippets for demos, support, product walkthroughs, and social sharing. Use when a team needs lightweight motion previews instead of full video files.
-  - 状态说明：已就绪
-- **video-stitcher** [ready]
-  - 功能介绍：视频片段拼接和后期处理。输入视频片段列表，输出完整视频。支持转场效果、背景音乐、字幕叠加。底层使用 FFmpeg 或 Remotion。触发词：拼接视频、合并视频、视频剪辑、video stitch、concatenate videos、add transitions。
-  - 状态说明：已就绪
-
-### 安全 / 基础设施 / 运维观测（33 个，ready 30 / total 33）
-
-- **1password** [ready]
-  - 功能介绍：Set up and use 1Password CLI (op). Use when installing the CLI, enabling desktop app integration, signing in (single or multi-account), or reading/injecting/running secrets via op.
-  - 状态说明：已就绪
-- **aws-infra** [ready]
-  - 功能介绍：Chat-based AWS infrastructure assistance using AWS CLI and console context. Use for querying, auditing, and monitoring AWS resources (EC2, S3, IAM, Lambda, ECS/EKS, RDS, CloudWatch, billing, etc.), and for proposing safe changes with explicit confirmation before any write/destructive action.
-  - 状态说明：已就绪
-- **CI-CD** [ready]
-  - 功能介绍：Automate builds, tests, and deployments across web, mobile, and backend applications.
-  - 状态说明：已就绪
-- **cicd-pipeline** [ready]
-  - 功能介绍：Create, debug, and manage CI/CD pipelines with GitHub Actions. Use when the user needs to set up automated testing, deployment, releases, or workflows. Covers workflow syntax, common patterns, secrets management, caching, matrix builds, and troubleshooting.
-  - 状态说明：已就绪
-- **cloudflare** [needs setup]
-  - 功能介绍：Manage Cloudflare domains, DNS records, SSL settings, zone configuration, firewall rules, tunnels, and analytics via the Cloudflare API. Use when the user asks to set up a domain, add/edit/delete DNS records, configure SSL, check zone settings, manage Cloudflare Tunnels, view analytics, or any Cloudflare account management task.
-  - 状态说明：缺少环境变量: CLOUDFLARE_API_TOKEN
-- **cloudflare-tunnel** [ready]
-  - 功能介绍：Create and manage secure Cloudflare Tunnels using cloudflared. Expose local services to the internet safely, configure DNS routing, set up zero-trust access controls, and manage tunnel authentication without opening firewall ports.
-  - 状态说明：已就绪
-- **db-readonly** [ready]
-  - 功能介绍：Run safe read-only queries against MySQL or PostgreSQL for data inspection, reporting, and troubleshooting. Use when the user asks to read tables, inspect schema, count rows, sample data, or export query results without modifying data.
-  - 状态说明：已就绪
-- **docker** [needs setup]
-  - 功能介绍：Installs and uses Docker reliably with official docs. Use when installing Docker (Desktop or Engine), building or running containers, writing Dockerfiles, using docker compose, or when the user asks about containers, images, or Docker CLI.
-  - 状态说明：至少需要一个命令: docker
-- **Docker Compose** [ready]
-  - 功能介绍：Define multi-container applications with proper dependency handling, networking, and volume management.
-  - 状态说明：已就绪
-- **Docker Pro Diagnostic** [ready]
-  - 功能介绍：Advanced log analysis for Docker containers using signal extraction.
-  - 状态说明：已就绪
-- **grafana** [ready]
-  - 功能介绍：Grafana API integration with managed authentication. Manage dashboards, data sources, folders, annotations, alerts, and teams.Use this skill when users want to interact with Grafana for monitoring, visualization, and observability.For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).
-  - 状态说明：已就绪
-- **grafana-lens** [needs setup]
-  - 功能介绍：Grafana tools for data visualization, monitoring, alerting, security, and SRE investigation. Use grafana_query, grafana_query_logs, grafana_query_traces, grafana_create_dashboard, grafana_update_dashboard, grafana_create_alert, grafana_share_dashboard, grafana_annotate, grafana_explore_datasources, grafana_list_metrics, grafana_search, grafana_get_dashboard, grafana_check_alerts, grafana_push_metrics, grafana_explain_metric, grafana_security_check, and grafana_investigate. Trigger when asked about metrics, dashboards, monitoring, alerts, costs, token usage, data visualization, PromQL, Prometheus, LogQL, Loki, log queries, error logs, log search, TraceQL, Tempo, traces, distributed tracing, span search, find slow traces, debug session traces, annotations, deployments, sharing charts, investigating alert notifications, pushing custom data (calendar, git, fitness, finance) to Grafana for visualization, pushing historical data, backfilling metrics, recording past data with timestamps, modifying dashboards, adding panels, removing panels, changing dashboard settings, updating dashboard time range, explain metric, metric trend, what is this metric, how has this changed, is this metric normal, why did my bill spike, cost visibility, security monitoring, security check, security audit, am I being attacked, is my agent compromised, suspicious activity, threat detection, prompt injection detection, set up security alerts, investigate, debug, triage, root cause, what's wrong, why is X broken, anomaly detection, RED method, USE method, alert fatigue, postmortem, incident summary.
-  - 状态说明：缺少配置: grafana.url, grafana.apiKey
-- **healthcheck** [ready]
-  - 功能介绍：Host security hardening and risk-tolerance configuration for OpenClaw deployments. Use when a user asks for security audits, firewall/SSH/update hardening, risk posture, exposure review, OpenClaw cron scheduling for periodic checks, or version status checks on a machine running OpenClaw (laptop, workstation, Pi, VPS).
-  - 状态说明：已就绪
-- **helm** [ready]
-  - 功能介绍：Create, lint, template, and package Kubernetes Helm charts with checks. Use when scaffolding charts, linting templates, or packaging chart releases.
-  - 状态说明：已就绪
-- **initial-traefik** [ready]
-  - 功能介绍：Initialize and configure Traefik reverse proxy with Docker. Install Traefik, configure Docker Compose, set up service routing via path prefix or host-based routing, enable features like dashboard metrics logging tracing, configure Dashboard access via nip.io or path prefix
-  - 状态说明：已就绪
-- **jenkins** [ready]
-  - 功能介绍：Interact with Jenkins CI/CD server via REST API. Use when you need to trigger builds, check build status, view console output, manage jobs, or monitor Jenkins nodes and queue. Supports deployment to different Jenkins instances via environment variables.
-  - 状态说明：已就绪
-- **kafka** [ready]
-  - 功能介绍：Produce, consume, and manage Kafka topics with lag monitoring and data export. Use when publishing messages, consuming topics, monitoring consumer lag.
-  - 状态说明：已就绪
-- **kibana** [ready]
-  - 功能介绍：Kibana API integration with managed authentication. Manage saved objects, dashboards, data views, spaces, alerts, and fleet.Use this skill when users want to interact with Kibana for observability, security, and search analytics.For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).
-  - 状态说明：已就绪
-- **Kubernetes** [ready]
-  - 功能介绍：Avoid common Kubernetes mistakes — resource limits, probe configuration, selector mismatches, and RBAC pitfalls.
-  - 状态说明：已就绪
-- **kubernetes-devops** [ready]
-  - 功能介绍：WHAT: Kubernetes manifest generation - Deployments, StatefulSets, CronJobs, Services, Ingresses, ConfigMaps, Secrets, and PVCs with production-grade security and health checks.WHEN: User needs to create K8s manifests, deploy containers, configure Services/Ingress, manage ConfigMaps/Secrets, set up persistent storage, or organize multi-environment configs.KEYWORDS: kubernetes, k8s, manifest, deployment, statefulset, cronjob, service, ingress, configmap, secret, pvc, pod, container, yaml, kustomize, helm, namespace, probe, security context
-  - 状态说明：已就绪
-- **logging-observability** [ready]
-  - 功能介绍：Structured logging, distributed tracing, and metrics collection patterns for building observable systems. Use when implementing logging infrastructure, setting up distributed tracing with OpenTelemetry, designing metrics collection (RED/USE methods), configuring alerting and dashboards, or reviewing observability practices. Covers structured JSON logging, context propagation, trace sampling, Prometheus/Grafana stack, alert design, and PII/secret scrubbing.
-  - 状态说明：已就绪
-- **Monitoring** [ready]
-  - 功能介绍：Set up observability for applications and infrastructure with metrics, logs, traces, and alerts.
-  - 状态说明：已就绪
-- **mqtt-client** [ready]
-  - 功能介绍：This is a simple client for connecting to an mqtt instance
-  - 状态说明：已就绪
-- **Nginx** [ready]
-  - 功能介绍：Configure Nginx for reverse proxy, load balancing, SSL termination, and high-performance static serving.
-  - 状态说明：已就绪
-- **node-connect** [ready]
-  - 功能介绍：Diagnose OpenClaw node connection and pairing failures for Android, iOS, and macOS companion apps. Use when QR/setup code/manual connect fails, local Wi-Fi works but VPS/tailnet does not, or errors mention pairing required, unauthorized, bootstrap token invalid or expired, gateway.bind, gateway.remote.url, Tailscale, or plugins.entries.device-pair.config.publicUrl.
-  - 状态说明：已就绪
-- **postgres** [ready]
-  - 功能介绍：PostgreSQL database management and optimization assistant. Provides complete database operation capabilities: health checks, index optimization, query plan analysis, schema queries, SQL execution.Use this skill when users mention PostgreSQL, Postgres, database optimization, index tuning, query performance, database health checks, or any PostgreSQL-related operations.
-  - 状态说明：已就绪
-- **prometheus** [ready]
-  - 功能介绍：Query Prometheus monitoring data to check server metrics, resource usage, and system health. Use when the user asks about server status, disk space, CPU/memory usage, network stats, or any metrics collected by Prometheus. Supports multiple Prometheus instances with aggregated queries, config file or environment variables, and HTTP Basic Auth.
-  - 状态说明：已就绪
-- **rabbitmq-client-guide** [ready]
-  - 功能介绍：RabbitMQ 客户端代码指南。当用户需要编写、调试或审查 RabbitMQ 应用代码时使用。涵盖：用任意语言（Java/Go/Python/PHP/.NET）写生产者或消费者；排查连接暴增、消息丢失、Broken pipe、消费慢、漏消费等客户端问题；审查 spring-boot-starter-amqp、amqp091-go、pika、php-amqplib 等库的代码；实现 RPC 模式、confirm、手动 ack、prefetch 调优、连接复用、重连机制。用户贴了 RabbitMQ 相关代码片段或描述了客户端侧的消息异常时，始终触发此技能。不适用于 RabbitMQ 服务端运维部署、Kafka 等其他消息系统、或纯架构设计问题。
-  - 状态说明：已就绪
-- **system_resource_monitor** [ready]
-  - 功能介绍：A clean, reliable system resource monitor for CPU load, RAM, Swap, and Disk usage. Optimized for OpenClaw.
-  - 状态说明：已就绪
-- **tcpdump** [ready]
-  - 功能介绍：Tcpdump reference tool. Use when working with tcpdump in devtools contexts.
-  - 状态说明：已就绪
-- **terraform-iac** [ready]
-  - 功能介绍：Deep Terraform/IaC workflow—module boundaries, state, workspaces, plan/apply safety, drift, secrets, CI integration, and team governance. Use when building infra as code, refactoring modules, or debugging state issues.
-  - 状态说明：已就绪
-- **Traefik** [ready]
-  - 功能介绍：Avoid common Traefik mistakes — router priority, TLS configuration, Docker labels syntax, and middleware ordering.
-  - 状态说明：已就绪
-- **Wireshark Network Traffic Analysis** [ready]
-  - 功能介绍：Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troubleshoot connectivity, and perform forensic PCAP analysis.
-  - 状态说明：已就绪
-
-### 协作 / 项目 / 工作流（12 个，ready 5 / total 12）
-
-- **bluebubbles** [needs setup]
-  - 功能介绍：Use when you need to send or manage iMessages via BlueBubbles (recommended iMessage integration). Calls go through the generic message tool with channel="bluebubbles".
-  - 状态说明：缺少配置: channels.bluebubbles
-- **confluence** [needs setup]
-  - 功能介绍：Read and write Confluence Cloud pages — search, create, update, manage labels. Use when user mentions Confluence, wiki, documentation, pages, or knowledge base.
-  - 状态说明：缺少环境变量: ATLASSIAN_URL, ATLASSIAN_EMAIL, ATLASSIAN_API_TOKEN
-- **daily-report-writer** [ready]
-  - 功能介绍：根据输入生成日报 Markdown 草稿并写入 reports 目录
-  - 状态说明：已就绪
-- **discord** [needs setup]
-  - 功能介绍：Discord ops via the message tool (channel=discord).
-  - 状态说明：缺少配置: channels.discord.token
-- **GitLab** [ready]
-  - 功能介绍：Avoid common GitLab CI/CD mistakes — rules gotchas, silent failures, and YAML merge traps.
-  - 状态说明：已就绪
-- **himalaya** [needs setup]
-  - 功能介绍：CLI to manage emails via IMAP/SMTP. Use `himalaya` to list, read, write, reply, forward, search, and organize emails from the terminal. Supports multiple accounts and message composition with MML (MIME Meta Language).
-  - 状态说明：缺少命令: himalaya
-- **imsg** [needs setup]
-  - 功能介绍：iMessage/SMS CLI for listing chats, history, and sending messages via Messages.app.
-  - 状态说明：缺少命令: imsg
-- **jira** [ready]
-  - 功能介绍：Use when the user mentions Jira issues (e.g., "PROJ-123"), asks about tickets, wants to create/view/update issues, check sprint status, or manage their Jira workflow. Triggers on keywords like "jira", "issue", "ticket", "sprint", "backlog", or issue key patterns.
-  - 状态说明：已就绪
-- **linear** [ready]
-  - 功能介绍：Query and manage Linear issues, projects, and team workflows.
-  - 状态说明：已就绪
-- **slack** [needs setup]
-  - 功能介绍：Use when you need to control Slack from OpenClaw via the slack tool, including reacting to messages or pinning/unpinning items in Slack channels or DMs.
-  - 状态说明：缺少配置: channels.slack
-- **wacli** [needs setup]
-  - 功能介绍：Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).
-  - 状态说明：缺少命令: wacli
-- **weekly-report-writer** [ready]
-  - 功能介绍：用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。
-  - 状态说明：已就绪
-
-### 移动 / 设备 / 终端（3 个，ready 3 / total 3）
-
-- **android-automation** [ready]
-  - 功能介绍：Control Android devices via ADB with support for UI layout analysis (uiautomator) and visual feedback (screencap). Use when you need to interact with Android apps, perform UI automation, take screenshots, or run complex ADB command sequences.
-  - 状态说明：已就绪
-- **android-device-automation** [ready]
-  - 功能介绍：Vision-driven Android device automation using Midscene. Operates entirely from screenshots — no DOM or accessibility labels required. Can interact with all visible elements on screen regardless of technology stack. Control Android devices with natural language commands via ADB. Perform taps, swipes, text input, app launches, screenshots, and more.Trigger keywords: android, phone, mobile app, tap, swipe, install app, open app on phone, android device, mobile automation, adb, launch app, mobile screenPowered by Midscene.js (https://midscenejs.com)
-  - 状态说明：已就绪
-- **fastlane** [ready]
-  - 功能介绍：iOS/macOS app automation — builds, signing, TestFlight, App Store via CLI
-  - 状态说明：已就绪
-
-### 搜索 / 生活 / 通用工具（3 个，ready 1 / total 3）
-
-- **baidu-web-search** [needs setup]
-  - 功能介绍：基于百度搜索进行实时中文网页检索。
-  - 状态说明：缺少环境变量: BAIDU_API_KEY
-- **goplaces** [needs setup]
-  - 功能介绍：Query Google Places API (New) via the goplaces CLI for text search, place details, resolve, and reviews. Use for human-friendly place lookup or JSON output for scripts.
-  - 状态说明：缺少环境变量: GOOGLE_PLACES_API_KEY
-- **weather** [ready]
-  - 功能介绍：Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.
-  - 状态说明：已就绪
-
-### 其他（32 个，ready 5 / total 32）
-
-- **API Mock Server Generator** [ready]
-  - 功能介绍：Generates mock API servers from OpenAPI specs or examples. Realistic fake data, configurable delays, error simulation.
-  - 状态说明：已就绪
-- **apple-notes** [needs setup]
-  - 功能介绍：Manage Apple Notes via the `memo` CLI on macOS (create, view, edit, delete, search, move, and export notes). Use when a user asks OpenClaw to add a note, list notes, search notes, or manage note folders.
-  - 状态说明：缺少命令: memo
-- **apple-reminders** [needs setup]
-  - 功能介绍：Manage Apple Reminders via remindctl CLI (list, add, edit, complete, delete). Supports lists, date filters, and JSON/plain output.
-  - 状态说明：缺少命令: remindctl
-- **automate-excel** [ready]
-  - 功能介绍：Automates reading, writing, merging, transforming, and validating Excel (.xlsx/.xls) files. Use when the user works with spreadsheets, .xlsx files, Excel data, CSV-to-Excel conversion, batch Excel processing, or report generation from tables.
-  - 状态说明：已就绪
-- **bear-notes** [needs setup]
-  - 功能介绍：Create, search, and manage Bear notes via grizzly CLI.
-  - 状态说明：缺少命令: grizzly
-- **blogwatcher** [needs setup]
-  - 功能介绍：Monitor blogs and RSS/Atom feeds for updates using the blogwatcher CLI.
-  - 状态说明：缺少命令: blogwatcher
-- **blucli** [needs setup]
-  - 功能介绍：BluOS CLI (blu) for discovery, playback, grouping, and volume.
-  - 状态说明：缺少命令: blu
-- **camsnap** [needs setup]
-  - 功能介绍：Capture frames or clips from RTSP/ONVIF cameras.
-  - 状态说明：缺少命令: camsnap
-- **crash-fixer** [needs setup]
-  - 功能介绍：Autonomous crash analysis and bug fixing. Monitors crash reports from Cloudflare D1, deduplicates, analyzes with Codex 5.3 High, generates fixes, and creates PRs. Usage: /crash-fixer [--hours 24] [--limit 5] [--dry-run]
-  - 状态说明：缺少环境变量: GH_TOKEN, CRASH_REPORTER_API_KEY, CRASH_REPORTER_URL, TARGET_REPO
-- **eightctl** [needs setup]
-  - 功能介绍：Control Eight Sleep pods (status, temperature, alarms, schedules).
-  - 状态说明：缺少命令: eightctl
-- **Excel / XLSX** [ready]
-  - 功能介绍：Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits.
-  - 状态说明：已就绪
-- **gog** [needs setup]
-  - 功能介绍：Google Workspace CLI for Gmail, Calendar, Drive, Contacts, Sheets, and Docs.
-  - 状态说明：缺少命令: gog
-- **incident-fupan** [ready]
-  - 功能介绍：事故复盘 / Incident Fupan — structured root cause analysis for production failures, outages, bugs, and near-misses. Use when: (1) 事故复盘 or incident review is needed, (2) a production incident just happened and needs root cause analysis, (3) an agent made a costly mistake and you want to prevent recurrence, (4) building safety rules or kill switches from incident patterns. Triggers on: 复盘, fupan, postmortem, incident review, root cause analysis, 事故分析. Generates a full report with timeline, 5 Whys root cause, impact assessment, fix/prevention actions, and new defensive rules. NOT for: routine debugging, feature planning, or non-incident analysis.
-  - 状态说明：已就绪
-- **mantis-manager** [needs setup]
-  - 功能介绍：Manage Mantis Bug Tracker (issues, projects, users, filters, configs) via the official Mantis REST API. Supports full CRUD operations on issues, projects, users, attachments, notes, tags, relationships, and configuration management. Features dynamic instance switching with context-aware base URL and token resolution.
-  - 状态说明：缺少环境变量: MANTIS_BASE_URL, MANTIS_API_TOKEN
-- **mcporter** [needs setup]
-  - 功能介绍：Use the mcporter CLI to list, configure, auth, and call MCP servers/tools directly (HTTP or stdio), including ad-hoc servers, config edits, and CLI/type generation.
-  - 状态说明：缺少命令: mcporter
-- **model-usage** [needs setup]
-  - 功能介绍：Use CodexBar CLI local cost usage to summarize per-model usage for Codex or Claude, including the current (most recent) model or a full model breakdown. Trigger when asked for model-level usage/cost data from codexbar, or when you need a scriptable per-model summary from codexbar cost JSON.
-  - 状态说明：缺少命令: codexbar
-- **notion** [needs setup]
-  - 功能介绍：Notion API for creating and managing pages, databases, and blocks.
-  - 状态说明：缺少环境变量: NOTION_API_KEY
-- **obsidian** [needs setup]
-  - 功能介绍：Work with Obsidian vaults (plain Markdown notes) and automate via obsidian-cli.
-  - 状态说明：缺少命令: obsidian-cli
-- **openhue** [needs setup]
-  - 功能介绍：Control Philips Hue lights and scenes via the OpenHue CLI.
-  - 状态说明：缺少命令: openhue
-- **oracle** [needs setup]
-  - 功能介绍：Best practices for using the oracle CLI (prompt + file bundling, engines, sessions, and file attachment patterns).
-  - 状态说明：缺少命令: oracle
-- **ordercli** [needs setup]
-  - 功能介绍：Foodora-only CLI for checking past orders and active order status (Deliveroo WIP).
-  - 状态说明：缺少命令: ordercli
-- **peekaboo** [ready]
-  - 功能介绍：Capture and automate macOS UI with the Peekaboo CLI.
-  - 状态说明：已就绪
-- **promql-cli** [needs setup]
-  - 功能介绍：CLI for querying Prometheus and PromQL-compatible engines (Thanos, Cortex, VictoriaMetrics, Grafana Mimir, Grafana Tempo...) — instant queries, range queries, metric discovery (metrics/labels/meta subcommands), output formats (table/csv/json/graph). Apply when executing PromQL queries, troubleshooting performance issues on a software having observability, investigating latency/error rates/saturation, or analyzing time series data.
-  - 状态说明：缺少命令: promql
-- **sag** [needs setup]
-  - 功能介绍：ElevenLabs text-to-speech with mac-style say UX.
-  - 状态说明：缺少命令: sag；缺少环境变量: ELEVENLABS_API_KEY
-- **sherpa-onnx-tts** [needs setup]
-  - 功能介绍：Local text-to-speech via sherpa-onnx (offline, no cloud)
-  - 状态说明：缺少环境变量: SHERPA_ONNX_RUNTIME_DIR, SHERPA_ONNX_MODEL_DIR
-- **songsee** [needs setup]
-  - 功能介绍：Generate spectrograms and feature-panel visualizations from audio with the songsee CLI.
-  - 状态说明：缺少命令: songsee
-- **sonoscli** [needs setup]
-  - 功能介绍：Control Sonos speakers (discover/status/play/volume/group).
-  - 状态说明：缺少命令: sonos
-- **spotify-player** [needs setup]
-  - 功能介绍：Terminal Spotify playback/search via spogo (preferred) or spotify_player.
-  - 状态说明：至少需要一个命令: spogo, spotify_player
-- **things-mac** [needs setup]
-  - 功能介绍：Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database). Use when a user asks OpenClaw to add a task to Things, list inbox/today/upcoming, search tasks, or inspect projects/areas/tags.
-  - 状态说明：缺少命令: things
-- **trello** [needs setup]
-  - 功能介绍：Manage Trello boards, lists, and cards via the Trello REST API.
-  - 状态说明：缺少环境变量: TRELLO_API_KEY, TRELLO_TOKEN
-- **voice-call** [needs setup]
-  - 功能介绍：Start voice calls via the OpenClaw voice-call plugin.
-  - 状态说明：缺少配置: plugins.entries.voice-call.enabled
-- **xurl** [needs setup]
-  - 功能介绍：A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, manage followers, send DMs, upload media, or interact with any X API v2 endpoint.
-  - 状态说明：缺少命令: xurl
+📌 一、GitHub 官方地址及核心清单入口
+以下为所有 Skills 资源的官方入口，可直接点击访问、下载及查阅，统一管理，便捷高效。
+- 🔗 GitHub 主页链接：https://github.com/QA19816-glitch/QA-agent（核心入口，包含所有技能资源汇总）
+- 🧪 测试专项清单链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/SOFTWARE_TESTING_SPECIALTIES.md（聚焦测试领域专项技能）
+- 🌐 非测试专项清单链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/NON_TESTING_SPECIALTIES.md（覆盖装机及通用技术能力）
+- ✅ 建议安装 Skills 清单链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ESSENTIAL_SETUP_SKILLS.md（通用环境适配，推荐优先安装）
+- 📋 全局总清单 Skills 链接：https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ALL_SKILLS.md（全量技能汇总，全面查阅）
+🧪 二、软件测试专项 Skills 清单
+聚焦软件测试全流程，覆盖需求分析、功能测试、接口测试、自动化测试等核心场景，助力测试团队提升效率、保障产品质量。
+1. 需求分析 / 测试设计 / 用例 / 追踪 / 报告
+- qa-prd-analyzer：深度分析 PRD、需求文档及产品变更说明，自动拆解业务流程、识别核心功能点、排查需求歧义及潜在测试风险，推动测试工作前置，提升需求评审效率。
+- qa-test-point-extractor：从需求文档、业务流程、接口文档中精准提取可执行测试点，全面覆盖正常流程、异常场景、边界值、权限控制及状态流转，确保测试覆盖无遗漏。
+- qa-testcase-writer：将提取的测试点规范化整理为标准测试用例，明确前置条件、执行步骤、预期结果及优先级，可直接用于测试执行及文档输出，规范测试流程。
+- qa-traceability-mapper：建立需求、测试点、测试用例、执行结果、缺陷之间的全链路追踪关系，实现需求覆盖率统计及测试闭环管理，便于项目复盘及质量追溯。
+- qa-test-data-factory：按需设计并生成多元化测试数据，涵盖边界数据、脏数据、权限数据、状态流转数据及接口入参数据等，满足各类测试场景的数据需求。
+- qa-test-report-generator：自动汇总测试范围、用例通过率、失败项、缺陷统计、风险评估及发布建议，生成标准化测试报告，减少人工整理成本，提升汇报效率。
+- qa-regression-planner：根据需求变更、受影响模块及依赖关系，智能规划回归测试范围，精准规避回归测试冗余或漏测问题，提升回归测试效率。
+- qa-release-gate-checker：版本上线前开展质量门禁检查，从缺陷状态、用例通过率、风险级别、未关闭问题等多维度评估，判断版本是否具备上线条件，保障上线质量。
+2. 功能测试 / 冒烟测试 / 回归测试 / 巡检
+- qa：系统化开展 Web 应用 QA 测试，全面检查页面功能、核心业务路径及基础交互场景，适用于线上产品质量常态化检查。
+- qa-browser-tester：在真实浏览器环境中自动化执行点击、输入、菜单切换、表单提交等操作，模拟用户真实使用场景，提升功能测试真实性及效率。
+- qa-patrol：本地浏览器自动化测试工具，无需依赖外部云端执行环境，适用于冒烟测试、日常巡检及基础回归测试，便捷高效。
+- Test Generator：自动生成单元测试、集成测试、E2E 测试脚本，助力研发及测试开发人员快速补齐测试覆盖，提升代码质量。
+- test-master：聚焦测试架构与策略设计，可协助制定测试方案、自动化测试策略、性能测试策略及安全测试策略，规范测试体系。
+- test-patterns：沉淀行业通用测试设计模式，统一团队测试用例写法、组织方式及最佳实践，提升测试团队协作效率。
+- test-sentinel：全流程自动化测试工具，可自动编写测试用例、执行测试、运行 lint 检查、识别测试失败原因，并尝试自动修复常见问题，降低测试成本。
+- ux-qa-gate：从 UI/UX 质量视角开展交付前检查，验证页面布局、边界状态、按钮文案、交互一致性及用户体验细节，保障产品体验质量。
+3. 接口测试 / API 测试 / 合同测试 / Mock
+- qa-api-runner：高效执行 API 冒烟测试、回归测试及异常测试，精准检查接口状态码、响应结构、鉴权逻辑、错误处理及断言结果，保障接口稳定性。
+- APITester Agent-Driven API Testing：支持通过自然语言描述接口测试场景，自动生成并执行 API 测试用例，适用于快速验证接口功能，降低测试门槛。
+- API Mock Server Generator：根据 OpenAPI 规范或接口示例，快速生成 Mock API 服务，助力前后端联调、产品演示及测试工作提前开展，提升协作效率。
+- openapi-spec：规范化设计与维护 OpenAPI 规范，统一接口文档、schema 定义、鉴权方案、错误码及代码生成流程，实现接口标准化管理。
+- Postman：集中管理 Postman 集合、环境变量及 Newman 自动化执行脚本，支持团队协作开展接口测试，提升接口测试协同效率。
+4. Web UI / E2E / 浏览器自动化测试
+- qa-web-e2e-runner：执行 Web 端到端测试，自动记录操作步骤、断言测试结果、截取测试截图并生成测试结论，适用于核心业务链路验证。
+- e2e-test-orchestrator：统一编排 Playwright / Cypress 的 E2E 测试执行流程，支持测试脚本修复、失败排查及测试报告生成，规范 E2E 测试体系。
+- e2e-testing：提供 E2E 测试规范、目录结构及实践模式，协助团队建立标准化 E2E 测试体系，提升测试规范性。
+- e2e-testing-patterns：沉淀 Playwright / Cypress 测试最佳实践，重点解决测试不稳定、等待策略优化及 CI 集成等核心问题，提升 E2E 测试可靠性。
+- playwright-browser-automation：通过 Playwright API 实现浏览器自动化，可广泛应用于测试执行、网页抓取、表单操作、截图留存及流程验证等场景。
+- playwright-cli：基于官方 Playwright CLI 执行网页自动化任务，适用于命令行驱动的自动化场景，便捷高效。
+- playwright-mcp：通过 Playwright MCP 实现浏览器自动化，适用于需要与 MCP 工具链衔接的自动化测试场景，提升工具兼容性。
+- playwright-npx：通过 Node + Playwright 脚本执行浏览器操作，适用于临时自动化任务及脚本化测试场景，灵活便捷。
+- playwright-pro：提供全方位 Playwright 迁移、调优、测试报告及反不稳定能力，适用于生产级自动化测试场景，保障测试稳定性。
+- playwright-skill：完整封装 Playwright 浏览器测试工作流，可快速启动网页自动化测试，降低自动化测试门槛。
+- web-screenshot：支持网页整页截图、PDF 导出、页面证据留存，适用于 UI 对比、测试留证及页面归档等场景，提升工作规范性。
+5. APP / 移动端 / 终端测试
+- mobile-appium-test：基于 Appium 实现 Android 真机 UI 自动化测试，精准执行 App 端功能验证，保障移动端产品质量。
+- android-automation：通过 ADB + uiautomator 控制 Android 设备，实现自动点击、截图、界面分析及调试，提升移动端测试效率。
+- android-device-automation：基于截图识别和视觉理解实现 Android 设备自动化，无需依赖 DOM 和无障碍标签，适配更多测试场景。
+- mobile-responsive：检查移动端响应式设计、布局适配、触控体验及不同屏幕尺寸下的可用性，保障移动端用户体验。
+- fastlane：自动化处理 iOS / macOS 应用构建、签名、TestFlight 分发及 App Store 发布等流程，提升移动端研发交付效率。
+- TestFlight：用于 TestFlight 测试包分发、测试人员协作及 beta 测试管理，助力移动端产品灰度测试及问题收集。
+6. 性能 / SEO / 安全 / 埋点测试
+- api-performance-testing：设计并执行接口压测、并发测试、吞吐测试、响应时间分析及性能瓶颈定位，保障接口性能稳定。
+- frontend-performance-audit：分析网页首屏加载性能、资源加载效率、渲染阻塞问题及交互卡顿现象，输出针对性优化建议，提升前端体验。
+- webperf-core-web-vitals：重点分析 LCP、CLS、INP 等 Core Web Vitals 核心指标，全面评估网页体验质量，助力前端优化。
+- Chrome DevTools Auto Analyzer：利用 Lighthouse / DevTools 自动分析网站性能、可访问性、SEO 及最佳实践问题，提升网站整体质量。
+- performance-tuning：聚焦系统级性能调优，协助分析系统延迟、吞吐能力、资源饱和、慢查询及系统瓶颈，提升系统整体性能。
+- seo-optimizer：开展 SEO 全面审计并输出优化方案，涵盖页面结构、关键词布局、技术 SEO 等核心维度，提升网站搜索排名。
+- seo-analyzer：精准分析网页 SEO 问题，包括标题、描述、标签、索引性、结构化数据等，助力优化网页搜索表现。
+- website-seo：提供站点级全面 SEO 工具，覆盖技术 SEO、内链结构、Schema 配置及页面质量评估，全方位提升网站 SEO 能力。
+- security-audit：从代码及基础设施视角开展安全审计，识别潜在安全风险及不安全配置，保障系统安全。
+- security-auditor：检查系统认证机制、权限控制、输入校验、常见漏洞及安全规范符合性，筑牢系统安全防线。
+- security-scanner：自动化执行漏洞扫描及风险排查，适用于版本上线前安全检查，降低安全风险。
+- add-analytics：为系统补充 Google Analytics / GA4 埋点能力，实现用户行为数据采集及分析。
+- analytics-tracking：设计埋点方案、事件模型、转化路径及数据采集规则，规范数据采集流程，提升数据准确性。
+- check-analytics：审计现有埋点实现情况，排查漏埋、错埋、事件缺失及配置异常等问题，保障埋点数据质量。
+- sensors-analytics-tracking：面向神策埋点开展设计、字段命名、事件规范及验收回归测试，确保神策埋点合规有效。
+7. 缺陷管理 / 复盘 / 协同
+- qa-bug-triage：将测试失败结果、截图、日志及问题现象整理为结构化缺陷单，明确缺陷优先级及严重级建议，提升缺陷管理效率。
+- bug-investigation：针对前端缺陷开展复现、定位、调试、假设验证及根因分析，助力快速解决缺陷。
+- jira：高效管理 Jira 工单、迭代计划、缺陷跟踪、backlog 及项目流转，提升团队协作效率。
+- linear：管理 Linear 工单、团队任务及研发协同流程，适配敏捷研发模式，提升协作效率。
+- incident-fupan：用于事故复盘、时间线梳理、根因分析、改进项沉淀及复发预防，提升团队问题解决能力及流程优化水平。
+8. 测试支撑环境 / 数据库 / 日志 / 可观测
+- db-readonly：提供 MySQL / PostgreSQL 只读查询能力，适用于数据校验、问题排查及测试验证，保障数据安全。
+- sql-toolkit：用于 SQL 编写、schema 设计、迁移脚本开发、慢查询优化及数据结构设计，提升数据库操作效率。
+- postgres：面向 PostgreSQL 开展管理、优化、查询计划分析及健康检查，保障数据库稳定运行。
+- grafana：管理 Grafana 面板、数据源、文件夹、注释及告警配置，实现系统监控可视化。
+- grafana-lens：深度分析监控数据、日志、trace、安全事件，助力问题快速排查及根因分析。
+- kibana：开展日志检索、监控视图搭建、异常分析及观测数据查询，提升系统可观测性。
+- prometheus：查询指标数据，检查服务器及服务健康状态，实现系统实时监控。
+- promql-cli：直接执行 PromQL 查询，分析时序指标及趋势变化，助力监控数据分析。
+- log-analyzer：自动分析日志模式、异常事件及定时任务运行问题，输出分析报告，提升日志排查效率。
+- logging-observability：搭建日志、指标、trace、告警一体化可观测体系，提升系统运维效率。
+- system_resource_monitor：实时监控 CPU、内存、Swap、磁盘占用等系统资源，及时发现资源异常。
+- tcpdump：开展网络抓包及网络层问题排查，助力解决网络连接异常问题。
+- Wireshark Network Traffic Analysis：使用 Wireshark / tshark 开展 PCAP 分析、连接排查及流量取证，解决复杂网络问题。
+9. 测试平台 / CI / 环境自动化
+- docker：构建和运行测试所需容器环境，实现环境标准化，提升测试环境一致性。
+- Docker Compose：管理多容器测试环境及依赖服务编排，简化环境部署流程。
+- Docker Pro Diagnostic：分析 Docker 容器日志及运行异常，助力容器问题快速排查。
+- kubectl-skill：通过 kubectl 管理 Kubernetes 集群资源并排障，保障集群稳定运行。
+- Kubernetes：协助规避 Kubernetes 常见配置错误，提升集群配置规范性。
+- kubernetes-devops：生成 Deployment、Service、Ingress、ConfigMap、Secret 等 K8s 配置，提升配置效率。
+- helm：创建、检查、模板化和发布 Helm Chart，简化 Kubernetes 应用部署流程。
+- kafka：处理 Kafka 消息生产、消费、lag 检查及消息流问题，保障消息队列稳定运行。
+- mqtt-client：连接并调试 MQTT 服务和消息链路，保障物联网消息传输稳定。
+- rabbitmq-client-guide：指导 RabbitMQ 客户端开发、连接复用、ack 配置、prefetch 优化及性能调优，提升消息队列使用效率。
+- Nginx：配置反向代理、负载均衡、静态资源服务及 SSL 证书，保障 Web 服务稳定运行。
+- Traefik：配置 Traefik 路由、TLS 及中间件规则，实现服务动态路由管理。
+- initial-traefik：快速初始化 Traefik + Docker 的代理环境，简化环境部署流程。
+- aws-infra：管理 AWS 资源、查询基础设施状态及监控信息，保障云资源稳定运行。
+- cloudflare：管理域名、DNS、SSL、WAF 及 Cloudflare 配置，提升网站安全性及访问速度。
+- cloudflare-tunnel：通过 Cloudflare Tunnel 安全暴露本地服务，无需直接开放端口，提升服务安全性。
+- terraform-iac：编写和管理 Terraform / IaC 模块、状态及变更，实现基础设施即代码，提升基础设施部署效率。
+- GitHub Actions：设计和调试 GitHub Actions 工作流，实现 CI/CD 自动化，提升研发交付效率。
+- GitLab：处理 GitLab CI/CD 配置和流水线问题，适配 GitLab 生态下的研发协同。
+- Jenkins：管理 Jenkins 构建、日志及任务执行，实现自动化构建、测试及部署。
+- CI-CD：统一自动化构建、测试和发布流程，提升研发交付效率及规范性。
+- cicd-pipeline：设计、搭建和调试 CI/CD 流水线，适配不同研发场景，提升流水线稳定性。
+- Monitoring：建设系统监控、日志、trace 和告警机制，提升系统可观测性及运维效率。
+🌐 三、非测试专项 Skills 清单
+覆盖研发、协同、运维、内容创作等全岗位通用技能，适配产品、运营、研发、管理者等不同角色，助力提升全员工作效率。
+1. 开发 / GitHub / Agent 工具
+- agent-browser：网页自动化执行工具，可实现网站打开、内容抓取、截图留存、按钮操作、表单填写及流程自动化，提升网页操作效率。
+- Capability Evolver：分析运行日志、错误模式及历史表现，生成能力优化及自我演进建议，助力工具持续迭代升级。
+- clawhub：Skills 技能市场管理入口，可实现技能搜索、安装、更新及发布，便捷管理各类技能资源。
+- coding-agent：通用编码代理，适用于新功能开发、代码重构、Bug 修复、代码审查及持续迭代，提升开发效率。
+- deerflow-super-agent-harness：用于安装和配置 DeerFlow 2.0，支持多代理协同、长期记忆、沙箱执行及复杂任务编排，适配复杂工作场景。
+- find-skills：技能搜索入口，可快速发现适合当前工作场景的 Skills，降低技能选型成本。
+- gemini：支持通过 Gemini CLI 开展问答、内容生成、总结及辅助处理，提升工作便捷性。
+- gh-issues：从 GitHub 拉取 issue，派生代理修复并跟踪 PR 进度，实现 issue 自动化处理，提升研发协同效率。
+- github：通过 gh CLI 管理 GitHub 仓库、PR、Issue、Actions 及协作流程，提升 GitHub 使用效率。
+- GitHub Actions：面向 GitHub Actions 工作流开展设计、调试、性能优化及安全配置，提升 CI/CD 自动化水平。
+- kubectl-skill：通过 kubectl 查询、部署和排查 Kubernetes 资源，助力 Kubernetes 集群管理。
+- log-analyzer：分析日志、识别错误模式、发现任务异常并输出报告，提升问题排查效率。
+- self-improving-agent-skill：让 Agent 从历史经验中学习，沉淀错误教训及改进机制，实现能力持续提升。
+- session-logs：检索和分析历史会话日志，适用于工作回溯、问题排查及行为审计。
+- skill-creator：创建、改造、打包和优化 OpenClaw skills，助力企业定制专属技能体系。
+- skill-vetter：对第三方 skill 开展安装前安全审查，识别可疑权限、恶意行为及风险点，保障技能使用安全。
+- sql-toolkit：偏开发向的 SQL 设计、迁移、建模、查询及性能优化工具，提升数据库开发效率。
+- tmux：控制 tmux 会话，适用于长期任务执行、交互式 CLI 操作、守护进程管理及远程操作，提升终端使用效率。
+2. 飞书 / 文档 / 知识库 / 媒体内容
+- feishu-doc：读写飞书文档，适用于文档整理、说明编写、文案生成及内容更新，提升文档协作效率。
+- feishu-drive：管理飞书云盘文件、文件夹及存储结构，实现文件规范化管理。
+- feishu-perm：管理飞书文档和文件权限，处理共享设置、协作者管理及访问控制，保障文档安全。
+- feishu-wiki：浏览和操作飞书知识库 / Wiki 节点，便捷查询项目资料、制度说明及知识沉淀。
+- gifgrep：搜索 GIF 资源、下载动画及提取静态帧，适用于内容创作及演示素材准备。
+- html-to-pdf：将网页或 HTML 文件转换为 PDF，适用于文档留档、汇报材料制作及打印需求。
+- Image Editing：开展图片修复、扩图、抠图、背景替换、增强及 AI 编辑，满足各类图片处理需求。
+- lh-video-gen：基于 Markdown 脚本自动生成竖版短视频，适用于内容生产及传播需求。
+- nano-pdf：通过自然语言修改 PDF 内容，快速编辑 PDF 文档，提升文档处理效率。
+- openai-whisper：本地运行 Whisper，实现音频转文字，适用于音频转录及文字提取。
+- openai-whisper-api：通过 OpenAI API 开展音频转写，适用于远程或云端转录场景，灵活便捷。
+- openclaw-slides：生成高质量 HTML 演示文稿，或实现 PPT 转网页幻灯片，提升演示效果。
+- pdf：创建、合并、拆分、编辑、提取及处理 PDF 文件，满足各类 PDF 操作需求。
+- Powerpoint / PPTX：创建、编辑、检查和维护 PowerPoint 演示文稿，提升演示材料制作效率。
+- pptx-generator：自动生成结构完整、可编辑的专业 PPT，降低演示材料制作成本。
+- summarize：总结网页、文件、PDF、图片、音频、视频及 YouTube 内容，快速提取核心信息，提升信息处理效率。
+- video-frames：从视频中提取关键帧或短片段，适用于素材整理及内容创作。
+- video-gif-converter：将视频片段转换为更适合传播的 GIF 或轻量动图，提升内容传播效果。
+- video-stitcher：拼接多个视频片段，支持字幕添加、转场效果及背景音乐搭配，满足视频剪辑需求。
+3. 安全 / 基础设施 / 运维观测
+- 1password：管理 1Password CLI 登录、读取密钥及安全注入，保障密钥安全管理。
+- aws-infra：查询和管理 AWS 资源，适用于云资源审计、监控及问题排查，保障云资源稳定。
+- CI-CD：统一自动化构建、测试和部署流程，提升研发交付效率及规范性。
+- cicd-pipeline：创建和调试 CI/CD 流水线，适配不同研发场景，提升流水线稳定性。
+- cloudflare：管理 Cloudflare 域名、DNS、SSL、防护及隧道，提升网站安全性及访问速度。
+- cloudflare-tunnel：安全暴露本地服务到公网，无需直接开放端口，提升服务安全性。
+- db-readonly：只读查询数据库，适用于数据查询及问题排查，保障数据安全。
+- docker：安装和使用 Docker，运行容器和镜像，实现环境标准化。
+- Docker Compose：管理多容器应用及依赖关系，简化环境部署流程。
+- Docker Pro Diagnostic：深度诊断容器日志及 Docker 运行故障，助力容器问题快速排查。
+- grafana：管理 Grafana 看板、监控视图及告警，实现系统监控可视化。
+- grafana-lens：开展高级监控、日志、trace、安全调查及根因分析，提升问题排查效率。
+- healthcheck：检查环境健康状态、主机安全、系统暴露面及基础风险，保障系统安全稳定。
+- helm：创建、渲染、校验和发布 Helm Chart，简化 Kubernetes 应用部署。
+- initial-traefik：快速搭建 Traefik 代理和路由环境，简化环境部署流程。
+- jenkins：控制 Jenkins 构建、查看日志及任务队列，实现自动化构建、测试及部署。
+- kafka：管理 Kafka topic、生产消息、消费消息及 lag，保障消息队列稳定运行。
+- kibana：开展日志搜索、可视化及可观测数据分析，提升系统运维效率。
+- Kubernetes：规避 Kubernetes 常见错误和配置坑，提升集群配置规范性。
+- kubernetes-devops：生成和维护生产级 Kubernetes 配置，提升配置效率。
+- logging-observability：搭建日志、trace、metrics、告警一体化可观测体系，提升系统可观测性。
+- Monitoring：建设系统监控方案和观测能力，保障系统稳定运行。
+- mqtt-client：连接和测试 MQTT 消息服务，保障物联网消息传输稳定。
+- Nginx：配置 Nginx 反向代理、静态服务及 SSL，保障 Web 服务稳定。
+- node-connect：排查 OpenClaw node 连接、配对及网络问题，保障节点正常运行。
+- postgres：管理 PostgreSQL 数据库并做性能优化，保障数据库稳定高效运行。
+- prometheus：查询 Prometheus 指标和服务健康状态，实现系统实时监控。
+- rabbitmq-client-guide：指导 RabbitMQ 客户端开发和调优，提升消息队列使用效率。
+- system_resource_monitor：监控系统 CPU、内存、磁盘等资源，及时发现资源异常。
+- tcpdump：网络抓包和连接问题排查，助力解决网络异常。
+- terraform-iac：编写和治理 Terraform 基础设施即代码，提升基础设施部署效率。
+- Traefik：配置 Traefik 路由规则、TLS 及中间件，实现服务动态路由管理。
+- Wireshark Network Traffic Analysis：分析抓包文件、协议细节及网络异常，解决复杂网络问题。
+4. 协作 / 项目 / 工作流
+- bluebubbles：通过 BlueBubbles 管理 iMessage 消息，提升消息管理效率。
+- confluence：创建、搜索、更新和维护 Confluence 页面，实现团队知识沉淀及协作。
+- daily-report-writer：根据工作内容生成日报草稿，降低日报编写成本，提升汇报效率。
+- discord：通过 OpenClaw 控制 Discord 消息和频道操作，提升 Discord 协作效率。
+- GitLab：处理 GitLab 协作和 CI/CD 流水线问题，适配 GitLab 生态下的研发协同。
+- himalaya：通过 IMAP / SMTP 管理邮箱、收发邮件及检索邮件，提升邮箱使用效率。
+- imsg：通过命令行管理 iMessage / SMS 历史和发送，便捷管理消息。
+- jira：管理 Jira 工单、迭代、backlog 和流程协作，提升团队项目管理效率。
+- linear：管理 Linear 工单、项目和团队流程，适配敏捷研发模式。
+- slack：控制 Slack 消息、反应、pin 等协作动作，提升 Slack 协作效率。
+- wacli：管理 WhatsApp 消息和历史同步，便捷管理 WhatsApp 沟通记录。
+- weekly-report-writer：自动生成结构清晰的中文周报，降低周报编写成本，提升汇报质量。
+5. 移动 / 设备 / 终端
+- android-automation：通过 ADB 控制 Android 设备、截图和自动化操作，提升移动端操作效率。
+- android-device-automation：基于截图和视觉理解控制 Android 设备，适配更多移动端场景。
+- fastlane：自动化 iOS / macOS 应用构建、签名和分发，提升移动端研发交付效率。
+6. 搜索 / 生活 / 通用工具
+- baidu-web-search：开展实时中文网页搜索，适用于查询最新资讯和中文资料，提升信息获取效率。
+- goplaces：查询地点、门店、地址、评论和位置详情，便捷获取地理位置信息。
+- weather：查询天气、气温和未来预报，方便安排日常工作及出行。
+7. 其他通用工具
+- API Mock Server Generator：从 API 规范快速生成 Mock 服务，助力前后端联调及测试工作。
+- apple-notes：管理 Apple Notes 笔记，实现个人及工作笔记规范化管理。
+- apple-reminders：管理 Apple 提醒事项，便捷记录及跟进待办工作。
+- automate-excel：批量处理 Excel 文件、合并表格、转换数据，提升 Excel 操作效率。
+- bear-notes：管理 Bear 笔记，实现笔记高效管理及知识沉淀。
+- blogwatcher：监控博客和 RSS/Atom 更新，及时获取最新内容。
+- blucli：控制 BluOS 音频设备，便捷管理音频播放。
+- camsnap：抓取摄像头画面或短视频片段，适用于素材采集。
+- crash-fixer：自动分析 crash、定位根因并生成修复 PR，提升缺陷修复效率。
+- eightctl：控制 Eight Sleep 设备状态和温度，便捷管理睡眠设备。
+- Excel / XLSX：创建、编辑和检查 Excel 文件及公式格式，满足各类数据处理需求。
+- gog：统一操作 Gmail、Calendar、Drive、Docs、Sheets 等 Google Workspace 服务，提升办公效率。
+- incident-fupan：开展事故复盘、根因分析、时间线梳理及改进项沉淀，提升团队问题解决能力。
+- mantis-manager：管理 Mantis 缺陷跟踪系统，提升缺陷管理效率。
+- mcporter：配置和调用 MCP server / tool，适配 MCP 工具链使用场景。
+- model-usage：统计和分析不同模型的调用成本和使用情况，实现成本管控。
+- notion：读写 Notion 页面、数据库和 block，实现工作内容规范化管理及协作。
+- obsidian：管理 Obsidian Markdown 笔记库，实现知识管理及沉淀。
+- openhue：控制 Philips Hue 灯光和场景，便捷管理智能灯光设备。
+- oracle：管理 oracle CLI 用法和相关工作流，提升 Oracle 数据库使用效率。
+- ordercli：查看历史订单和当前配送状态，便捷跟踪订单信息。
+- peekaboo：抓取和自动化 macOS 界面操作，提升 macOS 使用效率。
+- promql-cli：直接运行 PromQL 查询，分析时序指标及趋势变化。
+- sag：基于 ElevenLabs 的文本转语音，实现文字快速转语音。
+- sherpa-onnx-tts：本地离线文本转语音，无需依赖网络，灵活便捷。
+- songsee：生成音频频谱图和特征分析图，适用于音频分析。
+- sonoscli：控制 Sonos 音箱播放和分组，便捷管理音频设备。
+- spotify-player：在终端中控制 Spotify 播放，提升 Spotify 使用便捷性。
+- things-mac：管理 Things 3 任务和项目，实现任务高效管理。
+- trello：管理 Trello board、list 和 card，提升团队任务管理效率。
+- voice-call：发起 OpenClaw 语音通话，便捷开展语音沟通。
+- xurl：通过 X / Twitter API 发文、搜索和操作内容，提升社交平台操作效率。
+✅ 四、建议安装 Skills 清单
+1. 通用必备 8 个
+- find-skills：技能搜索核心入口，所有人均可通过它快速找到适配自身岗位的技能，降低技能选型成本，是使用所有 Skills 的基础。
+- summarize：全岗位通用信息处理工具，可快速总结长文档、网页、PDF、会议内容等，提取核心信息，大幅提升信息处理效率。
+- agent-browser：日常工作通用执行工具，可实现网页操作自动化，涵盖信息查询、表单填写、截图留存、流程巡检等场景，适配各类岗位需求。
+- skill-vetter：安全保障工具，团队安装任何技能前，可通过它开展安全审查，识别风险点，保障企业环境及数据安全，适合全员统一使用。
+- feishu-doc：文档协同核心工具，适合所有需要编写、协作文档的岗位，提升文档创作及协作效率，规范文档管理。
+- feishu-wiki：知识库管理工具，适合所有需要查询项目资料、制度说明、知识沉淀的岗位，便捷获取所需信息。
+- daily-report-writer：工作汇报辅助工具，适配绝大部分岗位，可自动生成日报草稿，减少汇报编写时间，提升汇报规范性。
+- weekly-report-writer：工作复盘辅助工具，适合大多数岗位，可自动生成结构清晰的中文周报，助力工作复盘及进度同步。
+2. 进阶推荐 4 个
+- github：研发协作必备工具，若涉及代码管理、PR 评审、项目协同等工作，安装后可大幅提升协作效率。
+- coding-agent：开发相关岗位高价值工具，适用于代码开发、调试、Bug 修复、代码审查等场景，提升开发效率及代码质量。
+- skill-creator：团队能力沉淀工具，若团队需沉淀自身方法论、流程规范，可通过它定制专属技能，提升团队标准化水平。
+- deerflow-super-agent-harness：复杂任务处理工具，适合需要开展多代理协同、复杂流程编排及深度研究的场景，提升复杂工作处理效率。
+4. 核心总结
+- 发现类：find-skills（技能入口）
+- 信息处理类：summarize（高效读档）
+- 执行类：agent-browser（自动操作）
+- 安全类：skill-vetter（安全保障）
+- 文档协同类：feishu-doc、feishu-wiki（协同办公）
+- 工作汇报类：daily-report-writer、weekly-report-writer（高效汇报） 更新到我的GitHub里，一字不差的那种，覆盖之前的内容
