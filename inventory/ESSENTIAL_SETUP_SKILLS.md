@@ -1,105 +1,22 @@
-# 装机必备 Skills 清单
-
-这份清单适合刚装 OpenClaw、准备搭一套高频通用工作流的人使用。
-目标不是“全装”，而是优先装那些**装上马上能提升效率**、而且覆盖面最广的 skills。
-
-## 一、最推荐先装的 10 个
-
-### 1) find-skills
-- 功能：搜索和发现可安装 skills。
-- 为什么必备：装机后第一件事通常不是“马上全会用”，而是“先找到能用的 skill”。它相当于你的 skill 搜索入口。
-
-### 2) skill-vetter
-- 功能：安装前做安全审查，检查风险、权限范围、可疑行为。
-- 为什么必备：从社区装 skill 时，先过一遍安全检查更稳，适合团队环境。
-
-### 3) skill-creator
-- 功能：创建、改造、优化自定义 skill。
-- 为什么必备：公司里很多流程都是定制化的，迟早会需要把团队经验固化成 skill。
-
-### 4) github
-- 功能：管理 GitHub 仓库、PR、Issue、Actions。
-- 为什么必备：开发协作、代码评审、CI 跟踪基本都会用到。
-
-### 5) coding-agent
-- 功能：通用编码代理，适合构建功能、重构、修 Bug、代码审查、迭代式编码。
-- 为什么必备：它补的是“真正干活”的那层，不只是查资料，而是能把开发执行落下去。
-
-### 6) agent-browser
-- 功能：网页自动化、抓取、截图、表单操作、页面巡检。
-- 为什么必备：很多实际任务最后都会落到浏览器上，它是高频执行器。
-
-### 7) summarize
-- 功能：总结网页、URL、PDF、图片、音频、视频、YouTube 等长内容。
-- 为什么必备：信息太长时，先总结再处理，能显著减少沟通和阅读成本。
-
-### 8) deerflow-super-agent-harness
-- 功能：对接 DeerFlow 2.0，多代理、记忆、沙箱和复杂任务编排。
-- 为什么必备：适合进阶用户，把单点能力升级成复杂任务工作流。
-
-### 9) session-logs
-- 功能：查看和分析会话日志。
-- 为什么必备：排查问题、回溯行为、优化流程时非常有用。
-
-### 10) healthcheck
-- 功能：做环境健康检查、安全巡检和基础排障。
-- 为什么必备：新环境最怕“装了很多，但不知道哪里坏了”，这个能帮你快速发现问题。
-
----
-
-## 二、按场景补装建议
-
-### A. 开发/工程协作优先
-- `github`
-- `coding-agent`
-- `skill-creator`
-- `session-logs`
-
-适合：研发、测试开发、平台工程师。
-
-### B. 网页执行/信息处理优先
-- `agent-browser`
-- `summarize`
-- `find-skills`
-
-适合：运营、研究、测试、产品、自动化场景。
-
-### C. 安全/治理优先
-- `skill-vetter`
-- `healthcheck`
-- `session-logs`
-
-适合：团队环境、公司内分享、生产环境使用前。
-
-### D. 复杂自动化/多代理优先
-- `deerflow-super-agent-harness`
-- `coding-agent`
-- `github`
-
-适合：复杂任务拆解、深度研究、长链路自动化。
-
----
-
-## 三、我个人建议的安装顺序
-
-1. `find-skills`
-2. `skill-vetter`
-3. `github`
-4. `coding-agent`
-5. `agent-browser`
-6. `summarize`
-7. `skill-creator`
-8. `session-logs`
-9. `healthcheck`
-10. `deerflow-super-agent-harness`
-
----
-
-## 四、一句话总结
-
-如果你只想先装最值的：
-
-- **基础三件套**：`find-skills` + `skill-vetter` + `github`
-- **执行三件套**：`coding-agent` + `agent-browser` + `summarize`
-- **进阶两件套**：`skill-creator` + `deerflow-super-agent-harness`
-- **排障两件套**：`session-logs` + `healthcheck`
+✅ 四、建议安装 Skills 清单
+1. 通用必备 8 个
+- find-skills：技能搜索核心入口，所有人均可通过它快速找到适配自身岗位的技能，降低技能选型成本，是使用所有 Skills 的基础。
+- summarize：全岗位通用信息处理工具，可快速总结长文档、网页、PDF、会议内容等，提取核心信息，大幅提升信息处理效率。
+- agent-browser：日常工作通用执行工具，可实现网页操作自动化，涵盖信息查询、表单填写、截图留存、流程巡检等场景，适配各类岗位需求。
+- skill-vetter：安全保障工具，团队安装任何技能前，可通过它开展安全审查，识别风险点，保障企业环境及数据安全，适合全员统一使用。
+- feishu-doc：文档协同核心工具，适合所有需要编写、协作文档的岗位，提升文档创作及协作效率，规范文档管理。
+- feishu-wiki：知识库管理工具，适合所有需要查询项目资料、制度说明、知识沉淀的岗位，便捷获取所需信息。
+- daily-report-writer：工作汇报辅助工具，适配绝大部分岗位，可自动生成日报草稿，减少汇报编写时间，提升汇报规范性。
+- weekly-report-writer：工作复盘辅助工具，适合大多数岗位，可自动生成结构清晰的中文周报，助力工作复盘及进度同步。
+2. 进阶推荐 4 个
+- github：研发协作必备工具，若涉及代码管理、PR 评审、项目协同等工作，安装后可大幅提升协作效率。
+- coding-agent：开发相关岗位高价值工具，适用于代码开发、调试、Bug 修复、代码审查等场景，提升开发效率及代码质量。
+- skill-creator：团队能力沉淀工具，若团队需沉淀自身方法论、流程规范，可通过它定制专属技能，提升团队标准化水平。
+- deerflow-super-agent-harness：复杂任务处理工具，适合需要开展多代理协同、复杂流程编排及深度研究的场景，提升复杂工作处理效率。
+4. 核心总结
+- 发现类：find-skills（技能入口）
+- 信息处理类：summarize（高效读档）
+- 执行类：agent-browser（自动操作）
+- 安全类：skill-vetter（安全保障）
+- 文档协同类：feishu-doc、feishu-wiki（协同办公）
+- 工作汇报类：daily-report-writer、weekly-report-writer（高效汇报）
