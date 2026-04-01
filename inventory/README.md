@@ -1,13 +1,3 @@
-# inventory（历史索引 / 机器清单）
+# inventory
 
-这个目录现在主要保留：
-
-- 机器可读的 manifest JSON
-- 少量历史索引
-
-如果你是人类读者，请直接从下面入口开始：
-
-- [`../INSTALL_GUIDE/README.md`](../INSTALL_GUIDE/README.md)
-- [`../INSTALL_GUIDE/TESTING_SPECIALTIES.md`](../INSTALL_GUIDE/TESTING_SPECIALTIES.md)
-- [`../INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md`](../INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md)
-- [`../INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md`](../INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md)
+这个目录保留机器 manifest 与少量兼容入口。人类请优先看 `../INSTALL_GUIDE/README.md`。
