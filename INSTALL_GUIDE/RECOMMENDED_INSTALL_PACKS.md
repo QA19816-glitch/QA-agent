@@ -202,3 +202,55 @@
    - 功能作用：Build QA traceability between requirements, test points, test cases, execution results, and defects. Use when the user asks for a traceability matrix, coverage mapping, gap analysis, release coverage proof, or help linking requirements to tests and bugs.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-traceability-mapper>
 
+
+## 开发 / Agent 工具安装包
+
+适合需要 GitHub、Agent 工具、技能发现、技能创建与治理能力的人。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/dev-agent-tools-pack.zip>
+
+包含的 skills：
+- `github`
+- `gh-issues`
+- `clawhub`
+- `find-skills-3`
+- `skill-creator`
+- `skill-auditor`
+- `skill-vetter`
+- `deerflow-super-agent-harness`
+
+## 飞书 / 文档 / 内容安装包
+
+适合需要 Feishu 文档、知识库、总结、PDF/PPT、内容处理的人。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/feishu-docs-content-pack.zip>
+
+包含的 skills：
+- `feishu-doc`
+- `feishu-drive`
+- `feishu-perm`
+- `feishu-wiki`
+- `summarize`
+- `pdf-skill`
+- `html-to-pdf`
+- `pptx-generator`
+- `openclaw-slides`
+- `image-handler`
+
+## 办公 / 效率 / 数据安装包
+
+适合需要 Excel、Notion、Obsidian、天气、会话日志、办公效率工具的人。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/productivity-office-pack.zip>
+
+包含的 skills：
+- `automate-excel`
+- `excel-xlsx`
+- `weather`
+- `tmux`
+- `1password`
+- `obsidian`
+- `notion`
+- `trello`
+- `gog`
+- `session-logs`

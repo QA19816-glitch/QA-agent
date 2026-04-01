@@ -76,6 +76,27 @@
 - 一键脚本：[`install_release-gate-pack.sh`](./scripts/install_release-gate-pack.sh)
 - 详情清单：[缺陷 / 复盘 / 发布准入专项安装包详情](./RECOMMENDED_INSTALL_PACKS.md#缺陷-/-复盘-/-发布准入专项安装包)
 
+### 开发 / Agent 工具安装包
+
+适合需要 GitHub、Agent 工具、技能发现、技能创建与治理能力的人。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/dev-agent-tools-pack.zip>
+- 一键脚本：后续可从推荐安装包页查看
+
+### 飞书 / 文档 / 内容安装包
+
+适合需要 Feishu 文档、知识库、总结、PDF/PPT、内容处理的人。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/feishu-docs-content-pack.zip>
+- 一键脚本：后续可从推荐安装包页查看
+
+### 办公 / 效率 / 数据安装包
+
+适合需要 Excel、Notion、Obsidian、天气、会话日志、办公效率工具的人。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/productivity-office-pack.zip>
+- 一键脚本：后续可从推荐安装包页查看
+
 ## 🎯 推荐给谁
 
 - **测试 / QA 同学**：先看测试专项技能，或者直接下载 QA 核心安装包

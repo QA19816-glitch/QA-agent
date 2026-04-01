@@ -51,6 +51,21 @@
 - 页面查看：[`release-gate-pack.zip`](./dist/install-packs/release-gate-pack.zip)
 - 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/release-gate-pack.zip>
 
+### 开发 / Agent 工具安装包
+适合 GitHub、技能发现、技能创建、技能治理、多代理工具。
+- 页面查看：[`dev-agent-tools-pack.zip`](./dist/install-packs/dev-agent-tools-pack.zip)
+- 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/dev-agent-tools-pack.zip>
+
+### 飞书 / 文档 / 内容安装包
+适合 Feishu 文档、知识库、总结、PDF/PPT、内容处理。
+- 页面查看：[`feishu-docs-content-pack.zip`](./dist/install-packs/feishu-docs-content-pack.zip)
+- 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/feishu-docs-content-pack.zip>
+
+### 办公 / 效率 / 数据安装包
+适合 Excel、Notion、Obsidian、会话日志、办公效率工具。
+- 页面查看：[`productivity-office-pack.zip`](./dist/install-packs/productivity-office-pack.zip)
+- 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/productivity-office-pack.zip>
+
 ---
 
 ## 🧭 仓库结构

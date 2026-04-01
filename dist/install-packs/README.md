@@ -27,3 +27,15 @@
 ### 缺陷 / 复盘 / 发布准入专项安装包
 - 页面查看：[`release-gate-pack.zip`](./release-gate-pack.zip)
 - 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/release-gate-pack.zip>
+
+### 开发 / Agent 工具安装包
+- 页面查看：[`dev-agent-tools-pack.zip`](./dev-agent-tools-pack.zip)
+- 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/dev-agent-tools-pack.zip>
+
+### 飞书 / 文档 / 内容安装包
+- 页面查看：[`feishu-docs-content-pack.zip`](./feishu-docs-content-pack.zip)
+- 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/feishu-docs-content-pack.zip>
+
+### 办公 / 效率 / 数据安装包
+- 页面查看：[`productivity-office-pack.zip`](./productivity-office-pack.zip)
+- 直接下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/install-packs/productivity-office-pack.zip>
