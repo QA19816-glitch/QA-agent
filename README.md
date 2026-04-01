@@ -1,51 +1,25 @@
 # QA-agent / OpenClaw Skills Hub
 
-这是大王当前维护的一份 **OpenClaw Skills 仓库**：既包含软件测试专项 skills，也包含研发、Agent、浏览器自动化、GitHub、文档、搜索、基础设施等非测试专项能力。
+这是一个以 **软件测试专项 skills** 为核心，同时包含开发、文档、Agent、自动化、搜索、办公效率等能力的 OpenClaw Skills 仓库。
 
-## 本次新增（按你的图片 + DeerFlow 2.0 要求补装 + 额外推荐 1 项）
+## 从这里开始
 
-- **开发 / Agent 工具**
-  - `find-skills`：智能搜索和发现可安装 skill。
-  - `skill-creator`：创建/改造自定义 skills。
-  - `Capability Evolver`：根据日志和历史表现生成能力优化建议。
-  - `self-improving-agent-skill`：让 Agent 从经验中持续学习。
-  - `github`：管理仓库、PR、Issue、Actions。
-  - `deerflow-super-agent-harness`：对接 DeerFlow 2.0，多代理/记忆/沙箱任务编排。
-  - `coding-agent`：**额外推荐安装**，补上真正的开发执行层，适合构建功能、重构、修 Bug、代码审查。
-- **安全 / 治理**
-  - `skill-vetter`：安装前安全审查与风险扫描。
-- **网页自动化 / 内容处理 / 搜索**
-  - `agent-browser`：网页自动化、抓取、截图、表单操作。
-  - `summarize`：长文、URL、PDF、音频、视频总结。
-  - `baidu-web-search`：百度实时中文检索（当前需补 `BAIDU_API_KEY` 才算 fully ready）。
+- **安装导航总入口**：[`INSTALL_GUIDE/README.md`](./INSTALL_GUIDE/README.md)
+- **测试专项技能**：[`INSTALL_GUIDE/TESTING_SPECIALTIES.md`](./INSTALL_GUIDE/TESTING_SPECIALTIES.md)
+- **全部技能目录**：[`INSTALL_GUIDE/ALL_SKILLS.md`](./INSTALL_GUIDE/ALL_SKILLS.md)
+- **非测试技能目录**：[`INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md`](./INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md)
+- **建议安装技能 / 安装包**：[`INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md`](./INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md)
 
-## 当前仓库规模
+## 仓库结构
 
-- 总技能数：**172**
-- Ready：**131**
-- Needs setup：**41**
-- 测试专项：**52**
-- 非测试专项：**120**
+- `INSTALL_GUIDE/`：给人看的安装导航与一键安装包
+- `skills/`：所有 skills 源码目录
+- `inventory/`：历史清单 / 统计 / 发布索引
+- `dist/`：打包产物
 
-## 直接入口
+## 适合谁
 
-- **GitHub 仓库主页**：<https://github.com/QA19816-glitch/QA-agent>
-- **公司分享版总文档**：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/COMPANY_SHARE_SKILLS_CATALOG.md>
-- **全局技能总清单**：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/ALL_SKILLS.md>
-- **测试专项清单**：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/SOFTWARE_TESTING_SPECIALTIES.md>
-- **非测试专项清单**：<https://github.com/QA19816-glitch/QA-agent/blob/main/inventory/NON_TESTING_SPECIALTIES.md>
-
-## 使用方式
-
-1. 克隆仓库
-   ```bash
-   git clone https://github.com/QA19816-glitch/QA-agent.git
-   ```
-2. 把需要的 skill 目录复制到你的 OpenClaw workspace `skills/` 下
-3. 新开会话，或重启 gateway，让技能生效
-
-## 说明
-
-- `ready` = 当前环境下已经能直接用。
-- `needs setup` = skill 已装入仓库，但还缺 CLI / 环境变量 / 配置。
-- 本仓库适合做“技能超市 + 测试工具箱 + 非测试能力中心”。
+- 测试 / QA 同学
+- 需要接口测试 / E2E / 性能测试的人
+- 想要按场景一键安装技能的人
+- 想把仓库链接直接分享给同事，让对方一目了然选技能的人

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+REPO_DIR="${1:-$(pwd)}"
+DEST="${2:-$HOME/.openclaw/workspace/skills}"
+mkdir -p "$DEST"
+cp -R "$REPO_DIR/skills/qa-prd-analyzer" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-test-point-extractor" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-testcase-writer" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-api-runner" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-browser-tester" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-web-e2e-runner" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-bug-triage" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-regression-planner" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-release-gate-checker" "$DEST/"
+cp -R "$REPO_DIR/skills/qa-test-report-generator" "$DEST/"
+echo "Installed pack successfully to $DEST"
