@@ -1,15 +1,6 @@
 ---
 name: qa-browser-tester
-description: >
-  Launch a real headless browser on the server and perform exhaustive end-to-end
-  QA testing of a web application — clicking every button, filling every form,
-  navigating every menu, and simulating a complete user journey.
-  Use this skill whenever the user asks to "test the app", "check if everything
-  works", "simulate a user", "run QA", "click through the site", or "browse the
-  website automatically". Also trigger when the user says things like "בדוק את
-  האתר", "תדמה משתמש", or "תבדוק שהכל עובד". Always use this skill — do not
-  attempt browser automation without it, as it contains critical Docker-safe
-  configuration required for Chromium to run on Linux servers.
+description: "Run exhaustive browser-based QA testing with headless Chromium to simulate real user journeys through a web app."
 ---
 
 # QA Browser Tester

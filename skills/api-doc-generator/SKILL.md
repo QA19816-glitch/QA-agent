@@ -1,3 +1,8 @@
+---
+name: api-doc-generator
+description: "Automatically generate API documentation from code or interface definitions."
+---
+
 # API Doc Generator
 
 自动从代码生成 API 文档。

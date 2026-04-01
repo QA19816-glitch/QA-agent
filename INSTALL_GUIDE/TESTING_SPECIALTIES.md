@@ -1,22 +1,22 @@
 # 测试专项技能（QA 合并版）
 
-总数：**114**
+总数：**113**
 
 1. `add-analytics`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Add Google Analytics 4 tracking to any project. Detects framework, adds tracking code, sets up events, and configures privacy settings.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/add-analytics>
 2. `afrexai-qa-engine`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
-   - 功能作用：Complete quality assurance system — from test strategy to automation frameworks, coverage analysis, and release readiness. Works for any stack, any team size.
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
+   - 功能作用：Complete quality assurance system covering test strategy, automation frameworks, coverage analysis, and release readiness for any stack.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/afrexai-qa-engine>
 3. `afrexai-qa-test-plan`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
-   - 功能作用：You are a Quality Assurance architect. Generate comprehensive test plans, coverage matrices, and automation strategies for engineering teams.
+   - 功能作用：Generate comprehensive QA test plans, coverage matrices, and automation strategies for engineering teams.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/afrexai-qa-test-plan>
 4. `afrexai-qa-testing-engine`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
-   - 功能作用：> The definitive testing methodology for AI agents. From test strategy to execution, coverage to reporting — everything you need to ship quality software.
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
+   - 功能作用：End-to-end testing methodology for AI agents, covering strategy, execution, coverage, and reporting.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/afrexai-qa-testing-engine>
 5. `analytics-tracking-2`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
@@ -28,7 +28,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/android-adb>
 7. `api-doc-generator`
    - 分类名称：测试技能类 / 其他测试相关
-   - 功能作用：自动从代码生成 API 文档。
+   - 功能作用：Automatically generate API documentation from code or interface definitions.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/api-doc-generator>
 8. `api-performance-testing`
    - 分类名称：测试技能类 / 接口测试 / API / Mock
@@ -39,7 +39,7 @@
    - 功能作用：Chat-based AWS infrastructure assistance using AWS CLI and console context. Use for querying, auditing, and monitoring AWS resources (EC2, S3, IAM, Lambda, ECS/EKS, RDS, CloudWatch, billing, etc.), and for proposing safe changes with explicit confirmation before any write/destructive action.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/aws-infra>
 10. `bug-investigation`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：Systematically reproduces, locates, and diagnoses frontend bugs using steps, hypotheses, DevTools, and minimal repro. Use when 排查bug, bug定位, 调试, debugging, 复现问题, or investigating frontend issues.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/bug-investigation>
 11. `check-analytics`
@@ -116,22 +116,22 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/gitlab>
 29. `grafana-api`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
-   - 功能作用：(未提取到描述)
+   - 功能作用：Access Grafana dashboards, folders, data sources, annotations, and alerts through managed API authentication.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/grafana-api>
 30. `grafana-lens`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：Grafana tools for data visualization, monitoring, alerting, security, and SRE investigation. Use grafana_query, grafana_query_logs, grafana_query_traces, grafana_create_dashboard, grafana_update_dashboard, grafana_create_alert, grafana_share_dashboard, grafana_annotate, grafana_explore_datasources, grafana_list_metrics, grafana_search, grafana_get_dashboard, grafana_check_alerts, grafana_push_metrics, grafana_explain_metric, grafana_security_check, and grafana_investigate. Trigger when asked about metrics, dashboards, monitoring, alerts, costs, token usage, data visualization, PromQL, Prometheus, LogQL, Loki, log queries, error logs, log search, TraceQL, Tempo, traces, distributed tracing, span search, find slow traces, debug session traces, annotations, deployments, sharing charts, investigating alert notifications, pushing custom data (calendar, git, fitness, finance) to Grafana for visualization, pushing historical data, backfilling metrics, recording past data with timestamps, modifying dashboards, adding panels, removing panels, changing dashboard settings, updating dashboard time range, explain metric, metric trend, what is this metric, how has this changed, is this metric normal, why did my bill spike, cost visibility, security monitoring, security check, security audit, am I being attacked, is my agent compromised, suspicious activity, threat detection, prompt injection detection, set up security alerts, investigate, debug, triage, root cause, what's wrong, why is X broken, anomaly detection, RED method, USE method, alert fatigue, postmortem, incident summary.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/grafana-lens>
 31. `gstack-qa`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
-   - 功能作用：(未提取到描述)
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
+   - 功能作用：Structured QA questioning and analysis workflow for gathering testing context, scope, risks, and validation requirements.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/gstack-qa>
 32. `helm`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：Create, lint, template, and package Kubernetes Helm charts with checks. Use when scaffolding charts, linting templates, or packaging chart releases.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/helm>
 33. `incident-fupan`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：事故复盘 / Incident Fupan — structured root cause analysis for production failures, outages, bugs, and near-misses. Use when: (1) 事故复盘 or incident review is needed, (2) a production incident just happened and needs root cause analysis, (3) an agent made a costly mistake and you want to prevent recurrence, (4) building safety rules or kill switches from incident patterns. Triggers on: 复盘, fupan, postmortem, incident review, root cause analysis, 事故分析. Generates a full report with timeline, 5 Whys root cause, impact assessment, fix/prevention actions, and new defensive rules. NOT for: routine debugging, feature planning, or non-incident analysis.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/incident-fupan>
 34. `initial-traefik`
@@ -156,7 +156,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/kafka>
 39. `kibana`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
-   - 功能作用：(未提取到描述)
+   - 功能作用：Access Kibana saved objects, dashboards, spaces, alerts, and related observability resources through managed API authentication.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/kibana>
 40. `kubectl`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
@@ -164,7 +164,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/kubectl>
 41. `kubernetes-devops`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
-   - 功能作用：(未提取到描述)
+   - 功能作用：Generate and maintain production-ready Kubernetes manifests for core workloads, networking, config, and security settings.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/kubernetes-devops>
 42. `logging-observability`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
@@ -172,11 +172,11 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/logging-observability>
 43. `midscene-android-automation`
    - 分类名称：测试技能类 / APP / 移动端 / 终端测试
-   - 功能作用：(未提取到描述)
+   - 功能作用：Vision-driven Android device automation using Midscene and ADB for taps, swipes, text input, screenshots, and app workflows.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/midscene-android-automation>
 44. `mobile-appium-test`
    - 分类名称：测试技能类 / APP / 移动端 / 终端测试
-   - 功能作用：(未提取到描述)
+   - 功能作用：Android UI automation testing using Appium with USB-connected real devices.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/mobile-appium-test>
 45. `mobile-responsive`
    - 分类名称：测试技能类 / APP / 移动端 / 终端测试
@@ -212,7 +212,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/openclaw-api-tester>
 53. `performance-profiler`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
-   - 功能作用：分析代码性能，识别瓶颈并提供优化建议。
+   - 功能作用：Profile application or code performance, identify hotspots, and suggest concrete optimization directions.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/performance-profiler>
 54. `performance-testing`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
@@ -252,7 +252,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/pls-seo-audit>
 63. `postgres-mcp-skill`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
-   - 功能作用：(未提取到描述)
+   - 功能作用：Manage and optimize PostgreSQL databases through MCP tooling for queries, schema inspection, and operational workflows.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/postgres-mcp-skill>
 64. `postman`
    - 分类名称：测试技能类 / 接口测试 / API / Mock
@@ -266,195 +266,191 @@
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：CLI for querying Prometheus and PromQL-compatible engines (Thanos, Cortex, VictoriaMetrics, Grafana Mimir, Grafana Tempo...) — instant queries, range queries, metric discovery (metrics/labels/meta subcommands), output formats (table/csv/json/graph). Apply when executing PromQL queries, troubleshooting performance issues on a software having observability, investigating latency/error rates/saturation, or analyzing time series data.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/promql-cli>
-67. `qa`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
-   - 功能作用：(未提取到描述)
-   - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa>
-68. `qa-api-runner`
+67. `qa-api-runner`
    - 分类名称：测试技能类 / 接口测试 / API / Mock
    - 功能作用：Generate, execute, and summarize API smoke, regression, and negative tests from API docs or endpoint descriptions. Use when the user asks to run API tests, validate endpoint behavior, exercise request/response contracts, verify auth and error handling, or turn API specs into executable checks.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-api-runner>
-69. `qa-browser-tester`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
-   - 功能作用：(未提取到描述)
+68. `qa-browser-tester`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
+   - 功能作用：Run exhaustive browser-based QA testing with headless Chromium to simulate real user journeys through a web app.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-browser-tester>
-70. `qa-bug-triage`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+69. `qa-bug-triage`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：Turn failed tests, screenshots, logs, and mismatches into high-quality defect reports with titles, reproduction steps, severity/priority guidance, and likely ownership hints. Use when the user asks to write bugs, triage failures, classify severity, deduplicate issues, or convert raw evidence into actionable QA defect records.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-bug-triage>
-71. `qa-patrol`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
-   - 功能作用：(未提取到描述)
+70. `qa-patrol`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
+   - 功能作用：Run local browser-based QA patrols for smoke tests, auth flows, payments, and static-analysis checks on web applications.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-patrol>
-72. `qa-prd-analyzer`
+71. `qa-prd-analyzer`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Analyze PRDs, Feishu docs, wiki pages, specs, change notes, and prototype text into structured feature breakdowns, business flows, hidden assumptions, ambiguity lists, and QA risk summaries. Use when the user asks to analyze a requirement, break down a feature, review a spec, find missing cases, or identify unclear/risky requirements before test design.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-prd-analyzer>
-73. `qa-regression-planner`
+72. `qa-regression-planner`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Plan focused QA regression scope from requirement changes, bug fixes, impacted modules, and system dependencies. Use when the user asks what to regress, wants a change-impact-based regression plan, or needs a lean smoke vs full-regression split for a release.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-regression-planner>
-74. `qa-release-gate-checker`
+73. `qa-release-gate-checker`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Decide whether a build is releasable by checking core-flow status, unresolved defects, coverage gaps, and residual risks. Use when the user asks if a version can ship, wants a release gate decision, or needs a concise go/no-go QA judgement from current evidence.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-release-gate-checker>
-75. `qa-skill`
+74. `qa-skill`
    - 分类名称：测试技能类 / APP / 移动端 / 终端测试
    - 功能作用：Generate comprehensive test cases and quality assurance documentation from SwiftUI iOS code. Use when iOS application code is available and needs testing strategies, test cases, and quality validation. This skill receives input from dev-skill and completes the auto-dev-pipeline by providing testing coverage.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-skill>
-76. `qa-test-data-factory`
+75. `qa-test-data-factory`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Design and generate QA test data sets for validation, boundaries, permissions, workflow states, imports, and integration scenarios. Use when the user asks for test data, edge-case values, account/data setup plans, or scenario matrices needed to execute tests reliably.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-test-data-factory>
-77. `qa-test-point-extractor`
+76. `qa-test-point-extractor`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Convert requirements, flows, API specs, and feature summaries into structured QA test points covering happy path, negative path, boundary, permission, state transition, compatibility, and resilience. Use when the user asks to extract test points, design coverage, list edge cases, or expand testing scope before formal test cases are written.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-test-point-extractor>
-78. `qa-test-report-generator`
+77. `qa-test-report-generator`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Summarize QA execution into release-facing test reports with scope, environment, pass/fail counts, defect distribution, residual risk, and release recommendation. Use when the user asks to generate a test report, release summary, QA conclusion, execution recap, or stakeholder-ready testing status update.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-test-report-generator>
-79. `qa-testcase-writer`
+78. `qa-testcase-writer`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Turn QA test points or requirements into standardized test cases with preconditions, data, steps, expected results, priority, and automation hints. Use when the user asks to write test cases, generate smoke/regression cases, convert test points into executable cases, or format cases for docs, Feishu, spreadsheets, or case-management tools.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-testcase-writer>
-80. `qa-traceability-mapper`
+79. `qa-traceability-mapper`
    - 分类名称：测试技能类 / 需求分析 / 测试设计 / 用例 / 追踪 / 报告
    - 功能作用：Build QA traceability between requirements, test points, test cases, execution results, and defects. Use when the user asks for a traceability matrix, coverage mapping, gap analysis, release coverage proof, or help linking requirements to tests and bugs.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-traceability-mapper>
-81. `qa-web-e2e-runner`
+80. `qa-web-e2e-runner`
    - 分类名称：测试技能类 / Web UI / E2E / 浏览器自动化
    - 功能作用：Execute browser-based QA flows for web apps, capture assertions, screenshots, and failure evidence, and summarize end-to-end results. Use when the user asks to run UI smoke tests, verify business flows in a browser, regression-test key pages, or reproduce front-end issues with observable evidence.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/qa-web-e2e-runner>
-82. `rabbitmq-client-guide`
+81. `rabbitmq-client-guide`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：RabbitMQ 客户端代码指南。当用户需要编写、调试或审查 RabbitMQ 应用代码时使用。涵盖：用任意语言（Java/Go/Python/PHP/.NET）写生产者或消费者；排查连接暴增、消息丢失、Broken pipe、消费慢、漏消费等客户端问题；审查 spring-boot-starter-amqp、amqp091-go、pika、php-amqplib 等库的代码；实现 RPC 模式、confirm、手动 ack、prefetch 调优、连接复用、重连机制。用户贴了 RabbitMQ 相关代码片段或描述了客户端侧的消息异常时，始终触发此技能。不适用于 RabbitMQ 服务端运维部署、Kafka 等其他消息系统、或纯架构设计问题。
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/rabbitmq-client-guide>
-83. `react-performance`
+82. `react-performance`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：React and Next.js performance optimization patterns. Use when writing,
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/react-performance>
-84. `security-audit-toolkit`
+83. `security-audit-toolkit`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Audit codebases and infrastructure for security issues. Use when scanning dependencies for vulnerabilities, detecting hardcoded secrets, checking OWASP top 10 issues, verifying SSL/TLS, auditing file permissions, or reviewing code for injection and auth flaws.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/security-audit-toolkit>
-85. `security-auditor`
+84. `security-auditor`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/security-auditor>
-86. `security-scanner`
+85. `security-scanner`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform security audits. Integrates with nmap, nuclei, and other security tools.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/security-scanner>
-87. `sensors-analytics-tracking`
+86. `sensors-analytics-tracking`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Plan, audit, and validate Sensors Analytics (神策) tracking for web, H5, app, and mini-program scenarios. Use when the user mentions 神策, Sensors Analytics, 埋点, 事件 tracking, event taxonomy, 埋点方案, 数据校验, 漏埋/错埋/重复埋点, funnel, conversion tracking, or wants to connect a product flow to 神策平台.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/sensors-analytics-tracking>
-88. `seo-optimizer`
+87. `seo-optimizer`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：This skill should be used when analyzing HTML/CSS websites for SEO optimization, fixing SEO issues, generating SEO reports, or implementing SEO best practices. Use when the user requests SEO audits, optimization, meta tag improvements, schema markup implementation, sitemap generation, or general search engine optimization tasks.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/seo-optimizer>
-89. `shelly-seo-analyzer`
+88. `shelly-seo-analyzer`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Analyze any webpage URL for SEO issues and get actionable recommendations. Checks title tags, meta descriptions, heading structure, keyword density, image alt tags, Open Graph, and more.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/shelly-seo-analyzer>
-90. `sovereign-api-mock-generator`
+89. `sovereign-api-mock-generator`
    - 分类名称：测试技能类 / 接口测试 / API / Mock
    - 功能作用：Generates mock API servers from OpenAPI specs or examples. Realistic fake data, configurable delays, error simulation.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/sovereign-api-mock-generator>
-91. `sql-toolkit`
+90. `sql-toolkit`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：Query, design, migrate, and optimize SQL databases. Use when working with SQLite, PostgreSQL, or MySQL — schema design, writing queries, creating migrations, indexing, backup/restore, and debugging slow queries. No ORMs required.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/sql-toolkit>
-92. `sw-analytics-tracking`
+91. `sw-analytics-tracking`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
-   - 功能作用：When the user wants to set up, improve, or audit analytics tracking and measurement.
+   - 功能作用：Set up, improve, or audit analytics tracking and measurement workflows.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/sw-analytics-tracking>
-93. `tcpdump`
+92. `tcpdump`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：Tcpdump reference tool. Use when working with tcpdump in devtools contexts.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/tcpdump>
-94. `terraform-iac`
+93. `terraform-iac`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：Deep Terraform/IaC workflow—module boundaries, state, workspaces, plan/apply safety, drift, secrets, CI integration, and team governance. Use when building infra as code, refactoring modules, or debugging state issues.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/terraform-iac>
-95. `test-generator`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+94. `test-generator`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：Automated test case generator. Unit tests, integration tests, end-to-end tests, mock objects, test fixtures, coverage analysis, edge case generation.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/test-generator>
-96. `test-master`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+95. `test-master`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：Use when writing tests, creating test strategies, or building automation frameworks. Invoke for unit tests, integration tests, E2E, coverage analysis, performance testing, security testing.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/test-master>
-97. `test-patterns`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+96. `test-patterns`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：Write and run tests across languages and frameworks. Use when setting up test suites, writing unit/integration/E2E tests, measuring coverage, mocking dependencies, or debugging test failures. Covers Node.js (Jest/Vitest), Python (pytest), Go, Rust, and Bash.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/test-patterns>
-98. `test-runner`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
-   - 功能作用：Write and run tests across languages and frameworks.
+97. `test-runner`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
+   - 功能作用：Write and run tests across languages and frameworks for unit, integration, and end-to-end validation.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/test-runner>
-99. `test-sentinel`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+98. `test-sentinel`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：Writes and runs tests (unit, integration, E2E), performs linting, and auto-fixes failures
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/test-sentinel>
-100. `testflight`
+99. `testflight`
    - 分类名称：测试技能类 / APP / 移动端 / 终端测试
    - 功能作用：Distribute iOS and macOS beta builds with TestFlight, tester management, and CI/CD automation.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/testflight>
-101. `traefik`
+100. `traefik`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：Avoid common Traefik mistakes — router priority, TLS configuration, Docker labels syntax, and middleware ordering.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/traefik>
-102. `ux-qa-gate`
-   - 分类名称：测试技能类 / 功能测试 / 回归 / 巡检 / 缺陷
+101. `ux-qa-gate`
+   - 分类名称：测试技能类 / 功能测试 / 回归测试 / 巡检 / 缺陷
    - 功能作用：Self-review gate for UI/UX work before delivering to the user. Run automatically after building, modifying, or completing any user-facing feature, page, component, or flow. Triggers on: finishing a build task, completing a UI change, delivering a web app feature, wrapping up frontend work. Also use when asked to QA this, review the UX, check for usability issues, or run the gate. What it does: (1) Functional completeness check — verifies every button, link, form, and flow works end-to-end, (2) Heuristic review — walks through all 10 Nielsen Norman usability heuristics with a detailed checklist, (3) State and edge case sweep — checks empty, loading, error, success, partial, overflow, and auth states, (4) Interaction and responsiveness — verifies clickability, keyboard access, and responsive layout, (5) Severity classification — blockers and major issues fixed before delivery, minor items noted. Catches missing functionality, broken flows, empty states, and usability problems before the user sees them.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/ux-qa-gate>
-103. `visual-regression-testing`
+102. `visual-regression-testing`
    - 分类名称：测试技能类 / Web UI / E2E / 浏览器自动化
-   - 功能作用：AI-powered visual regression testing skill for e-commerce websites. Designs screenshot comparison workflows, mobile/desktop visual checks, and change detection alerts to prevent conversion-killing UI bugs.
+   - 功能作用：Run visual regression testing for websites with screenshot comparison workflows and change detection for UI issues.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/visual-regression-testing>
-104. `web-auto-analyzer`
+103. `web-auto-analyzer`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Automatically analyze websites for performance metrics and audit issues using Lighthouse.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/web-auto-analyzer>
-105. `web-perf`
+104. `web-perf`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (FCP, LCP, TBT, CLS, Speed Index), identifies render-blocking resources, network dependency chains, layout shifts, caching issues, and accessibility gaps. Use when asked to audit, profile, debug, or optimize page load performance, Lighthouse scores, or site speed.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/web-perf>
-106. `web-screenshot`
+105. `web-screenshot`
    - 分类名称：测试技能类 / Web UI / E2E / 浏览器自动化
    - 功能作用：🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/web-screenshot>
-107. `webperf`
+106. `webperf`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Web performance measurement and debugging toolkit. Use when the user asks about web performance, wants to audit a page, or says "analyze performance", "debug lcp", "check ttfb", "measure core web vitals", "audit images", or similar.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/webperf>
-108. `webperf-core-web-vitals`
+107. `webperf-core-web-vitals`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Intelligent Core Web Vitals analysis with automated workflows and decision trees. Measures LCP, CLS, INP with guided debugging that automatically determines follow-up analysis based on results. Includes workflows for LCP deep dive (5 phases), CLS investigation (loading vs interaction), INP debugging (latency breakdown + attribution), and cross-skill integration with loading, interaction, and media skills. Use when the user asks about Core Web Vitals, LCP optimization, layout shifts, or interaction responsiveness. Compatible with Chrome DevTools MCP.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/webperf-core-web-vitals>
-109. `webperf-interaction`
+108. `webperf-interaction`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Intelligent interaction performance analysis with automated workflows for INP debugging, scroll jank investigation, and main thread blocking. Includes decision trees that automatically run script attribution when long frames detected, break down input latency phases, and correlate layout shifts with interactions. Features workflows for complete interaction audit, third-party script impact analysis, and animation performance debugging. Cross-skill integration with Core Web Vitals (INP/CLS correlation) and Loading (script execution analysis). Use when the user asks about slow interactions, janky scrolling, unresponsive pages, or INP optimization. Compatible with Chrome DevTools MCP.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/webperf-interaction>
-110. `webperf-loading`
+109. `webperf-loading`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Intelligent loading performance analysis with automated workflows for TTFB investigation (DNS/connection/server breakdown), render-blocking detection, script performance deep dive (first vs third-party attribution), font optimization, and resource hints validation. Includes decision trees that automatically analyze TTFB sub-parts when slow, detect script loading anti-patterns (async/defer/preload conflicts), identify render-blocking resources, and validate resource hints usage. Features workflows for complete loading audit (6 phases), backend performance investigation, and priority optimization. Cross-skill integration with Core Web Vitals (LCP resource loading), Interaction (script execution blocking), and Media (lazy loading strategy). Use when the user asks about TTFB, FCP, render-blocking, slow loading, font performance, script optimization, or resource hints. Compatible with Chrome DevTools MCP.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/webperf-loading>
-111. `webperf-media`
+110. `webperf-media`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Intelligent media optimization with automated workflows for images, videos, and SVGs. Includes decision trees that detect LCP images (triggers format/lazy-loading/priority analysis), identify layout shift risks (missing dimensions), and flag lazy loading issues (above-fold lazy or below-fold eager). Features workflows for complete media audit, LCP image investigation, video performance (poster optimization), and SVG embedded bitmap detection. Cross-skill integration with Core Web Vitals (LCP/CLS impact) and Loading (priority hints, resource preloading). Provides performance budgets and format recommendations based on content type. Use when the user asks about image optimization, LCP is an image/video, layout shifts from media, or media loading strategy. Compatible with Chrome DevTools MCP.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/webperf-media>
-112. `webperf-resources`
+111. `webperf-resources`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Intelligent network quality analysis with adaptive loading strategies. Detects connection type (2g/3g/4g), bandwidth, RTT, and save-data mode, then automatically triggers appropriate optimization workflows. Includes decision trees that recommend image compression for slow connections, critical CSS inlining for high RTT, and save-data optimizations (disable autoplay, reduce quality). Features connection-aware performance budgets (500KB for 2g, 1.5MB for 3g, 3MB for 4g+) and adaptive loading implementation guides. Cross-skill integration with Loading (TTFB impact), Media (responsive images), and Core Web Vitals (connection impact on LCP/INP). Use when the user asks about slow connections, mobile optimization, save-data support, or adaptive loading strategies. Compatible with Chrome DevTools MCP.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/webperf-resources>
-113. `website-seo`
+112. `website-seo`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
    - 功能作用：Complete on-page SEO system for any website — page optimization, schema markup, technical SEO checklist, internal linking strategy, Core Web Vitals guidance, and AI-driven content gap analysis. Works for any CMS (WordPress, Webflow, Squarespace, custom).
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/website-seo>
-114. `wireshark-analysis`
+113. `wireshark-analysis`
    - 分类名称：测试技能类 / 测试支撑环境 / 可观测 / 平台
    - 功能作用：Network traffic analysis with Wireshark and tshark. Capture packets, write display and BPF filters, follow TCP/UDP/TLS streams, detect C2 beacons, troubleshoot connectivity, and perform forensic PCAP analysis.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/wireshark-analysis>

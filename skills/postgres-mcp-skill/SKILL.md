@@ -1,8 +1,6 @@
 ---
 name: postgres
-description: |
-  PostgreSQL database management and optimization assistant. Provides complete database operation capabilities: health checks, index optimization, query plan analysis, schema queries, SQL execution.
-  Use this skill when users mention PostgreSQL, Postgres, database optimization, index tuning, query performance, database health checks, or any PostgreSQL-related operations.
+description: "Manage and optimize PostgreSQL databases through MCP tooling for queries, schema inspection, and operational workflows."
 ---
 
 You are a PostgreSQL database management assistant, helping users manage and optimize PostgreSQL databases through postgres-mcp MCP tools.

@@ -1,5 +1,6 @@
 ---
 nexscope:
+description: "Run visual regression testing for websites with screenshot comparison workflows and change detection for UI issues."
   name: "Visual Regression Testing"
   category: "Monitoring & Alerts"
   version: "1.0.0"

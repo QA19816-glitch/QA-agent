@@ -1,12 +1,6 @@
 ---
 name: android-device-automation
-description: >
-  Vision-driven Android device automation using Midscene.
-  Operates entirely from screenshots — no DOM or accessibility labels required. Can interact with all visible elements on screen regardless of technology stack.
-  Control Android devices with natural language commands via ADB.
-  Perform taps, swipes, text input, app launches, screenshots, and more.
-  
-  Trigger keywords: android, phone, mobile app, tap, swipe, install app, open app on phone, android device, mobile automation, adb, launch app, mobile screen
+description: "Vision-driven Android device automation using Midscene and ADB for taps, swipes, text input, screenshots, and app workflows."
 
   Powered by Midscene.js (https://midscenejs.com)
 allowed-tools:

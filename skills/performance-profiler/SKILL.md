@@ -1,3 +1,8 @@
+---
+name: performance-profiler
+description: "Profile application or code performance, identify hotspots, and suggest concrete optimization directions."
+---
+
 # Performance Profiler
 
 分析代码性能，识别瓶颈并提供优化建议。

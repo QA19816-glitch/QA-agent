@@ -1,7 +1,6 @@
 ---
 name: feishu-perm
-description: |
-  Feishu permission management for documents and files. Activate when user mentions sharing, permissions, collaborators.
+description: "Manage collaborators and permissions for Feishu docs, folders, and files with the `feishu_perm` tool."
 ---
 
 # Feishu Permission Tool

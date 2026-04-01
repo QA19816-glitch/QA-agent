@@ -1,9 +1,6 @@
 ---
 name: kibana
-description: |
-  Kibana API integration with managed authentication. Manage saved objects, dashboards, data views, spaces, alerts, and fleet.
-  Use this skill when users want to interact with Kibana for observability, security, and search analytics.
-  For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).
+description: "Access Kibana saved objects, dashboards, spaces, alerts, and related observability resources through managed API authentication."
 compatibility: Requires network access and valid Maton API key
 metadata:
   author: maton

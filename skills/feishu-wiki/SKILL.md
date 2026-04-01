@@ -1,7 +1,6 @@
 ---
 name: feishu-wiki
-description: |
-  Feishu knowledge base navigation. Activate when user mentions knowledge base, wiki, or wiki links.
+description: "Navigate, create, move, rename, and access Feishu wiki pages and knowledge-base nodes with the `feishu_wiki` tool."
 ---
 
 # Feishu Wiki Tool

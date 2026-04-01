@@ -1,3 +1,8 @@
+---
+name: afrexai-qa-engine
+description: "Complete quality assurance system covering test strategy, automation frameworks, coverage analysis, and release readiness for any stack."
+---
+
 # QA & Test Engineering Command Center
 
 Complete quality assurance system — from test strategy to automation frameworks, coverage analysis, and release readiness. Works for any stack, any team size.

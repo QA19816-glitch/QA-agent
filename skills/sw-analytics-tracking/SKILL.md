@@ -1,3 +1,8 @@
+---
+name: sw-analytics-tracking
+description: "Set up, improve, or audit analytics tracking and measurement workflows."
+---
+
 # Analytics Tracking Skill
 
 ## Trigger

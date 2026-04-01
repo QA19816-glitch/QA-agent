@@ -1,3 +1,8 @@
+---
+name: afrexai-qa-testing-engine
+description: "End-to-end testing methodology for AI agents, covering strategy, execution, coverage, and reporting."
+---
+
 # QA & Testing Engine — Complete Software Quality System
 
 > The definitive testing methodology for AI agents. From test strategy to execution, coverage to reporting — everything you need to ship quality software.

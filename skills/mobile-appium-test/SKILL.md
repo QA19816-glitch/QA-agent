@@ -1,10 +1,6 @@
 ---
 name: mobile-appium-test
-description: >
-  Android UI automation testing using Appium with USB-connected real devices.
-  Use when the user wants to run Appium tests on physical Android devices connected via USB,
-  including: device connection verification, app installation, UI element inspection,
-  test execution, screenshot capture, and log collection. Requires ADB and Appium Server installed.
+description: "Android UI automation testing using Appium with USB-connected real devices."
 metadata: { "openclaw": { "emoji": "📱", "requires": { "tools": ["adb", "appium"] } } }
 ---
 

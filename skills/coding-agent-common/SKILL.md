@@ -1,10 +1,7 @@
 ---
 name: coding-agent
 version: 1.0.0
-description: |
-  通用的编码代理技能，封装 Codex、Claude Code、OpenCode 等工具。
-  使用场景：(1) 构建/创建新功能或应用 (2) 重构大型代码库 (3) Bug 修复 (4) 代码审查 (5) 迭代式编码。
-  不适用于：简单的单行修改（直接用 edit），读取代码（用 read 工具）。
+description: "Delegate coding tasks to Codex, Claude Code, or similar coding agents through shared background workflows."
 metadata:
   openclaw:
     emoji: "🤖"

@@ -1,7 +1,6 @@
 ---
 name: feishu-doc
-description: |
-  Feishu document read/write operations. Activate when user mentions Feishu docs, cloud docs, or docx links.
+description: "Read, create, write, append, and manage Feishu Docx documents with the `feishu_doc` tool."
 ---
 
 # Feishu Document Tool

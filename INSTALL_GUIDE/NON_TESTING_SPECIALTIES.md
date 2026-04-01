@@ -1,6 +1,6 @@
 # 非测试技能
 
-总数：**87**
+总数：**86**
 
 1. `1password`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
@@ -52,7 +52,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/camsnap>
 13. `capability-evolver-pro`
    - 分类名称：非测试技能类 / 开发 / GitHub / Agent 工具
-   - 功能作用：(未提取到描述)
+   - 功能作用：Evolve and improve agent capabilities by analyzing conversation patterns, failures, and optimization opportunities.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/capability-evolver-pro>
 14. `clawhub`
    - 分类名称：非测试技能类 / 开发 / GitHub / Agent 工具
@@ -60,7 +60,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/clawhub>
 15. `coding-agent-common`
    - 分类名称：非测试技能类 / 开发 / GitHub / Agent 工具
-   - 功能作用：(未提取到描述)
+   - 功能作用：Delegate coding tasks to Codex, Claude Code, or similar coding agents through shared background workflows.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/coding-agent-common>
 16. `crash-fixer`
    - 分类名称：非测试技能类 / 其他非测试相关
@@ -92,19 +92,19 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/fastlane>
 23. `feishu-doc`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
-   - 功能作用：(未提取到描述)
+   - 功能作用：Read, create, write, append, and manage Feishu Docx documents with the `feishu_doc` tool.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/feishu-doc>
 24. `feishu-drive`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
-   - 功能作用：(未提取到描述)
+   - 功能作用：List, inspect, create folders in, move, and manage files in Feishu cloud storage with the `feishu_drive` tool.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/feishu-drive>
 25. `feishu-perm`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
-   - 功能作用：(未提取到描述)
+   - 功能作用：Manage collaborators and permissions for Feishu docs, folders, and files with the `feishu_perm` tool.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/feishu-perm>
 26. `feishu-wiki`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
-   - 功能作用：(未提取到描述)
+   - 功能作用：Navigate, create, move, rename, and access Feishu wiki pages and knowledge-base nodes with the `feishu_wiki` tool.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/feishu-wiki>
 27. `find-skills-3`
    - 分类名称：非测试技能类 / 开发 / GitHub / Agent 工具
@@ -266,87 +266,83 @@
    - 分类名称：非测试技能类 / 其他非测试相关
    - 功能作用：Local text-to-speech via sherpa-onnx (offline, no cloud)
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/sherpa-onnx-tts>
-67. `skill-auditor`
-   - 分类名称：非测试技能类 / 开发 / GitHub / Agent 工具
-   - 功能作用：(未提取到描述)
-   - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/skill-auditor>
-68. `skill-creator`
+67. `skill-creator`
    - 分类名称：非测试技能类 / 开发 / GitHub / Agent 工具
    - 功能作用：Guide for creating effective skills. This skill should be used when users want to create a new skill (or update an existing skill) that extends Claude's capabilities with specialized knowledge, workflows, or tool integrations.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/skill-creator>
-69. `skill-vetter`
+68. `skill-vetter`
    - 分类名称：非测试技能类 / 开发 / GitHub / Agent 工具
    - 功能作用：Security-first skill vetting for AI agents. Use before installing any skill from ClawdHub, GitHub, or other sources. Checks for red flags, permission scope, and suspicious patterns.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/skill-vetter>
-70. `slack`
+69. `slack`
    - 分类名称：非测试技能类 / 协作 / 工作流 / 消息
    - 功能作用：Use when you need to control Slack from OpenClaw via the slack tool, including reacting to messages or pinning/unpinning items in Slack channels or DMs.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/slack>
-71. `smart-weekly-report`
+70. `smart-weekly-report`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
-   - 功能作用：> **使用方法**：将本文件内容复制到你使用的 AI 对话框中，然后用自然语言描述你本周的工作情况，AI 将自动生成结构化周报。
+   - 功能作用：Generate structured weekly work reports from natural-language summaries of completed work, blockers, and next steps.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/smart-weekly-report>
-72. `songsee`
+71. `songsee`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Generate spectrograms and feature-panel visualizations from audio with the songsee CLI.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/songsee>
-73. `sonoscli`
+72. `sonoscli`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Control Sonos speakers (discover/status/play/volume/group).
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/sonoscli>
-74. `spotify-player`
+73. `spotify-player`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Terminal Spotify playback/search via spogo (preferred) or spotify_player.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/spotify-player>
-75. `summarize`
+74. `summarize`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
    - 功能作用：Summarize URLs or files with the summarize CLI (web, PDFs, images, audio, YouTube).
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/summarize>
-76. `system-resource-monitor`
+75. `system-resource-monitor`
    - 分类名称：非测试技能类 / 其他非测试相关
    - 功能作用：A clean, reliable system resource monitor for CPU load, RAM, Swap, and Disk usage. Optimized for OpenClaw.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/system-resource-monitor>
-77. `things-mac`
+76. `things-mac`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Manage Things 3 via the `things` CLI on macOS (add/update projects+todos via URL scheme; read/search/list from the local Things database). Use when a user asks OpenClaw to add a task to Things, list inbox/today/upcoming, search tasks, or inspect projects/areas/tags.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/things-mac>
-78. `tmux`
+77. `tmux`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Remote-control tmux sessions for interactive CLIs by sending keystrokes and scraping pane output.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/tmux>
-79. `trello`
+78. `trello`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Manage Trello boards, lists, and cards via the Trello REST API.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/trello>
-80. `video-frames`
+79. `video-frames`
    - 分类名称：非测试技能类 / 其他非测试相关
    - 功能作用：Extract frames or short clips from videos using ffmpeg.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/video-frames>
-81. `video-gif-converter`
+80. `video-gif-converter`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
    - 功能作用：Convert short video moments into GIF-friendly snippets for demos, support, product walkthroughs, and social sharing. Use when a team needs lightweight motion previews instead of full video files.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/video-gif-converter>
-82. `video-stitcher`
+81. `video-stitcher`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
    - 功能作用：视频片段拼接和后期处理。输入视频片段列表，输出完整视频。支持转场效果、背景音乐、字幕叠加。底层使用 FFmpeg 或 Remotion。触发词：拼接视频、合并视频、视频剪辑、video stitch、concatenate videos、add transitions。
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/video-stitcher>
-83. `voice-call`
+82. `voice-call`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Start voice calls via the OpenClaw voice-call plugin.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/voice-call>
-84. `wacli`
+83. `wacli`
    - 分类名称：非测试技能类 / 协作 / 工作流 / 消息
    - 功能作用：Send WhatsApp messages to other people or search/sync WhatsApp history via the wacli CLI (not for normal user chats).
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/wacli>
-85. `weather`
+84. `weather`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：Get current weather and forecasts via wttr.in or Open-Meteo. Use when: user asks about weather, temperature, or forecasts for any location. NOT for: historical weather data, severe weather alerts, or detailed meteorological analysis. No API key needed.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/weather>
-86. `weekly-report-writer`
+85. `weekly-report-writer`
    - 分类名称：非测试技能类 / 飞书 / 文档 / 知识库 / 媒体内容
    - 功能作用：用于撰写结构清晰的中文周报。只要用户提到“周报、weekly report、本周总结、工作复盘、下周计划、给老板汇报”，即使没有明确说“写周报”，也应主动使用此技能来生成可直接发送的周报内容。
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/weekly-report-writer>
-87. `xurl`
+86. `xurl`
    - 分类名称：非测试技能类 / 办公 / 效率 / 通用工具
    - 功能作用：A CLI tool for making authenticated requests to the X (Twitter) API. Use this skill when you need to post tweets, reply, quote, search, read posts, manage followers, send DMs, upload media, or interact with any X API v2 endpoint.
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/xurl>

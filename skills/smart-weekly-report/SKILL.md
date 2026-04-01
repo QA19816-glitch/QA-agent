@@ -1,3 +1,8 @@
+---
+name: smart-weekly-report
+description: "Generate structured weekly work reports from natural-language summaries of completed work, blockers, and next steps."
+---
+
 # 周报生成器 · Weekly Report Generator
 
 > **使用方法**：将本文件内容复制到你使用的 AI 对话框中，然后用自然语言描述你本周的工作情况，AI 将自动生成结构化周报。

@@ -1,9 +1,6 @@
 ---
 name: grafana
-description: |
-  Grafana API integration with managed authentication. Manage dashboards, data sources, folders, annotations, alerts, and teams.
-  Use this skill when users want to interact with Grafana for monitoring, visualization, and observability.
-  For other third party apps, use the api-gateway skill (https://clawhub.ai/byungkyu/api-gateway).
+description: "Access Grafana dashboards, folders, data sources, annotations, and alerts through managed API authentication."
 compatibility: Requires network access and valid Maton API key
 metadata:
   author: maton

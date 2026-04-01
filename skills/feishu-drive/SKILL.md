@@ -1,7 +1,6 @@
 ---
 name: feishu-drive
-description: |
-  Feishu cloud storage file management. Activate when user mentions cloud space, folders, drive.
+description: "List, inspect, create folders in, move, and manage files in Feishu cloud storage with the `feishu_drive` tool."
 ---
 
 # Feishu Drive Tool
