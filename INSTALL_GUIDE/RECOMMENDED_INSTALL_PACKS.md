@@ -2,6 +2,12 @@
 
 > 适合分享给别人，让他们根据自己的需求一键安装一组技能。
 
+
+## 下载压缩安装包
+
+- 安装包目录：<https://github.com/QA19816-glitch/QA-agent/tree/main/dist/install-packs>
+- 下载后解压，把里面的 `skills/` 目录复制到你的 OpenClaw workspace `skills/` 下即可。
+
 ## QA 核心安装包
 
 - 一键安装脚本：[`install_qa__.sh`](./scripts/install_qa__.sh)

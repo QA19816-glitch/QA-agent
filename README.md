@@ -9,6 +9,7 @@
 - **全部技能目录**：[`INSTALL_GUIDE/ALL_SKILLS.md`](./INSTALL_GUIDE/ALL_SKILLS.md)
 - **非测试技能目录**：[`INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md`](./INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md)
 - **建议安装技能 / 安装包**：[`INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md`](./INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md)
+- **下载压缩安装包**：[`dist/install-packs/README.md`](./dist/install-packs/README.md)
 
 ## 仓库结构
 

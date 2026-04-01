@@ -18,6 +18,7 @@
 - [全部技能目录](./ALL_SKILLS.md)
 - [非测试技能目录](./NON_TESTING_SPECIALTIES.md)
 - [建议安装技能 / 安装包](./RECOMMENDED_INSTALL_PACKS.md)
+- [下载压缩安装包](../dist/install-packs/README.md)
 - [一键安装脚本](./scripts/)
 
 ## 统计
