@@ -1,26 +1,19 @@
 # QA-agent / OpenClaw Skills Hub
 
-这是一个以 **软件测试专项 skills** 为核心，同时包含开发、文档、Agent、自动化、搜索、办公效率等能力的 OpenClaw Skills 仓库。
+这是一个以 **测试 / QA 技能** 为核心，同时覆盖前端性能、API、E2E、移动测试、文档、Agent 工具等能力的技能仓库。
 
-## 从这里开始
+## 🚀 直接入口
 
-- **安装导航总入口**：[`INSTALL_GUIDE/README.md`](./INSTALL_GUIDE/README.md)
+- **技能商店首页**：[`INSTALL_GUIDE/README.md`](./INSTALL_GUIDE/README.md)
 - **测试专项技能**：[`INSTALL_GUIDE/TESTING_SPECIALTIES.md`](./INSTALL_GUIDE/TESTING_SPECIALTIES.md)
+- **非测试技能**：[`INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md`](./INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md)
 - **全部技能目录**：[`INSTALL_GUIDE/ALL_SKILLS.md`](./INSTALL_GUIDE/ALL_SKILLS.md)
-- **非测试技能目录**：[`INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md`](./INSTALL_GUIDE/NON_TESTING_SPECIALTIES.md)
-- **建议安装技能 / 安装包**：[`INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md`](./INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md)
-- **下载压缩安装包**：[`dist/install-packs/README.md`](./dist/install-packs/README.md)
+- **建议安装包**：[`INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md`](./INSTALL_GUIDE/RECOMMENDED_INSTALL_PACKS.md)
+- **压缩安装包下载**：[`dist/install-packs/README.md`](./dist/install-packs/README.md)
 
-## 仓库结构
+## 📦 仓库结构
 
-- `INSTALL_GUIDE/`：给人看的安装导航与一键安装包
-- `skills/`：所有 skills 源码目录
-- `inventory/`：历史清单 / 统计 / 发布索引
-- `dist/`：打包产物
-
-## 适合谁
-
-- 测试 / QA 同学
-- 需要接口测试 / E2E / 性能测试的人
-- 想要按场景一键安装技能的人
-- 想把仓库链接直接分享给同事，让对方一目了然选技能的人
+- `INSTALL_GUIDE/`：给人看的中文产品目录页 / 安装导航 / 一键安装脚本
+- `skills/`：所有 skills 源码
+- `dist/install-packs/`：可下载 zip 安装包
+- `inventory/`：历史与机器清单（已精简）

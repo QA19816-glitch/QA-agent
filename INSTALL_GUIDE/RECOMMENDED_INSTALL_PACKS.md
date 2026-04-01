@@ -1,20 +1,20 @@
 # 建议安装技能 / 安装包
 
-> 适合分享给别人，让他们根据自己的需求一键安装一组技能。
+如果你不想一个个挑 skill，直接按场景安装一整包。
 
-
-## 下载压缩安装包
-
-- 安装包目录：<https://github.com/QA19816-glitch/QA-agent/tree/main/dist/install-packs>
-- 下载后解压，把里面的 `skills/` 目录复制到你的 OpenClaw workspace `skills/` 下即可。
+压缩包目录：<https://github.com/QA19816-glitch/QA-agent/tree/main/dist/install-packs>
 
 ## QA 核心安装包
 
-- 一键安装脚本：[`install_qa__.sh`](./scripts/install_qa__.sh)
-- 安装方式：
+适合大多数测试同学开箱即用：需求分析、测试点、用例、接口、Web 测试、缺陷与报告。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/qa-core-pack.zip>
+- 一键安装脚本：[`install_qa-core-pack.sh`](./scripts/install_qa-core-pack.sh)
   ```bash
-  bash INSTALL_GUIDE/scripts/install_qa__.sh /path/to/QA-agent ~/.openclaw/workspace/skills
+  bash INSTALL_GUIDE/scripts/install_qa-core-pack.sh /path/to/QA-agent ~/.openclaw/workspace/skills
   ```
+
+包含的 skills：
 
 1. `qa-prd-analyzer`
    - 功能作用：Analyze PRDs, Feishu docs, wiki pages, specs, change notes, and prototype text into structured feature breakdowns, business flows, hidden assumptions, ambiguity lists, and QA risk summaries. Use when the user asks to analyze a requirement, break down a feature, review a spec, find missing cases, or identify unclear/risky requirements before test design.
@@ -49,11 +49,15 @@
 
 ## 前端 / 页面性能专项安装包
 
-- 一键安装脚本：[`install______.sh`](./scripts/install______.sh)
-- 安装方式：
+适合做页面渲染性能、LCP/INP/CLS、首屏加载、前端性能优化与诊断。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/frontend-performance-pack.zip>
+- 一键安装脚本：[`install_frontend-performance-pack.sh`](./scripts/install_frontend-performance-pack.sh)
   ```bash
-  bash INSTALL_GUIDE/scripts/install______.sh /path/to/QA-agent ~/.openclaw/workspace/skills
+  bash INSTALL_GUIDE/scripts/install_frontend-performance-pack.sh /path/to/QA-agent ~/.openclaw/workspace/skills
   ```
+
+包含的 skills：
 
 1. `frontend-performance`
    - 功能作用：Analyzes and improves frontend performance: LCP, FCP, CLS, bundle size, lazy loading, and runtime efficiency. Use when 性能优化, 首屏慢, 卡顿, 打包体积, performance optimization, or improving Core Web Vitals.
@@ -88,11 +92,15 @@
 
 ## API / 接口专项安装包
 
-- 一键安装脚本：[`install_api____.sh`](./scripts/install_api____.sh)
-- 安装方式：
+适合做接口测试、API smoke/regression、Mock、OpenAPI 驱动测试。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/api-testing-pack.zip>
+- 一键安装脚本：[`install_api-testing-pack.sh`](./scripts/install_api-testing-pack.sh)
   ```bash
-  bash INSTALL_GUIDE/scripts/install_api____.sh /path/to/QA-agent ~/.openclaw/workspace/skills
+  bash INSTALL_GUIDE/scripts/install_api-testing-pack.sh /path/to/QA-agent ~/.openclaw/workspace/skills
   ```
+
+包含的 skills：
 
 1. `qa-api-runner`
    - 功能作用：Generate, execute, and summarize API smoke, regression, and negative tests from API docs or endpoint descriptions. Use when the user asks to run API tests, validate endpoint behavior, exercise request/response contracts, verify auth and error handling, or turn API specs into executable checks.
@@ -112,11 +120,15 @@
 
 ## Web 自动化 / E2E 专项安装包
 
-- 一键安装脚本：[`install_web_____e2e__.sh`](./scripts/install_web_____e2e__.sh)
-- 安装方式：
+适合浏览器自动化、E2E、回归测试、截图与视觉回归。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/web-e2e-pack.zip>
+- 一键安装脚本：[`install_web-e2e-pack.sh`](./scripts/install_web-e2e-pack.sh)
   ```bash
-  bash INSTALL_GUIDE/scripts/install_web_____e2e__.sh /path/to/QA-agent ~/.openclaw/workspace/skills
+  bash INSTALL_GUIDE/scripts/install_web-e2e-pack.sh /path/to/QA-agent ~/.openclaw/workspace/skills
   ```
+
+包含的 skills：
 
 1. `qa-web-e2e-runner`
    - 功能作用：Execute browser-based QA flows for web apps, capture assertions, screenshots, and failure evidence, and summarize end-to-end results. Use when the user asks to run UI smoke tests, verify business flows in a browser, regression-test key pages, or reproduce front-end issues with observable evidence.
@@ -136,11 +148,15 @@
 
 ## APP / 移动测试专项安装包
 
-- 一键安装脚本：[`install_app____.sh`](./scripts/install_app____.sh)
-- 安装方式：
+适合 Android / iOS 自动化、真机与模拟器测试。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/mobile-testing-pack.zip>
+- 一键安装脚本：[`install_mobile-testing-pack.sh`](./scripts/install_mobile-testing-pack.sh)
   ```bash
-  bash INSTALL_GUIDE/scripts/install_app____.sh /path/to/QA-agent ~/.openclaw/workspace/skills
+  bash INSTALL_GUIDE/scripts/install_mobile-testing-pack.sh /path/to/QA-agent ~/.openclaw/workspace/skills
   ```
+
+包含的 skills：
 
 1. `mobile-appium-test`
    - 功能作用：>
@@ -160,11 +176,15 @@
 
 ## 缺陷 / 复盘 / 发布准入专项安装包
 
-- 一键安装脚本：[`install__________.sh`](./scripts/install__________.sh)
-- 安装方式：
+适合缺陷归档、事故复盘、回归范围与发布准入判断。
+
+- 下载 zip：<https://github.com/QA19816-glitch/QA-agent/blob/main/dist/install-packs/release-gate-pack.zip>
+- 一键安装脚本：[`install_release-gate-pack.sh`](./scripts/install_release-gate-pack.sh)
   ```bash
-  bash INSTALL_GUIDE/scripts/install__________.sh /path/to/QA-agent ~/.openclaw/workspace/skills
+  bash INSTALL_GUIDE/scripts/install_release-gate-pack.sh /path/to/QA-agent ~/.openclaw/workspace/skills
   ```
+
+包含的 skills：
 
 1. `qa-bug-triage`
    - 功能作用：Turn failed tests, screenshots, logs, and mismatches into high-quality defect reports with titles, reproduction steps, severity/priority guidance, and likely ownership hints. Use when the user asks to write bugs, triage failures, classify severity, deduplicate issues, or convert raw evidence into actionable QA defect records.
