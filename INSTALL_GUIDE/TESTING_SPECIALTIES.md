@@ -24,7 +24,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/afrexai-qa-testing-engine>
 6. `afrexai-web-performance-engine`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
-   - 功能作用：Complete web performance optimization system. Audit, diagnose, fix, and monitor web performance across Core Web Vitals, loading, rendering, and runtime experience.
+   - 功能作用：
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/afrexai-web-performance-engine>
 7. `analytics-tracking-2`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
@@ -240,7 +240,7 @@
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/openclaw-api-tester>
 60. `perf-test-suite`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
-   - 功能作用：Performance test suite for designing, executing, and reporting load, stress, soak, and benchmark scenarios across applications and APIs.
+   - 功能作用：
    - GitHub 链接：<https://github.com/QA19816-glitch/QA-agent/tree/main/skills/perf-test-suite>
 61. `performance-profiler`
    - 分类名称：测试技能类 / 性能 / SEO / 安全 / 埋点
