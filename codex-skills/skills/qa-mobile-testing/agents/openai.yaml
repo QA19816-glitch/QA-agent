@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Mobile Testing"
+  short_description: "Test Android and iOS app flows"
+  default_prompt: "Use $qa-mobile-testing to plan mobile QA for this app feature."

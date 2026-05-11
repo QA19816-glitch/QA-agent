@@ -1,0 +1,4 @@
+interface:
+  display_name: "Feishu Cloud Docs"
+  short_description: "Create Feishu report docs with permissions"
+  default_prompt: "Use $feishu-cloud-docs to create a Feishu cloud document report with editable permission."

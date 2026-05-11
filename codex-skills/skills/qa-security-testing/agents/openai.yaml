@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Security Testing"
+  short_description: "Plan safe auth, access, and privacy checks"
+  default_prompt: "Use $qa-security-testing to create a defensive security QA checklist."

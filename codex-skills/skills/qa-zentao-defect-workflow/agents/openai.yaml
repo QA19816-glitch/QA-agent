@@ -1,0 +1,4 @@
+interface:
+  display_name: "Zentao Defect Workflow"
+  short_description: "File concise Zentao bugs with evidence"
+  default_prompt: "Use $qa-zentao-defect-workflow to submit this defect to Zentao with evidence."

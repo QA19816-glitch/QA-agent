@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Specialist Orchestrator"
+  short_description: "Route broad QA work to the right specialties"
+  default_prompt: "Use $qa-specialist-orchestrator to plan full QA coverage for this feature."

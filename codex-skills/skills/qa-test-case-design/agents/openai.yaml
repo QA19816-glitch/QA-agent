@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Test Case Design"
+  short_description: "Create detailed manual test cases"
+  default_prompt: "Use $qa-test-case-design to write Feishu-style test cases for these requirements."

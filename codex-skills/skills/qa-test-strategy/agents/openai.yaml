@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Test Strategy"
+  short_description: "Plan QA scope, risks, criteria, and execution"
+  default_prompt: "Use $qa-test-strategy to create a practical test strategy for this release."

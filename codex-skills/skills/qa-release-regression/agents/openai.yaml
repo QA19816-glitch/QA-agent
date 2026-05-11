@@ -1,0 +1,4 @@
+interface:
+  display_name: "Release Regression QA"
+  short_description: "Plan smoke, regression, and go/no-go"
+  default_prompt: "Use $qa-release-regression to create a release regression plan."

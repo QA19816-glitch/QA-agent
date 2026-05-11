@@ -1,0 +1,7 @@
+{
+  "token": "docx_token",
+  "type": "docx",
+  "member_type": "email",
+  "member_id": "user@example.com",
+  "perm": "full_access"
+}

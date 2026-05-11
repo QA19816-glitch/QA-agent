@@ -1,0 +1,9 @@
+{
+  "title": "QA Test Report",
+  "content": "# QA Test Report\n\nSummary...",
+  "grant": {
+    "member_type": "email",
+    "member_id": "user@example.com",
+    "perm": "full_access"
+  }
+}

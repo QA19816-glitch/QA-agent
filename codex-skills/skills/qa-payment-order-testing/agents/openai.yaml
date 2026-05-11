@@ -1,0 +1,4 @@
+interface:
+  display_name: "Payment Order QA"
+  short_description: "Test orders, payments, refunds, and reconciliation"
+  default_prompt: "Use $qa-payment-order-testing to design checkout and payment test cases."

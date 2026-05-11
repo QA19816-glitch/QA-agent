@@ -5,6 +5,11 @@
 
 ## 四个主入口
 
+### 🤖 Codex QA Skills
+- 文档：[`codex-skills/README.md`](./codex-skills/README.md)
+- 清单：[`codex-skills/MANIFEST.md`](./codex-skills/MANIFEST.md)
+- 安装：`bash codex-skills/scripts/install.sh`
+
 ### 📦 总包
 - 文档：[`INSTALL_GUIDE/ALL_SKILLS.md`](./INSTALL_GUIDE/ALL_SKILLS.md)
 - 下载：<https://raw.githubusercontent.com/QA19816-glitch/QA-agent/main/dist/all-skills-bundle-v1.zip>
