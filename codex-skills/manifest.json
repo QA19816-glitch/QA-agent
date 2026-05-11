@@ -2,7 +2,7 @@
   "name": "codex-qa-skills",
   "generatedAt": "2026-05-11T06:55:02.973Z",
   "source": "Local Codex skills exported from ~/.codex/skills",
-  "count": 33,
+  "count": 34,
   "skills": [
     {
       "name": "android-emulator-qa",
@@ -31,6 +31,10 @@
     {
       "name": "playwright",
       "description": "\"Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script.\""
+    },
+    {
+      "name": "playwright-interactive",
+      "description": "\"Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging.\""
     },
     {
       "name": "qa-ai-llm-testing",

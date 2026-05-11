@@ -1,6 +1,6 @@
 # Codex QA Skills Manifest
 
-Total skills: 33
+Total skills: 34
 
 | Skill | Description |
 | --- | --- |
@@ -11,6 +11,7 @@ Total skills: 33
 | `jmeter-performance-testing` | Use when the user asks for Apache JMeter, JMeter, JMX, JTL, .jmx plans, .jtl result analysis, non-GUI load tests, stress tests, spike tests, soak tests, capacity tests, ramp-up design, thread groups, timers, assertions, or JMeter HTML reports. |
 | `pdf` | "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction." |
 | `playwright` | "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script." |
+| `playwright-interactive` | "Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging." |
 | `qa-ai-llm-testing` | Test AI, LLM, chatbot, RAG, agent, prompt, evaluation, safety, hallucination, retrieval quality, tool-use, guardrail, multilingual, latency, and regression behavior for AI-powered product features. |
 | `qa-analytics-tracking-testing` | Test analytics tracking, event instrumentation, exposure logs, funnels, attribution, A/B experiment events, BI reports, dashboards, dataLayer, SDK events, privacy consent, and event schema quality for web, mobile, and backend products. |
 | `qa-api-testing` | Plan, design, execute, and report API testing for REST, GraphQL, RPC, webhooks, integrations, authentication, authorization, contracts, schemas, idempotency, pagination, rate limits, retries, and error handling. Use when the user asks for interface testing, backend API checks, Postman/curl cases, API automation, or API defect analysis. |
