@@ -1,8 +1,8 @@
 {
   "name": "codex-qa-skills",
-  "generatedAt": "2026-05-11T06:10:49.754Z",
+  "generatedAt": "2026-05-11T06:55:02.973Z",
   "source": "Local Codex skills exported from ~/.codex/skills",
-  "count": 32,
+  "count": 33,
   "skills": [
     {
       "name": "android-emulator-qa",
@@ -15,6 +15,10 @@
     {
       "name": "feishu-cloud-docs",
       "description": "Create, read, append, and permission Feishu/Lark cloud documents for reports, test results, execution summaries, QA deliverables, release notes, and stakeholder-ready documents. Use whenever the user asks for a report, test report, execution summary, QA deliverable, Feishu doc, cloud doc, or editable/shareable document."
+    },
+    {
+      "name": "geo-testing",
+      "description": "GEO (Generative Engine Optimization) testing skill for verifying AI search engine visibility, brand mentions, and citation optimization. Use when user needs GEO testing, AI search optimization verification, brand visibility in LLM responses, or checking how well content performs in generative AI search results."
     },
     {
       "name": "jmeter-performance-testing",

@@ -1,12 +1,13 @@
 # Codex QA Skills Manifest
 
-Total skills: 32
+Total skills: 33
 
 | Skill | Description |
 | --- | --- |
 | `android-emulator-qa` | "Use when validating Android feature flows in an emulator with adb-driven launch, input, UI-tree inspection, screenshots, and logcat capture." |
 | `android-performance` | Gather and interpret Android performance evidence on an adb target using Simpleperf CPU profiles, Perfetto or Compose traces, gfxinfo frame data, dumpsys meminfo snapshots, Java heap dumps, and native allocation traces. Use when asked to profile an Android app flow, find CPU-heavy functions, diagnose jank, capture startup or frame timing evidence, compare before/after performance, explain what code is taking time, or gather memory/leak profiling artifacts. |
 | `feishu-cloud-docs` | Create, read, append, and permission Feishu/Lark cloud documents for reports, test results, execution summaries, QA deliverables, release notes, and stakeholder-ready documents. Use whenever the user asks for a report, test report, execution summary, QA deliverable, Feishu doc, cloud doc, or editable/shareable document. |
+| `geo-testing` | GEO (Generative Engine Optimization) testing skill for verifying AI search engine visibility, brand mentions, and citation optimization. Use when user needs GEO testing, AI search optimization verification, brand visibility in LLM responses, or checking how well content performs in generative AI search results. |
 | `jmeter-performance-testing` | Use when the user asks for Apache JMeter, JMeter, JMX, JTL, .jmx plans, .jtl result analysis, non-GUI load tests, stress tests, spike tests, soak tests, capacity tests, ramp-up design, thread groups, timers, assertions, or JMeter HTML reports. |
 | `pdf` | "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction." |
 | `playwright` | "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script." |
