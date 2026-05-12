@@ -1,11 +1,19 @@
 # QA-agent 技能商店
 
-> 一个以 **测试 / QA 技能** 为核心，同时兼顾非测试通用能力的 OpenClaw Skills 仓库。
-> 如果你要分享给别人，就只发这个仓库首页，对方能一眼找到 4 个主入口。
+> 一个以 **测试 / QA 技能** 为核心，同时兼顾非测试通用能力的技能仓库。
+> 支持 Claude Code CLI（主力）、Codex、OpenClaw 三个运行时。
+> 如果你要分享给别人，就只发这个仓库首页，对方能一眼找到主入口。
 
-## 四个主入口
+## 主入口
 
-### 🤖 Codex QA Skills
+### ✨ Claude Code QA Skills（推荐，当前主力）
+- 文档：[`claude-skills/README.md`](./claude-skills/README.md)
+- 安装：`bash claude-skills/scripts/install.sh all`
+- 技能数：45个（13个原生 + 32个迁移）
+
+## 历史运行时入口
+
+### 🤖 Codex QA Skills（已弃用，仅备份）
 - 文档：[`codex-skills/README.md`](./codex-skills/README.md)
 - 清单：[`codex-skills/MANIFEST.md`](./codex-skills/MANIFEST.md)
 - 安装：`bash codex-skills/scripts/install.sh`
