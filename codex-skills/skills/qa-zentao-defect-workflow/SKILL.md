@@ -1,6 +1,6 @@
 ---
 name: qa-zentao-defect-workflow
-description: Prepare, submit, update, and verify bugs/defects in Zentao/禅道 with clear reproduction steps, actual results, expected results, severity, priority, environment, attachments, screenshots, and concise Chinese bug descriptions. Use when the user asks to 提 bug, 提BUG, 报bug, 提缺陷, 提交缺陷, file bugs, submit Zentao defects, triage defects, retest bugs, or attach evidence.
+description: Prepare, submit, update, and verify bugs/defects in Zentao/禅道 with clean titles, concise steps, actual results, expected results, severity, priority, attachments, screenshots, and focused Chinese bug descriptions. Use when the user asks to 提 bug, 提BUG, 报bug, 提缺陷, 提交缺陷, file bugs, submit Zentao defects, triage defects, retest bugs, or attach evidence.
 ---
 
 # QA Zentao Defect Workflow
@@ -11,7 +11,9 @@ Use this skill for defect documentation and Zentao work. Trigger it for casual r
 
 - Default Zentao project: `基建S`.
 - Use concise Chinese wording.
-- Write numbered `重现步骤`、`实际结果`、`预期结果`.
+- Write concise `[步骤]`、`[结果]`、`[期望]` only in the bug description body.
+- Do not include `[环境]` or metadata such as 禅道产品ID、所属项目、project/product IDs in the bug description body.
+- Keep bug titles clean; do not append timestamps, random IDs, run IDs, or other test-run suffixes.
 - Attach screenshot or video evidence automatically whenever available.
 - Do not claim submission or attachment succeeded unless the tool/API/browser action actually succeeded.
 
@@ -21,10 +23,9 @@ Every bug should include:
 
 - 标题: short, user-impact oriented.
 - 所属项目: 基建S unless user says otherwise.
-- 环境: URL/app version, browser/device, account/role, build, time.
-- 重现步骤: numbered, deterministic, no irrelevant narration.
-- 实际结果: what happened, including error text/status.
-- 预期结果: what should happen.
+- `[步骤]`: numbered, deterministic, no irrelevant narration.
+- `[结果]`: what happened, including only useful error text/status.
+- `[期望]`: what should happen.
 - 影响范围/严重程度: business impact, frequency, workaround.
 - 附件: screenshot, recording, logs, request/response, console/network evidence when useful.
 

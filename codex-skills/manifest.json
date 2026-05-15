@@ -130,7 +130,7 @@
     },
     {
       "name": "qa-zentao-defect-workflow",
-      "description": "Prepare, submit, update, and verify bugs/defects in Zentao/禅道 with clear reproduction steps, actual results, expected results, severity, priority, environment, attachments, screenshots, and concise Chinese bug descriptions. Use when the user asks to 提 bug, 提BUG, 报bug, 提缺陷, 提交缺陷, file bugs, submit Zentao defects, triage defects, retest bugs, or attach evidence."
+      "description": "Prepare, submit, update, and verify bugs/defects in Zentao/禅道 with clean titles, concise steps, actual results, expected results, severity, priority, attachments, screenshots, and focused Chinese bug descriptions. Use when the user asks to 提 bug, 提BUG, 报bug, 提缺陷, 提交缺陷, file bugs, submit Zentao defects, triage defects, retest bugs, or attach evidence."
     },
     {
       "name": "requirement-to-testpoints",
