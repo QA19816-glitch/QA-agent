@@ -45,7 +45,10 @@ Claude Code 全自动完成：REST API 创建缺陷 → Playwright 上传截图�
 
 ### 标题规范
 - ≤ 25 字
-- 格式：`[模块] 现象 + 触发条件`
+- 格式：`【Claude Code】现象 + 触发条件`
+- `【】` 内默认固定写 `Claude Code`，不要改成其他来源名
+- 不用"且"连接两件事；同根因多表现合并一条，非同根因拆单
+- 示例：`【Claude Code】提BUG全流程打通测试`
 - 严重度：1=Critical / 2=Major / 3=Minor / 4=Suggestion
 
 ## 工作流

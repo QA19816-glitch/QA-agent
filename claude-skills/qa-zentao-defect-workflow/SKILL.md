@@ -19,7 +19,7 @@ Use this skill for defect documentation and Zentao work. Trigger it for casual r
 
 Every bug should include:
 
-- 标题: short, user-impact oriented.
+- 标题: ≤25 字，格式 `【Claude Code】现象 + 触发条件`；`【】` 内默认固定写 `Claude Code`，不要改成其他来源名。
 - 所属项目: 基建S unless user says otherwise.
 - 环境: URL/app version, browser/device, account/role, build, time.
 - 重现步骤: numbered, deterministic, no irrelevant narration.
