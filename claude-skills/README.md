@@ -2,9 +2,9 @@
 
 专为 **Claude Code CLI** 设计的 QA 技能库，由大王（QA负责人）维护。
 
-## 包含技能（45个）
+## 包含技能（46个）
 
-### 本地原生 Claude Code 技能（13个）
+### 本地原生 Claude Code 技能（14个）
 | 技能 | 描述 |
 |------|------|
 | cross-browser-testing | 跨浏览器兼容性测试 |
@@ -15,6 +15,7 @@
 | ios-simulator | iOS 模拟器自动化（simctl + idb） |
 | pdf | PDF 生成/提取/审阅 |
 | qa-run | E2E QA 流水线编排（需求→用例→执行→报告） |
+| security-scan-agent | OWASP Top 10 安全扫描（SQL 注入/XSS/越权） |
 | seo-testing | SEO 配置验证（TDK/robots/结构化数据） |
 | tracking-testing | 埋点/事件追踪测试 |
 | ui-auto-test | Mac 本地 UI 自动化（Playwright + Chromium） |
