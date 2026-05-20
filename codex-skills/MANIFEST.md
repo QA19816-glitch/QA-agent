@@ -1,6 +1,6 @@
 # Codex QA Skills Manifest
 
-Total skills: 34
+Total skills: 36
 
 | Skill | Description |
 | --- | --- |
@@ -37,4 +37,6 @@ Total skills: 34
 | `qa-web-ui-testing` | Validate web apps and websites with visible browser testing, exploratory testing, user-flow checks, forms, navigation, responsive layout, console/network evidence, screenshots, cross-browser checks, and UI regression risk analysis. |
 | `qa-zentao-defect-workflow` | Prepare, submit, update, and verify bugs/defects in Zentao/禅道 with clean titles, concise steps, actual results, expected results, severity, priority, attachments, screenshots, and focused Chinese bug descriptions. Use when the user asks to 提 bug, 提BUG, 报bug, 提缺陷, 提交缺陷, file bugs, submit Zentao defects, triage defects, retest bugs, or attach evidence. |
 | `requirement-to-testpoints` | Extract structured QA test points from PRDs, requirement documents, change notes, product specs, user flows, API specs, prototypes, or feature summaries. Use when the user asks to extract test points, testing points, QA coverage, coverage gaps, edge cases, requirement-to-test mapping, or an initial checklist before writing full test cases. |
-| `web-article-extractor` | Extract and analyze article pages from URLs, especially pages that fail in a browser/web fetch because of bot checks, dynamic rendering, mobile-only content, or WeChat mp.weixin.qq.com verification. Use when the user sends a webpage/article URL and asks to read, summarize, analyze, cite, or turn it into a deliverable. |
+| `web-article-extractor` | Extract and analyze article pages from URLs, especially pages that fail in a browser/web fetch because of bot checks, dynamic rendering, mobile-only content, or WeChat mp.weixin.qq.com verification. Use immediately when the user sends a webpage/article URL, a WeChat public-account link, or asks to read, summarize, analyze, cite, identify skills/tools from, or turn article content into a deliverable. |
+| `wechat-skill-auto-installer` | Automatically identify skills, tool packages, GitHub skill repositories, and installable QA-agent bundles from WeChat public-account articles or article text, then check local Codex skill installation and install or update matching skills when the user asks to install, upgrade, or "把技能装上". |
+| `security-scan-agent` | 自动扫描 API 接口的 OWASP Top 10 安全风险，用于授权测试环境中的安全测试、漏洞发现、越权检查和风险报告生成。 |

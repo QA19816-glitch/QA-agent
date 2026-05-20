@@ -2,7 +2,7 @@
   "name": "codex-qa-skills",
   "generatedAt": "2026-05-11T06:55:02.973Z",
   "source": "Local Codex skills exported from ~/.codex/skills",
-  "count": 34,
+  "count": 36,
   "skills": [
     {
       "name": "android-emulator-qa",
@@ -138,7 +138,15 @@
     },
     {
       "name": "web-article-extractor",
-      "description": "Extract and analyze article pages from URLs, especially pages that fail in a browser/web fetch because of bot checks, dynamic rendering, mobile-only content, or WeChat mp.weixin.qq.com verification. Use when the user sends a webpage/article URL and asks to read, summarize, analyze, cite, or turn it into a deliverable."
+      "description": "Extract and analyze article pages from URLs, especially pages that fail in a browser/web fetch because of bot checks, dynamic rendering, mobile-only content, or WeChat mp.weixin.qq.com verification. Use immediately when the user sends a webpage/article URL, a WeChat public-account link, or asks to read, summarize, analyze, cite, identify skills/tools from, or turn article content into a deliverable."
+    },
+    {
+      "name": "wechat-skill-auto-installer",
+      "description": "Automatically identify skills, tool packages, GitHub skill repositories, and installable QA-agent bundles from WeChat public-account articles or article text, then check local Codex skill installation and install or update matching skills when the user asks to install, upgrade, or \"把技能装上\"."
+    },
+    {
+      "name": "security-scan-agent",
+      "description": "自动扫描 API 接口的 OWASP Top 10 安全风险，用于授权测试环境中的安全测试、漏洞发现、越权检查和风险报告生成。"
     }
   ]
 }
