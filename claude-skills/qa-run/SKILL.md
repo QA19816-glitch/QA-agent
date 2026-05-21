@@ -74,19 +74,31 @@ python3 ~/.claude/skills/_lib/feishu.py create \
 
 ### BUG 单硬规范（必须遵守，违反即回炉）
 
-**五字段分节写清楚但不啰嗦，参考记忆 `feedback_bug_template` 和 `feedback_bug_screenshots`：**
+**字段全部必填，清楚但不啰嗦：**
 
 | 字段 | 写什么 | 长度上限 |
 |---|---|---|
-| 标题 | `[模块][严重度] 现象 + 触发条件` | ≤ 40 字 |
+| 标题 | `【Claude Code】现象 + 触发条件`，专业精准，禁止口语化 | ≤ 25 字 |
 | 描述 | 影响面/业务后果，不复述标题 | ≤ 80 字 |
-| 复现步骤 | 编号列表，每步一行，带具体数据 | 每步 ≤ 30 字 |
-| 预期结果 | 一句话 | ≤ 30 字 |
-| 实际结果 | 一句话 + 报错/响应码 | ≤ 30 字 |
+| 严重度 | P0 / P1 / P2 / P3 | 必填 |
+| 优先级 | 高 / 中 / 低 | 必填 |
+| 建议负责人 | 至少精确到组（`@前端组` / `@后台组`） | 必填 |
+| 复现步骤 | 三段式：`[步骤]` / `[结果]` / `[期望]`，每条 ≤ 30 字，HTML `<p>` 标签 | 不写 `[环境]` 段 |
+
+**标题专业性自检**（写完必过）：
+- 用规范术语：「未汉化」不写「英文多」，「无法暂停/恢复播放」不写「不暂停」，「底部导航」不写「底栏」
+- 触发条件具体：「单击视频区域」不写「点击视频」
+- 换一个不了解背景的开发，能否从标题直接定位问题？不能则重写
+
+**禅道提单额外要求：**
+- 创建时 payload 必须显式传 `project: 5`（基建S），不能只传 `product: 3`
+- 提单后用 API 复查：`project == 5`、`steps` 包含 `[步骤]/[结果]/[期望]` 且每段有内容、`files` 非空
+- 补附件走编辑页（`index.php?m=bug&f=edit&bugID=<id>`，`iframe[name="app-qa"]` 内 `input[name='files[]']`），保存后立刻 API 回查 steps 是否被覆盖
+- 查看/编辑用 `index.php?m=bug&f=view|edit&bugID=<id>`，不用 `/zentao/bug-view-<id>.html`（会重定向）
 
 **附图必须自动上传并嵌入**，不是贴本地路径：
 
-- 禅道：`POST /index.php?m=file&f=ajaxUpload` 拿 fileID，嵌入 `<img>` 标签
+- 禅道：编辑页 `input[name='files[]']` set_input_files 后保存；REST `/api.php/v1/files` 不可靠，不用
 - GitHub Issue：上传到 assets.github.com，正文用 `![](url)`
 - 飞书 BUG 节：`drive/v1/medias/upload_all` → 拿 `file_token` → 插入 image block (block_type=27)
 
