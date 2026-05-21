@@ -437,6 +437,44 @@ async function zentaoBodyText(page) {
   return { frames, text: frames.map((frame) => frame.text).join(" ") };
 }
 
+function normalizeZentaoText(value) {
+  return String(value || "").replace(/&nbsp;/g, " ").replace(/\s+/g, "");
+}
+
+function verifyBugDescriptionText(text, finding) {
+  const normalized = normalizeZentaoText(text);
+  const requiredSections = ["[步骤]", "[结果]", "[期望]"];
+  const requiredSnippets = [
+    finding.steps?.find(Boolean),
+    finding.actual?.find(Boolean),
+    finding.expected?.find(Boolean),
+  ].filter(Boolean);
+  const missingSections = requiredSections.filter((section) => !normalized.includes(normalizeZentaoText(section)));
+  const missingSnippets = requiredSnippets.filter((snippet) => !normalized.includes(normalizeZentaoText(snippet)));
+  return {
+    ok: !missingSections.length && !missingSnippets.length,
+    missingSections,
+    missingSnippets,
+    excerpt: text.match(/\[步骤\][\s\S]{0,900}/)?.[0]?.slice(0, 900) || text.slice(0, 900),
+  };
+}
+
+async function verifyZentaoBugDetail(page, bugID, finding) {
+  await page.goto(`${zentaoOrigin}/index.php?m=bug&f=view&bugID=${encodeURIComponent(bugID)}`, { waitUntil: "domcontentloaded", timeout: 30000 });
+  await waitSettled(page, 1800);
+  const detail = await zentaoBodyText(page);
+  const description = verifyBugDescriptionText(detail.text, finding);
+  const hasTitle = detail.text.includes(finding.title);
+  const hasAttachment = finding.evidence ? detail.text.includes(path.basename(finding.evidence)) : true;
+  return {
+    ok: hasTitle && hasAttachment && description.ok,
+    hasTitle,
+    hasAttachment,
+    description,
+    viewUrl: page.url(),
+  };
+}
+
 async function findZentaoFrame(page) {
   await waitSettled(page, 1800);
   return page.frames().find((frame) => frame.name() === "app-qa") ?? page.mainFrame();
@@ -457,8 +495,17 @@ async function submitFindingToZentao(browser, finding) {
     await page.goto(zentaoBrowseUrl, { waitUntil: "domcontentloaded", timeout: 30000 });
     await waitSettled(page, 1500);
     let browse = await zentaoBodyText(page);
-    if (browse.text.includes(finding.title)) {
+    const escapedAtStart = finding.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const duplicateID = browse.text.match(new RegExp(`(\\d+)\\s+${escapedAtStart}`))?.[1] ?? null;
+    if (duplicateID || browse.text.includes(finding.title)) {
       result.skippedDuplicate = true;
+      result.bugID = duplicateID;
+      if (duplicateID) {
+        result.verify = await verifyZentaoBugDetail(page, duplicateID, finding);
+        if (!result.verify.ok) {
+          result.error = `同标题缺陷存在，但详情正文校验失败：${JSON.stringify(result.verify.description)}`;
+        }
+      }
       result.note = "same title already exists in current bug list";
       return result;
     }
@@ -525,7 +572,16 @@ async function submitFindingToZentao(browser, finding) {
     browse = await zentaoBodyText(page);
     const escaped = finding.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
     result.bugID = browse.text.match(new RegExp(`(\\d+)\\s+${escaped}`))?.[1] ?? null;
-    result.submitted = Boolean(result.bugID) || browse.text.includes(finding.title);
+    if (!result.bugID) {
+      result.error = "提交后未在禅道列表中找到新缺陷，不能判定为已提交。";
+      result.submitted = false;
+    } else {
+      result.verify = await verifyZentaoBugDetail(page, result.bugID, finding);
+      result.submitted = result.verify.ok;
+      if (!result.submitted) {
+        result.error = `禅道详情正文/附件校验失败，不能报告为已提交：${JSON.stringify(result.verify)}`;
+      }
+    }
   } catch (error) {
     result.error = error?.message || String(error);
   } finally {

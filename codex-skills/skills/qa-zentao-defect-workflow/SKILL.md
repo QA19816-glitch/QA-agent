@@ -16,6 +16,7 @@ Use this skill for defect documentation and Zentao work. Trigger it for casual r
 - Keep bug titles clean; do not append timestamps, random IDs, run IDs, or other test-run suffixes.
 - Attach screenshot or video evidence automatically whenever available.
 - Do not claim submission or attachment succeeded unless the tool/API/browser action actually succeeded.
+- Never claim a Zentao bug is submitted until the saved detail page or API response has been re-read and confirmed to contain non-empty `[步骤]`、`[结果]`、`[期望]` content. If any section is empty or missing, immediately repair the `steps` field through API/edit flow and re-check; otherwise report the submission as failed/incomplete.
 
 ## Defect Quality Bar
 
@@ -35,7 +36,7 @@ Every bug should include:
 2. Capture evidence before filing.
 3. Deduplicate against existing bugs if the task asks for triage or if duplicate risk is obvious.
 4. Submit or update using the project-local Zentao helper scripts when available.
-5. Verify submission result and attachment result before reporting success.
+5. Verify submission result, non-empty `[步骤]` / `[结果]` / `[期望]` description content, and attachment result before reporting success.
 
 ## Local Helpers
 
