@@ -30,11 +30,11 @@
 - 非测试技能类：**87** 个
 - 全部技能总数：**199** 个
 
-## 源码目录
+## 核心工具目录
 
-- Claude Code 主力包：[`../claude-skills/`](../claude-skills)
-- OpenClaw 源码包：[`../openclaw-skill/`](../openclaw-skill)
-- Codex 历史备份：[`../codex-skills/`](../codex-skills)
+- Claude Code 技能包：[`../claude-skills/`](../claude-skills)
+- Codex 技能包：[`../codex-skills/`](../codex-skills)
+- OpenClaw 技能源码包：[`../openclaw-skill/`](../openclaw-skill)
 - 分发压缩包：[`../dist/`](../dist)
 
 ## 推荐分享链接
