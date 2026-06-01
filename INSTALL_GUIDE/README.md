@@ -30,6 +30,13 @@
 - 非测试技能类：**87** 个
 - 全部技能总数：**199** 个
 
+## 源码目录
+
+- Claude Code 主力包：[`../claude-skills/`](../claude-skills)
+- OpenClaw 源码包：[`../openclaw-skill/`](../openclaw-skill)
+- Codex 历史备份：[`../codex-skills/`](../codex-skills)
+- 分发压缩包：[`../dist/`](../dist)
+
 ## 推荐分享链接
 
 - 仓库主页：<https://github.com/QA19816-glitch/QA-agent>

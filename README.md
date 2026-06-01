@@ -4,6 +4,18 @@
 > 支持 Claude Code CLI（主力）、Codex、OpenClaw 三个运行时。
 > 如果你要分享给别人，就只发这个仓库首页，对方能一眼找到主入口。
 
+## 目录归类
+
+| 目录 | 用途 | 状态 |
+| --- | --- | --- |
+| [`claude-skills/`](./claude-skills) | Claude Code CLI 技能包，当前主力入口 | 推荐使用 |
+| [`openclaw-skill/`](./openclaw-skill) | OpenClaw 技能源码集合，原 `skills/` 目录 | 已归名 |
+| [`codex-skills/`](./codex-skills) | Codex 技能备份与迁移记录 | 历史备份 |
+| [`INSTALL_GUIDE/`](./INSTALL_GUIDE) | 人类可读安装与分类文档 | 推荐分享 |
+| [`inventory/`](./inventory) | 机器清单与分类 manifest | 维护用 |
+| [`dist/`](./dist) | 已打包 zip / `.skill` 分发物 | 下载用 |
+| [`tools/`](./tools) | 仓库维护与 QA 自动化脚本 | 维护用 |
+
 ## 主入口
 
 ### ✨ Claude Code QA Skills（推荐，当前主力）
@@ -38,7 +50,7 @@
 
 - **技能商店首页**：[`INSTALL_GUIDE/README.md`](./INSTALL_GUIDE/README.md)
 - **压缩包下载中心**：[`dist/README.md`](./dist/README.md)
-- **skills 源码目录**：[`skills/`](./skills)
+- **OpenClaw 源码目录**：[`openclaw-skill/`](./openclaw-skill)
 
 ## 仓库统计
 

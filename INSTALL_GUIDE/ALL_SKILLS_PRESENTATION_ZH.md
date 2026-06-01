@@ -140,34 +140,34 @@ atlassian-confluence、atlassian-jira、baidu-web-search、brave-search、crash-
 
 1. `find-skills-3`
    - 功能作用：帮助用户发现并安装适合当前任务的 skill。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/find-skills-3
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/find-skills-3
 2. `summarize`
    - 功能作用：快速总结网页、PDF、图片、音频、视频和本地文件内容。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/summarize
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/summarize
 3. `feishu-doc`
    - 功能作用：直接创建、编辑和更新飞书云文档。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/feishu-doc
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/feishu-doc
 4. `feishu-wiki`
    - 功能作用：直接读写飞书知识库 / Wiki 页面。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/feishu-wiki
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/feishu-wiki
 5. `daily-report-writer`
    - 功能作用：快速生成日报草稿。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/daily-report-writer
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/daily-report-writer
 6. `weekly-report-writer`
    - 功能作用：快速生成结构化中文周报。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/weekly-report-writer
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/weekly-report-writer
 7. `github`
    - 功能作用：统一处理 GitHub 仓库、PR、Issue 和 CI 流程。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/github
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/github
 8. `skill-vetter`
    - 功能作用：在安装 skill 前做安全审查。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/skill-vetter
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/skill-vetter
 9. `skill-creator`
    - 功能作用：帮助把工作方法沉淀成 skill。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/skill-creator
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/skill-creator
 10. `deerflow-super-agent-harness`
    - 功能作用：处理复杂任务时的多代理编排框架。
-   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/skills/deerflow-super-agent-harness
+   - GitHub 链接：https://github.com/QA19816-glitch/QA-agent/tree/main/openclaw-skill/deerflow-super-agent-harness
 
 ## 📋 六、核心总结
 - GitHub 全量：**248 个**
