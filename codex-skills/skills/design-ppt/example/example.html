@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>经营周报示例(暗色)· design-ppt 质量锚点</title>
+<!--
+  design-ppt 成品范例 · 暗色高级版。给模型一个"美观天花板"的基线,示范质量不是内容。
+
+  视觉系统:
+  - 暗色调(深色画布 + 2-3 级 surface,非纯黑),适合经营驾驶舱 / 管理简报 / 产品科技汇报。
+    正式财务、审计、打印归档类仍应走浅色。
+  - 克制渐变质感:有方向的低透径向光、同色系文字渐变、卡片顶部高光、图表面积渐变。
+    全部低饱和、服务焦点 —— 不是满屏紫蓝光晕 / 霓虹 / 粒子。
+  - 矢量图形作视觉焦点:第 4 页用 SVG 环形仪表当整页主视觉(有目标对比口径)。
+
+  配图策略:
+  - 位图/照片(封面主视觉、现场实拍)→【占位图】.ph,锁比例 + 标注内容 + 给生图 prompt。
+  - 矢量/程序化(背景光、环形仪表、折线图、装饰几何)→ 代码自己生成。
+
+  其它:一套 token 全程一致 · 标题写结论 · 图表有轴/刻度/单位/口径/标注 · 结尾是下一步不是"谢谢"。
+  数据为示例。
+-->
+<style>
+  :root{
+    --canvas:#06080d; --bg:#0c1018; --s1:#141a25; --s2:#1b2230;
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.055);
+    --ink:#eef1f6; --ink-2:#97a1b2; --ink-3:#5e6878;
+    --accent:#37b6d3; --accent-2:#2b7fc4; --accent-soft:rgba(55,182,211,.14);
+    --risk:#f0705f; --good:#4cc38a;
+    --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--canvas);font-family:var(--font);color:var(--ink);
+    -webkit-font-smoothing:antialiased;padding:32px 0;line-height:1.5}
+  .deck{display:flex;flex-direction:column;align-items:center;gap:28px}
+  .slide{position:relative;width:960px;height:540px;background:var(--bg);
+    border:1px solid var(--line-2);border-radius:4px;
+    box-shadow:0 8px 30px rgba(0,0,0,.45);
+    padding:44px 52px 54px;display:flex;flex-direction:column;overflow:hidden}
+  .num{font-variant-numeric:tabular-nums}
+  .footer{position:absolute;left:52px;right:52px;bottom:18px;display:flex;
+    justify-content:space-between;align-items:center;font-size:11px;color:var(--ink-3);
+    border-top:1px solid var(--line-2);padding-top:8px;z-index:3}
+  .footer .brand{letter-spacing:.04em}
+
+  /* 字体层级 token */
+  .eyebrow{font-size:12.5px;color:var(--accent);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .page-title{font-size:25px;font-weight:700;line-height:1.32;letter-spacing:-.01em}
+  .page-title .em{color:var(--accent)}
+  .body{font-size:15px;color:var(--ink-2)}
+  /* 同色系文字渐变(克制焦点)*/
+  .grad{background:linear-gradient(180deg,#ffffff 0%,#a9dcec 120%);
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+  /* 占位图组件(暗色适配)*/
+  .ph{background:var(--s1);border:1px solid var(--line);border-radius:10px;display:flex;
+    flex-direction:column;align-items:center;justify-content:center;gap:9px;
+    color:var(--ink-3);position:relative;overflow:hidden}
+  .ph::after{content:"";position:absolute;inset:0;
+    background:radial-gradient(120% 80% at 80% 10%,var(--accent-soft),transparent 60%);pointer-events:none}
+  .ph .pic{width:34px;height:34px;opacity:.55;position:relative;z-index:1}
+  .ph .ph-t{font-size:13px;font-weight:600;color:#9aa4b3;position:relative;z-index:1}
+  .ph .ph-d{font-size:11.5px;color:#727c8b;max-width:80%;text-align:center;line-height:1.55;position:relative;z-index:1}
+  .ph .ratio{position:absolute;top:10px;right:12px;font-size:10px;background:rgba(255,255,255,.05);
+    border:1px solid var(--line);border-radius:3px;padding:2px 7px;color:var(--ink-3);z-index:1}
+
+  /* ---------- 1 封面 ---------- */
+  .cover{padding:0;justify-content:center}
+  .cover .glow{position:absolute;inset:0;z-index:0;
+    background:
+      radial-gradient(60% 80% at 88% 18%,rgba(55,182,211,.20),transparent 55%),
+      radial-gradient(50% 60% at 78% 100%,rgba(43,127,196,.16),transparent 60%)}
+  .cover .focus{position:absolute;right:-40px;top:0;bottom:0;width:520px;z-index:1;opacity:.9}
+  .cover .inner{position:relative;z-index:2;padding:56px 52px;
+    display:flex;flex-direction:column;justify-content:space-between;height:100%;max-width:620px}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:14px;letter-spacing:.03em}
+  .logo .mark{width:22px;height:22px;border-radius:6px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    display:flex;align-items:center;justify-content:center;color:#06121a;font-size:13px;font-weight:800}
+  .cover h1{font-size:34px;font-weight:700;line-height:1.28;letter-spacing:-.02em}
+  .cover .sub{font-size:15px;color:var(--ink-2);margin-top:14px}
+  .cover .meta{display:flex;gap:26px;font-size:12.5px;color:var(--ink-2);
+    border-top:1px solid var(--line);padding-top:16px}
+  .cover .meta b{color:var(--ink);font-weight:600}
+
+  /* ---------- 2 结论:图形化对照(图 + 小段文字)---------- */
+  .verdict{position:relative}
+  .verdict .glow{position:absolute;inset:0;z-index:0;
+    background:radial-gradient(50% 55% at 12% 25%,rgba(55,182,211,.12),transparent 60%)}
+  .verdict .z{position:relative;z-index:1;flex:1;display:flex;flex-direction:column}
+  .faces{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:8px}
+  .face{border:1px solid var(--line);border-radius:13px;padding:20px 22px;
+    display:flex;flex-direction:column;position:relative;overflow:hidden}
+  /* 涨跌色按中国规则:涨=红(增长面) 跌=绿(风险面) */
+  .face.up{background:linear-gradient(165deg,rgba(240,112,95,.13),var(--s1) 72%)}
+  .face.dn{background:linear-gradient(165deg,rgba(76,195,138,.13),var(--s1) 72%)}
+  .face .ft{font-size:13px;font-weight:600;color:var(--ink-2);display:flex;align-items:center;gap:8px}
+  .face .ft .d{width:8px;height:8px;border-radius:50%}
+  .face.up .ft .d{background:var(--risk)} .face.dn .ft .d{background:var(--good)}
+  .face .fv{font-size:37px;font-weight:800;margin-top:9px;letter-spacing:-.02em}
+  .face.up .fv{color:var(--risk)} .face.dn .fv{color:var(--good)}
+  .face .fv small{font-size:14px;font-weight:600;color:var(--ink-3);margin-left:7px}
+  .face .spark{flex:1;min-height:0;margin-top:14px;display:block}
+  .face .fd{font-size:12.5px;color:var(--ink-2);margin-top:13px;line-height:1.55}
+  .verdict-note{font-size:16px;font-weight:600;color:var(--ink);margin-top:18px;
+    padding-left:14px;border-left:3px solid var(--accent);line-height:1.5}
+  .verdict-note span{color:var(--ink-2);font-weight:400}
+
+  /* ---------- 3 KPI ---------- */
+  .head{margin-bottom:26px}
+  .head .eyebrow{display:block;margin-bottom:12px}
+  .head .page-title{margin-top:0}
+  .stage{flex:1;display:flex;flex-direction:column;justify-content:center;min-height:0}
+  .kpi-zone{flex:1;display:flex;flex-direction:column;justify-content:center;gap:24px}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .kpi{background:linear-gradient(180deg,var(--s2),var(--s1));
+    border:1px solid var(--line);border-radius:11px;padding:18px 16px 15px;position:relative;overflow:hidden}
+  .kpi::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,rgba(255,255,255,.16),transparent)}
+  .kpi.warn::before{background:linear-gradient(90deg,transparent,rgba(240,112,95,.5),transparent)}
+  .kpi .label{font-size:12px;color:var(--ink-2)}
+  .kpi .val{font-size:30px;font-weight:700;margin-top:10px;letter-spacing:-.01em}
+  .kpi .val span{font-size:14px;font-weight:600;color:var(--ink-3);margin-left:2px}
+  .kpi .delta{font-size:12px;margin-top:7px;font-weight:600}
+  .kpi .delta.up{color:var(--risk)} .kpi .delta.dn{color:var(--good)}
+  .kpi .delta .base{color:var(--ink-3);font-weight:400}
+  .kpi .ks{width:100%;height:30px;margin-top:14px;display:block}
+
+  /* ---------- 4 矢量焦点:环形仪表 ---------- */
+  .gauge-wrap{display:grid;grid-template-columns:1.1fr 1fr;gap:36px;align-items:center}
+  .gauge{position:relative;display:flex;align-items:center;justify-content:center}
+  .gauge .center{position:absolute;text-align:center}
+  .gauge .center .big{font-size:52px;font-weight:800;letter-spacing:-.02em;line-height:1}
+  .gauge .center .cap{font-size:12.5px;color:var(--ink-2);margin-top:8px}
+  .gauge .center .tgt{font-size:11.5px;color:var(--accent);margin-top:4px}
+  .sats{display:flex;flex-direction:column;gap:14px}
+  .sat{display:flex;justify-content:space-between;align-items:center;
+    padding:13px 16px;background:var(--s1);border:1px solid var(--line);border-radius:9px}
+  .sat .nm{font-size:13.5px;color:var(--ink-2)}
+  .sat .vv{font-size:17px;font-weight:700}
+  .sat .vv small{font-size:11px;font-weight:600;margin-left:6px}
+
+  /* ---------- 5 图表 ---------- */
+  .chart-wrap{display:flex;gap:34px;align-items:stretch;height:328px}
+  .chart-main{flex:1.7;display:flex;flex-direction:column}
+  .chart-side{flex:1;border-left:1px solid var(--line);padding-left:26px;
+    display:flex;flex-direction:column;justify-content:space-between;gap:15px;padding-top:8px;padding-bottom:8px}
+  .insight .t{font-size:14px;font-weight:600;display:flex;gap:8px;align-items:baseline}
+  .insight .t .dot{width:7px;height:7px;border-radius:50%;flex:none}
+  .insight p{font-size:13px;color:var(--ink-2);margin-top:5px;padding-left:15px}
+  svg text{font-family:var(--font)}
+
+  /* ---------- 6 图文佐证 ---------- */
+  .split{flex:1;display:grid;grid-template-columns:1.15fr 1fr;gap:34px}
+  .split .ph{height:100%}
+  .split .points{display:flex;flex-direction:column;justify-content:center;gap:19px}
+  .point{display:flex;gap:13px;align-items:flex-start}
+  .point .n{width:25px;height:25px;border-radius:7px;background:var(--accent-soft);
+    color:var(--accent);font-size:13px;font-weight:700;flex:none;
+    display:flex;align-items:center;justify-content:center}
+  .point .pt{font-size:15px;font-weight:600}
+  .point .pd{font-size:13px;color:var(--ink-2);margin-top:3px;line-height:1.55}
+
+  /* ---------- 7 决策 ---------- */
+  .rows{flex:1;display:flex;flex-direction:column;border-top:1px solid var(--line)}
+  .row{flex:1;display:grid;grid-template-columns:14px 1fr 150px 110px;gap:16px;
+    align-items:center;padding:15px 4px;border-bottom:1px solid var(--line)}
+  .row .tag{width:9px;height:9px;border-radius:2px}
+  .row .what{font-size:15px;font-weight:600}
+  .row .what small{display:block;font-size:12.5px;color:var(--ink-2);font-weight:400;margin-top:3px}
+  .row .who{font-size:13px;color:var(--ink-2)}
+  .row .who b{color:var(--ink);font-weight:600}
+  .row .due{font-size:13px;font-weight:600;text-align:right}
+  .row .due.soon{color:var(--risk)}
+
+  /* ---------- 8 收束:下一步时间线 ---------- */
+  .close{justify-content:center;position:relative}
+  .close .glow{position:absolute;inset:0;z-index:0;
+    background:radial-gradient(45% 60% at 85% 70%,rgba(55,182,211,.13),transparent 60%)}
+  .close .z{position:relative;z-index:1}
+  .close .big{font-size:27px;font-weight:700;line-height:1.4;max-width:680px;letter-spacing:-.01em}
+  .timeline{display:flex;gap:0;margin-top:34px}
+  .tl{flex:1;position:relative;padding:24px 18px 0 0}
+  .tl::before{content:"";position:absolute;left:0;top:0;width:13px;height:13px;border-radius:50%;
+    background:var(--bg);border:2px solid var(--accent)}
+  .tl::after{content:"";position:absolute;left:13px;top:6px;right:8px;height:2px;background:var(--line)}
+  .tl:last-child::after{display:none}
+  .tl .d{font-size:12px;color:var(--accent);font-weight:600}
+  .tl .x{font-size:13.5px;color:var(--ink);font-weight:600;margin-top:7px}
+  .tl .xn{font-size:12.5px;color:var(--ink-2);margin-top:4px;line-height:1.5}
+
+  .pagehint{text-align:center;font-size:12px;color:#404a5a;padding-bottom:8px}
+</style>
+</head>
+<body>
+<div class="pagehint">design-ppt 范例 · 经营周报(暗色)· 示例数据,仅供排版参考</div>
+<div class="deck">
+
+  <!-- 1 · 封面:暗色 + 克制径向光 + 矢量焦点 -->
+  <section class="slide cover">
+    <div class="glow"></div>
+    <!-- 矢量视觉焦点:抽象"履约网络/增长",自己生成 -->
+    <svg class="focus" viewBox="0 0 520 540" fill="none">
+      <defs>
+        <linearGradient id="line" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#2b7fc4"/><stop offset="1" stop-color="#37b6d3"/>
+        </linearGradient>
+        <radialGradient id="ring" cx="50%" cy="50%" r="50%">
+          <stop offset="60%" stop-color="#37b6d3" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#37b6d3" stop-opacity=".5"/>
+        </radialGradient>
+      </defs>
+      <!-- 同心环 -->
+      <g stroke="#37b6d3" fill="none">
+        <circle cx="360" cy="270" r="80"  stroke-opacity=".5"/>
+        <circle cx="360" cy="270" r="140" stroke-opacity=".32"/>
+        <circle cx="360" cy="270" r="200" stroke-opacity=".18"/>
+        <circle cx="360" cy="270" r="262" stroke-opacity=".09"/>
+      </g>
+      <!-- 上扬增长曲线 -->
+      <polyline points="70,430 150,400 230,410 300,350 360,360 420,275 470,300 520,205"
+        stroke="url(#line)" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- 节点 -->
+      <g>
+        <circle cx="300" cy="350" r="4" fill="#0c1018" stroke="#37b6d3" stroke-width="2"/>
+        <circle cx="420" cy="275" r="4" fill="#0c1018" stroke="#37b6d3" stroke-width="2"/>
+        <circle cx="360" cy="270" r="6" fill="#37b6d3"/>
+        <circle cx="520" cy="205" r="5" fill="#0c1018" stroke="#37b6d3" stroke-width="2"/>
+      </g>
+    </svg>
+    <div class="inner">
+      <div class="logo"><span class="mark">北</span>北区零售事业部</div>
+      <div>
+        <div class="eyebrow" style="margin-bottom:16px">第 23 周 · 经营周报</div>
+        <h1><span class="grad">GMV 回升,但履约延迟</span><br>正在拖住复购</h1>
+        <div class="sub">一周关键变化、风险与下周决策项</div>
+      </div>
+      <div class="meta">
+        <div>周期 · <b>06-01 ~ 06-07</b></div>
+        <div>汇报人 · <b>李航</b></div>
+        <div>日期 · <b>2026-06-09</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · 结论:图形化对照,一升一降的矛盾用图承载,文字降为解读 -->
+  <section class="slide verdict">
+    <div class="glow"></div>
+    <div class="z">
+      <div class="head">
+        <div class="eyebrow">本周结论</div>
+        <div class="page-title">增长和履约<span class="em">背道而驰</span>:GMV 回升,准时率却跌破目标</div>
+      </div>
+      <div class="faces">
+        <div class="face up">
+          <div class="ft"><span class="d"></span>增长面 · 真实回升</div>
+          <div class="fv num">+6.8%<small>GMV 环比</small></div>
+          <svg class="spark" width="100%" height="58" viewBox="0 0 240 58" preserveAspectRatio="none">
+            <defs><linearGradient id="su" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f0705f" stop-opacity=".35"/>
+              <stop offset="1" stop-color="#f0705f" stop-opacity="0"/></linearGradient></defs>
+            <path d="M0,46 48,42 96,44 144,28 192,30 240,12 L240,58 L0,58 Z" fill="url(#su)"/>
+            <polyline points="0,46 48,42 96,44 144,28 192,30 240,12" fill="none"
+              stroke="#f0705f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="fd">支付订单 ▲4.2%、客单价 ▲2.5% 同步回升,主要由华东 618 预热大促拉动。</div>
+        </div>
+        <div class="face dn">
+          <div class="ft"><span class="d"></span>风险面 · 履约掉队</div>
+          <div class="fv num">86.3%<small>较上周 ▼4.1pt</small></div>
+          <svg class="spark" width="100%" height="58" viewBox="0 0 240 58" preserveAspectRatio="none">
+            <line x1="0" y1="16" x2="240" y2="16" stroke="#5e6878" stroke-dasharray="4 4" stroke-width="1"/>
+            <polyline points="0,13 48,17 96,22 144,31 192,42 240,47" fill="none"
+              stroke="#4cc38a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="240" cy="47" r="3.5" fill="#0c1018" stroke="#4cc38a" stroke-width="2"/>
+          </svg>
+          <div class="fd">华东准时率跌破 95% 目标线(虚线),周末两日最低到 84%,已开始压制次周复购。</div>
+        </div>
+      </div>
+      <div class="verdict-note">本周不该再投流量,而要先补华东周末履约。
+        <span>增长是真的,问题也是真的——先守住复购。</span></div>
+    </div>
+    <div class="footer"><span class="brand">北区零售 · 经营周报</span><span class="num">02 / 08</span></div>
+  </section>
+
+  <!-- 3 · KPI 概览 -->
+  <section class="slide">
+    <div class="head">
+      <div class="eyebrow">指标变化</div>
+      <div class="page-title">四个核心指标三个回升,<span class="em">履约准时率独自承压</span></div>
+    </div>
+    <div class="kpi-zone">
+      <div class="kpis">
+        <div class="kpi"><div class="label">GMV(本周)</div>
+          <div class="val num">¥<span style="font-size:22px">2,184</span><span>万</span></div>
+          <div class="delta up num">▲ 6.8% <span class="base">环比上周</span></div>
+          <svg class="ks" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,24 30,21 60,22 90,13 120,7" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="kpi"><div class="label">支付订单数</div>
+          <div class="val num">18.7<span>万</span></div>
+          <div class="delta up num">▲ 4.2% <span class="base">环比上周</span></div>
+          <svg class="ks" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,23 30,22 60,18 90,15 120,8" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="kpi"><div class="label">客单价</div>
+          <div class="val num">¥1,168</div>
+          <div class="delta up num">▲ 2.5% <span class="base">环比上周</span></div>
+          <svg class="ks" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,22 30,20 60,21 90,17 120,14" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="kpi warn"><div class="label">履约准时率</div>
+          <div class="val num">86.3<span>%</span></div>
+          <div class="delta dn num">▼ 4.1pt <span class="base">环比上周</span></div>
+          <svg class="ks" viewBox="0 0 120 30" preserveAspectRatio="none"><polyline points="0,8 30,11 60,14 90,20 120,24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+      <div class="body">
+        口径:GMV 为不含税成交额,剔除退款;准时率 = 24h 内出库订单 / 总订单。三项增长指标受华东 618 预热大促拉动。
+      </div>
+    </div>
+    <div class="footer"><span class="brand">北区零售 · 经营周报</span><span class="num">03 / 08</span></div>
+  </section>
+
+  <!-- 4 · 矢量焦点:环形仪表当整页主视觉 -->
+  <section class="slide">
+    <div class="head">
+      <div class="eyebrow">全区履约健康度</div>
+      <div class="page-title">全区准时率 <span class="em">91.2%</span>,距 95% 目标仍差 3.8pt,缺口全在华东</div>
+    </div>
+    <div class="stage">
+    <div class="gauge-wrap">
+      <div class="gauge">
+        <svg width="300" height="300" viewBox="0 0 300 300">
+          <defs>
+            <linearGradient id="gauge" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#2b7fc4"/><stop offset="1" stop-color="#37b6d3"/>
+            </linearGradient>
+          </defs>
+          <!-- 轨道 -->
+          <circle cx="150" cy="150" r="120" fill="none" stroke="#1b2230" stroke-width="20"/>
+          <!-- 进度 91.2% of 全圆 -> dash:周长 2πr=753.98,91.2% = 687.6 -->
+          <circle cx="150" cy="150" r="120" fill="none" stroke="url(#gauge)" stroke-width="20"
+            stroke-linecap="round" stroke-dasharray="687.6 753.98"
+            transform="rotate(-90 150 150)"/>
+          <!-- 目标刻度 95% 位置标记 -->
+          <line x1="150" y1="18" x2="150" y2="42" stroke="#5e6878" stroke-width="2"
+            transform="rotate(342 150 150)"/>
+        </svg>
+        <div class="center">
+          <div class="big grad num">91.2%</div>
+          <div class="cap">全区履约准时率</div>
+          <div class="tgt num">目标 95.0% · 差 3.8pt</div>
+        </div>
+      </div>
+      <div class="sats">
+        <div class="sat"><span class="nm">华北仓</span><span class="vv num" style="color:var(--good)">95.4%<small>达标</small></span></div>
+        <div class="sat"><span class="nm">华中仓</span><span class="vv num" style="color:var(--good)">94.1%<small>接近</small></span></div>
+        <div class="sat"><span class="nm">华东仓</span><span class="vv num" style="color:var(--risk)">86.3%<small>承压</small></span></div>
+        <div class="sat" style="border-color:rgba(240,112,95,.3)">
+          <span class="nm" style="color:var(--ink)">华东缺口贡献</span><span class="vv num" style="color:var(--risk)">占全区 82%</span></div>
+      </div>
+    </div>
+    </div>
+    <div class="footer"><span class="brand">北区零售 · 经营周报</span><span class="num">04 / 08</span></div>
+  </section>
+
+  <!-- 5 · 图表归因(暗色发光折线 + 面积渐变) -->
+  <section class="slide">
+    <div class="head">
+      <div class="eyebrow">归因</div>
+      <div class="page-title">华东准时率下滑集中在<span class="em">周末两天</span>,与单量峰值重叠</div>
+    </div>
+    <div class="stage">
+    <div class="chart-wrap">
+      <div class="chart-main">
+        <svg viewBox="0 0 520 300" width="100%" height="100%" preserveAspectRatio="xMidYMid meet">
+          <defs>
+            <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#37b6d3" stop-opacity=".28"/>
+              <stop offset="1" stop-color="#37b6d3" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <g font-size="11" fill="#5e6878" text-anchor="end">
+            <line x1="56" y1="20"  x2="510" y2="20"  stroke="#1b2230"/>
+            <line x1="56" y1="80"  x2="510" y2="80"  stroke="#1b2230"/>
+            <line x1="56" y1="140" x2="510" y2="140" stroke="#1b2230"/>
+            <line x1="56" y1="200" x2="510" y2="200" stroke="#1b2230"/>
+            <text x="48" y="24">100%</text><text x="48" y="84">95%</text>
+            <text x="48" y="144">90%</text><text x="48" y="204">85%</text>
+          </g>
+          <line x1="56" y1="80" x2="510" y2="80" stroke="#37b6d3" stroke-dasharray="4 4" stroke-width="1" opacity=".5"/>
+          <text x="510" y="74" font-size="10.5" fill="#37b6d3" text-anchor="end">目标 95%</text>
+          <!-- 面积渐变 -->
+          <path d="M86,68 156,80 226,92 296,116 366,152 436,212 506,188 L506,260 L86,260 Z" fill="url(#area)"/>
+          <polyline fill="none" stroke="#37b6d3" stroke-width="2.5" stroke-linecap="round"
+            points="86,68 156,80 226,92 296,116 366,152 436,212 506,188"/>
+          <g fill="#0c1018" stroke="#37b6d3" stroke-width="2">
+            <circle cx="86" cy="68" r="3.5"/><circle cx="156" cy="80" r="3.5"/>
+            <circle cx="226" cy="92" r="3.5"/><circle cx="296" cy="116" r="3.5"/>
+            <circle cx="366" cy="152" r="3.5"/><circle cx="436" cy="212" r="3.5"/>
+            <circle cx="506" cy="188" r="3.5"/>
+          </g>
+          <g font-size="11.5" fill="#97a1b2" text-anchor="middle">
+            <text x="86" y="262">周一</text><text x="156" y="262">周二</text>
+            <text x="226" y="262">周三</text><text x="296" y="262">周四</text><text x="366" y="262">周五</text>
+            <text x="436" y="262">周六</text>
+            <text x="506" y="262">周日</text>
+          </g>
+          <text x="56" y="288" font-size="10.5" fill="#5e6878">华东仓 · 履约准时率(%)· 2026-06-01~06-07</text>
+        </svg>
+      </div>
+      <div class="chart-side">
+        <div class="insight"><div class="t"><span class="dot" style="background:var(--risk)"></span>周末双日跌破 85%</div>
+          <p>周六最低 84.0%,周日 86.0%,两天拖累全周均值 4.1pt。</p></div>
+        <div class="insight"><div class="t"><span class="dot" style="background:var(--accent)"></span>与单量峰值重叠</div>
+          <p>周末单量是工作日的 1.6 倍,现有夜班拣货人力不足以覆盖。</p></div>
+        <div class="insight"><div class="t"><span class="dot" style="background:var(--ink-3)"></span>仅华东仓出现</div>
+          <p>华北、华中全周稳定在 94% 以上,问题不在系统。</p></div>
+      </div>
+    </div>
+    </div>
+    <div class="footer"><span class="brand">北区零售 · 经营周报</span><span class="num">05 / 08</span></div>
+  </section>
+
+  <!-- 6 · 图文佐证:位图用占位图 -->
+  <section class="slide">
+    <div class="head">
+      <div class="eyebrow">现场核实</div>
+      <div class="page-title">周末峰值下,华东仓拣货区<span class="em">动线拥堵肉眼可见</span></div>
+    </div>
+    <div class="split">
+      <div class="ph">
+        <span class="ratio">4 : 3</span>
+        <svg class="pic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="8.5" cy="9.5" r="1.8"/>
+          <path d="M3 16l5-4 4 3 3.5-2.5L21 16"/></svg>
+        <div class="ph-t">现场实拍(占位)</div>
+        <div class="ph-d">建议配图:华东仓周六晚高峰拣货区实拍<br>生图 prompt:繁忙的现代物流仓库拣货区,夜晚,纪实风</div>
+      </div>
+      <div class="points">
+        <div class="point"><div class="n">1</div><div>
+          <div class="pt">拣货动线在打包台前交汇</div>
+          <div class="pd">峰值时段两条主动线共用一个出口,平均每单多耗 40 秒。</div></div></div>
+        <div class="point"><div class="n">2</div><div>
+          <div class="pt">夜班只有日班一半人力</div>
+          <div class="pd">单量却是日班的 1.6 倍,缺口集中在 20:00–23:00。</div></div></div>
+        <div class="point"><div class="n">3</div><div>
+          <div class="pt">问题可定位、可解</div>
+          <div class="pd">非系统故障,补人力 + 调整动线即可恢复,见下页方案。</div></div></div>
+      </div>
+    </div>
+    <div class="footer"><span class="brand">北区零售 · 经营周报</span><span class="num">06 / 08</span></div>
+  </section>
+
+  <!-- 7 · 决策/行动 -->
+  <section class="slide">
+    <div class="head">
+      <div class="eyebrow">下周决策项</div>
+      <div class="page-title">三件事需要本周内拍板,<span class="em">两件需要你批资源</span></div>
+    </div>
+    <div class="rows">
+      <div class="row"><span class="tag" style="background:var(--risk)"></span>
+        <div class="what">华东仓周末增配 2 班夜班拣货
+          <small>预计把周末准时率拉回 92%+,需临时用工预算约 ¥8 万/月</small></div>
+        <div class="who">负责人 <b>仓配 · 王磊</b></div>
+        <div class="due soon">需批 · 周三前</div></div>
+      <div class="row"><span class="tag" style="background:var(--risk)"></span>
+        <div class="what">对受影响订单发放履约补偿券
+          <small>本周延迟订单约 1.1 万笔,挽回次周复购,预算 ¥15 万</small></div>
+        <div class="who">负责人 <b>用户运营 · 陈曦</b></div>
+        <div class="due soon">需批 · 周二前</div></div>
+      <div class="row"><span class="tag" style="background:var(--accent)"></span>
+        <div class="what">618 前重估华东仓峰值承载
+          <small>避免大促当周重演,输出扩容或分仓方案</small></div>
+        <div class="who">负责人 <b>供应链 · 周敏</b></div>
+        <div class="due">评审 · 周五</div></div>
+    </div>
+    <div class="footer"><span class="brand">北区零售 · 经营周报</span><span class="num">07 / 08</span></div>
+  </section>
+
+  <!-- 8 · 收束:下一步时间线(不是"谢谢") -->
+  <section class="slide close">
+    <div class="glow"></div>
+    <div class="z">
+      <div class="eyebrow">下一步</div>
+      <div class="big" style="margin-top:14px">本周把华东周末履约补回 <span class="grad">92%+</span>,为 618 守住复购</div>
+      <div class="timeline">
+        <div class="tl"><div class="d num">周二</div><div class="x">补偿券上线</div>
+          <div class="xn">挽回本周延迟订单复购</div></div>
+        <div class="tl"><div class="d num">周三</div><div class="x">夜班增配到位</div>
+          <div class="xn">周末准时率拉回 92%+</div></div>
+        <div class="tl"><div class="d num">周五</div><div class="x">扩容方案评审</div>
+          <div class="xn">锁定 618 峰值承载</div></div>
+        <div class="tl"><div class="d num">下周一</div><div class="x">复盘验证</div>
+          <div class="xn">看周末两日是否回升</div></div>
+      </div>
+    </div>
+    <div class="footer"><span class="brand">北区零售 · 经营周报</span><span class="num">08 / 08</span></div>
+  </section>
+
+</div>
+</body>
+</html>
