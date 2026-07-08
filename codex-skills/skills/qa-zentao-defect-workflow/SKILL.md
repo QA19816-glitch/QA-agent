@@ -14,8 +14,8 @@ Use this skill for defect documentation and Zentao work. Trigger it for casual r
 - Write concise `[步骤]`、`[结果]`、`[期望]` only in the bug description body.
 - Do not include `[环境]` or metadata such as 禅道产品ID、所属项目、project/product IDs in the bug description body.
 - Keep bug titles clean; do not append timestamps, random IDs, run IDs, or other test-run suffixes.
-- Attach screenshot or video evidence automatically whenever available.
-- Do not claim submission or attachment succeeded unless the tool/API/browser action actually succeeded.
+- Embed screenshot evidence directly into the `[步骤]` rich-text body as visible inline images whenever available. For Zentao, do not use base64/data URI images because the editor may strip them; first save the screenshot as the bug's formal `files[]` attachment or through the Zen editor upload flow, then embed the resulting `/index.php?m=file&f=read&t=<ext>&fileID=<id>` URL in `[步骤]`. Show the section title `证据截图` and the image only; do not add a separate visible filename/caption line such as `证据截图：xxx.png`. Verify actual browser rendering before reporting success: the inline image must have non-zero `naturalWidth`/`naturalHeight`, visible layout size, and a saved Bug-detail screenshot showing the preview. Use downloadable-only attachments only when the user explicitly asks for attachments or inline image persistence fails after repair.
+- Do not claim submission, attachment, or inline image display succeeded unless the tool/API/browser action actually succeeded and the saved image resource returns `200 image/*`.
 - Never claim a Zentao bug is submitted until the saved detail page or API response has been re-read and confirmed to contain non-empty `[步骤]`、`[结果]`、`[期望]` content. If any section is empty or missing, immediately repair the `steps` field through API/edit flow and re-check; otherwise report the submission as failed/incomplete.
 
 ## Defect Quality Bar
@@ -28,7 +28,7 @@ Every bug should include:
 - `[结果]`: what happened, including only useful error text/status.
 - `[期望]`: what should happen.
 - 影响范围/严重程度: business impact, frequency, workaround.
-- 附件: screenshot, recording, logs, request/response, console/network evidence when useful.
+- 证据: screenshots should be visible inline in the `[步骤]` body by default; use recordings, logs, request/response, and console/network evidence when useful.
 
 ## Workflow
 
@@ -36,7 +36,7 @@ Every bug should include:
 2. Capture evidence before filing.
 3. Deduplicate against existing bugs if the task asks for triage or if duplicate risk is obvious.
 4. Submit or update using the project-local Zentao helper scripts when available.
-5. Verify submission result, non-empty `[步骤]` / `[结果]` / `[期望]` description content, and attachment result before reporting success.
+5. Verify submission result, non-empty `[步骤]` / `[结果]` / `[期望]` description content, visible inline evidence, embedded image resource response, and actual browser rendering (`naturalWidth`/`naturalHeight` plus screenshot) before reporting success.
 
 ## Local Helpers
 
