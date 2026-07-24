@@ -33,12 +33,16 @@ import urllib.request
 from pathlib import Path
 
 OPENCLAW_CONFIG = Path("/Users/jiguang/.openclaw/openclaw.json")
+CODEX_FEISHU_CONFIG = Path("/Users/jiguang/.codex/feishu.json")
 DEFAULT_OWNER_OPEN_ID = "ou_f0136616b2e5fcdd98a977e75fb9e2d0"
 TOKEN_CACHE = Path.home() / ".claude" / "cache" / "feishu_token.json"
 FEISHU_BASE = "https://open.feishu.cn/open-apis"
 
 
 def load_creds() -> tuple[str, str]:
+    if CODEX_FEISHU_CONFIG.exists():
+        cfg = json.loads(CODEX_FEISHU_CONFIG.read_text())
+        return cfg["appId"], cfg["appSecret"]
     data = json.loads(OPENCLAW_CONFIG.read_text())
     acc = data["channels"]["feishu"]["accounts"]["default"]
     return acc["appId"], acc["appSecret"]
