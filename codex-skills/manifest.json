@@ -2,7 +2,7 @@
   "name": "codex-qa-skills",
   "generatedAt": "2026-05-11T06:55:02.973Z",
   "source": "Local Codex skills exported from ~/.codex/skills",
-  "count": 40,
+  "count": 41,
   "skills": [
     {
       "name": "android-emulator-qa",
@@ -23,6 +23,10 @@
     {
       "name": "jmeter-performance-testing",
       "description": "Use when the user asks for Apache JMeter, JMeter, JMX, JTL, .jmx plans, .jtl result analysis, non-GUI load tests, stress tests, spike tests, soak tests, capacity tests, ramp-up design, thread groups, timers, assertions, or JMeter HTML reports."
+    },
+    {
+      "name": "one2all",
+      "description": "Submit, update, deduplicate, and verify BUGs in the One2/One2All quality-management platform with visible-browser evidence, requirement association, impact-based severity and priority, screenshots, and saved-detail verification. Use when the user asks to 提 BUG, 报 BUG, 提交缺陷, or file a defect without naming a platform; also use when One2, One2All, one2all, 当前平台, or the One2 quality-management URL is named. Do not use for requests that explicitly name Zentao/禅道."
     },
     {
       "name": "pdf",
@@ -130,7 +134,7 @@
     },
     {
       "name": "qa-zentao-defect-workflow",
-      "description": "Prepare, submit, update, and verify bugs/defects in Zentao/禅道 with clean titles, concise steps, actual results, expected results, severity, priority, attachments, screenshots, and focused Chinese bug descriptions. Use when the user asks to 提 bug, 提BUG, 报bug, 提缺陷, 提交缺陷, file bugs, submit Zentao defects, triage defects, retest bugs, or attach evidence."
+      "description": "Prepare, submit, update, and verify bugs/defects specifically in Zentao/禅道 with clean titles, concise steps, actual results, expected results, severity, priority, attachments, screenshots, and focused Chinese bug descriptions. Use only when the user explicitly names Zentao/禅道 or supplies a Zentao URL, or when updating, triaging, retesting, or attaching evidence to an identified Zentao defect. Generic requests such as 提 BUG or 报 BUG default to One2 and must not trigger this skill."
     },
     {
       "name": "requirement-to-testpoints",

@@ -1,11 +1,11 @@
 ---
 name: qa-zentao-defect-workflow
-description: Prepare, submit, update, and verify bugs/defects in Zentao/禅道 with clean titles, concise steps, actual results, expected results, severity, priority, attachments, screenshots, and focused Chinese bug descriptions. Use when the user asks to 提 bug, 提BUG, 报bug, 提缺陷, 提交缺陷, file bugs, submit Zentao defects, triage defects, retest bugs, or attach evidence.
+description: Prepare, submit, update, and verify bugs/defects specifically in Zentao/禅道 with clean titles, concise steps, actual results, expected results, severity, priority, attachments, screenshots, and focused Chinese bug descriptions. Use only when the user explicitly names Zentao/禅道 or supplies a Zentao URL, or when updating, triaging, retesting, or attaching evidence to an identified Zentao defect. Generic requests such as 提 BUG or 报 BUG default to One2 and must not trigger this skill.
 ---
 
 # QA Zentao Defect Workflow
 
-Use this skill for defect documentation and Zentao work. Trigger it for casual requests such as "提 bug", "提BUG", "报个 bug", "提交到禅道", "提缺陷", or "复测缺陷".
+Use this skill only for explicitly identified Zentao work, such as “提交到禅道”, “复测禅道 BUG”, or a Zentao defect URL. Generic “提 BUG” requests belong to `one2all`. Never dual-write or fall back between the two platforms.
 
 ## Defaults
 
