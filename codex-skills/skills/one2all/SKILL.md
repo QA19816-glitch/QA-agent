@@ -13,7 +13,9 @@ File defects only in One2. Keep Zentao independent: never dual-write, fall back 
 - Use the Codex right-side visible in-app browser and reuse its signed-in session.
 - Before browser work, read and follow the native in-app Browser skill.
 - Do not inspect or export cookies, tokens, local storage, or passwords.
-- If login has expired, stop on the One2 login page and ask the user to sign in.
+- If the right-side session cannot be claimed or its upload control is blocked, use `codex-skills/skills/one2all/scripts/one2all-browser` as the visible fallback. It uses a dedicated local Profile and an exact One2All host allowlist; do not start an unscoped temporary browser.
+- On the first fallback run, stop on the One2All login page and ask the user to sign in once in that visible window. Later runs must reuse the same Profile automatically.
+- If login has expired, keep the page open and ask the user to sign in; do not submit a partially filled BUG.
 
 ## Required Inputs
 
@@ -57,6 +59,16 @@ Enforce these defaults:
 10. Re-read the saved list row and detail page. Confirm the BUG number, title, requirement, severity, priority, environment, non-empty reproduction sections, separate actual/expected fields, and material count.
 11. Preview each saved image or video. For images, verify a successful resource load plus non-zero natural and visible dimensions.
 12. Report success only after every required saved field and attachment check passes. Keep the verified detail page open for the user.
+
+## Browser Session Recovery
+
+Use the fallback only after the right-side browser is unavailable or cannot complete a required interaction:
+
+```sh
+codex-skills/skills/one2all/scripts/one2all-browser
+```
+
+The wrapper stores the browser Profile in `~/.agent-browser/profiles/one2all` by default. Set `ONE2ALL_BROWSER_PROFILE_DIR` only when a different private local directory is explicitly required. Never copy the Profile into Git or convert it to an exported auth-state file.
 
 ## Failure Handling
 

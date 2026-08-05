@@ -1,1 +1,5 @@
 .DS_Store
+
+# Local browser/session artifacts must never enter the repository.
+.agent-browser/
+one2all-browser-profile/

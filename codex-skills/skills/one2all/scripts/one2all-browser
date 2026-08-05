@@ -1,0 +1,21 @@
+#!/bin/sh
+
+set -eu
+
+# Keep One2All's browser session isolated from every other QA site.
+one2all_profile_dir="${ONE2ALL_BROWSER_PROFILE_DIR:-${HOME}/.agent-browser/profiles/one2all}"
+one2all_target_url="http://192.168.113.115:32633/one2all/workspace/quality-management"
+
+umask 077
+mkdir -p "$one2all_profile_dir"
+
+if [ "$#" -eq 0 ]; then
+  set -- open "$one2all_target_url"
+fi
+
+exec agent-browser \
+  --session one2all \
+  --profile "$one2all_profile_dir" \
+  --headed \
+  --allowed-domains 192.168.113.115 \
+  "$@"
