@@ -1,4 +1,4 @@
 interface:
-  display_name: "QA Test Case Design Plus"
-  short_description: "生成风险优先、需求可追踪、步骤可执行、结果可判定的专业测试用例文档"
-  default_prompt: "Use $qa-test-case-design to create risk-prioritized, traceable Feishu-style test cases for these requirements."
+  display_name: "QA Test Case Design"
+  short_description: "Create detailed manual test cases"
+  default_prompt: "Use $qa-test-case-design to write Feishu-style test cases for these requirements."
