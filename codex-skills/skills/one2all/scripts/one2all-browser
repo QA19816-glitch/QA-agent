@@ -4,7 +4,11 @@ set -eu
 
 # Keep One2All's browser session isolated from every other QA site.
 one2all_profile_dir="${ONE2ALL_BROWSER_PROFILE_DIR:-${HOME}/.agent-browser/profiles/one2all}"
-one2all_target_url="http://192.168.113.115:32633/one2all/workspace/quality-management"
+one2all_target_url="http://192.168.113.115:32633/one2all/workspace/quality-management/bugs/new"
+one2all_session="one2all"
+one2all_state="one2all"
+one2all_allowed_domains="192.168.113.115,open.feishu.cn,accounts.feishu.cn"
+one2all_socket_dir="${AGENT_BROWSER_SOCKET_DIR:-${HOME}/.agent-browser}"
 
 umask 077
 mkdir -p "$one2all_profile_dir"
@@ -13,9 +17,20 @@ if [ "$#" -eq 0 ]; then
   set -- open "$one2all_target_url"
 fi
 
+# Startup flags are ignored by an already-running daemon. Reuse the dedicated
+# session without repeating them; apply the private Profile only on first start.
+if [ -S "${one2all_socket_dir}/${one2all_session}.sock" ]; then
+  exec agent-browser \
+    --session "$one2all_session" \
+    --session-name "$one2all_state" \
+    --allowed-domains "$one2all_allowed_domains" \
+    "$@"
+fi
+
 exec agent-browser \
-  --session one2all \
+  --session "$one2all_session" \
+  --session-name "$one2all_state" \
   --profile "$one2all_profile_dir" \
   --headed \
-  --allowed-domains 192.168.113.115 \
+  --allowed-domains "$one2all_allowed_domains" \
   "$@"

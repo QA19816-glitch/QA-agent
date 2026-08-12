@@ -1,4 +1,4 @@
 interface:
-  display_name: "One2 自动提 BUG"
-  short_description: "在 One2 质量管理平台中查重、提交、上传证据并回读验证缺陷"
-  default_prompt: "Use $one2all to deduplicate, file, and verify this BUG in One2."
+  display_name: "One2All 快速提 BUG"
+  short_description: "复用登录快速提交，或用完整证据流程验证 One2All 缺陷"
+  default_prompt: "Use $one2all to file and verify this BUG through the persistent fast path unless full evidence mode is required."
