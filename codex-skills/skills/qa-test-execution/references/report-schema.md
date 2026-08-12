@@ -10,6 +10,8 @@ Use `assets/report-template.md` and preserve this order:
 6. `阻塞与遗留风险`.
 7. `执行结论` and release recommendation.
 
+For requirement-first or mixed runs, also include the requirement source, verified test-case document URL, generated/preserved/repaired/blocked case counts, and approval-required disposition.
+
 Each result table uses:
 
 | 用例ID | 用例名称 | 执行结果 | 实际结果 | 证据 | BUG | 执行方式 | 耗时 |

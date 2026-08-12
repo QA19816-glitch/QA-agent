@@ -1,4 +1,4 @@
 interface:
-  display_name: "QA Test Execution"
-  short_description: "按测试用例逐条执行、续跑、取证、提 BUG 并生成飞书报告"
-  default_prompt: "Use $qa-test-execution to execute these test cases, preserve per-case results, file confirmed defects, and create a Feishu report."
+  display_name: "QA Design & Execution"
+  short_description: "从需求生成用例并自动执行、提 BUG、输出飞书报告"
+  default_prompt: "Use $qa-test-execution to turn these requirements or cases into a validated test suite, execute safe cases, file confirmed defects, and create linked Feishu documents."

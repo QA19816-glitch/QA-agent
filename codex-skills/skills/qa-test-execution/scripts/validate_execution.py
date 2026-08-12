@@ -52,7 +52,14 @@ def validate(run_dir: Path, allow_incomplete: bool) -> list[str]:
         manifest = load_json(manifest_path)
     except (OSError, json.JSONDecodeError) as exc:
         return [f"manifest.json 无效：{exc}"]
-    required_manifest = {"run_id", "source_path", "environment", "fingerprint", "case_ids", "case_count"}
+    required_manifest = {
+        "run_id",
+        "source_path",
+        "environment",
+        "fingerprint",
+        "case_ids",
+        "case_count",
+    }
     missing = sorted(required_manifest - set(manifest))
     if missing:
         errors.append(f"manifest 缺少字段：{', '.join(missing)}")
@@ -63,6 +70,11 @@ def validate(run_dir: Path, allow_incomplete: bool) -> list[str]:
         case_ids = []
     if manifest.get("case_count") != len(case_ids):
         errors.append("manifest.case_count 与 case_ids 数量不一致")
+    if manifest.get("input_kind", "cases") not in {"requirements", "cases", "mixed"}:
+        errors.append("manifest.input_kind 无效")
+    requirement_fingerprint = manifest.get("requirement_fingerprint", "")
+    if requirement_fingerprint and not re.fullmatch(r"[a-fA-F0-9]{64}", requirement_fingerprint):
+        errors.append("manifest.requirement_fingerprint 必须是 64 位 SHA-256")
 
     events: list[dict[str, Any]] = []
     for number, line in enumerate(results_path.read_text(encoding="utf-8").splitlines(), 1):

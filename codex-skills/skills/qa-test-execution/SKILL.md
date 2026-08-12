@@ -1,89 +1,96 @@
 ---
 name: qa-test-execution
-description: Execute existing test cases one by one from Feishu wiki/docx, Markdown, or structured JSON; preserve Pass/Fail/Blocked/Skipped results; resume interrupted runs; capture Web/API evidence; submit confirmed defects to One2All; and publish Feishu execution reports. Use when the user asks to 照着测试用例执行测试、执行测试用例、跑冒烟/回归、记录测试结果、失败提 BUG、生成测试执行报告, or requests an end-to-end QA execution workflow.
+description: Design and execute an end-to-end QA workflow from requirements, PRDs, prototypes, API specifications, change notes, Feishu wiki/docx, Markdown, structured JSON, or existing test cases. Use when the user asks to 生成并执行测试用例、从需求开始测试、照着测试用例执行、跑冒烟/回归、记录结果、失败提 BUG、生成测试用例和执行报告, or wants one integrated requirement-to-case-to-One2All-to-Feishu workflow.
 ---
 
-# QA Test Execution
+# QA Test Design And Execution
 
-Treat the supplied test cases as the source of truth. Execute supported Web and API cases in order, persist each outcome immediately, and produce verified defects and a Feishu report without inventing requirements.
+Act as the unified QA entry point. Preserve `qa-test-case-design` as the independent design specialist and invoke it when cases must be generated or repaired; never duplicate its design rules in this skill.
 
-## Required Inputs
+## Route The Input
 
-Obtain or infer:
+Read [references/design-execution-handoff.md](references/design-execution-handoff.md), then classify input:
 
-- Test-case source: Feishu wiki/docx URL, Markdown, or structured JSON.
-- Target environment and permitted scope.
-- Required roles, accounts, and test data.
+- `requirements`: PRD, requirement, story, prototype, API specification, technical note, change list, or defects without execution-ready cases.
+- `cases`: stable IDs, explicit preconditions, numbered steps, observable expectations, and priorities already exist.
+- `mixed`: requirements and cases both exist.
 
-For a Feishu wiki link, resolve the wiki token to its backing docx before reading. In this workspace prefer `/Users/jiguang/Documents/New project 8/tools/feishu_doc_ops.mjs`.
+For Feishu wiki links, resolve the wiki token to its backing docx before reading. In this workspace prefer `/Users/jiguang/Documents/New project 8/tools/feishu_doc_ops.mjs`.
 
-If no executable cases exist, use `qa-test-case-design` first. Do not redesign valid cases during execution.
+## Prepare Cases
 
-## Workflow
+### Requirements
 
-1. Parse cases into the schema in `assets/case-schema.json`. Keep source IDs, steps, expected results, and priority unchanged.
-2. Read `references/execution-rules.md`, classify each case as `web`, `api`, or `manual`, and identify unsafe or missing prerequisites.
-3. Initialize durable state:
+1. Invoke `qa-test-case-design` to generate risk-prioritized, traceable, execution-ready cases.
+2. Create its preferred Feishu-style case document and a structured handoff matching `assets/case-schema.json`.
+3. Run the design skill's `scripts/validate_testcases.py` against the saved Markdown artifact.
+4. Continue automatically into safe execution after validation.
 
-   ```bash
-   python3 scripts/qa_run_state.py init --source cases.json --environment test --output-root .qa-runs
-   ```
+### Existing cases
 
-   Reuse the returned run directory when its fingerprint matches. Use `pending` to obtain only unfinished cases.
-4. Execute smoke/P0 cases first unless the source or user specifies another order.
-5. Before each case, mark it `Running`. Immediately after observation, record exactly one terminal result: `Pass`, `Fail`, `Blocked`, or `Skipped`.
-6. For a Web case, use `qa-web-ui-testing` and the visible Codex in-app browser by default. Preserve the authenticated session. Use Chinese locale and Shanghai timezone.
-7. For an API case, use `qa-api-testing`. Verify both transport and business results; sanitize credentials and personal data.
-8. For a manual or unsupported case, record `Blocked` with the missing executor or prerequisite. Never simulate a pass.
-9. On failure, collect evidence and follow the failure gate below.
-10. Validate the completed run, render `assets/report-template.md`, and create the report through `feishu-cloud-docs`.
+Validate and normalize them without rewriting valid IDs, steps, expectations, or priorities. Do not invoke case generation when the source is already execution-ready.
 
-Run commands from this skill directory or use absolute script paths. See `python3 scripts/qa_run_state.py --help` for all state operations.
+### Mixed input
 
-## Result Rules
+Preserve valid stable IDs. Invoke `qa-test-case-design` only to repair conflicts or add missing coverage; never regenerate the whole suite unnecessarily.
 
-- `Pass`: every numbered expected result is observed.
-- `Fail`: at least one expected result is contradicted by reproducible evidence.
-- `Blocked`: execution cannot start or finish because a prerequisite or supported executor is unavailable.
-- `Skipped`: the case is intentionally outside the requested run scope; always record the reason.
+## Classify Safety
 
-Do not use `Fail` for unclear requirements. Do not use `Pass` when evidence is incomplete.
+Assign each case one `safety` value:
 
-## Failure Gate And One2All
+- `auto`: safe Web/API operation in an approved test environment.
+- `approval_required`: destructive, production, payment/funds, permission-changing, or irreversible external effect.
+- `blocked`: ambiguous expectation, missing environment/account/data, or unsupported executor.
 
-Before submitting a BUG:
+Automatically execute `auto` cases. Pause only affected `approval_required` cases. Record `blocked` cases as `Blocked`; never infer their expected results.
 
-1. Re-read the source expected result.
-2. Capture minimal steps, actual result, environment, and relevant screenshot/console/network/API evidence.
-3. Reproduce once when repetition is safe.
-4. Delegate focused duplicate checking and submission to `one2all`.
+## Start Or Resume
 
-Use One2All's persistent named browser session. Determine severity from impact and priority from urgency independently. Destructive flows, uncertain expected behavior, or insufficient impact evidence require user confirmation before submission.
+Initialize state with the structured handoff:
 
-Persist the verified BUG ID and URL in the case result. A BUG submission failure does not change the test result from `Fail`.
+```bash
+python3 scripts/qa_run_state.py init \
+  --source cases.json \
+  --environment test \
+  --input-kind requirements \
+  --requirement-source '<source URL or label>' \
+  --requirement-fingerprint '<sha256>' \
+  --case-document-url '<verified Feishu URL>' \
+  --output-root .qa-runs
+```
 
-## Resume And Integrity
+Omit optional requirement or document values for case-first input. A matching fingerprint resumes the existing run; changed cases create a new run. Use `pending --only-auto` to obtain the safe automatic queue.
 
-- State is append-only under `.qa-runs/<run-id>/results.jsonl`.
-- Resume skips cases whose latest result is terminal. A rerun uses `init --new-run`; never append a second terminal result to the same run.
-- A changed source or environment creates a different fingerprint and run.
-- Never edit the source case document to store runtime state.
-- Never store tokens, cookies, authorization headers, passwords, or personal data in evidence.
-- Run `scripts/validate_execution.py <run-dir>` before reporting completion.
+## Execute
 
-## Report
+1. Read [references/execution-rules.md](references/execution-rules.md).
+2. Run smoke/P0 cases first unless the user or source specifies another order.
+3. Mark each case `Running`, execute source steps in order, then immediately append one terminal result: `Pass`, `Fail`, `Blocked`, or `Skipped`.
+4. For Web, use `qa-web-ui-testing` and the visible in-app browser. Preserve authentication and use Chinese locale plus Shanghai timezone.
+5. For API, use `qa-api-testing`; verify both transport and business effects and redact secrets.
+6. Never simulate unsupported manual execution.
 
-Read `references/report-schema.md` before producing the final report. Create a Feishu document by default, grant `full_access` to configured OpenID `ou_f0136616b2e5fcdd98a977e75fb9e2d0`, and verify both API results. Return the document URL and permission result only after they succeed.
+Resume skips terminal cases and reuses generated cases when requirement and case fingerprints match. A rerun uses `init --new-run`; never append a second terminal result to the same run.
 
-The final verdict is:
+## Confirm Failures And File BUGs
 
-- `Pass`: all executed cases pass and there are no blockers.
-- `Conditional Pass`: no release-blocking failure remains, but blockers, skipped risk, or accepted failures exist.
-- `Fail`: a release-blocking or unresolved material failure remains.
+Before submitting a BUG, re-read the exact expected result, capture minimal reproducible evidence, reproduce once when safe, and delegate focused duplicate checking plus submission to `one2all`.
 
-## Safety
+Use One2All's persistent session. Determine severity from impact and priority from urgency independently. Persist only verified BUG IDs and URLs. Do not create BUGs for design gaps, `Blocked`, or `Skipped` cases.
 
-- Never execute destructive, production, payment, bulk-delete, or permission-changing cases without explicit authorization.
-- Do not file defects for `Blocked` or `Skipped` cases.
-- Do not repeat completed side-effecting cases during resume.
-- Do not claim a BUG, report, attachment, or permission succeeded without re-reading the saved/API result.
+## Publish Feishu Deliverables
+
+1. When cases were generated or materially repaired, create a separate Feishu test-case document using `qa-test-case-design` formatting.
+2. Validate the run with `scripts/validate_execution.py <run-dir>`.
+3. Read [references/report-schema.md](references/report-schema.md) and create the Feishu execution report.
+4. Put the verified case-document URL in the report and add a report backlink to the case document when supported.
+5. Grant configured OpenID `ou_f0136616b2e5fcdd98a977e75fb9e2d0` `full_access` to both documents.
+
+Report document creation, linking, and permission results separately. Never claim any external write succeeded without verified API results.
+
+## Safety And Integrity
+
+- Never auto-run destructive, production, payment, bulk-delete, permission-changing, or irreversible cases.
+- Never store passwords, tokens, cookies, authorization headers, or personal data in state or evidence.
+- Preserve source cases; runtime annotations live only in `.qa-runs/<run-id>/` and Feishu reports.
+- A failed BUG or Feishu write must not erase execution results and may be retried without rerunning terminal cases.

@@ -19,6 +19,8 @@ TERMINAL = {"Pass", "Fail", "Blocked", "Skipped"}
 STATUSES = TERMINAL | {"Running"}
 PRIORITIES = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
 EXECUTORS = {"web", "api", "manual"}
+INPUT_KINDS = {"requirements", "cases", "mixed"}
+SAFETY_LEVELS = {"auto", "approval_required", "blocked"}
 SENSITIVE = re.compile(
     r"password|passwd|secret|token|authorization|cookie|api[-_]?key|session|credential",
     re.IGNORECASE,
@@ -69,11 +71,28 @@ def validate_cases(data: Any) -> list[dict[str, Any]]:
             raise ValueError(f"{case_id}: priority must be P0-P3")
         if case["executor"] not in EXECUTORS:
             raise ValueError(f"{case_id}: executor must be web, api, or manual")
+        safety = case.get("safety", "auto")
+        if safety not in SAFETY_LEVELS:
+            raise ValueError(f"{case_id}: safety must be auto, approval_required, or blocked")
+        if safety in {"approval_required", "blocked"} and not str(case.get("safety_reason", "")).strip():
+            raise ValueError(f"{case_id}: {safety} requires safety_reason")
     return cases
 
 
-def fingerprint(data: dict[str, Any], environment: str) -> str:
-    return canonical_hash({"source": data, "environment": environment})
+def fingerprint(
+    data: dict[str, Any],
+    environment: str,
+    input_kind: str,
+    requirement_fingerprint: str,
+) -> str:
+    return canonical_hash(
+        {
+            "source": data,
+            "environment": environment,
+            "input_kind": input_kind,
+            "requirement_fingerprint": requirement_fingerprint,
+        }
+    )
 
 
 def load_events(run_dir: Path) -> list[dict[str, Any]]:
@@ -125,7 +144,10 @@ def cmd_init(args: argparse.Namespace) -> int:
     source = args.source.resolve()
     data = read_json(source)
     cases = validate_cases(data)
-    digest = fingerprint(data, args.environment)
+    requirement_fingerprint = args.requirement_fingerprint or data.get("requirement_fingerprint", "")
+    if requirement_fingerprint and not re.fullmatch(r"[a-fA-F0-9]{64}", requirement_fingerprint):
+        raise ValueError("requirement fingerprint must be a 64-character SHA-256")
+    digest = fingerprint(data, args.environment, args.input_kind, requirement_fingerprint)
     root = args.output_root.resolve()
     existing = find_run(root, digest)
     if existing and not args.new_run:
@@ -141,11 +163,16 @@ def cmd_init(args: argparse.Namespace) -> int:
     (run_dir / "evidence").mkdir(parents=True)
     (run_dir / "results.jsonl").touch()
     manifest = {
-        "schema_version": 1,
+        "schema_version": 2,
         "run_id": run_dir.name,
+        "input_kind": args.input_kind,
         "source_path": str(source),
         "source_label": data.get("source", source.name),
         "source_version": data.get("version", ""),
+        "requirement_source": args.requirement_source or data.get("requirement_source", ""),
+        "requirement_fingerprint": requirement_fingerprint,
+        "case_document_url": args.case_document_url or data.get("case_document_url", ""),
+        "case_document_permission": args.case_document_permission,
         "environment": args.environment,
         "scope": args.scope,
         "fingerprint": digest,
@@ -168,6 +195,8 @@ def cmd_pending(args: argparse.Namespace) -> int:
     cases = source_cases(run_dir)
     latest = latest_events(load_events(run_dir))
     pending = [case for case in cases if args.rerun or latest.get(case["case_id"], {}).get("status") not in TERMINAL]
+    if args.only_auto:
+        pending = [case for case in pending if case.get("safety", "auto") == "auto"]
     pending.sort(key=lambda case: (PRIORITIES[case["priority"]], case["case_id"]))
     print(json.dumps({"cases": pending}, ensure_ascii=False, indent=2))
     return 0
@@ -266,6 +295,15 @@ def parser() -> argparse.ArgumentParser:
     init = sub.add_parser("init", help="create or resume a run")
     init.add_argument("--source", required=True, type=Path)
     init.add_argument("--environment", required=True)
+    init.add_argument("--input-kind", choices=sorted(INPUT_KINDS), default="cases")
+    init.add_argument("--requirement-source", default="")
+    init.add_argument("--requirement-fingerprint", default="")
+    init.add_argument("--case-document-url", default="")
+    init.add_argument(
+        "--case-document-permission",
+        choices=["full_access", "failed", "not_attempted"],
+        default="not_attempted",
+    )
     init.add_argument("--scope", default="all")
     init.add_argument("--output-root", type=Path, default=Path(".qa-runs"))
     init.add_argument("--new-run", action="store_true")
@@ -274,6 +312,7 @@ def parser() -> argparse.ArgumentParser:
     pending = sub.add_parser("pending", help="print unfinished cases in priority order")
     pending.add_argument("run_dir", type=Path)
     pending.add_argument("--rerun", action="store_true")
+    pending.add_argument("--only-auto", action="store_true", help="return only safety=auto cases")
     pending.set_defaults(func=cmd_pending)
 
     record = sub.add_parser("record", help="append a case state event")

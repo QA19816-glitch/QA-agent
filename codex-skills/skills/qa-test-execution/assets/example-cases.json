@@ -1,6 +1,8 @@
 {
   "source": "QA execution fixture",
   "version": "1.0",
+  "requirement_source": "fixture requirement",
+  "requirement_fingerprint": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
   "cases": [
     {
       "case_id": "TC-WEB-001",
@@ -10,7 +12,8 @@
       "steps": ["打开目标页面"],
       "expected": ["页面主内容可见且无阻断错误"],
       "priority": "P0",
-      "executor": "web"
+      "executor": "web",
+      "safety": "auto"
     },
     {
       "case_id": "TC-API-001",
@@ -20,7 +23,8 @@
       "steps": ["请求健康检查接口"],
       "expected": ["HTTP 状态和业务状态均成功"],
       "priority": "P1",
-      "executor": "api"
+      "executor": "api",
+      "safety": "auto"
     },
     {
       "case_id": "TC-MANUAL-001",
@@ -30,7 +34,9 @@
       "steps": ["触发振动操作"],
       "expected": ["设备产生一次可感知振动"],
       "priority": "P2",
-      "executor": "manual"
+      "executor": "manual",
+      "safety": "blocked",
+      "safety_reason": "需要受支持的真机"
     },
     {
       "case_id": "TC-SCOPE-001",
@@ -40,7 +46,9 @@
       "steps": ["在目标浏览器打开页面"],
       "expected": ["页面显示和核心操作正常"],
       "priority": "P3",
-      "executor": "web"
+      "executor": "web",
+      "safety": "approval_required",
+      "safety_reason": "兼容性检查需要启动额外外部浏览器会话"
     }
   ]
 }
