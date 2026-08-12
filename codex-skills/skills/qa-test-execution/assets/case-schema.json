@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "QA execution case set",
+  "type": "object",
+  "required": ["cases"],
+  "properties": {
+    "source": {"type": "string"},
+    "version": {"type": "string"},
+    "cases": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["case_id", "name", "steps", "expected", "priority", "executor"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "module": {"type": "string"},
+          "name": {"type": "string", "minLength": 1},
+          "preconditions": {"type": "array", "items": {"type": "string"}},
+          "steps": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "expected": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "priority": {"enum": ["P0", "P1", "P2", "P3"]},
+          "executor": {"enum": ["web", "api", "manual"]},
+          "trace": {"type": "string"},
+          "tags": {"type": "array", "items": {"type": "string"}}
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

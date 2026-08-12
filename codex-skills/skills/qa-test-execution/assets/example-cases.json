@@ -1,0 +1,46 @@
+{
+  "source": "QA execution fixture",
+  "version": "1.0",
+  "cases": [
+    {
+      "case_id": "TC-WEB-001",
+      "module": "Web",
+      "name": "页面正常打开",
+      "preconditions": ["测试环境可访问"],
+      "steps": ["打开目标页面"],
+      "expected": ["页面主内容可见且无阻断错误"],
+      "priority": "P0",
+      "executor": "web"
+    },
+    {
+      "case_id": "TC-API-001",
+      "module": "API",
+      "name": "健康检查接口返回成功",
+      "preconditions": ["接口已部署"],
+      "steps": ["请求健康检查接口"],
+      "expected": ["HTTP 状态和业务状态均成功"],
+      "priority": "P1",
+      "executor": "api"
+    },
+    {
+      "case_id": "TC-MANUAL-001",
+      "module": "Mobile",
+      "name": "真机振动反馈",
+      "preconditions": ["具备受支持的真机"],
+      "steps": ["触发振动操作"],
+      "expected": ["设备产生一次可感知振动"],
+      "priority": "P2",
+      "executor": "manual"
+    },
+    {
+      "case_id": "TC-SCOPE-001",
+      "module": "Scope",
+      "name": "本轮排除的兼容性检查",
+      "preconditions": ["具备目标浏览器"],
+      "steps": ["在目标浏览器打开页面"],
+      "expected": ["页面显示和核心操作正常"],
+      "priority": "P3",
+      "executor": "web"
+    }
+  ]
+}

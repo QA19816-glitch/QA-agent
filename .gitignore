@@ -3,3 +3,6 @@
 # Local browser/session artifacts must never enter the repository.
 .agent-browser/
 one2all-browser-profile/
+
+# Local QA execution state and evidence.
+.qa-runs/
