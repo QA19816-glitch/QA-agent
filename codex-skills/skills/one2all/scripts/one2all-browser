@@ -4,14 +4,114 @@ set -eu
 
 # Keep One2All's browser session isolated from every other QA site.
 one2all_profile_dir="${ONE2ALL_BROWSER_PROFILE_DIR:-${HOME}/.agent-browser/profiles/one2all}"
-one2all_target_url="http://192.168.113.115:32633/one2all/workspace/quality-management/bugs/new"
+one2all_base_url="${ONE2ALL_BASE_URL:-http://192.168.113.115:32633}"
+one2all_target_url="${one2all_base_url}/one2all/workspace/quality-management"
 one2all_session="one2all"
 one2all_state="one2all"
-one2all_allowed_domains="192.168.113.115,open.feishu.cn,accounts.feishu.cn"
+one2all_host="$(printf '%s' "$one2all_base_url" | sed -E 's#^[a-zA-Z]+://([^/:]+).*#\1#')"
+one2all_allowed_domains="${one2all_host},open.feishu.cn,accounts.feishu.cn"
 one2all_socket_dir="${AGENT_BROWSER_SOCKET_DIR:-${HOME}/.agent-browser}"
+one2all_action_timeout_ms="${ONE2ALL_BROWSER_TIMEOUT_MS:-8000}"
+
+one2all_browser() {
+  if [ -S "${one2all_socket_dir}/${one2all_session}.sock" ]; then
+    AGENT_BROWSER_DEFAULT_TIMEOUT="$one2all_action_timeout_ms" agent-browser \
+      --session "$one2all_session" \
+      --session-name "$one2all_state" \
+      --allowed-domains "$one2all_allowed_domains" \
+      "$@"
+    return $?
+  fi
+
+  AGENT_BROWSER_DEFAULT_TIMEOUT="$one2all_action_timeout_ms" agent-browser \
+    --session "$one2all_session" \
+    --session-name "$one2all_state" \
+    --profile "$one2all_profile_dir" \
+    --headed \
+    --allowed-domains "$one2all_allowed_domains" \
+    "$@"
+}
+
+one2all_tabs() {
+  one2all_browser tab list --json
+}
+
+one2all_ready() {
+  one2all_tab_json="$(one2all_tabs)"
+  one2all_target_tab="$(printf '%s' "$one2all_tab_json" | jq -r \
+    --arg url "$one2all_target_url" \
+    '.data.tabs[] | select(.url == $url) | .index' | head -n 1)"
+  one2all_business_tab="$(printf '%s' "$one2all_tab_json" | jq -r \
+    --arg base "${one2all_base_url}/one2all/" \
+    '.data.tabs[] | select(.url | startswith($base)) | .index' | head -n 1)"
+
+  if [ -n "$one2all_target_tab" ]; then
+    one2all_browser tab "$one2all_target_tab" >/dev/null
+    # Avoid an unconditional second navigation when quality management already
+    # exists. This saves two browser round-trips on every submission.
+    one2all_active_url="$one2all_target_url"
+  else
+    if [ -n "$one2all_business_tab" ]; then
+      one2all_browser tab "$one2all_business_tab" >/dev/null
+    fi
+    one2all_oauth_tab="$(printf '%s' "$one2all_tab_json" | jq -r \
+      '.data.tabs[] | select(.url | startswith("https://accounts.feishu.cn/")) | .index' \
+      | head -n 1)"
+    if [ -n "$one2all_oauth_tab" ]; then
+      printf '%s\n' 'One2All is waiting for Feishu authorization in the dedicated visible browser tab. Authorize once, then rerun this command.' >&2
+      return 2
+    fi
+    one2all_browser open "$one2all_target_url" >/dev/null
+    one2all_tab_json="$(one2all_tabs)"
+    one2all_active_url="$(printf '%s' "$one2all_tab_json" | jq -r \
+      '.data.tabs[] | select(.active) | .url' | head -n 1)"
+  fi
+
+  case "$one2all_active_url" in
+    "$one2all_target_url")
+      # URL checks alone can be fooled by an expired SPA session. Confirm the
+      # page is not showing the login form before handing control to the
+      # submitter.
+      one2all_page_text="$(one2all_browser get text body 2>/dev/null || true)"
+      case "$one2all_page_text" in
+        *'登录'*'密码'*|*'用户名'*'登录'*)
+          printf '%s\n' 'One2All login is required. Use the dedicated visible browser tab to complete Feishu authorization once, then rerun this command.' >&2
+          return 2
+          ;;
+      esac
+      printf '%s\n' "$one2all_active_url"
+      ;;
+    *'/one2all/login'*)
+      printf '%s\n' 'One2All login is required. Use the dedicated visible browser tab to complete Feishu authorization once, then rerun this command.' >&2
+      return 2
+      ;;
+    *)
+      printf 'One2All did not reach quality management (current URL: %s).\n' "$one2all_active_url" >&2
+      return 1
+      ;;
+  esac
+}
 
 umask 077
 mkdir -p "$one2all_profile_dir"
+
+if [ "${1:-}" = "ready" ]; then
+  shift
+  [ "$#" -eq 0 ] || {
+    printf '%s\n' 'The ready command does not accept additional arguments.' >&2
+    exit 64
+  }
+  one2all_ready
+  exit $?
+fi
+
+# Batch multiple diagnostic browser actions through one CLI invocation. Normal
+# BUG submissions use the one2all-submit one-shot workflow.
+if [ "${1:-}" = "batch" ]; then
+  shift
+  one2all_browser batch "$@"
+  exit $?
+fi
 
 if [ "$#" -eq 0 ]; then
   set -- open "$one2all_target_url"
@@ -19,18 +119,4 @@ fi
 
 # Startup flags are ignored by an already-running daemon. Reuse the dedicated
 # session without repeating them; apply the private Profile only on first start.
-if [ -S "${one2all_socket_dir}/${one2all_session}.sock" ]; then
-  exec agent-browser \
-    --session "$one2all_session" \
-    --session-name "$one2all_state" \
-    --allowed-domains "$one2all_allowed_domains" \
-    "$@"
-fi
-
-exec agent-browser \
-  --session "$one2all_session" \
-  --session-name "$one2all_state" \
-  --profile "$one2all_profile_dir" \
-  --headed \
-  --allowed-domains "$one2all_allowed_domains" \
-  "$@"
+one2all_browser "$@"

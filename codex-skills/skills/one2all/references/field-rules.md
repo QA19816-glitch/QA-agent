@@ -12,14 +12,14 @@ Read this reference before creating or editing a One2 BUG.
 | `severity_key` | Select from the impact matrix below; never default mechanically |
 | `priority`, `priority_key` | Select from urgency below; keep both values aligned |
 | `due_date` | `null` unless explicitly provided |
-| `found_environment` | Known actual environment, otherwise exact value `test` |
+| `found_environment` | Hard default: if the user did not provide a real environment, always use the exact value `test`; never leave blank or inherit a stale/form default. Preserve an explicitly provided actual environment. |
 | `operating_system` | Actual environment evidence only |
 | `browser` | Actual environment evidence only |
 | `assignee_user_id` | `null` unless explicitly provided |
-| `reproduction_steps` | Concise rich text with `[步骤]`, `[实际结果]`, `[期望结果]` |
-| `actual_result` | Same fact as the actual-result section |
-| `expected_result` | Same fact as the expected-result section |
-| `reproduction_materials` | Platform-returned material URLs only |
+| `reproduction_steps` | Concise rich text with `[步骤]`, `[实际结果]`, `[期望结果]`; embed uploaded image evidence inline below `证据截图` |
+| `actual_result` | Same fact as the actual-result section when the UI exposes an editable field; otherwise the rich-text section is authoritative |
+| `expected_result` | Same fact as the expected-result section when the UI exposes an editable field; otherwise the rich-text section is authoritative |
+| `reproduction_materials` | Platform-returned material URLs only; image materials must also render inline in `reproduction_steps`, never as download-only evidence |
 
 ## Requirement Association
 
@@ -38,6 +38,10 @@ Automatically associate a requirement only when one candidate is uniquely suppor
 Stop and ask the user to choose when candidates are tied, cross-project, weakly supported, or cannot be distinguished from the available facts. Never choose the first item, newest item, most recently used item, form default, or superficially most similar title.
 
 Before submission, verify the displayed project set/project/requirement path. After submission, re-read the saved detail and confirm the persisted requirement is identical. Repair and re-check any missing or mismatched value; otherwise report the submission as incomplete.
+
+### Found environment hard rule
+
+If no actual environment is stated in the defect evidence, set `found_environment` to the exact value `test` unconditionally. Do not ask a follow-up question merely because the environment is unspecified, and do not rely on whatever value the form happens to show. Before reporting success, re-read the saved BUG and verify the persisted value is `test` (unless the user explicitly supplied another environment).
 
 ## Severity
 
@@ -78,3 +82,9 @@ Do not mechanically bind the two dimensions. Valid combinations can include `p0 
 [期望结果]
 <expected behavior>
 ```
+
+When a screenshot is available, upload it only after selecting the requirement,
+then embed the platform-returned image URL below a `证据截图` heading in the
+reproduction rich text. Verify on the saved detail page that the image renders
+inline with non-zero dimensions. Do not add a separate visible filename or
+caption.

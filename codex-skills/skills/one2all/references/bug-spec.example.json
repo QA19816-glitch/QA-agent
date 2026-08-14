@@ -1,0 +1,11 @@
+{
+  "title": "【Codex自动化】简洁且可复现的缺陷标题",
+  "requirement_path": ["test", "test", "PMMCP"],
+  "severity_key": "p3",
+  "priority_key": "low",
+  "found_environment": "test",
+  "steps": "1. 进入目标页面\n2. 执行触发操作",
+  "actual_result": "描述实际观察到的错误结果。",
+  "expected_result": "描述正确的预期结果。",
+  "screenshot_path": "/absolute/path/to/evidence.png"
+}

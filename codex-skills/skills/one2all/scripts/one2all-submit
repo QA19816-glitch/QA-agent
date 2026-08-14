@@ -1,0 +1,257 @@
+#!/bin/sh
+
+set -eu
+
+script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+browser_cmd="${ONE2ALL_BROWSER_CMD:-${script_dir}/one2all-browser}"
+one2all_base_url="${ONE2ALL_BASE_URL:-http://192.168.113.115:32633}"
+list_url="${one2all_base_url}/one2all/workspace/quality-management"
+login_profile="${ONE2ALL_AUTH_PROFILE:-one2all}"
+dry_run=0
+
+fail() {
+  jq -n --arg error "$1" '{ok:false,error:$error}' >&2
+  exit "${2:-1}"
+}
+
+usage() {
+  printf '%s\n' 'Usage: one2all-submit [--dry-run] <bug.json>' >&2
+  exit 64
+}
+
+browser() {
+  "$browser_cmd" "$@"
+}
+
+eval_raw() {
+  browser eval "$1"
+}
+
+eval_string() {
+  eval_raw "$1" | jq -r 'if type == "string" then . else tostring end'
+}
+
+wait_for_js() {
+  wait_js="$1"
+  wait_attempts="${2:-50}"
+  wait_index=0
+  while [ "$wait_index" -lt "$wait_attempts" ]; do
+    if [ "$(eval_raw "$wait_js" 2>/dev/null || true)" = "true" ]; then
+      return 0
+    fi
+    sleep 0.1
+    wait_index=$((wait_index + 1))
+  done
+  return 1
+}
+
+json_quote() {
+  jq -Rn --arg value "$1" '$value'
+}
+
+click_text_in_dialog() {
+  click_text="$1"
+  click_text_json="$(json_quote "$click_text")"
+  eval_string "(()=>{const dialogs=[...document.querySelectorAll('[role=dialog]')];const d=dialogs.find(x=>x.textContent.includes('清空范围'))||dialogs[dialogs.length-1];if(!d)return 'dialog-not-found';const b=[...d.querySelectorAll('button')].find(x=>x.textContent.trim()===${click_text_json});if(!b)return 'button-not-found';b.click();return 'clicked'})()"
+}
+
+select_requirement_part() {
+  part="$1"
+  part_json="$(json_quote "$part")"
+  eval_string "(()=>{const ds=[...document.querySelectorAll('[role=dialog]')].filter(x=>x.textContent.includes('项目集')&&x.textContent.includes('清空范围'));const d=ds[ds.length-1];if(!d)return 'dialog-not-found';const matches=[...d.querySelectorAll('button')].filter(x=>x.textContent.trim()===${part_json}&&x.getAttribute('aria-checked')!=='true');const b=matches[matches.length-1];if(!b)return 'option-not-found';b.click();return 'clicked'})()"
+}
+
+select_form_option() {
+  trigger_id="$1"
+  option_label="$2"
+  trigger_json="$(json_quote "$trigger_id")"
+  label_json="$(json_quote "$option_label")"
+  eval_string "(()=>{const b=document.querySelector(${trigger_json});if(!b)return 'trigger-not-found';b.click();return 'clicked'})()" >/dev/null
+  wait_for_js "(()=>[...document.querySelectorAll('[role=option]')].some(x=>x.textContent.trim()===${label_json}))()" 30 || fail "Timed out opening option: ${option_label}"
+  eval_string "(()=>{const o=[...document.querySelectorAll('[role=option]')].find(x=>x.textContent.trim()===${label_json});if(!o)return 'option-not-found';o.click();return 'clicked'})()" >/dev/null
+}
+
+[ "$#" -gt 0 ] || usage
+if [ "${1:-}" = "--dry-run" ]; then
+  dry_run=1
+  shift
+fi
+[ "$#" -eq 1 ] || usage
+
+spec_file="$1"
+[ -f "$spec_file" ] || fail "BUG spec file not found: ${spec_file}" 66
+jq -e 'type == "object"' "$spec_file" >/dev/null 2>&1 || fail 'BUG spec must be a JSON object' 65
+
+raw_title="$(jq -r '.title // empty' "$spec_file")"
+[ -n "$raw_title" ] || fail 'title is required' 65
+title="$(printf '%s' "$raw_title" | jq -Rr 'sub("^(【Codex自动化】)+"; "") | "【Codex自动化】" + .')"
+steps="$(jq -r '.steps // empty' "$spec_file")"
+actual_result="$(jq -r '.actual_result // empty' "$spec_file")"
+expected_result="$(jq -r '.expected_result // empty' "$spec_file")"
+severity_key="$(jq -r '.severity_key // empty' "$spec_file")"
+priority_key="$(jq -r '.priority_key // empty' "$spec_file")"
+found_environment="$(jq -r '.found_environment // "test"' "$spec_file")"
+screenshot_path="$(jq -r '.screenshot_path // empty' "$spec_file")"
+project_set="$(jq -r '.requirement_path[0] // empty' "$spec_file")"
+project="$(jq -r '.requirement_path[1] // empty' "$spec_file")"
+requirement="$(jq -r '.requirement_path[2] // empty' "$spec_file")"
+
+[ -n "$steps" ] || fail 'steps is required' 65
+[ -n "$actual_result" ] || fail 'actual_result is required' 65
+[ -n "$expected_result" ] || fail 'expected_result is required' 65
+[ -n "$project_set" ] && [ -n "$project" ] && [ -n "$requirement" ] || fail 'requirement_path must contain project set, project, and requirement' 65
+case "$severity_key" in p0|p1|p2|p3) ;; *) fail 'severity_key must be p0, p1, p2, or p3' 65 ;; esac
+case "$priority_key" in urgent|high|medium|low) ;; *) fail 'priority_key must be urgent, high, medium, or low' 65 ;; esac
+[ -n "$found_environment" ] || found_environment='test'
+if [ -n "$screenshot_path" ]; then
+  [ -f "$screenshot_path" ] || fail "Screenshot not found: ${screenshot_path}" 66
+fi
+
+severity_label="$(jq -nr --arg key "$severity_key" '{p0:"致命（P0）",p1:"严重（P1）",p2:"一般（P2）",p3:"轻微（P3）"}[$key]')"
+priority_label="$(jq -nr --arg key "$priority_key" '{urgent:"紧急",high:"高",medium:"中",low:"低"}[$key]')"
+
+reproduction_text="[步骤]
+${steps}
+
+[实际结果]
+${actual_result}
+
+[期望结果]
+${expected_result}"
+if [ -n "$screenshot_path" ]; then
+  reproduction_text="${reproduction_text}
+
+证据截图
+"
+fi
+
+browser open "$list_url" >/dev/null
+browser wait 250 >/dev/null
+current_url="$(browser get url)"
+case "$current_url" in
+  *'/one2all/login'*)
+    browser auth login "$login_profile" >/dev/null 2>&1 || true
+    if [ "$(browser get url)" = "${one2all_base_url}/one2all/login" ]; then
+      eval_string "(()=>{const form=document.querySelector('form');if(form?.requestSubmit){form.requestSubmit();return 'submitted'}const button=document.querySelector('button[type=\"submit\"]');if(!button)return 'submit-not-found';button.click();return 'clicked'})()" >/dev/null
+    fi
+    wait_for_js "(()=>location.pathname.includes('/workspace/'))()" 80 || fail 'Login did not reach the One2All workspace' 77
+    browser open "$list_url" >/dev/null
+    ;;
+esac
+
+wait_for_js "(()=>!!document.querySelector('input[placeholder=\"搜索标题、编号\"]'))()" 80 || fail 'Quality management list did not load'
+
+search_selector='input[placeholder="搜索标题、编号"]'
+browser fill "$search_selector" "$title" >/dev/null
+browser wait 400 >/dev/null
+wait_for_js "(()=>!document.body.innerText.includes('正在更新'))()" 80 || fail 'Duplicate search did not finish'
+title_json="$(json_quote "$title")"
+duplicate="$(eval_raw "(()=>[...document.querySelectorAll('button')].some(x=>x.getAttribute('aria-label')===('查看质量问题：'+${title_json})))()")"
+[ "$duplicate" = "false" ] || fail "Duplicate BUG title already exists: ${title}" 3
+
+eval_string "(()=>{const b=[...document.querySelectorAll('button')].find(x=>x.textContent.trim()==='提 Bug');if(!b)return 'not-found';b.click();return 'clicked'})()" >/dev/null
+wait_for_js "(()=>!!document.querySelector('#quality-form-requirement-trigger'))()" 80 || fail 'New BUG form did not open'
+
+eval_string "(()=>{document.querySelector('#quality-form-requirement-trigger').click();return 'clicked'})()" >/dev/null
+wait_for_js "(()=>[...document.querySelectorAll('[role=dialog]')].some(x=>x.textContent.includes('项目集')&&x.textContent.includes('清空范围')))()" 50 || fail 'Requirement selector did not open'
+[ "$(select_requirement_part "$project_set")" = 'clicked' ] || fail "Project set not found: ${project_set}"
+project_json="$(json_quote "$project")"
+wait_for_js "(()=>{const ds=[...document.querySelectorAll('[role=dialog]')].filter(x=>x.textContent.includes('项目集')&&x.textContent.includes('清空范围'));const d=ds[ds.length-1];return !!d&&[...d.querySelectorAll('button')].some(x=>x.textContent.trim()===${project_json}&&x.getAttribute('aria-checked')!=='true')})()" 50 || fail "Project did not load: ${project}"
+[ "$(select_requirement_part "$project")" = 'clicked' ] || fail "Project not found: ${project}"
+requirement_json="$(json_quote "$requirement")"
+wait_for_js "(()=>{const ds=[...document.querySelectorAll('[role=dialog]')].filter(x=>x.textContent.includes('项目集')&&x.textContent.includes('清空范围'));const d=ds[ds.length-1];return !!d&&[...d.querySelectorAll('button')].some(x=>x.textContent.trim()===${requirement_json}&&x.getAttribute('aria-checked')!=='true')})()" 50 || fail "Requirement did not load: ${requirement}"
+[ "$(select_requirement_part "$requirement")" = 'clicked' ] || fail "Requirement not found: ${requirement}"
+[ "$(click_text_in_dialog '完成')" = 'clicked' ] || fail 'Could not confirm requirement selection'
+
+expected_requirement="${project_set} / ${project} / ${requirement}"
+expected_requirement_json="$(json_quote "$expected_requirement")"
+wait_for_js "(()=>document.querySelector('#quality-form-requirement-trigger')?.innerText.trim()===${expected_requirement_json})()" 50 || fail 'Selected requirement path does not match'
+
+browser fill '#quality-form-title' "$title" >/dev/null
+environment_control="$(eval_string "(()=>document.querySelector('#quality-form-environment')?.tagName||'')()")"
+if [ "$environment_control" = 'BUTTON' ]; then
+  select_form_option '#quality-form-environment' "$found_environment"
+else
+  browser fill '#quality-form-environment' "$found_environment" >/dev/null
+fi
+browser fill '[contenteditable="true"][aria-label="复现步骤"]' "$reproduction_text" >/dev/null
+select_form_option '#quality-form-severity' "$severity_label"
+
+priority_control="$(eval_raw "(()=>!!document.querySelector('#quality-form-priority'))()")"
+if [ "$priority_control" = "true" ]; then
+  select_form_option '#quality-form-priority' "$priority_label"
+fi
+
+image_url=''
+if [ -n "$screenshot_path" ] && [ "$dry_run" -eq 0 ]; then
+  browser upload 'input[type="file"][aria-label="复现材料"]' "$screenshot_path" >/dev/null
+  wait_for_js "(()=>[...document.images].some(i=>i.src.includes('/bug_materials/')&&i.naturalWidth>0))()" 100 || fail 'Screenshot upload did not produce a usable image'
+  image_url="$(eval_string "(()=>[...document.images].find(i=>i.src.includes('/bug_materials/')&&i.naturalWidth>0)?.src||'')()")"
+  [ -n "$image_url" ] || fail 'Uploaded screenshot URL is empty'
+  image_url_json="$(json_quote "$image_url")"
+  eval_string "(()=>{const e=document.querySelector('[contenteditable=\"true\"][aria-label=\"复现步骤\"]');e.focus();const s=window.getSelection();const r=document.createRange();r.selectNodeContents(e);r.collapse(false);s.removeAllRanges();s.addRange(r);document.execCommand('insertImage',false,${image_url_json});e.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertFromPaste'}));return 'inserted'})()" >/dev/null
+  wait_for_js "(()=>[...document.querySelectorAll('[contenteditable=\"true\"][aria-label=\"复现步骤\"] img')].some(i=>i.src===${image_url_json}&&i.naturalWidth>0&&i.getBoundingClientRect().width>0))()" 50 || fail 'Screenshot is not visible inside reproduction steps'
+fi
+
+found_environment_json="$(json_quote "$found_environment")"
+severity_label_json="$(json_quote "$severity_label")"
+precheck="$(eval_raw "(()=>{const environment=document.querySelector('#quality-form-environment');return {title:document.querySelector('#quality-form-title')?.value,requirement:document.querySelector('#quality-form-requirement-trigger')?.innerText.trim(),environment:(environment?.value||environment?.innerText||'').trim(),severity:document.querySelector('#quality-form-severity')?.innerText.trim(),body:document.querySelector('[contenteditable=\"true\"][aria-label=\"复现步骤\"]')?.innerText}})()")"
+[ "$(printf '%s' "$precheck" | jq -r '.title')" = "$title" ] || fail 'Title pre-submit check failed'
+[ "$(printf '%s' "$precheck" | jq -r '.requirement')" = "$expected_requirement" ] || fail 'Requirement pre-submit check failed'
+[ "$(printf '%s' "$precheck" | jq -r '.environment')" = "$found_environment" ] || fail 'Environment pre-submit check failed'
+[ "$(printf '%s' "$precheck" | jq -r '.severity')" = "$severity_label" ] || fail 'Severity pre-submit check failed'
+for required_section in '[步骤]' '[实际结果]' '[期望结果]'; do
+  printf '%s' "$precheck" | jq -er --arg section "$required_section" '.body | contains($section)' >/dev/null || fail "Missing reproduction section: ${required_section}"
+done
+
+if [ "$dry_run" -eq 1 ]; then
+  browser open "$list_url" >/dev/null
+  jq -n \
+    --arg title "$title" \
+    --arg requirement "$expected_requirement" \
+    --arg environment "$found_environment" \
+    --arg severity "$severity_key" \
+    --arg priority "$priority_key" \
+    --argjson screenshot "$([ -n "$screenshot_path" ] && printf true || printf false)" \
+    --argjson priority_control "$priority_control" \
+    '{ok:true,dry_run:true,form_precheck:true,title:$title,requirement:$requirement,found_environment:$environment,severity_key:$severity,priority_key:$priority,priority_control_available:$priority_control,would_upload_screenshot:$screenshot}'
+  exit 0
+fi
+
+submit_result="$(eval_string "(()=>{const ds=[...document.querySelectorAll('[role=dialog]')].filter(x=>x.textContent.includes('新建质量问题'));const d=ds[ds.length-1];const b=d&&[...d.querySelectorAll('button')].find(x=>x.textContent.trim()==='创建质量问题');if(!b)return 'not-found';b.click();return 'clicked'})()")"
+[ "$submit_result" = 'clicked' ] || fail 'Submit button not found'
+wait_for_js "(()=>[...document.querySelectorAll('button')].some(x=>x.getAttribute('aria-label')===('查看质量问题：'+${title_json})))()" 120 || fail 'Submitted BUG did not appear in the list; do not retry automatically'
+
+eval_string "(()=>{const b=[...document.querySelectorAll('button')].find(x=>x.getAttribute('aria-label')===('查看质量问题：'+${title_json}));if(!b)return 'not-found';b.click();return 'clicked'})()" >/dev/null
+wait_for_js "(()=>[...document.querySelectorAll('[role=dialog]')].some(x=>/BUG-\\d+/.test(x.innerText)&&x.innerText.includes(${title_json})))()" 80 || fail 'Saved BUG detail did not open'
+
+detail="$(eval_raw "(()=>{const d=[...document.querySelectorAll('[role=dialog]')].find(x=>/BUG-\\d+/.test(x.innerText)&&x.innerText.includes(${title_json}));const number=(d.innerText.match(/BUG-\\d+/)||[])[0]||'';const inline=[...d.querySelectorAll('[aria-label=\"复现步骤\"] img')].filter(i=>i.src&&i.naturalWidth>0&&i.getBoundingClientRect().width>0).map(i=>i.src);return {number,text:d.innerText,inline_images:inline}})()")"
+bug_number="$(printf '%s' "$detail" | jq -r '.number')"
+detail_text="$(printf '%s' "$detail" | jq -r '.text')"
+[ -n "$bug_number" ] || fail 'Saved BUG number is empty'
+for required_value in "$title" "$severity_label" "$project_set" "$project" "$requirement" "$found_environment" '[步骤]' '[实际结果]' '[期望结果]'; do
+  case "$detail_text" in *"$required_value"*) ;; *) fail "Saved detail is missing: ${required_value}" ;; esac
+done
+if [ -n "$image_url" ]; then
+  printf '%s' "$detail" | jq -e --arg url "$image_url" '.inline_images | index($url) != null' >/dev/null || fail 'Saved detail does not contain the visible inline screenshot'
+fi
+
+current_url="$(browser get url)"
+bug_id="${bug_number#BUG-}"
+case "$current_url" in
+  *[?\&]bug_id=*) detail_url="$current_url" ;;
+  *\?*) detail_url="${current_url}&bug_id=${bug_id}" ;;
+  *) detail_url="${current_url}?bug_id=${bug_id}" ;;
+esac
+
+jq -n \
+  --arg bug_number "$bug_number" \
+  --arg title "$title" \
+  --arg url "$detail_url" \
+  --arg requirement "$expected_requirement" \
+  --arg severity "$severity_label" \
+  --arg priority "$priority_label" \
+  --arg environment "$found_environment" \
+  --arg image_url "$image_url" \
+  --argjson priority_control "$priority_control" \
+  '{ok:true,bug_number:$bug_number,title:$title,url:$url,requirement:$requirement,severity:$severity,priority:$priority,priority_control_available:$priority_control,found_environment:$environment,inline_image_url:(if $image_url=="" then null else $image_url end)}'

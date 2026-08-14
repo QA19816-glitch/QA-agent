@@ -1,0 +1,9 @@
+[mcp_servers.pm_native_local]
+url = "http://192.168.113.115:32633/one2all/api/v1/platform/public/mcp/78591a0afbfaa4ee6deb674ca01d4887e20eb259dac2b64a"
+auth = "oauth"
+oauth_resource = "http://192.168.113.115:32633/one2all/api/v1/platform/public/mcp/78591a0afbfaa4ee6deb674ca01d4887e20eb259dac2b64a"
+scopes = ["full"]
+required = false
+default_tools_approval_mode = "prompt"
+startup_timeout_sec = 10
+tool_timeout_sec = 60

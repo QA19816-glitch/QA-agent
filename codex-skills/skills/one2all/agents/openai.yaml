@@ -1,4 +1,4 @@
 interface:
   display_name: "One2All 快速提 BUG"
   short_description: "复用登录快速提交，或用完整证据流程验证 One2All 缺陷"
-  default_prompt: "Use $one2all to file and verify this BUG through the persistent fast path unless full evidence mode is required."
+  default_prompt: "Use $one2all and its one2all-submit one-shot command to file and verify this BUG through the persistent fast path unless full evidence mode is required."
