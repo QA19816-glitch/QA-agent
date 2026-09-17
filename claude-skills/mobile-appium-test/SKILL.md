@@ -1,7 +1,6 @@
 ---
 name: mobile-appium-test
 description: "Android UI automation testing using Appium with USB-connected real devices."
-metadata: { "openclaw": { "emoji": "📱", "requires": { "tools": ["adb", "appium"] } } }
 ---
 
 # Mobile Appium Test

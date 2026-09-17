@@ -21,7 +21,7 @@
 | ui-auto-test | Mac 本地 UI 自动化（Playwright + Chromium） |
 | visual-regression-testing | 视觉回归对比测试 |
 
-### 迁移自 OpenClaw 的技能（32个）
+### 通用 Claude 技能（32个）
 accessibility-testing · api-performance-testing · bug-investigation · daily-report-writer · data-analyst · database-testing · diffs · excel-xlsx · feishu-doc · feishu-drive · feishu-perm · feishu-wiki · gstack-qa · mobile-appium-test · playwright-pro · qa-api-runner · qa-bug-triage · qa-prd-analyzer · qa-regression-planner · qa-release-gate-checker · qa-test-data-factory · qa-test-point-extractor · qa-test-report-generator · qa-testcase-writer · qa-traceability-mapper · qa-web-e2e-runner · security-testing · summarize · ux-qa-gate · web-screenshot · weekly-report-writer · zentao-qa-fullflow
 
 ### 从 Codex 迁移的技能（1个）
@@ -75,5 +75,3 @@ description: >
 | 目录 | 运行时 | 说明 |
 |------|--------|------|
 | `claude-skills/` | Claude Code CLI | **本目录**，大王当前主力 |
-| `codex-skills/` | Codex（已弃用） | 历史备份 |
-| `skills/` | OpenClaw（已弃用） | 历史备份，248个技能 |

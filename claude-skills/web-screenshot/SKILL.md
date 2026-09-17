@@ -4,12 +4,6 @@ slug: web-screenshot
 version: 1.1.3
 description: "🖼️ 任意URL全页面截图 + PDF导出工具。当用户要求截取网页、保存网页快照、截图存档、做QA对比、导出PDF时使用。支持百度/知乎/微信公众号/小红书等中文网站，自动等待JS渲染交付PNG/JPG/PDF。"
 changelog: "v1.1.3 - 优化描述为功能导向，提升搜索排名"
-metadata:
-  clawhub:
-    tags: ["screenshot","网页截图","截图工具","全页面截图","PDF导出","playwright","browser","headless","中文网站","内容存档","自动化测试","QA对比","网页快照"]
-  clawdbot:
-    emoji: "🖼️"
-    os: ["linux","darwin","win32"]
 ---
 
 ## When to Use（中文场景）
@@ -75,7 +69,7 @@ const { chromium } = require('playwright');
 | Parameter | Default | Notes |
 |-----------|---------|-------|
 | URL | required | Target URL, must be valid |
-| output path | auto timestamp | `/tmp/openclaw/screenshot_YYYYMMDD_HHMMSS.png` |
+| output path | auto timestamp | `/tmp/web-screenshot/screenshot_YYYYMMDD_HHMMSS.png` |
 | `--fullpage` | viewport only | Captures entire scrollable page |
 | `--pdf` | screenshot | Exports as A4 PDF |
 
