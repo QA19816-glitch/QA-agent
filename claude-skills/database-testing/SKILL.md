@@ -1,7 +1,6 @@
 ---
 name: database-testing
 description: 数据库测试技能，用于验证数据库功能、性能、数据一致性和迁移测试。当用户需要进行SQL测试、数据验证、性能优化时使用。
-metadata: { "openclaw": { "emoji": "🗄️" } }
 ---
 
 # 数据库测试技能

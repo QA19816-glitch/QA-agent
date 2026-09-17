@@ -2,10 +2,8 @@
 name: Excel / XLSX
 slug: excel-xlsx
 version: 1.0.2
-homepage: https://clawic.com/skills/excel-xlsx
 description: "Create, inspect, and edit Microsoft Excel workbooks and XLSX files with reliable formulas, dates, types, formatting, recalculation, and template preservation. Use when (1) the task is about Excel, `.xlsx`, `.xlsm`, `.xls`, `.csv`, or `.tsv`; (2) formulas, formatting, workbook structure, or compatibility matter; (3) the file must stay reliable after edits."
 changelog: Tightened formula anchoring, recalculation, and model traceability after a stricter external spreadsheet audit.
-metadata: {"clawdbot":{"emoji":"📗","requires":{"bins":[]},"os":["linux","darwin","win32"]}}
 ---
 
 ## When to Use
@@ -92,12 +90,11 @@ Use when the main artifact is a Microsoft Excel workbook or spreadsheet file, es
 - A workbook can be numerically correct and still fail visually because wrapped text, clipped labels, or narrow columns were never reviewed.
 
 ## Related Skills
-Install with `clawhub install <slug>` if user confirms:
+Related tools can be installed separately when needed:
 - `csv` — Plain-text tabular import and export workflows.
 - `data` — General data handling patterns before spreadsheet output.
 - `data-analysis` — Higher-level analysis that can feed workbook deliverables.
 
 ## Feedback
 
-- If useful: `clawhub star excel-xlsx`
-- Stay updated: `clawhub sync`
+- -

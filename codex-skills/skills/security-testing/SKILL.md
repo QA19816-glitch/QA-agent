@@ -1,7 +1,6 @@
 ---
 name: security-testing
 description: 安全测试技能，用于验证系统安全性、漏洞扫描、渗透测试、安全审计等。当用户需要进行安全测试、漏洞检测、安全检查时使用。
-metadata: { "openclaw": { "emoji": "🔒" } }
 ---
 
 # 安全测试技能

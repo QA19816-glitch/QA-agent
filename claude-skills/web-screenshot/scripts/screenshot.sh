@@ -21,9 +21,9 @@ fi
 if [ -z "$OUTPUT" ]; then
   TIMESTAMP=$(date +%Y%m%d_%H%M%S)
   if [ "$MODE" = "--pdf" ]; then
-    OUTPUT="/tmp/openclaw/screenshot_${TIMESTAMP}.pdf"
+    OUTPUT="/tmp/web-screenshot/screenshot_${TIMESTAMP}.pdf"
   else
-    OUTPUT="/tmp/openclaw/screenshot_${TIMESTAMP}.png"
+    OUTPUT="/tmp/web-screenshot/screenshot_${TIMESTAMP}.png"
   fi
 fi
 

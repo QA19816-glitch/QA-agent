@@ -2,7 +2,6 @@
 name: daily-report-writer
 description: 根据输入生成日报 Markdown 草稿并写入 reports 目录
 user-invocable: true
-metadata: {"openclaw":{"emoji":"📝"}}
 ---
 
 # Daily Report Writer

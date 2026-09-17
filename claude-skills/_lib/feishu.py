@@ -18,8 +18,7 @@ Usage:
 
 Output is JSON on stdout. Non-zero exit on error.
 
-Credentials are read from /Users/jiguang/.openclaw/openclaw.json
-(channels.feishu.accounts.default).
+Credentials are read from /Users/jiguang/.codex/feishu.json.
 """
 from __future__ import annotations
 
@@ -32,16 +31,13 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-OPENCLAW_CONFIG = Path("/Users/jiguang/.openclaw/openclaw.json")
 DEFAULT_OWNER_OPEN_ID = "ou_f0136616b2e5fcdd98a977e75fb9e2d0"
 TOKEN_CACHE = Path.home() / ".claude" / "cache" / "feishu_token.json"
 FEISHU_BASE = "https://open.feishu.cn/open-apis"
 
 
 def load_creds() -> tuple[str, str]:
-    data = json.loads(OPENCLAW_CONFIG.read_text())
-    acc = data["channels"]["feishu"]["accounts"]["default"]
-    return acc["appId"], acc["appSecret"]
+    raise FileNotFoundError(f"Feishu credentials not found: {CODEX_FEISHU_CONFIG}")
 
 
 def http(method: str, url: str, *, token: str | None = None, json_body=None, params=None):

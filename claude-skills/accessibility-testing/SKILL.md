@@ -1,7 +1,6 @@
 ---
 name: accessibility-testing
 description: 无障碍测试技能，用于验证产品的可访问性、WCAG合规性、辅助技术支持等。当用户需要进行无障碍测试、合规检查、用户体验优化时使用。
-metadata: { "openclaw": { "emoji": "♿" } }
 ---
 
 # 无障碍测试技能
