@@ -1,7 +1,6 @@
 ---
 name: data-analyst
 description: "Data Analyst Lite: read and analyze CSV and Excel files, perform data cleaning, statistical analysis, and generate visualizations including line charts, bar charts, histograms, and scatter plots. Use when: the user wants to analyze a spreadsheet or CSV file, get statistics on data, clean messy data, find patterns or trends, create charts, summarize a dataset, or perform exploratory data analysis."
-metadata: { "openclaw": { "emoji": "📊" } }
 ---
 
 ## Setup
