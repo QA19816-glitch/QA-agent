@@ -41,6 +41,4 @@ Total skills: 40
 | `wechat-skill-auto-installer` | Automatically identify skills, tool packages, GitHub skill repositories, and installable QA-agent bundles from WeChat public-account articles or article text, then check local Codex skill installation and install or update matching skills when the user asks to install, upgrade, or "把技能装上". |
 | `security-scan-agent` | 自动扫描 API 接口的 OWASP Top 10 安全风险，用于授权测试环境中的安全测试、漏洞发现、越权检查和风险报告生成。 |
 | `security-audit` | Audit codebases and infrastructure for security issues. Use when scanning dependencies for vulnerabilities, detecting hardcoded secrets, checking OWASP top 10 issues, verifying SSL/TLS, auditing file permissions, or reviewing code for injection and auth flaws. |
-| `security-auditor` | Use when reviewing code for security vulnerabilities, implementing authentication flows, auditing OWASP Top 10, configuring CORS/CSP headers, handling secrets, input validation, SQL injection prevention, XSS protection, or any security-related code review. |
-| `security-scanner` | Automated security scanning and vulnerability detection for web applications, APIs, and infrastructure. Use when you need to scan targets for vulnerabilities, check SSL certificates, find open ports, detect misconfigurations, or perform security audits. Integrates with nmap, nuclei, and other security tools. |
-| `security-testing` | 安全测试技能，用于验证系统安全性、漏洞扫描、渗透测试、安全审计等。当用户需要进行安全测试、漏洞检测、安全检查时使用。 |
+| `dashiai-ppt` | Generate editable HTML presentation decks and export them to PPTX or PDF with the bundled DashiAI renderer. |

@@ -2,9 +2,9 @@
 
 专为 **Claude Code CLI** 设计的 QA 技能库，由大王（QA负责人）维护。
 
-## 包含技能（46个）
+## 包含技能（47个）
 
-### 本地原生 Claude Code 技能（14个）
+### 本地原生 Claude Code 技能（13个）
 | 技能 | 描述 |
 |------|------|
 | cross-browser-testing | 跨浏览器兼容性测试 |
@@ -21,8 +21,8 @@
 | ui-auto-test | Mac 本地 UI 自动化（Playwright + Chromium） |
 | visual-regression-testing | 视觉回归对比测试 |
 
-### 通用 Claude 技能（32个）
-accessibility-testing · api-performance-testing · bug-investigation · daily-report-writer · data-analyst · database-testing · diffs · excel-xlsx · feishu-doc · feishu-drive · feishu-perm · feishu-wiki · gstack-qa · mobile-appium-test · playwright-pro · qa-api-runner · qa-bug-triage · qa-prd-analyzer · qa-regression-planner · qa-release-gate-checker · qa-test-data-factory · qa-test-point-extractor · qa-test-report-generator · qa-testcase-writer · qa-traceability-mapper · qa-web-e2e-runner · security-testing · summarize · ux-qa-gate · web-screenshot · weekly-report-writer · zentao-qa-fullflow
+### 通用 Claude 技能（33个）
+accessibility-testing · api-performance-testing · bug-investigation · daily-report-writer · data-analyst · database-testing · diffs · excel-xlsx · feishu-doc · feishu-drive · feishu-perm · feishu-wiki · gstack-qa · mobile-appium-test · playwright-pro · qa-api-runner · qa-bug-triage · qa-prd-analyzer · qa-regression-planner · qa-release-gate-checker · qa-test-data-factory · qa-test-point-extractor · qa-test-report-generator · qa-testcase-writer · qa-traceability-mapper · qa-web-e2e-runner · security-testing · summarize · ux-qa-gate · web-screenshot · weekly-report-writer · qa-test-plan · zentao-auto-bug
 
 ### 从 Codex 迁移的技能（1个）
 qa-zentao-defect-workflow
