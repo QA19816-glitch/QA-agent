@@ -51,9 +51,6 @@ if (
 ) {
   [
     "qa-security-testing",
-    "security-testing",
-    "security-auditor",
-    "security-scanner",
     "security-audit",
   ].forEach((name) => inferred.add(name));
 }
