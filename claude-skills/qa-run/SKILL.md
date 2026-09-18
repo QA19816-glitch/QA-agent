@@ -36,7 +36,7 @@ description: End-to-end QA pipeline orchestration. Activate when 大王 says `/q
 | Web E2E | `qa-web-e2e-runner` / `e2e-test-orchestrator` |
 | Mobile | `mobile-appium-test` / `mobile-testing` |
 | 性能 | `api-performance-testing` / `frontend-performance-audit` |
-| 安全 | `security-testing` |
+| 安全 | `qa-security-testing` |
 | 兼容 | `cross-browser-testing` / `geo-testing` |
 | 可访问性 | `accessibility-testing` |
 | 视觉回归 | `visual-regression-testing` |
@@ -69,7 +69,7 @@ python3 ~/.claude/skills/_lib/feishu.py create \
 对每条失败用例（status in [fail, blocked]）：
 
 1. `qa-bug-triage`：合并证据 → 生成 BUG 标题 / 复现步骤 / 严重度（P0-P3）/ 优先级 / 建议负责人。
-2. 按就绪的渠道提单（优先级：**禅道**`zentao-qa-fullflow` > `gh-issues` > 飞书 BUG 文档）。禅道配置读 `~/.claude/config/integrations.json#zentao`（默认产品 `S基座` id=3）。
+2. 按就绪的渠道提单（优先级：**禅道**`qa-zentao-defect-workflow` > `gh-issues` > 飞书 BUG 文档）。禅道配置读 `~/.claude/config/integrations.json#zentao`（默认产品 `S基座` id=3）。
 3. 在报告末尾登记 BUG 编号/链接并回写到追溯表。
 
 ### BUG 单硬规范（必须遵守，违反即回炉）

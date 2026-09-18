@@ -132,4 +132,4 @@ Charter 模板：
 
 ## Phase 4 — 可选：直接提 BUG
 
-如发现 P1/P2 缺陷，调用 `zentao-qa-fullflow` 或 `qa-bug-triage` 直接提单。
+如发现 P1/P2 缺陷，调用 `qa-zentao-defect-workflow` 或 `qa-bug-triage` 直接提单。

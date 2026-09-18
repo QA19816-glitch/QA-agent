@@ -32,9 +32,6 @@ Use this as the entry point when the user sends a WeChat article and wants the s
 If the article says `OWASP Top 10`, `安全测试`, `SQL 注入`, `XSS`, `越权`, `漏洞扫描`, `渗透测试`, or `安全审计`, map it to this security testing set when present locally:
 
 - `qa-security-testing`
-- `security-testing`
-- `security-auditor`
-- `security-scanner`
 - `security-audit`
 
 If the article says `Codex + Zentao`, `Claude Code + Zentao`, `自动提 BUG`, `QA-agent`, or `一体化缺陷提报`, map it to this default Codex skill set when present locally:
