@@ -39,6 +39,22 @@ Required fields:
 - `actual_result`
 - `expected_result`
 
+## Title Quality
+
+Treat a short phrase supplied by the user as the defect's core fact, not automatically as the final title. Before submission, rewrite it into a concise professional title using `module/object + trigger or state + observable abnormal result`.
+
+- Preserve the user's meaning and observable evidence.
+- Add enough context to make the title independently understandable in a BUG list.
+- Do not invent a root cause, affected scope, device, environment, frequency, or business impact that the user did not provide.
+- Avoid vague final titles such as `首页不显示`, `页面有问题`, `功能异常`, or `点击没反应`.
+- If the user explicitly says to use an exact title, preserve it apart from the required `【Codex自动化】` prefix.
+
+Examples:
+
+- `首页不显示` → `进入系统首页后页面内容未正常展示`
+- `保存没反应` → `点击保存后页面无响应且数据未提交`
+- `列表为空` → `进入数据列表后已有记录未展示`
+
 Defaults:
 
 - requirement: `S基建 / 未分类 / 未分类Bug`
@@ -54,7 +70,7 @@ The submitter performs one exact-title duplicate check, creates once, waits brie
 
 ## Speed Rules
 
-1. When complete defect facts are available, immediately encode the JSON in memory and invoke `one2all-submit --json-base64` once.
+1. When complete defect facts are available, first professionalize any shorthand title without adding unsupported facts, then immediately encode the JSON in memory and invoke `one2all-submit --json-base64` once.
 2. Do not run a dry-run before a normal submission.
 3. Do not open a browser, inspect login state, call MCP, probe endpoints manually, or repeat verification outside the submitter.
 4. Do not submit twice. A persistence failure is an error requiring investigation, not permission to retry automatically.

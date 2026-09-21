@@ -6,7 +6,7 @@ Read this reference before creating or editing a One2 BUG.
 
 | One2 field | Rule |
 | --- | --- |
-| `title` | One leading `【Codex自动化】`; concise; no timestamp, run ID, random suffix, or second bracketed scope marker |
+| `title` | Treat user shorthand as a core fact and rewrite it as `module/object + trigger or state + observable abnormal result`; one leading `【Codex自动化】`; concise; no invented cause/scope, timestamp, run ID, random suffix, or second bracketed scope marker. Preserve wording only when the user explicitly requires an exact title. |
 | `requirement_id` | Auto-select only one unique high-confidence match supported by project scope and defect evidence; ask when ambiguous |
 | `bug_type` | Infer from evidence; otherwise keep the platform default `code_error` |
 | `severity_key` | Select from the impact matrix below; never default mechanically |
