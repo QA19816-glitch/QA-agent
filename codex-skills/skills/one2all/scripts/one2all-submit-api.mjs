@@ -3,10 +3,10 @@
 /**
  * One2All API submitter.
  *
- * The API contract is deliberately kept in one place so the field rules stay
- * identical to the browser submitter. Authentication is supplied through an
- * explicitly configured header or token; secrets are never stored in this
- * skill or inferred from browser state.
+ * The API contract is deliberately kept in one place so every installation
+ * uses the same fast submission and persistence-verification behavior.
+ * Authentication is supplied through a private runtime header or token;
+ * secrets are never stored in this skill.
  */
 
 import fs from "node:fs/promises";

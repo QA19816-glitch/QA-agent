@@ -3,24 +3,13 @@
 set -eu
 
 script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
-browser_cmd="${ONE2ALL_BROWSER_CMD:-${script_dir}/one2all-browser}"
-one2all_base_url="${ONE2ALL_BASE_URL:-https://pm-prod.vibeworld.top}"
-one2all_app_prefix="${ONE2ALL_BROWSER_APP_PREFIX:-}"
-auth_profile="${ONE2ALL_AUTH_PROFILE:-one2all}"
-mcp_name="${ONE2ALL_MCP_NAME:-pm_native_local}"
-mcp_url="${ONE2ALL_MCP_URL:-${one2all_base_url}/api/v1/mcp}"
-username=''
-password_stdin=0
-api_token_stdin=0
-install_mcp=0
-check_only=0
 keychain_service="${ONE2ALL_KEYCHAIN_SERVICE:-codex-one2all-api-token}"
 keychain_account="${ONE2ALL_KEYCHAIN_ACCOUNT:-one2all-api}"
+api_token_stdin=0
+check_only=0
 
 usage() {
-  printf '%s\n' 'Usage: one2all-setup --username <name> [--password-stdin] [--install-mcp]' >&2
-  printf '%s\n' '       one2all-setup --api-token-stdin' >&2
-  printf '%s\n' '       one2all-setup --install-mcp' >&2
+  printf '%s\n' 'Usage: one2all-setup --api-token-stdin' >&2
   printf '%s\n' '       one2all-setup --check' >&2
   exit 64
 }
@@ -32,33 +21,23 @@ fail() {
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
-    --username)
-      [ "$#" -ge 2 ] || usage
-      username="$2"
-      shift 2
-      ;;
-    --password-stdin)
-      password_stdin=1
-      shift
-      ;;
     --api-token-stdin)
       api_token_stdin=1
-      shift
-      ;;
-    --install-mcp)
-      install_mcp=1
       shift
       ;;
     --check)
       check_only=1
       shift
       ;;
-    *) usage ;;
+    *)
+      usage
+      ;;
   esac
 done
 
+[ "$api_token_stdin" -eq 1 ] || [ "$check_only" -eq 1 ] || usage
+
 command -v node >/dev/null 2>&1 || fail 'node is not installed' 69
-sh -n "${script_dir}/one2all-browser" || fail 'one2all-browser has invalid shell syntax' 65
 sh -n "${script_dir}/one2all-submit" || fail 'one2all-submit has invalid shell syntax' 65
 node --check "${script_dir}/one2all-submit-api.mjs" || fail 'one2all-submit-api.mjs has invalid JavaScript syntax' 65
 
@@ -80,65 +59,5 @@ if [ "$check_only" -eq 1 ]; then
     printf '%s\n' 'One2All API setup check passed (macOS Keychain).'
     exit 0
   fi
-  if [ "${ONE2ALL_TRANSPORT:-api}" = "browser" ]; then
-    command -v agent-browser >/dev/null 2>&1 || fail 'agent-browser is not installed' 69
-    command -v jq >/dev/null 2>&1 || fail 'jq is not installed' 69
-    "$browser_cmd" auth show "$auth_profile" >/dev/null 2>&1 || fail "local auth profile '${auth_profile}' is not configured" 78
-    printf '%s\n' 'One2All browser fallback setup check passed.'
-    exit 0
-  fi
-  fail 'set ONE2ALL_API_TOKEN or ONE2ALL_API_AUTH_HEADER for API transport' 78
-fi
-
-if [ -n "$username" ]; then
-  command -v agent-browser >/dev/null 2>&1 || fail 'agent-browser is not installed' 69
-  command -v jq >/dev/null 2>&1 || fail 'jq is not installed' 69
-fi
-
-if [ "$install_mcp" -eq 0 ] && [ -z "$username" ] && [ "$api_token_stdin" -eq 0 ]; then
-  usage
-fi
-
-if [ -n "$username" ]; then
-  login_url="${one2all_base_url}${one2all_app_prefix}/login"
-  if [ "$password_stdin" -eq 1 ]; then
-    "$browser_cmd" auth save "$auth_profile" \
-      --url "$login_url" \
-      --username "$username" \
-      --password-stdin \
-      --username-selector 'input[type="text"]' \
-      --password-selector 'input[type="password"]' \
-      --submit-selector 'button[type="submit"]' >/dev/null
-  elif [ -t 0 ]; then
-    printf '%s' 'One2All password: ' >&2
-    stty -echo
-    IFS= read -r password
-    stty echo
-    printf '\n' >&2
-    printf '%s' "$password" | "$browser_cmd" auth save "$auth_profile" \
-      --url "$login_url" \
-      --username "$username" \
-      --password-stdin \
-      --username-selector 'input[type="text"]' \
-      --password-selector 'input[type="password"]' \
-      --submit-selector 'button[type="submit"]' >/dev/null
-    unset password
-  else
-    fail 'use --password-stdin when setup is not attached to a terminal' 64
-  fi
-  "$browser_cmd" auth show "$auth_profile" >/dev/null 2>&1 || fail 'saved auth profile could not be verified' 78
-  printf '%s\n' 'One2All browser fallback credentials saved. The shared skill contains no password.'
-fi
-
-if [ "$install_mcp" -eq 1 ]; then
-  codex_bin="${CODEX_CLI_PATH:-$(command -v codex || true)}"
-  [ -n "$codex_bin" ] || fail 'codex CLI is not available for MCP setup' 69
-  if ! "$codex_bin" mcp get "$mcp_name" >/dev/null 2>&1; then
-    "$codex_bin" mcp add "$mcp_name" --url "$mcp_url" --oauth-resource "$mcp_url"
-  fi
-  if "$codex_bin" mcp login "$mcp_name" --scopes full; then
-    printf '%s\n' 'One2All MCP OAuth completed. Start a new Codex task to load its tools.'
-  else
-    printf '%s\n' 'One2All MCP OAuth is unavailable; configure ONE2ALL_API_TOKEN or ONE2ALL_API_AUTH_HEADER for the API submitter.' >&2
-  fi
+  fail 'save a token with --api-token-stdin or configure a private API token variable' 78
 fi
