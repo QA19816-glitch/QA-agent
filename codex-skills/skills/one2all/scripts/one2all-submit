@@ -11,9 +11,10 @@ command -v node >/dev/null 2>&1 || {
 
 if [ -z "${ONE2ALL_API_TOKEN:-}" ] && [ -z "${ONE2ALL_API_AUTH_HEADER:-}" ]; then
   keychain_service="${ONE2ALL_KEYCHAIN_SERVICE:-codex-one2all-api-token}"
+  keychain_account="${ONE2ALL_KEYCHAIN_ACCOUNT:-one2all-api}"
   security_bin="${ONE2ALL_KEYCHAIN_SECURITY_BIN:-security}"
   if command -v "$security_bin" >/dev/null 2>&1; then
-    keychain_token="$("$security_bin" find-generic-password -s "$keychain_service" -w 2>/dev/null || true)"
+    keychain_token="$("$security_bin" find-generic-password -s "$keychain_service" -a "$keychain_account" -w 2>/dev/null || true)"
     if [ -n "$keychain_token" ]; then
       ONE2ALL_API_TOKEN="$keychain_token"
       export ONE2ALL_API_TOKEN

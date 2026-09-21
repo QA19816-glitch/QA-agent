@@ -15,6 +15,7 @@ const temporaryDir = await fs.mkdtemp(path.join(os.tmpdir(), "one2all-api-test-"
 const specPath = path.join(temporaryDir, "bug.json");
 const missingPersistenceSpecPath = path.join(temporaryDir, "missing-persistence.json");
 const fakeSecurityPath = path.join(temporaryDir, "security");
+const securityLogPath = path.join(temporaryDir, "security.log");
 const requestLog = [];
 let createdBug = null;
 let persistInList = true;
@@ -37,7 +38,7 @@ await fs.writeFile(missingPersistenceSpecPath, JSON.stringify({
   actual_result: "详情存在但列表不存在",
   expected_result: "详情和列表都能查询到",
 }));
-await fs.writeFile(fakeSecurityPath, "#!/bin/sh\nif [ \"${1:-}\" = 'find-generic-password' ]; then printf '%s\\n' 'test-keychain-token'; fi\n", { mode: 0o700 });
+await fs.writeFile(fakeSecurityPath, "#!/bin/sh\nprintf '%s\\n' \"$*\" >> \"$ONE2ALL_TEST_SECURITY_LOG\"\nif [ \"${1:-}\" = 'find-generic-password' ]; then printf '%s\\n' 'test-keychain-token'; fi\n", { mode: 0o700 });
 
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, "http://127.0.0.1");
@@ -85,6 +86,7 @@ function run(extraArgs, { file = specPath, useKeychain = false, appendFile = tru
     if (useKeychain) {
       delete env.ONE2ALL_API_TOKEN;
       env.ONE2ALL_KEYCHAIN_SECURITY_BIN = fakeSecurityPath;
+      env.ONE2ALL_TEST_SECURITY_LOG = securityLogPath;
     } else {
       env.ONE2ALL_API_TOKEN = "test-token";
     }
@@ -104,7 +106,11 @@ function run(extraArgs, { file = specPath, useKeychain = false, appendFile = tru
 function runSetup(input) {
   return new Promise((resolve, reject) => {
     const child = spawn(setup, ["--api-token-stdin"], {
-      env: { ...process.env, ONE2ALL_KEYCHAIN_SECURITY_BIN: fakeSecurityPath },
+      env: {
+        ...process.env,
+        ONE2ALL_KEYCHAIN_SECURITY_BIN: fakeSecurityPath,
+        ONE2ALL_TEST_SECURITY_LOG: securityLogPath,
+      },
       stdio: ["pipe", "pipe", "pipe"],
     });
     let stdout = "";
@@ -121,6 +127,11 @@ try {
   const setupSecret = "setup-secret-token";
   const setupResult = await runSetup(setupSecret);
   assert.equal(`${setupResult.stdout}${setupResult.stderr}`.includes(setupSecret), false, "setup must not print the API token");
+  assert.equal(
+    (await fs.readFile(securityLogPath, "utf8")).includes("-s codex-one2all-api-token -a one2all-api"),
+    true,
+    "setup must save the token under the configured Keychain service and account",
+  );
 
   const dryRun = await run(["--dry-run"]);
   assert.equal(dryRun.ok, true);
@@ -142,6 +153,7 @@ try {
   assert.equal(result.persisted, true);
   assert.equal(result.bug_number, "BUG-9001");
   assert.equal(result.url, `${baseUrl}/workspace/quality-management/bugs/9001`);
+  assert.match(await fs.readFile(securityLogPath, "utf8"), /find-generic-password -s codex-one2all-api-token -a one2all-api -w/);
   assert.equal(typeof result.create_duration_ms, "number");
   assert.equal(typeof result.verification_duration_ms, "number");
   assert.deepEqual(requestLog.slice(0, 2).map(item => `${item.method} ${item.path}`), [

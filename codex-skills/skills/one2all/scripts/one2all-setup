@@ -65,7 +65,7 @@ if [ "$check_only" -eq 1 ]; then
     printf '%s\n' 'One2All API setup check passed.'
     exit 0
   fi
-  if command -v "$security_bin" >/dev/null 2>&1 && "$security_bin" find-generic-password -s "$keychain_service" -w >/dev/null 2>&1; then
+  if command -v "$security_bin" >/dev/null 2>&1 && "$security_bin" find-generic-password -s "$keychain_service" -a "$keychain_account" -w >/dev/null 2>&1; then
     printf '%s\n' 'One2All API setup check passed (macOS Keychain).'
     exit 0
   fi
