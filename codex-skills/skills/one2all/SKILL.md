@@ -9,7 +9,7 @@ File defects only in One2All. This skill is API-only: do not open the browser, t
 
 ## One-Time Setup
 
-Read [references/field-rules.md](references/field-rules.md) before creating a BUG.
+The fast-path rules below are self-contained. Read [references/field-rules.md](references/field-rules.md) only when requirement ownership, severity, priority, or evidence handling is genuinely ambiguous.
 
 On macOS, save each user's own API token in Keychain:
 
@@ -22,11 +22,13 @@ The Keychain service is `codex-one2all-api-token`. The token is never printed, c
 
 ## Submit
 
-Build one JSON specification and run exactly one command:
+For the fastest path, Base64-encode the UTF-8 JSON specification in memory and run exactly one command:
 
 ```sh
-scripts/one2all-submit /private/tmp/one2all-bug.json
+scripts/one2all-submit --json-base64 '<base64-json>'
 ```
+
+Do not create a temporary specification file for ordinary submissions. File input remains supported for manually maintained fixtures: `scripts/one2all-submit <bug.json>`.
 
 Required fields:
 
@@ -46,17 +48,19 @@ Defaults:
 
 Preserve an explicitly supplied requirement, requirement ID, environment, owner, deadline, operating system, or browser.
 
+Severity shorthand: `p0` is broad outage/destruction; `p1` is a blocked core flow or material security/data risk; `p2` is limited functional impairment; `p3` is cosmetic or minor. Priority is independent: `urgent` for active/release-blocking risk, `high` for important current work, `medium` for normal scheduling, and `low` for minor backlog work.
+
 The submitter performs one exact-title duplicate check, creates once, waits briefly, then verifies the saved detail and exact-title list in parallel. Report success only when its JSON contains both `ok:true` and `persisted:true`.
 
 ## Speed Rules
 
-1. When complete defect facts are available, immediately build the JSON and invoke `one2all-submit` once.
+1. When complete defect facts are available, immediately encode the JSON in memory and invoke `one2all-submit --json-base64` once.
 2. Do not run a dry-run before a normal submission.
 3. Do not open a browser, inspect login state, call MCP, probe endpoints manually, or repeat verification outside the submitter.
 4. Do not submit twice. A persistence failure is an error requiring investigation, not permission to retry automatically.
-5. For `随机提一个` or `随便提一个`, use an already verified, not-yet-submitted real issue. If none exists, immediately ask for title, steps, actual result, and expected result; never invent a BUG or spend minutes exploring.
+5. For `随机提一个` or `随便提一个`, use an already known, verified, not-yet-submitted real issue from the current task context. Never search the filesystem, browser, or application merely to manufacture a speed-test candidate. If none is already available, immediately ask for title, steps, actual result, and expected result.
 6. Enter real line breaks in reproduction text. Never save visible `\n` literals.
-7. Return the BUG number, detail URL, total duration, creation duration, verification duration, and persistence status from the command JSON.
+7. Return the BUG number, detail URL, total duration, creation duration, verification duration, persistence status, and `input_mode` from the command JSON.
 
 ## Evidence Mode
 

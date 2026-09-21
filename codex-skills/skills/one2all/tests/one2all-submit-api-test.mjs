@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 
 const skillDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const submitter = path.join(skillDir, "scripts", "one2all-submit");
+const setup = path.join(skillDir, "scripts", "one2all-setup");
 const temporaryDir = await fs.mkdtemp(path.join(os.tmpdir(), "one2all-api-test-"));
 const specPath = path.join(temporaryDir, "bug.json");
 const missingPersistenceSpecPath = path.join(temporaryDir, "missing-persistence.json");
@@ -18,14 +19,16 @@ const requestLog = [];
 let createdBug = null;
 let persistInList = true;
 
-await fs.writeFile(specPath, JSON.stringify({
+const inlineSpec = {
   title: "接口提交回归测试",
   severity_key: "p3",
   priority_key: "low",
   steps: "1. 打开页面\n2. 触发问题",
   actual_result: "出现错误",
   expected_result: "正常完成",
-}));
+};
+const inlineSpecBase64 = Buffer.from(JSON.stringify(inlineSpec), "utf8").toString("base64");
+await fs.writeFile(specPath, JSON.stringify(inlineSpec));
 await fs.writeFile(missingPersistenceSpecPath, JSON.stringify({
   title: "接口持久化失败回归测试",
   severity_key: "p2",
@@ -34,7 +37,7 @@ await fs.writeFile(missingPersistenceSpecPath, JSON.stringify({
   actual_result: "详情存在但列表不存在",
   expected_result: "详情和列表都能查询到",
 }));
-await fs.writeFile(fakeSecurityPath, "#!/bin/sh\nprintf '%s\\n' 'test-keychain-token'\n", { mode: 0o700 });
+await fs.writeFile(fakeSecurityPath, "#!/bin/sh\nif [ \"${1:-}\" = 'find-generic-password' ]; then printf '%s\\n' 'test-keychain-token'; fi\n", { mode: 0o700 });
 
 const server = http.createServer(async (request, response) => {
   const url = new URL(request.url, "http://127.0.0.1");
@@ -70,7 +73,7 @@ await new Promise(resolve => server.listen(0, "127.0.0.1", resolve));
 const address = server.address();
 const baseUrl = `http://127.0.0.1:${address.port}`;
 
-function run(extraArgs, { file = specPath, useKeychain = false } = {}) {
+function run(extraArgs, { file = specPath, useKeychain = false, appendFile = true } = {}) {
   return new Promise((resolve, reject) => {
     const env = {
       ...process.env,
@@ -85,7 +88,7 @@ function run(extraArgs, { file = specPath, useKeychain = false } = {}) {
     } else {
       env.ONE2ALL_API_TOKEN = "test-token";
     }
-    const child = spawn(submitter, [...extraArgs, file], {
+    const child = spawn(submitter, appendFile ? [...extraArgs, file] : extraArgs, {
       env,
       stdio: ["ignore", "pipe", "pipe"],
     });
@@ -98,7 +101,27 @@ function run(extraArgs, { file = specPath, useKeychain = false } = {}) {
   });
 }
 
+function runSetup(input) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(setup, ["--api-token-stdin"], {
+      env: { ...process.env, ONE2ALL_KEYCHAIN_SECURITY_BIN: fakeSecurityPath },
+      stdio: ["pipe", "pipe", "pipe"],
+    });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", chunk => { stdout += chunk; });
+    child.stderr.on("data", chunk => { stderr += chunk; });
+    child.on("error", reject);
+    child.on("close", code => code === 0 ? resolve({ stdout, stderr }) : reject(new Error(stderr.trim())));
+    child.stdin.end(`${input}\n`);
+  });
+}
+
 try {
+  const setupSecret = "setup-secret-token";
+  const setupResult = await runSetup(setupSecret);
+  assert.equal(`${setupResult.stdout}${setupResult.stderr}`.includes(setupSecret), false, "setup must not print the API token");
+
   const dryRun = await run(["--dry-run"]);
   assert.equal(dryRun.ok, true);
   assert.equal(dryRun.transport, "api");
@@ -112,9 +135,10 @@ try {
 
   requestLog.length = 0;
   createdBug = null;
-  const result = await run([], { useKeychain: true });
+  const result = await run(["--json-base64", inlineSpecBase64], { useKeychain: true, appendFile: false });
   assert.equal(result.ok, true);
   assert.equal(result.transport, "api");
+  assert.equal(result.input_mode, "inline_base64");
   assert.equal(result.persisted, true);
   assert.equal(result.bug_number, "BUG-9001");
   assert.equal(result.url, `${baseUrl}/workspace/quality-management/bugs/9001`);

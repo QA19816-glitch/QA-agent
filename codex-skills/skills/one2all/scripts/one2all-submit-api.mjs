@@ -41,6 +41,7 @@ function fail(message, code = 1) {
 
 function usage() {
   process.stderr.write("Usage: one2all-submit-api.mjs [--dry-run] <bug.json>\n");
+  process.stderr.write("       one2all-submit-api.mjs [--dry-run] --json-base64 <base64-json>\n");
   process.exit(64);
 }
 
@@ -48,11 +49,14 @@ function normalizeTitle(value) {
   return `【Codex自动化】${String(value || "").replace(/^(【Codex自动化】)+/, "")}`;
 }
 
-async function readSpec(file) {
-  if (!file) usage();
+async function readSpec({ file, jsonBase64 }) {
+  if (!file && !jsonBase64) usage();
   let spec;
   try {
-    spec = JSON.parse(await fs.readFile(file, "utf8"));
+    const raw = jsonBase64
+      ? Buffer.from(jsonBase64, "base64").toString("utf8")
+      : await fs.readFile(file, "utf8");
+    spec = JSON.parse(raw);
   } catch (error) {
     throw new Error(`cannot read BUG spec: ${error.message}`);
   }
@@ -281,11 +285,26 @@ async function uploadScreenshot(spec, requirementId) {
 
 async function main() {
   const started = performance.now();
-  let args = process.argv.slice(2);
-  const dryRun = args[0] === "--dry-run";
-  if (dryRun) args = args.slice(1);
-  if (args.length !== 1) usage();
-  const spec = await readSpec(args[0]);
+  const args = process.argv.slice(2);
+  let dryRun = false;
+  let file = "";
+  let jsonBase64 = "";
+  for (let index = 0; index < args.length; index += 1) {
+    const argument = args[index];
+    if (argument === "--dry-run") {
+      dryRun = true;
+    } else if (argument === "--json-base64") {
+      index += 1;
+      if (index >= args.length || jsonBase64 || file) usage();
+      jsonBase64 = args[index];
+    } else if (!file && !jsonBase64) {
+      file = argument;
+    } else {
+      usage();
+    }
+  }
+  if ((!file && !jsonBase64) || (file && jsonBase64)) usage();
+  const spec = await readSpec({ file, jsonBase64 });
   await resolveWorkspaceId();
   const [duplicate, requirementId] = await Promise.all([
     duplicateCheck(spec),
@@ -294,7 +313,7 @@ async function main() {
   let inlineImageUrl = null;
   const payload = buildPayload(spec, requirementId);
   if (dryRun) {
-    process.stdout.write(`${JSON.stringify({ ok: true, dry_run: true, transport: "api", duplicate_check: duplicate, requirement_id: requirementId, would_upload_screenshot: Boolean(spec.screenshot_path), request: { method: "POST", path: createPath, payload } })}\n`);
+    process.stdout.write(`${JSON.stringify({ ok: true, dry_run: true, transport: "api", input_mode: jsonBase64 ? "inline_base64" : "file", duplicate_check: duplicate, requirement_id: requirementId, would_upload_screenshot: Boolean(spec.screenshot_path), request: { method: "POST", path: createPath, payload } })}\n`);
     return;
   }
   inlineImageUrl = await uploadScreenshot(spec, requirementId);
@@ -330,7 +349,7 @@ async function main() {
   if (!persisted) throw new Error(`Created BUG was not persisted in the exact-title list: ${spec.title} (${bugId})`);
   const verificationDurationMs = Math.round(performance.now() - verificationStarted);
   const uiUrl = new URL(`${uiPath.replace(/\/$/, "")}/bugs/${encodeURIComponent(bugId)}`, `${siteUrl}/`);
-  process.stdout.write(`${JSON.stringify({ ok: true, transport: "api", persisted: true, bug_number: String(created.bug_number || created.number || saved.bug_number || saved.number || `BUG-${bugId}`), bug_id: bugId, title: spec.title, url: uiUrl.toString(), requirement: [spec.project_set, spec.project, spec.requirement].join(" / "), requirement_id: requirementId, severity: severityLabels[spec.severity_key], priority: priorityLabels[spec.priority_key], found_environment: spec.found_environment, inline_image_url: inlineImageUrl, create_duration_ms: createDurationMs, verification_duration_ms: verificationDurationMs, duration_ms: Math.round(performance.now() - started) })}\n`);
+  process.stdout.write(`${JSON.stringify({ ok: true, transport: "api", input_mode: jsonBase64 ? "inline_base64" : "file", persisted: true, bug_number: String(created.bug_number || created.number || saved.bug_number || saved.number || `BUG-${bugId}`), bug_id: bugId, title: spec.title, url: uiUrl.toString(), requirement: [spec.project_set, spec.project, spec.requirement].join(" / "), requirement_id: requirementId, severity: severityLabels[spec.severity_key], priority: priorityLabels[spec.priority_key], found_environment: spec.found_environment, inline_image_url: inlineImageUrl, create_duration_ms: createDurationMs, verification_duration_ms: verificationDurationMs, duration_ms: Math.round(performance.now() - started) })}\n`);
 }
 
 main().catch(error => fail(error.message));

@@ -1,4 +1,4 @@
 interface:
   display_name: "One2All 快速提 BUG"
   short_description: "通过直接 API 在约 1 秒内提交并持久化验证 One2All BUG"
-  default_prompt: "Use $one2all and its one2all-submit command to file this BUG once through the direct API, and report success only when persisted is true."
+  default_prompt: "Use $one2all and submit this BUG once with the direct API and inline Base64 JSON; do not create a temporary file, and report success only when persisted is true."
