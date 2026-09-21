@@ -3,9 +3,38 @@
 set -eu
 
 script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+
+# API is the default transport. Keep the browser implementation available for
+# diagnostics and for installations that have not enabled API access yet.
+if [ "${ONE2ALL_TRANSPORT:-api}" != "browser" ]; then
+  command -v node >/dev/null 2>&1 || {
+    printf '%s\n' '{"ok":false,"error":"node is required for API transport"}' >&2
+    exit 69
+  }
+  if [ -z "${ONE2ALL_API_TOKEN:-}" ] && [ -z "${ONE2ALL_API_AUTH_HEADER:-}" ]; then
+    keychain_service="${ONE2ALL_KEYCHAIN_SERVICE:-codex-one2all-api-token}"
+    security_bin="${ONE2ALL_KEYCHAIN_SECURITY_BIN:-security}"
+    if command -v "$security_bin" >/dev/null 2>&1; then
+      keychain_token="$($security_bin find-generic-password -s "$keychain_service" -w 2>/dev/null || true)"
+      if [ -n "$keychain_token" ]; then
+        ONE2ALL_API_TOKEN="$keychain_token"
+        export ONE2ALL_API_TOKEN
+        unset keychain_token
+      fi
+    fi
+  fi
+  exec node "${script_dir}/one2all-submit-api.mjs" "$@"
+fi
+
+command -v jq >/dev/null 2>&1 || {
+  printf '%s\n' '{"ok":false,"error":"jq is required for browser fallback"}' >&2
+  exit 69
+}
+
 browser_cmd="${ONE2ALL_BROWSER_CMD:-${script_dir}/one2all-browser}"
-one2all_base_url="${ONE2ALL_BASE_URL:-http://192.168.113.115:32633}"
-list_url="${one2all_base_url}/one2all/workspace/quality-management"
+one2all_base_url="${ONE2ALL_BASE_URL:-https://pm-prod.vibeworld.top}"
+one2all_app_prefix="${ONE2ALL_BROWSER_APP_PREFIX:-}"
+list_url="${one2all_base_url}${one2all_app_prefix}/workspace/quality-management"
 login_profile="${ONE2ALL_AUTH_PROFILE:-one2all}"
 dry_run=0
 
@@ -129,9 +158,9 @@ browser open "$list_url" >/dev/null
 browser wait 250 >/dev/null
 current_url="$(browser get url)"
 case "$current_url" in
-  *'/one2all/login'*)
+  *'/login'*)
     browser auth login "$login_profile" >/dev/null 2>&1 || true
-    if [ "$(browser get url)" = "${one2all_base_url}/one2all/login" ]; then
+    if [ "$(browser get url)" = "${one2all_base_url}${one2all_app_prefix}/login" ]; then
       eval_string "(()=>{const form=document.querySelector('form');if(form?.requestSubmit){form.requestSubmit();return 'submitted'}const button=document.querySelector('button[type=\"submit\"]');if(!button)return 'submit-not-found';button.click();return 'clicked'})()" >/dev/null
     fi
     wait_for_js "(()=>location.pathname.includes('/workspace/'))()" 80 || fail 'Login did not reach the One2All workspace' 77

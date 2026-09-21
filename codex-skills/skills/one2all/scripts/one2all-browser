@@ -4,8 +4,9 @@ set -eu
 
 # Keep One2All's browser session isolated from every other QA site.
 one2all_profile_dir="${ONE2ALL_BROWSER_PROFILE_DIR:-${HOME}/.agent-browser/profiles/one2all}"
-one2all_base_url="${ONE2ALL_BASE_URL:-http://192.168.113.115:32633}"
-one2all_target_url="${one2all_base_url}/one2all/workspace/quality-management"
+one2all_base_url="${ONE2ALL_BASE_URL:-https://pm-prod.vibeworld.top}"
+one2all_app_prefix="${ONE2ALL_BROWSER_APP_PREFIX:-}"
+one2all_target_url="${one2all_base_url}${one2all_app_prefix}/workspace/quality-management"
 one2all_session="one2all"
 one2all_state="one2all"
 one2all_host="$(printf '%s' "$one2all_base_url" | sed -E 's#^[a-zA-Z]+://([^/:]+).*#\1#')"
@@ -42,7 +43,7 @@ one2all_ready() {
     --arg url "$one2all_target_url" \
     '.data.tabs[] | select(.url == $url) | .index' | head -n 1)"
   one2all_business_tab="$(printf '%s' "$one2all_tab_json" | jq -r \
-    --arg base "${one2all_base_url}/one2all/" \
+    --arg base "${one2all_base_url}${one2all_app_prefix}/" \
     '.data.tabs[] | select(.url | startswith($base)) | .index' | head -n 1)"
 
   if [ -n "$one2all_target_tab" ]; then
@@ -81,7 +82,7 @@ one2all_ready() {
       esac
       printf '%s\n' "$one2all_active_url"
       ;;
-    *'/one2all/login'*)
+    *'/login'*)
       printf '%s\n' 'One2All login is required. Use the dedicated visible browser tab to complete Feishu authorization once, then rerun this command.' >&2
       return 2
       ;;

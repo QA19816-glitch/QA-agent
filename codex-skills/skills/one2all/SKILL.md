@@ -11,29 +11,35 @@ File defects only in One2All. Never dual-write or fall back to Zentao.
 
 Read [references/field-rules.md](references/field-rules.md) before creating or editing a BUG.
 
-On first use after installation, save that user's own One2All credentials locally:
+API submission requires local runtime authentication. Configure one of these without committing the value:
 
 ```sh
-scripts/one2all-setup --username <username>
+export ONE2ALL_API_TOKEN='<local-token>'
+# or: export ONE2ALL_API_AUTH_HEADER='Authorization: Bearer <local-token>'
+scripts/one2all-setup --check
 ```
 
-For non-interactive setup, pass the password through stdin with `--password-stdin`. Run `scripts/one2all-setup --check` to verify dependencies and the local auth-vault entry. Never put credentials in this skill folder. `ONE2ALL_BASE_URL`, `ONE2ALL_AUTH_PROFILE`, and `ONE2ALL_BROWSER_PROFILE_DIR` are optional per-user overrides; do not hardcode them into a shared copy.
+On macOS, the preferred one-time setup is `scripts/one2all-setup --api-token-stdin`. It stores the token in Keychain service `codex-one2all-api-token`; later submissions load it automatically without printing or writing it into the project.
 
-The shared MCP endpoint and generic configuration are in [references/mcp-config.toml](references/mcp-config.toml). Run `scripts/one2all-setup --install-mcp` for optional OAuth setup. In a new Codex task, prefer the MCP only when its exposed tools cover duplicate search, BUG creation, saved-detail verification, and any requested screenshot upload/inline embedding. Otherwise use the one-shot browser submitter immediately; never delay a BUG submission to troubleshoot MCP.
+Use `scripts/one2all-setup --username <username>` only to configure the explicit browser fallback; for non-interactive fallback setup, pass the password through stdin with `--password-stdin`. Never put credentials in this skill folder. See [references/api-config.example.env](references/api-config.example.env) for non-secret endpoint settings. `ONE2ALL_BASE_URL`, `ONE2ALL_AUTH_PROFILE`, and `ONE2ALL_BROWSER_PROFILE_DIR` are optional per-user overrides. The production browser path has no app prefix; set `ONE2ALL_BROWSER_APP_PREFIX=/one2all` only for the legacy internal deployment. Do not hardcode secrets into a shared copy.
 
-For BUG creation, use the one-shot submitter:
+The shared MCP endpoint and generic configuration are in [references/mcp-config.toml](references/mcp-config.toml). Run `scripts/one2all-setup --install-mcp` for optional OAuth setup. The one-shot submitter defaults to direct HTTP API transport. Configure `ONE2ALL_API_TOKEN` or `ONE2ALL_API_AUTH_HEADER` in the local runtime; never write either secret into this skill. Set `ONE2ALL_TRANSPORT=browser` only for diagnostics or an explicit fallback. In a new Codex task, prefer the MCP only when its exposed tools cover duplicate search, BUG creation, saved-detail verification, and any requested screenshot upload/inline embedding. Otherwise use the one-shot API submitter immediately; never delay a BUG submission to troubleshoot MCP.
+
+For BUG creation, use the one-shot submitter (API by default):
 
 ```sh
 scripts/one2all-submit /private/tmp/one2all-bug.json
 ```
 
-The JSON input must contain `title`, `requirement_path` (project set, project, requirement), `severity_key`, `priority_key`, `steps`, `actual_result`, and `expected_result`. `found_environment` defaults to exact value `test`; `screenshot_path` is optional. The submitter normalizes the title marker, performs one focused duplicate check, opens the form from the initialized quality-management list, selects the requirement with stable DOM selectors, uploads and embeds a screenshot when supplied, submits once, and verifies the saved detail.
+The JSON input must contain `title`, `severity_key`, `priority_key`, `steps`, `actual_result`, and `expected_result`. `requirement_path` defaults to the verified `S基建 / 未分类 / 未分类Bug` mapping (`requirement_id=109`), `found_environment` defaults to exact value `test`, and `screenshot_path` is optional. The API submitter normalizes the title marker, performs one focused duplicate check, resolves a unique requirement (or accepts `requirement_id`), creates once, uploads a screenshot when supplied, then verifies persistence through the detail and exact-title list APIs in parallel.
 
-Use [references/bug-spec.example.json](references/bug-spec.example.json) as the input contract example. Use `--dry-run` to exercise duplicate search, form initialization, requirement selection, field entry, severity selection, and pre-submit validation without uploading evidence or creating a BUG.
+API settings contain no credentials: `ONE2ALL_BASE_URL`, `ONE2ALL_API_CREATE_PATH`, `ONE2ALL_API_LIST_PATH`, `ONE2ALL_API_DETAIL_PATH`, and `ONE2ALL_API_UPLOAD_PATH` override paths when a deployment differs. For direct HTTP outside the browser session, provide `ONE2ALL_API_TOKEN` or `ONE2ALL_API_AUTH_HEADER`; do not write either value to this skill. If the API requires an explicit requirement ID, pass `requirement_id` in the BUG JSON or set `ONE2ALL_API_REQUIREMENT_ID`. `--dry-run` performs duplicate and requirement checks and prints the exact API payload without creating a BUG.
 
-The submitter reuses the named `one2all` browser state, the private Profile, and a per-user auth-vault entry named `one2all`. Each user saves their own credentials locally; the skill never contains usernames or passwords. Set `ONE2ALL_AUTH_PROFILE` only when a user deliberately chooses another local vault name. Run the entire submission in one outer command. Do not implement normal submissions as a sequence of separate `one2all-browser` calls; that wrapper is for diagnostics and recovery only. Do not first attempt write interactions through the Codex right-side micro-app; its embedded dialog clicks are known to be unreliable. Use the right-side browser when the user explicitly asks to watch there or for read-only inspection.
+Use [references/bug-spec.example.json](references/bug-spec.example.json) as the input contract example. Use `--dry-run` to exercise duplicate search, requirement resolution, payload construction, and pre-submit validation without uploading evidence or creating a BUG.
 
-The allowlist contains only the One2All host plus `open.feishu.cn` and `accounts.feishu.cn`. Never inspect or export passwords, cookies, tokens, local storage, or auth-state files. If login has expired, let the submitter use the saved auth-vault entry in the same session. Ask the user to log in only when the saved login fails. Do not refresh, close, rebuild, or switch browser sessions while a valid session exists.
+The browser state and private Profile are retained only for diagnostics and the explicit browser fallback. Each user saves their own credentials locally; the skill never contains usernames or passwords. Set `ONE2ALL_AUTH_PROFILE` only when a user deliberately chooses another local vault name. Run the entire submission in one outer command. Do not implement normal submissions as a sequence of separate `one2all-browser` calls; that wrapper is for diagnostics and recovery only. Do not first attempt write interactions through the Codex right-side micro-app; its embedded dialog clicks are known to be unreliable. Use the right-side browser when the user explicitly asks to watch there or for read-only inspection.
+
+The allowlist contains only the One2All host plus `open.feishu.cn` and `accounts.feishu.cn`. Never inspect or export passwords, cookies, tokens, local storage, or auth-state files. These session-recovery rules apply only to the explicit browser fallback: if login has expired, let the fallback use the saved auth-vault entry in the same session. Ask the user to log in only when the saved login fails. Do not refresh, close, rebuild, or switch browser sessions while a valid session exists.
 
 ## Choose a Mode
 
@@ -41,15 +47,17 @@ The allowlist contains only the One2All host plus `open.feishu.cn` and `accounts
 
 Use fast mode when the user says `只要提成功`, `随机提一个`, `随便提一个`, `不要复杂`, or `快速提交`, or when the user provides complete defect facts and does not request a full evidence package.
 
-1. Build one JSON spec and invoke `one2all-submit` once. Do not manually replay the form step by step.
-2. Use the user's defect. For a random request, verify one real issue on the scoped page; never invent a defect.
+Hard speed rule: when complete defect facts are already available, do not open a browser, rediscover endpoints, troubleshoot MCP, run a dry-run, or manually repeat API probes. Build the JSON and invoke `one2all-submit` exactly once. Success means its JSON contains both `ok:true` and `persisted:true`.
+
+1. Build one JSON spec and invoke `one2all-submit` once. The default path performs duplicate check, create, optional material upload, and saved-detail readback through the API; do not manually replay the form step by step.
+2. Use the user's defect. For a random request, use an already verified, not-yet-submitted real issue. If none is available, immediately ask for title, steps, actual result, and expected result; do not spend minutes exploring or invent a defect.
 3. Run one focused duplicate check using the title or distinctive actual result. Do not perform broad historical research.
-4. Resolve one supported requirement. For One2All/PM quality-management defects only, use the verified self-test mapping `test > test > PMMCP`. Never reuse it for unrelated business defects.
+4. Resolve one supported requirement. The local verified default is `S基建 / 未分类 / 未分类Bug` with `requirement_id=109`; preserve an explicitly supplied requirement instead.
 5. Determine severity and priority independently from actual impact. Fast mode does not authorize copying form defaults.
 6. Fill required fields. Skip screenshots only when deterministic text or numeric evidence is sufficient and the user did not request an attachment. When an image is attached, upload it after selecting the requirement and embed it inline in the reproduction steps under `证据截图`; do not leave it as download-only material.
 7. Enter real line breaks in steps and results; do not save visible `\n` literals.
-8. Let the submitter submit once. If the result is uncertain, it searches by exact title instead of clicking again.
-9. Require the submitter's verified JSON result. It confirms BUG number, title, requirement, severity, available priority control, environment, non-empty reproduction sections, and inline screenshot dimensions.
+8. Let the submitter submit once. It performs one delayed persistence check through detail and exact-title list APIs in parallel; never click or POST again automatically.
+9. Require the submitter's verified JSON result. It confirms persistence, BUG number, title, requirement, severity, priority, environment, non-empty reproduction sections, and inline screenshot URL when present.
 10. Return the verified BUG number and detail URL from that JSON result.
 
 ### Full Mode
@@ -78,11 +86,11 @@ Use full mode for release blockers, high-risk defects, formal acceptance, reques
 
 ## Session Recovery
 
-The submitter persists login through agent-browser's named state `one2all`, the per-user `one2all` auth-vault entry, and the private first-start Profile in `~/.agent-browser/profiles/one2all`. Set `ONE2ALL_BROWSER_PROFILE_DIR` only when explicitly required. Never copy the Profile, credentials, or named state into Git or a shared skill package.
+The explicit browser fallback persists login through agent-browser's named state `one2all`, the per-user `one2all` auth-vault entry, and the private first-start Profile in `~/.agent-browser/profiles/one2all`. Set `ONE2ALL_BROWSER_PROFILE_DIR` only when explicitly required. Never copy the Profile, credentials, or named state into Git or a shared skill package.
 
 If the session is unavailable:
 
-1. Run `one2all-submit --dry-run <spec>` once.
+1. Run `one2all-submit --dry-run <spec>` once. This exercises API validation without creating a BUG; set `ONE2ALL_TRANSPORT=browser` only when diagnosing the API deployment.
 2. If the login page appears, allow the saved auth-vault login to run in the same session.
 3. Ask the user for manual login only if saved authentication fails.
 4. Reuse the same `one2all` session and do not launch an unscoped temporary browser.
@@ -102,3 +110,5 @@ Use the UI; treat these paths only as field-contract evidence:
 - `POST /quality/bugs`
 - `PATCH /quality/bugs/{id}`
 - `POST /quality/bugs/materials/upload` with `file` and `requirement_id`
+
+The API client treats the paths above as the stable write contract. List/detail and requirement lookup paths are configurable because they were not part of the observed public contract. Requirement resolution fails closed when no unique `requirement_id` can be obtained; pass `requirement_id` directly when the deployment does not expose the configured lookup path.

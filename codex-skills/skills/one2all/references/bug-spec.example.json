@@ -1,6 +1,7 @@
 {
   "title": "【Codex自动化】简洁且可复现的缺陷标题",
-  "requirement_path": ["test", "test", "PMMCP"],
+  "requirement_path": ["S基建", "未分类", "未分类Bug"],
+  "requirement_id": 109,
   "severity_key": "p3",
   "priority_key": "low",
   "found_environment": "test",
