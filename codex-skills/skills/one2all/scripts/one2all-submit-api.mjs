@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * One2All API submitter.
+ * PM项目管理平台 API submitter (historical compatibility name: one2all).
  *
  * The API contract is deliberately kept in one place so every installation
  * uses the same fast submission and persistence-verification behavior.
@@ -160,7 +160,7 @@ function decodeResponse(result, url) {
   }
   if (status < 200 || status >= 300) {
     const detail = body?.message || body?.error || (body && typeof body === "object" ? JSON.stringify(body) : result?.body) || `HTTP ${status}`;
-    throw new Error(`One2All API ${status}: ${detail}`);
+    throw new Error(`PM项目管理平台 API ${status}: ${detail}`);
   }
   return body;
 }

@@ -26,7 +26,7 @@
     },
     {
       "name": "one2all",
-      "description": "Submit, update, deduplicate, and verify BUGs in the One2/One2All quality-management platform with visible-browser evidence, requirement association, impact-based severity and priority, screenshots, and saved-detail verification. Use when the user asks to 提 BUG, 报 BUG, 提交缺陷, or file a defect without naming a platform; also use when One2, One2All, one2all, 当前平台, or the One2 quality-management URL is named. Do not use for requests that explicitly name Zentao/禅道."
+      "description": "Submit, update, deduplicate, and verify BUGs in PM项目管理平台（原 One2All） with requirement association, impact-based severity and priority, evidence, and saved-detail verification. Use when the user asks to 提 BUG, 报 BUG, 提交缺陷, or file a defect without naming a platform; also use when PM项目管理平台, PM平台, One2, One2All, one2all, 当前平台, or its quality-management URL is named. Do not use for requests that explicitly name Zentao/禅道. The one2all skill name and scripts remain compatibility identifiers."
     },
     {
       "name": "pdf",
@@ -122,7 +122,7 @@
     },
     {
       "name": "qa-test-execution",
-      "description": "Design and execute an end-to-end QA workflow from requirements, PRDs, prototypes, API specifications, change notes, Feishu wiki/docx, Markdown, structured JSON, or existing test cases. Use when the user asks to 生成并执行测试用例、从需求开始测试、照着测试用例执行、跑冒烟/回归、记录结果、失败提 BUG、生成测试用例和执行报告, or wants one integrated requirement-to-case-to-One2All-to-Feishu workflow."
+      "description": "Design and execute an end-to-end QA workflow from requirements, PRDs, prototypes, API specifications, change notes, Feishu wiki/docx, Markdown, structured JSON, or existing test cases. Use when the user asks to 生成并执行测试用例、从需求开始测试、照着测试用例执行、跑冒烟/回归、记录结果、失败提 BUG、生成测试用例和执行报告, or wants one integrated requirement-to-case-to-PM项目管理平台-to-Feishu workflow."
     },
     {
       "name": "qa-test-environment-platform",

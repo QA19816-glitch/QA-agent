@@ -180,7 +180,7 @@ try {
     /was not persisted in the exact-title list/,
   );
   assert.equal(requestLog.filter(item => item.method === "POST").length, 1, "persistence failure must not retry creation");
-  process.stdout.write("One2All API submitter tests passed.\n");
+  process.stdout.write("PM项目管理平台 API submitter tests passed.\n");
 } finally {
   server.close();
   await fs.rm(temporaryDir, { recursive: true, force: true });

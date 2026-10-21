@@ -1,11 +1,11 @@
 ---
 name: one2all
-description: Submit, deduplicate, and verify BUGs in the One2/One2All quality-management platform through the fast direct API workflow. Use when the user asks to 提 BUG, 报 BUG, 提交缺陷, 快速提 BUG, 随机提一个, or names One2, One2All, one2all, 当前平台, or the One2 quality-management URL. Do not use for requests that explicitly name Zentao/禅道.
+description: Submit, deduplicate, and verify BUGs in PM项目管理平台（原 One2All） through the fast direct API workflow. Use when the user asks to 提 BUG, 报 BUG, 提交缺陷, 快速提 BUG, 随机提一个, or names PM项目管理平台, PM平台, One2, One2All, one2all, 当前平台, or its quality-management URL. Do not use for requests that explicitly name Zentao/禅道.
 ---
 
-# One2All Fast API Defect Workflow
+# PM项目管理平台 Fast API Defect Workflow
 
-File defects only in One2All. This skill is API-only: do not open the browser, troubleshoot MCP, rediscover endpoints, or replay form interactions.
+File defects only in PM项目管理平台（原 One2All）. This skill is API-only: do not open the browser, troubleshoot MCP, rediscover endpoints, or replay form interactions. Keep `one2all` directory names, commands, environment variables, Keychain services, and API paths as historical compatibility identifiers.
 
 ## One-Time Setup
 

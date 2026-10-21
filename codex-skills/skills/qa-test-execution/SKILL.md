@@ -1,6 +1,6 @@
 ---
 name: qa-test-execution
-description: Design and execute an end-to-end QA workflow from requirements, PRDs, prototypes, API specifications, change notes, Feishu wiki/docx, Markdown, structured JSON, or existing test cases. Use when the user asks to 生成并执行测试用例、从需求开始测试、照着测试用例执行、跑冒烟/回归、记录结果、失败提 BUG、生成测试用例和执行报告, or wants one integrated requirement-to-case-to-One2All-to-Feishu workflow.
+description: Design and execute an end-to-end QA workflow from requirements, PRDs, prototypes, API specifications, change notes, Feishu wiki/docx, Markdown, structured JSON, or existing test cases. Use when the user asks to 生成并执行测试用例、从需求开始测试、照着测试用例执行、跑冒烟/回归、记录结果、失败提 BUG、生成测试用例和执行报告, or wants one integrated requirement-to-case-to-PM项目管理平台-to-Feishu workflow.
 ---
 
 # QA Test Design And Execution
@@ -74,9 +74,9 @@ Resume skips terminal cases and reuses generated cases when requirement and case
 
 ## Confirm Failures And File BUGs
 
-Before submitting a BUG, re-read the exact expected result, capture minimal reproducible evidence, reproduce once when safe, and delegate focused duplicate checking plus submission to `one2all`.
+Before submitting a BUG, re-read the exact expected result, capture minimal reproducible evidence, reproduce once when safe, and delegate focused duplicate checking plus submission to the PM项目管理平台 compatibility skill `one2all`.
 
-Use One2All's persistent session. Determine severity from impact and priority from urgency independently. Persist only verified BUG IDs and URLs. Do not create BUGs for design gaps, `Blocked`, or `Skipped` cases.
+Use PM项目管理平台's persistent session. Determine severity from impact and priority from urgency independently. Persist only verified BUG IDs and URLs. Do not create BUGs for design gaps, `Blocked`, or `Skipped` cases.
 
 ## Publish Feishu Deliverables
 

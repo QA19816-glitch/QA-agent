@@ -46,4 +46,4 @@ Durations are measured in seconds. Evidence paths should be relative to the run 
 
 Reproduce a failure once only when safe. Do not repeat irreversible or high-impact actions. Compare the actual result with the exact source expectation, check relevant console/network data, and distinguish product defect from environment instability, invalid data, expired authentication, and requirement ambiguity.
 
-Only confirmed product failures proceed to One2All.
+Only confirmed product failures proceed to PM项目管理平台 through the compatibility skill `one2all`.
