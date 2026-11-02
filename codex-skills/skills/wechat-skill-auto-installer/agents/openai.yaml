@@ -1,0 +1,4 @@
+interface:
+  display_name: "WeChat Skill Auto Installer"
+  short_description: "Identify and install skills from WeChat articles"
+  default_prompt: "Use $wechat-skill-auto-installer to read this WeChat article, identify mentioned skills, and install matching local Codex skills."

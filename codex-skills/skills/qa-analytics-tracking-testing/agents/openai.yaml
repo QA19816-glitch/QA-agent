@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analytics Tracking QA"
+  short_description: "Verify events, funnels, BI, and experiments"
+  default_prompt: "Use $qa-analytics-tracking-testing to test this analytics tracking spec."

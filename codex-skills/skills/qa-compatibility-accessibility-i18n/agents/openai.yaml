@@ -1,0 +1,4 @@
+interface:
+  display_name: "Compatibility A11y I18n QA"
+  short_description: "Test browsers, accessibility, and locales"
+  default_prompt: "Use $qa-compatibility-accessibility-i18n to build a compatibility and localization matrix."

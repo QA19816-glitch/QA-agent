@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA API Testing"
+  short_description: "Cover APIs, contracts, auth, and integrations"
+  default_prompt: "Use $qa-api-testing to design API tests for these endpoints."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cloud Infra QA"
+  short_description: "Verify deploys, config, IAM, and rollback"
+  default_prompt: "Use $qa-cloud-infra-testing to build an infra release QA checklist."

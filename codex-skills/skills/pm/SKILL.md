@@ -1,0 +1,100 @@
+---
+name: pm
+description: Submit, deduplicate, and verify BUGs in PM项目管理平台 through the fast direct API workflow. Use when the user asks to 提 BUG, 报 BUG, 提交缺陷, 快速提 BUG, 随机提一个, or names PM项目管理平台, PM平台, PM, 当前平台, or its quality-management URL. Do not use for requests that explicitly name Zentao/禅道.
+---
+
+# PM项目管理平台 Fast API Defect Workflow
+
+File defects only in PM项目管理平台. This skill is API-only: do not open the browser, troubleshoot MCP, rediscover endpoints, or replay form interactions.
+
+## One-Time Setup
+
+The fast-path rules below are self-contained. Read [references/field-rules.md](references/field-rules.md) only when requirement ownership, severity, priority, or evidence handling is genuinely ambiguous.
+
+On macOS, save each user's own API token in Keychain:
+
+```sh
+scripts/pm-setup --api-token-stdin
+scripts/pm-setup --check
+```
+
+The Keychain service is `codex-pm-api-token`. The token is never printed, committed, or written into the skill directory. An installation may instead provide `PM_API_TOKEN` or `PM_API_AUTH_HEADER` in its private runtime.
+
+## Submit
+
+For the fastest path, Base64-encode the UTF-8 JSON specification in memory and run exactly one command:
+
+```sh
+scripts/pm-submit --json-base64 '<base64-json>'
+```
+
+Do not create a temporary specification file for ordinary submissions. File input remains supported for manually maintained fixtures: `scripts/pm-submit <bug.json>`.
+
+Required fields:
+
+- `title`
+- `severity_key`: `p0`, `p1`, `p2`, or `p3`
+- `priority_key`: `urgent`, `high`, `medium`, or `low`
+- `steps`
+- `actual_result`
+- `expected_result`
+
+## Title Quality
+
+Treat a short phrase supplied by the user as the defect's core fact, not automatically as the final title. Before submission, rewrite it into a concise professional title using `module/object + trigger or state + observable abnormal result`.
+
+- Preserve the user's meaning and observable evidence.
+- Add enough context to make the title independently understandable in a BUG list.
+- Do not invent a root cause, affected scope, device, environment, frequency, or business impact that the user did not provide.
+- Avoid vague final titles such as `首页不显示`, `页面有问题`, `功能异常`, or `点击没反应`.
+- If the user explicitly says to use an exact title, preserve it apart from the required `【Codex自动化】` prefix.
+
+Examples:
+
+- `首页不显示` → `进入系统首页后页面内容未正常展示`
+- `保存没反应` → `点击保存后页面无响应且数据未提交`
+- `列表为空` → `进入数据列表后已有记录未展示`
+
+Defaults:
+
+- requirement: `S基建 / 未分类 / 未分类Bug`
+- `requirement_id`: `109`
+- `found_environment`: exact value `test`
+- workspace: `2`
+
+Preserve an explicitly supplied requirement, requirement ID, environment, owner, deadline, operating system, or browser.
+
+Severity shorthand: `p0` is broad outage/destruction; `p1` is a blocked core flow or material security/data risk; `p2` is limited functional impairment; `p3` is cosmetic or minor. Priority is independent: `urgent` for active/release-blocking risk, `high` for important current work, `medium` for normal scheduling, and `low` for minor backlog work.
+
+The submitter performs one exact-title duplicate check, creates once, waits briefly, then verifies the saved detail and exact-title list in parallel. Report success only when its JSON contains both `ok:true` and `persisted:true`.
+
+## Speed Rules
+
+1. When complete defect facts are available, first professionalize any shorthand title without adding unsupported facts, then immediately encode the JSON in memory and invoke `pm-submit --json-base64` once.
+2. Do not run a dry-run before a normal submission.
+3. Do not open a browser, inspect login state, call MCP, probe endpoints manually, or repeat verification outside the submitter.
+4. Do not submit twice. A persistence failure is an error requiring investigation, not permission to retry automatically.
+5. For `随机提一个` or `随便提一个`, use an already known, verified, not-yet-submitted real issue from the current task context. Never search the filesystem, browser, or application merely to manufacture a speed-test candidate. If none is already available, immediately ask for title, steps, actual result, and expected result.
+6. Enter real line breaks in reproduction text. Numbered steps must be vertical, with every item (`1.`、`2.`、`3.`、`4.` etc.) on its own line; never place multiple numbered steps on one line. Never save visible `\n` literals.
+7. Keep `reproduction_steps` limited to the `[步骤]` section and its numbered steps. Store the actual result and expected result only in `actual_result` and `expected_result`; never duplicate either result inside the reproduction text.
+8. When `actual_result` or `expected_result` contains multiple information points, number them and put each item on its own line. Never place multiple numbered result items on one line.
+9. Return the BUG number, detail URL, total duration, creation duration, verification duration, persistence status, and `input_mode` from the command JSON.
+
+## Evidence Mode
+
+When `screenshot_path` is supplied, the API uploads the image after resolving the requirement, adds the returned material URL to the BUG, and embeds it under `证据截图` in the reproduction text. Do not continue without required evidence if upload fails.
+
+## Configuration
+
+See [references/api-config.example.env](references/api-config.example.env) for non-secret overrides. Never place real tokens, authorization headers, passwords, cookies, usernames, Keychain exports, or browser state in this directory.
+
+Use [references/bug-spec.example.json](references/bug-spec.example.json) as the input contract example. `--dry-run` is for installation diagnostics only; it performs duplicate checking and prints the payload without creating a BUG.
+
+## Failure Rules
+
+- Exact duplicate found: stop and return the existing-match error.
+- Requirement is not uniquely supported and no verified mapping applies: ask the user to choose.
+- Create response has no BUG ID: stop; do not retry automatically.
+- Detail or exact-title list does not contain the created BUG after the persistence delay: return failure; do not POST again.
+- Saved requirement, environment, severity, priority, title, or reproduction sections mismatch: report incomplete rather than claiming success.
+- Never delete, close, or modify an existing non-test BUG without explicit authorization.

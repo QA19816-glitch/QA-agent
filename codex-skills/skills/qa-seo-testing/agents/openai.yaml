@@ -1,0 +1,4 @@
+interface:
+  display_name: "SEO QA"
+  short_description: "Check crawl, metadata, schema, and SEO launch risk"
+  default_prompt: "Use $qa-seo-testing to run SEO QA for these pages."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Web UI Testing"
+  short_description: "Validate web flows with browser evidence"
+  default_prompt: "Use $qa-web-ui-testing to test this web flow and capture defects."

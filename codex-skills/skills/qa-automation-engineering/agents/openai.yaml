@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Automation Engineering"
+  short_description: "Build reliable automated QA coverage"
+  default_prompt: "Use $qa-automation-engineering to design automation for this regression suite."

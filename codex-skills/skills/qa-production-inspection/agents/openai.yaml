@@ -1,0 +1,4 @@
+interface:
+  display_name: "Production Inspection QA"
+  short_description: "Run safe online巡检 and post-release checks"
+  default_prompt: "Use $qa-production-inspection to perform safe post-release inspection."

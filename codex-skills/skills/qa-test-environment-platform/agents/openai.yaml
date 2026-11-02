@@ -1,0 +1,4 @@
+interface:
+  display_name: "Test Environment QA"
+  short_description: "Check env readiness, data, accounts, and flags"
+  default_prompt: "Use $qa-test-environment-platform to verify this QA environment."

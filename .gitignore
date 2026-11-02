@@ -1,0 +1,20 @@
+.DS_Store
+
+# Local credentials and environment overrides.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*credentials*.json
+*secrets*.json
+
+# Local PM submission diagnostics.
+tmp-pm-speed-test*.json
+
+# Local browser/session artifacts must never enter the repository.
+.agent-browser/
+pm-browser-profile/
+
+# Local QA execution state and evidence.
+.qa-runs/

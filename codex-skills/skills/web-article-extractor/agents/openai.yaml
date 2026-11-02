@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web Article Extractor"
+  short_description: "Extract articles from difficult web pages"
+  default_prompt: "Use $web-article-extractor to extract and summarize this article URL."

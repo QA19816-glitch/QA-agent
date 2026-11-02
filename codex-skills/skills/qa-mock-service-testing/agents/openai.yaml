@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mock Service QA"
+  short_description: "Validate mocks, stubs, sandboxes, and callbacks"
+  default_prompt: "Use $qa-mock-service-testing to design mock scenarios for this integration."

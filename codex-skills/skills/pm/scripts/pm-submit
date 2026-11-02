@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -eu
+
+script_dir="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+
+command -v node >/dev/null 2>&1 || {
+  printf '%s\n' '{"ok":false,"error":"node is required for PM项目管理平台 API submission"}' >&2
+  exit 69
+}
+
+if [ -z "${PM_API_TOKEN:-}" ] && [ -z "${PM_API_AUTH_HEADER:-}" ]; then
+  keychain_service="${PM_KEYCHAIN_SERVICE:-codex-pm-api-token}"
+  keychain_account="${PM_KEYCHAIN_ACCOUNT:-pm-api}"
+  security_bin="${PM_KEYCHAIN_SECURITY_BIN:-security}"
+  if command -v "$security_bin" >/dev/null 2>&1; then
+    keychain_token="$("$security_bin" find-generic-password -s "$keychain_service" -a "$keychain_account" -w 2>/dev/null || true)"
+    if [ -n "$keychain_token" ]; then
+      PM_API_TOKEN="$keychain_token"
+      export PM_API_TOKEN
+      unset keychain_token
+    fi
+  fi
+fi
+
+exec node "${script_dir}/pm-submit-api.mjs" "$@"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Observability QA"
+  short_description: "Verify logs, metrics, traces, alerts, and audits"
+  default_prompt: "Use $qa-observability-testing to test observability for this flow."

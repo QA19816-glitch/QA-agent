@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI LLM Testing"
+  short_description: "Test AI quality, RAG, tools, and safety"
+  default_prompt: "Use $qa-ai-llm-testing to design eval cases for this AI feature."

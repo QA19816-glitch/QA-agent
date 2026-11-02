@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Design & Execution"
+  short_description: "从需求生成用例并自动执行、提 BUG、输出飞书报告"
+  default_prompt: "Use $qa-test-execution to turn these requirements or cases into a validated test suite, execute safe cases, file confirmed defects, and create linked Feishu documents."

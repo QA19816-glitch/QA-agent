@@ -1,0 +1,4 @@
+interface:
+  display_name: "QA Data Backend Testing"
+  short_description: "Verify data, jobs, queues, and migrations"
+  default_prompt: "Use $qa-data-backend-testing to design backend data checks for this change."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Desktop Client QA"
+  short_description: "Test desktop install, updates, and OS integration"
+  default_prompt: "Use $qa-desktop-client-testing to plan desktop app QA."

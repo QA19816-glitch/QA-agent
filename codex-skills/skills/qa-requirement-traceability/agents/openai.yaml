@@ -1,0 +1,4 @@
+interface:
+  display_name: "Requirement Traceability QA"
+  short_description: "Map requirements to tests, results, and defects"
+  default_prompt: "Use $qa-requirement-traceability to build a requirement traceability matrix."
